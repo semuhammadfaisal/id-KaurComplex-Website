@@ -111,29 +111,39 @@ function initScrollEffects() {
     });
 }
 
-// Counter Animation
+// Enhanced Counter Animation
 function initCounters() {
     const counters = document.querySelectorAll('.stat-number');
+    const speed = 2000; // Animation duration in ms
     
     const animateCounter = (counter) => {
-        const target = parseInt(counter.getAttribute('data-target'));
-        const duration = 2000; // 2 seconds
-        const increment = target / (duration / 16); // 60fps
-        let current = 0;
-
-        const updateCounter = () => {
-            current += increment;
-            if (current < target) {
-                counter.textContent = Math.floor(current);
+        const target = +counter.getAttribute('data-target');
+        const suffix = counter.getAttribute('data-suffix') || '';
+        const start = 0;
+        const duration = speed;
+        const startTime = performance.now();
+        
+        const updateCounter = (currentTime) => {
+            const elapsedTime = currentTime - startTime;
+            const progress = Math.min(elapsedTime / duration, 1);
+            const easeProgress = easeOutQuad(progress);
+            const currentValue = Math.floor(easeProgress * target);
+            
+            counter.textContent = currentValue + suffix;
+            
+            if (progress < 1) {
                 requestAnimationFrame(updateCounter);
-            } else {
-                counter.textContent = target;
             }
         };
-
-        updateCounter();
+        
+        requestAnimationFrame(updateCounter);
     };
-
+    
+    // Easing function for smooth animation
+    function easeOutQuad(t) {
+        return t * (2 - t);
+    }
+    
     // Intersection Observer for counters
     const counterObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -142,33 +152,18 @@ function initCounters() {
                 counterObserver.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.5 });
-
+    }, { 
+        threshold: 0.5,
+        rootMargin: '0px 0px -50px 0px'
+    });
+    
     counters.forEach(counter => {
         counterObserver.observe(counter);
     });
 }
 
-// Smooth Scrolling
-function initSmoothScrolling() {
-    const links = document.querySelectorAll('a[href^="#"]');
-    
-    links.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const targetId = link.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            
-            if (targetSection) {
-                const offsetTop = targetSection.offsetTop - 80; // Account for fixed navbar
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-}
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', initCounters);
 
 // Gallery Lightbox
 function initGallery() {
@@ -660,5 +655,79 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         });
+    });
+});
+
+// Testimonial Slider Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const track = document.querySelector('.testimonial-track');
+    const cards = document.querySelectorAll('.testimonial-card');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    const dotsContainer = document.querySelector('.testimonial-dots');
+    let currentIndex = 0;
+    
+    // Create dots
+    cards.forEach((_, index) => {
+        const dot = document.createElement('div');
+        dot.classList.add('dot');
+        if (index === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToTestimonial(index));
+        dotsContainer.appendChild(dot);
+    });
+    
+    const dots = document.querySelectorAll('.dot');
+    
+    // Update slider position
+    function updateSlider() {
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        
+        // Update dots
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentIndex);
+        });
+        
+        // Disable/enable buttons at ends
+        prevBtn.disabled = currentIndex === 0;
+        nextBtn.disabled = currentIndex === cards.length - 1;
+    }
+    
+    function goToTestimonial(index) {
+        currentIndex = index;
+        updateSlider();
+    }
+    
+    function nextTestimonial() {
+        if (currentIndex < cards.length - 1) {
+            currentIndex++;
+            updateSlider();
+        }
+    }
+    
+    function prevTestimonial() {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateSlider();
+        }
+    }
+    
+    // Event listeners
+    nextBtn.addEventListener('click', nextTestimonial);
+    prevBtn.addEventListener('click', prevTestimonial);
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowRight') nextTestimonial();
+        if (e.key === 'ArrowLeft') prevTestimonial();
+    });
+    
+    // Autoplay (optional)
+    let autoplay = setInterval(nextTestimonial, 5000);
+    
+    // Pause autoplay on hover
+    const container = document.querySelector('.testimonials-container');
+    container.addEventListener('mouseenter', () => clearInterval(autoplay));
+    container.addEventListener('mouseleave', () => {
+        autoplay = setInterval(nextTestimonial, 5000);
     });
 });
