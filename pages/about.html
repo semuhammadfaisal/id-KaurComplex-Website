@@ -3,18 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn about Kaur Complex - our mission, vision, and commitment to luxury living in Peshawar. Discover our story and development philosophy.">
-    <title>About Us - Kaur Complex</title>
+    <meta name="description" content="Discover Kaur Complex - Peshawar's premier luxury living destination. Learn about our vision, values, and commitment to excellence in real estate development.">
+    <title>About Kaur Complex | Luxury Living in Peshawar</title>
     
     <!-- CSS Files -->
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/responsive.css">
     
-    <!-- Font Awesome for icons -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
@@ -22,19 +25,22 @@
         <div class="nav-container">
             <div class="nav-logo">
                 <a href="../index.html">
-                    <h2>Kaur Complex</h2>
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 0L40 20L20 40L0 20L20 0Z" fill="#D4AF37"/>
+                        <path d="M20 10L30 20L20 30L10 20L20 10Z" fill="#1E3A8A"/>
+                    </svg>
+                    <span>Kaur Complex</span>
                 </a>
             </div>
             
             <div class="nav-menu" id="nav-menu">
-                <a href="../index.html" class="nav-link">Home</a>
-                <a href="about.html" class="nav-link active">About</a>
-                <a href="apartments.html" class="nav-link">Apartments</a>
-                <a href="shops.html" class="nav-link">Shops</a>
-                <a href="amenities.html" class="nav-link">Amenities</a>
-                <a href="gallery.html" class="nav-link">Gallery</a>
-                <a href="floor-plans.html" class="nav-link">Floor Plans</a>
-                <a href="contact.html" class="nav-link">Contact</a>
+              <a href="../index.html" class="nav-link">Home</a>
+              <a href="about.html" class="nav-link active">About</a>
+              <a href="apartments.html" class="nav-link">Apartments</a>
+              <a href="shops.html" class="nav-link">Commercial</a>
+              <a href="amenities.html" class="nav-link">Amenities</a>
+              <a href="contact.html" class="nav-link">Contact</a>
+              <a href="tel:+923001234567" class="nav-cta">Call Now</a>
             </div>
             
             <div class="nav-toggle" id="nav-toggle">
@@ -45,262 +51,554 @@
         </div>
     </nav>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1>About Kaur Complex</h1>
-            <p>Discover our story, mission, and commitment to luxury living</p>
-        </div>
-    </section>
-
-    <!-- Project Overview -->
-    <section class="about-overview">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-content">
-                    <h2>Project Overview</h2>
-                    <p>Kaur Complex represents the pinnacle of luxury living in Peshawar, offering an unprecedented blend of modern architecture, premium amenities, and strategic location. Our development spans over 15 acres of prime real estate, featuring more than 600 meticulously designed residential units.</p>
-                    
-                    <p>Built to international standards, Kaur Complex incorporates cutting-edge construction techniques, sustainable design principles, and world-class finishes. Each apartment is crafted with attention to detail, ensuring maximum comfort, functionality, and aesthetic appeal.</p>
-                    
-                    <div class="about-stats">
-                        <div class="about-stat">
-                            <h3>15+</h3>
-                            <p>Acres of Land</p>
-                        </div>
-                        <div class="about-stat">
-                            <h3>25+</h3>
-                            <p>Floors</p>
-                        </div>
-                        <div class="about-stat">
-                            <h3>100%</h3>
-                            <p>Gated Community</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="about-image">
-                    <img src="../assets/images/about/project-overview.jpg" alt="Kaur Complex Project Overview">
-                </div>
+    <!-- Hero Banner -->
+<section class="about-hero">
+    <div class="hero-media-wrapper">
+        <img src="../assets/images/about/hero-bg.jpg" 
+             alt="Kaur Complex Luxury Living" 
+             class="hero-image"
+             loading="eager"
+             width="1920" 
+             height="1080">
+        <div class="hero-overlay"></div>
+    </div>
+    
+    <div class="container">
+        <div class="hero-content">
+            <h1>Redefining Luxury Living in Peshawar</h1>
+            <p class="hero-subtitle">Discover the vision behind Kaur Complex - where exceptional design meets unparalleled quality</p>
+            
+            <div class="hero-cta">
+                <a href="#contact" class="cta-button primary">Schedule a Visit</a>
+                <a href="#gallery" class="cta-button secondary">View Gallery</a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Mission & Vision -->
-    <section class="mission-vision">
-        <div class="container">
-            <div class="mission-vision-grid">
-                <div class="mission-card">
-                    <div class="mission-icon">
-                        <i class="fas fa-bullseye"></i>
-                    </div>
-                    <h3>Our Mission</h3>
-                    <p>To create exceptional living spaces that exceed expectations, providing families with not just homes, but communities where they can thrive, grow, and create lasting memories. We are committed to delivering quality, innovation, and value in every aspect of our development.</p>
+    <!-- Introduction Section -->
+<section class="intro-section">
+    <div class="container">
+        <div class="intro-grid">
+            <div class="intro-content" data-aos="fade-right">
+                <span class="section-label">Our Story</span>
+                <h2 class="section-title">Crafting Peshawar's Most Exclusive Address</h2>
+                <div class="intro-text">
+                    <p>Founded in 2015, Kaur Complex represents the culmination of decades of real estate expertise and a passion for creating exceptional living spaces. Our development spans 15 acres of prime Peshawar real estate, offering over 600 meticulously designed residential units alongside premium commercial spaces.</p>
+                    <p>We've reimagined urban living by combining contemporary architecture with timeless elegance, creating a sanctuary that offers both luxury and comfort in equal measure.</p>
                 </div>
                 
-                <div class="vision-card">
-                    <div class="vision-icon">
-                        <i class="fas fa-eye"></i>
-                    </div>
-                    <h3>Our Vision</h3>
-                    <p>To be the leading real estate developer in Peshawar, setting new standards for luxury living and community development. We envision Kaur Complex as a landmark destination that defines the future of urban living in Pakistan.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Developer Background -->
-    <section class="developer-background">
-        <div class="container">
-            <div class="developer-content">
-                <h2>About the Developer</h2>
-                <p>With over 25 years of experience in real estate development, our team has successfully delivered numerous landmark projects across Pakistan. Our commitment to excellence, attention to detail, and customer satisfaction has earned us a reputation as one of the most trusted developers in the region.</p>
-                
-                <div class="developer-features">
-                    <div class="developer-feature">
-                        <i class="fas fa-award"></i>
-                        <h4>25+ Years Experience</h4>
-                        <p>Decades of expertise in real estate development</p>
-                    </div>
-                    
-                    <div class="developer-feature">
-                        <i class="fas fa-handshake"></i>
-                        <h4>Trusted Partner</h4>
-                        <p>Thousands of satisfied customers nationwide</p>
-                    </div>
-                    
-                    <div class="developer-feature">
-                        <i class="fas fa-certificate"></i>
-                        <h4>Quality Certified</h4>
-                        <p>ISO certified construction standards</p>
-                    </div>
-                    
-                    <div class="developer-feature">
-                        <i class="fas fa-clock"></i>
-                        <h4>On-Time Delivery</h4>
-                        <p>Consistent track record of timely project completion</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Location & Map -->
-    <section class="location-section">
-        <div class="container">
-            <div class="location-content">
-                <h2>Prime Location</h2>
-                <p>Strategically located in the heart of Peshawar, Kaur Complex offers unparalleled access to major landmarks, educational institutions, healthcare facilities, and commercial centers.</p>
-                
-                <div class="location-features">
-                    <div class="location-feature">
-                        <i class="fas fa-graduation-cap"></i>
-                        <h4>Educational Institutions</h4>
-                        <p>Proximity to top schools and universities</p>
-                    </div>
-                    
-                    <div class="location-feature">
-                        <i class="fas fa-hospital"></i>
-                        <h4>Healthcare Facilities</h4>
-                        <p>Easy access to hospitals and medical centers</p>
-                    </div>
-                    
-                    <div class="location-feature">
-                        <i class="fas fa-shopping-bag"></i>
-                        <h4>Shopping Centers</h4>
-                        <p>Close to major malls and retail outlets</p>
-                    </div>
-                    
-                    <div class="location-feature">
-                        <i class="fas fa-road"></i>
-                        <h4>Transportation</h4>
-                        <p>Well-connected to major roads and highways</p>
+                <div class="signature-block">
+                    <img src="../assets/images/about/signature.png" alt="Founder's Signature" class="signature">
+                    <div class="signature-info">
+                        <h4>Shahzad Khan</h4>
+                        <p>Founder & CEO</p>
                     </div>
                 </div>
             </div>
             
-            <div class="map-container">
-                <div class="map">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.1234567890123!2d71.12345678901234!3d34.12345678901234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDA3JzM0LjQiTiA3McKwMDcnMzQuNCJF!5e0!3m2!1sen!2spk!4v1234567890123"
-                        width="100%" 
-                        height="400" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
+            <div class="intro-media" data-aos="fade-left">
+                <div class="media-card">
+                    <div class="media-image">
+                        <img src="../assets/images/about/ceo.jpg" alt="Kaur Complex Founder" loading="lazy">
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Values Section -->
-    <section class="values-section">
-        <div class="container">
-            <h2>Our Core Values</h2>
-            <div class="values-grid">
-                <div class="value-card">
-                    <div class="value-icon">
-                        <i class="fas fa-star"></i>
+  <!-- Modern Milestones -->
+<section class="modern-milestones">
+    <div class="container">
+        <div class="section-intro" data-aos="fade-up">
+            <h2>Key Milestones</h2>
+            <p class="subtitle">Our Journey to Excellence</p>
+        </div>
+
+        <div class="timeline-container">
+            <!-- Milestone 1 -->
+            <div class="milestone-card" data-aos="fade-up">
+                <div class="milestone-header">
+                    <div class="year-badge">2015</div>
+                    <div class="milestone-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2L1 12h3v9h6v-6h4v6h6v-9h3L12 2z"/>
+                        </svg>
                     </div>
-                    <h3>Excellence</h3>
-                    <p>We strive for excellence in every aspect of our work, from design to construction to customer service.</p>
                 </div>
-                
-                <div class="value-card">
-                    <div class="value-icon">
-                        <i class="fas fa-heart"></i>
+                <div class="milestone-content">
+                    <h3>Project Conception</h3>
+                    <p>Initial planning and conceptualization of Kaur Complex begins with a vision to create Peshawar's premier luxury community.</p>
+                </div>
+            </div>
+
+            <!-- Milestone 2 -->
+            <div class="milestone-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="milestone-header">
+                    <div class="year-badge">2017</div>
+                    <div class="milestone-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                        </svg>
                     </div>
-                    <h3>Integrity</h3>
-                    <p>We conduct our business with honesty, transparency, and ethical practices that build trust with our customers.</p>
                 </div>
-                
-                <div class="value-card">
-                    <div class="value-icon">
+                <div class="milestone-content">
+                    <h3>Land Acquisition</h3>
+                    <p>Secured 15 acres of prime real estate in Peshawar's most desirable location after extensive research and planning.</p>
+                </div>
+            </div>
+
+            <!-- Milestone 3 -->
+            <div class="milestone-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="milestone-header">
+                    <div class="year-badge">2019</div>
+                    <div class="milestone-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1s-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm5 16H5V5h2v2h10V5h2v14z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="milestone-content">
+                    <h3>Construction Begins</h3>
+                    <p>Groundbreaking ceremony marks the start of construction with international architects and engineers onboard.</p>
+                </div>
+            </div>
+
+            <!-- Milestone 4 -->
+            <div class="milestone-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="milestone-header">
+                    <div class="year-badge">2021</div>
+                    <div class="milestone-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="milestone-content">
+                    <h3>Structural Completion</h3>
+                    <p>All buildings reached their final structural form with roofing and exterior work completed.</p>
+                </div>
+            </div>
+
+            <!-- Milestone 5 -->
+            <div class="milestone-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="milestone-header">
+                    <div class="year-badge">2022</div>
+                    <div class="milestone-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="milestone-content">
+                    <h3>First Phase Completion</h3>
+                    <p>Successful delivery of Phase 1 with 200 luxury apartments and commercial spaces, exceeding customer expectations.</p>
+                </div>
+            </div>
+
+            <!-- Milestone 6 -->
+            <div class="milestone-card completed" data-aos="fade-up" data-aos-delay="500">
+                <div class="milestone-header">
+                    <div class="year-badge">2024</div>
+                    <div class="milestone-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm4.59-12.42L10 14.17l-2.59-2.58L6 13l4 4 8-8z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="milestone-content">
+                    <h3>Grand Opening</h3>
+                    <p>Full project completion with all amenities operational, establishing Kaur Complex as Peshawar's most prestigious address.</p>
+                    <div class="completion-tag">Completed</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+   <!-- Values Section -->
+<section class="values-section">
+    <div class="container">
+        <div class="section-header center" data-aos="fade-up">
+            <h2 class="section-title">Core Values</h2>
+            <p class="section-subtitle">The principles that shape every decision, partnership, and action we take</p>
+        </div>
+
+        <div class="values-grid">
+            <div class="value-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="value-icon">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <div class="icon-bg"></div>
+                </div>
+                <h3>Excellence</h3>
+                <p>We pursue the highest standards in every detail of our work, ensuring excellence in design, construction, and client experience.</p>
+                <button class="value-toggle-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 9l6 6 6-6"/>
+                    </svg>
+                </button>
+                <div class="value-content">
+                    <p>Every step of our process is defined by attention to detail, quality control checks, and a dedication to flawless execution that delivers long-term value.</p>
+                </div>
+            </div>
+
+            <div class="value-card" data-aos="fade-up" data-aos-delay="150">
+                <div class="value-icon">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="icon-bg"></div>
+                </div>
+                <h3>Integrity</h3>
+                <p>We believe in doing what's right—even when no one is watching. Honesty is at the core of everything we do.</p>
+                <button class="value-toggle-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 9l6 6 6-6"/>
+                    </svg>
+                </button>
+                <div class="value-content">
+                    <p>From open communication to ethical decision-making, our commitment to transparency fosters trust with clients, partners, and stakeholders.</p>
+                </div>
+            </div>
+
+            <div class="value-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="value-icon">
+                    <div class="icon-wrapper">
                         <i class="fas fa-lightbulb"></i>
                     </div>
-                    <h3>Innovation</h3>
-                    <p>We embrace new technologies and innovative design concepts to create cutting-edge living spaces.</p>
+                    <div class="icon-bg"></div>
                 </div>
-                
-                <div class="value-card">
-                    <div class="value-icon">
+                <h3>Innovation</h3>
+                <p>We embrace new technologies and ideas to shape smarter, more efficient, and future-ready spaces.</p>
+                <button class="value-toggle-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 9l6 6 6-6"/>
+                    </svg>
+                </button>
+                <div class="value-content">
+                    <p>Our approach includes sustainable building practices, smart home integration, and adaptive design that keeps pace with an ever-changing world.</p>
+                </div>
+            </div>
+
+            <div class="value-card" data-aos="fade-up" data-aos-delay="250">
+                <div class="value-icon">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="icon-bg"></div>
+                </div>
+                <h3>Sustainability</h3>
+                <p>We build with the planet in mind, striving to reduce our environmental impact through eco-conscious design and construction.</p>
+                <button class="value-toggle-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 9l6 6 6-6"/>
+                    </svg>
+                </button>
+                <div class="value-content">
+                    <p>We use energy-efficient systems and sustainable materials to ensure our developments are both beautiful and environmentally responsible.</p>
+                </div>
+            </div>
+
+            <div class="value-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="value-icon">
+                    <div class="icon-wrapper">
                         <i class="fas fa-users"></i>
                     </div>
-                    <h3>Community</h3>
-                    <p>We believe in building not just homes, but vibrant communities where people can connect and thrive.</p>
+                    <div class="icon-bg"></div>
+                </div>
+                <h3>Community</h3>
+                <p>We design living spaces that inspire connection, belonging, and shared prosperity.</p>
+                <button class="value-toggle-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 9l6 6 6-6"/>
+                    </svg>
+                </button>
+                <div class="value-content">
+                    <p>Our spaces include thoughtfully designed shared areas that promote interaction and a sense of togetherness for residents and visitors alike.</p>
+                </div>
+            </div>
+
+            <div class="value-card" data-aos="fade-up" data-aos-delay="350">
+                <div class="value-icon">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="icon-bg"></div>
+                </div>
+                <h3>Heritage</h3>
+                <p>We celebrate the rich cultural legacy of our region while integrating modern lifestyle solutions.</p>
+                <button class="value-toggle-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 9l6 6 6-6"/>
+                    </svg>
+                </button>
+                <div class="value-content">
+                    <p>Our architecture thoughtfully blends local traditions and international standards, preserving identity while ensuring comfort and functionality.</p>
+                </div>
+            </div>
+
+            <div class="value-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="value-icon">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <div class="icon-bg"></div>
+                </div>
+                <h3>Accountability</h3>
+                <p>We stand by our promises and hold ourselves responsible for the outcomes we deliver.</p>
+                <button class="value-toggle-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 9l6 6 6-6"/>
+                    </svg>
+                </button>
+                <div class="value-content">
+                    <p>Every project is backed by transparent timelines, open communication, and a results-driven mindset that prioritizes client confidence.</p>
+                </div>
+            </div>
+
+            <div class="value-card" data-aos="fade-up" data-aos-delay="450">
+                <div class="value-icon">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="icon-bg"></div>
+                </div>
+                <h3>Customer-Centric</h3>
+                <p>Our clients are at the heart of everything we do—from first interaction to final handover and beyond.</p>
+                <button class="value-toggle-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 9l6 6 6-6"/>
+                    </svg>
+                </button>
+                <div class="value-content">
+                    <p>We offer customized solutions, proactive updates, and dedicated after-sales support to ensure every client feels valued and confident in their investment.</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+    <!-- Team Section -->
+<section class="team-section">
+    <div class="container">
+        <div class="section-header center" data-aos="fade-up">
+            <h2 class="section-title">Our Leadership</h2>
+            <p class="section-subtitle">The visionary minds behind Kaur Complex</p>
+        </div>
+        
+        <div class="team-grid">
+            <div class="team-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="team-image">
+                    <img src="../assets/images/about/ceo.jpg" alt="Shahzad Kaur - CEO" loading="lazy">
+                    <div class="team-overlay"></div>
+                    <div class="team-social">
+                        <a href="#" aria-label="LinkedIn profile"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Twitter profile"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Email contact"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="team-info">
+                    <h3>Shahzad Khan</h3>
+                    <p class="team-position">Founder & CEO</p>
+                    <div class="team-divider"></div>
+                    <p class="team-bio">With 25+ years in real estate development, Harpreet has pioneered luxury living concepts across Pakistan.</p>
+                    <div class="team-achievements">
+                        <span><i class="fas fa-award"></i> 15+ Industry Awards</span>
+                        <span><i class="fas fa-project-diagram"></i> 50+ Projects</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="team-card" data-aos="fade-up" data-aos-delay="150">
+                <div class="team-image">
+                    <img src="../assets/images/about/architect.jpg" alt="Ahmed Khan - Lead Architect" loading="lazy">
+                    <div class="team-overlay"></div>
+                    <div class="team-social">
+                        <a href="#" aria-label="LinkedIn profile"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Twitter profile"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Email contact"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="team-info">
+                    <h3>Ahmed Khan</h3>
+                    <p class="team-position">Lead Architect</p>
+                    <div class="team-divider"></div>
+                    <p class="team-bio">Internationally trained architect blending contemporary design with cultural sensitivity.</p>
+                    <div class="team-achievements">
+                        <span><i class="fas fa-graduation-cap"></i> Harvard Graduate</span>
+                        <span><i class="fas fa-globe-asia"></i> International Experience</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="team-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="team-image">
+                    <img src="../assets/images/about/engineer.jpg" alt="Sara Mahmood - Chief Engineer" loading="lazy">
+                    <div class="team-overlay"></div>
+                    <div class="team-social">
+                        <a href="#" aria-label="LinkedIn profile"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Twitter profile"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Email contact"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="team-info">
+                    <h3>Sara Mahmood</h3>
+                    <p class="team-position">Chief Engineer</p>
+                    <div class="team-divider"></div>
+                    <p class="team-bio">Structural engineering expert ensuring all buildings meet international safety standards.</p>
+                    <div class="team-achievements">
+                        <span><i class="fas fa-shield-alt"></i> Safety First</span>
+                        <span><i class="fas fa-certificate"></i> LEED Certified</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Unified Mission & Vision Section -->
+<section class="unified-mission-vision">
+    <!-- Mission Card -->
+    <div class="mission-card unified-card" data-aos="fade-up">
+        <div class="card-image" style="background-image: url('../assets/images/about/mission-image.jpg');"></div>
+        <div class="card-content">
+            <span class="card-label">Our Core Purpose</span>
+            <h2 class="card-title">Mission</h2>
+            <div class="gold-divider"></div>
+            <p class="card-text">To craft exceptional living and commercial spaces that seamlessly blend luxury, sustainability, and community-focused design, delivering unparalleled quality and comfort to our residents and tenants.</p>
+            
+            <div class="card-details">
+                <div class="detail-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--secondary-color)" width="20" height="20">
+                        <path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3zm-1.06 13.54L7.4 12l1.41-1.41 2.12 2.12 4.24-4.24 1.41 1.41-5.64 5.66z"/>
+                    </svg>
+                    <div class="detail-content">
+                        <h4>Quality Commitment</h4>
+                        <p>Premium materials and craftsmanship in every project</p>
+                    </div>
+                </div>
+                
+                <div class="detail-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--secondary-color)" width="20" height="20">
+                        <path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3zm0 4.5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5.67-1.5 1.5-1.5z"/>
+                    </svg>
+                    <div class="detail-content">
+                        <h4>Community Focus</h4>
+                        <p>Designing spaces that foster connection and belonging</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vision Card -->
+    <div class="vision-card unified-card" data-aos="fade-up">
+        <div class="card-image" style="background-image: url('../assets/images/about/vision-image.jpg');"></div>
+        <div class="card-content">
+            <span class="card-label">Our Future Aspiration</span>
+            <h2 class="card-title">Vision</h2>
+            <div class="gold-divider"></div>
+            <p class="card-text">To establish Kaur Complex as a global benchmark for residential and commercial spaces in Pakistan, fostering vibrant, connected communities that elevate lifestyles and inspire pride.</p>
+            
+            <div class="milestones">
+                <h3 class="milestone-title">Key Milestones:</h3>
+                <ul class="milestone-list">
+                    <li>Become the most trusted real estate brand in Pakistan by 2030</li>
+                    <li>Develop 10+ sustainable communities nationwide</li>
+                    <li>Achieve international recognition for architectural excellence</li>
+                    <li>Maintain 98%+ customer satisfaction across all projects</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Kaur Complex</h3>
-                    <p>Luxury living redefined in the heart of Peshawar. Experience international standards with premium amenities and world-class construction.</p>
+                <div class="footer-section about" data-aos="fade-up">
+                    <div class="footer-logo">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 0L40 20L20 40L0 20L20 0Z" fill="#D4AF37"/>
+                            <path d="M20 10L30 20L20 30L10 20L20 10Z" fill="#1E3A8A"/>
+                        </svg>
+                        <span>Kaur Complex</span>
+                    </div>
+                    <p>Peshawar's premier luxury gated community offering world-class living experiences with unmatched amenities and security.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 
-                <div class="footer-section">
+                <div class="footer-section links" data-aos="fade-up" data-aos-delay="100">
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="../index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="apartments.html">Apartments</a></li>
-                        <li><a href="shops.html">Shops</a></li>
-                        <li><a href="amenities.html">Amenities</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="../pages/about.html">About Us</a></li>
+                        <li><a href="../pages/apartments.html">Apartments</a></li>
+                        <li><a href="../pages/shops.html">Commercial Shops</a></li>
+                        <li><a href="../pages/amenities.html">Amenities</a></li>
+                        <li><a href="../pages/contact.html">Contact Us</a></li>
                     </ul>
                 </div>
                 
-                <div class="footer-section">
+                <div class="footer-section contact" data-aos="fade-up" data-aos-delay="200">
                     <h4>Contact Info</h4>
                     <div class="contact-info">
-                        <p><i class="fas fa-map-marker-alt"></i> Kaur Complex, Peshawar, Pakistan</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Kaur Complex, Prime Location, Peshawar, Pakistan</p>
                         <p><i class="fas fa-phone"></i> +92 300 123 4567</p>
                         <p><i class="fas fa-envelope"></i> info@kaurcomplex.com</p>
                         <p><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 6:00 PM</p>
                     </div>
                 </div>
                 
-                <div class="footer-section">
-                    <h4>Newsletter</h4>
-                    <p>Subscribe to get updates about our latest offers and developments.</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Enter your email" required>
-                        <button type="submit" class="btn btn-primary">Subscribe</button>
-                    </form>
-                </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2024 Kaur Complex. All rights reserved. | Designed with <i class="fas fa-heart"></i> for luxury living</p>
+                <div class="copyright" data-aos="fade-up">
+                    <p>&copy; 2024 Kaur Complex. All rights reserved.</p>
+                </div>
+                <div class="footer-links" data-aos="fade-up" data-aos-delay="100">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Sitemap</a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- WhatsApp Floating Button -->
+    <!-- WhatsApp Float -->
     <div class="whatsapp-float">
         <a href="https://wa.me/923001234567" target="_blank">
             <i class="fab fa-whatsapp"></i>
         </a>
     </div>
 
-    <!-- Back to Top Button -->
+    <!-- Back to Top -->
     <button class="back-to-top" id="backToTop">
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- JavaScript Files -->
+    <!-- JavaScript -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="../assets/js/main.js"></script>
+    <script>
+        // Initialize AOS animation
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        // Testimonial slider functionality would be implemented here
+    </script>
 </body>
-</html> 
+</html>
