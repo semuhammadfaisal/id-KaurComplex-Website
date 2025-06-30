@@ -67,7 +67,35 @@
 
 /* Mobile and Small Tablets (577px - 768px) */
 @media (max-width: 768px) {
-
+    .container, section {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    .features-grid, .stats-grid, .property-grid, .gallery-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+    }
+    .about-grid, .location-grid {
+        display: block !important;
+    }
+    .hero-content, .section-header, .cta-content, .newsletter-content {
+        text-align: center !important;
+    }
+    .btn, .nav-link, .nav-cta {
+        font-size: 1rem !important;
+        padding: 1em 1.5em !important;
+    }
+    .footer-content, .footer-section {
+        display: block !important;
+        text-align: center !important;
+    }
+    .footer-section {
+        margin-bottom: 24px !important;
+    }
+    .whatsapp-float, .back-to-top {
+        right: 12px !important;
+        bottom: 12px !important;
+    }
     .footer {
         padding-bottom: 80px; /* Space for floating buttons */
     }
@@ -225,6 +253,19 @@
     }
     section {
         padding: 40px 0;
+    }
+    .hero-title, .section-title {
+        font-size: 1.3rem !important;
+    }
+    .hero-subtitle, .section-description {
+        font-size: 1rem !important;
+    }
+    .property-specs, .property-price, .feature-content, .stat-content {
+        font-size: 0.95rem !important;
+    }
+    .form-group input, .newsletter-form input {
+        font-size: 1rem !important;
+        padding: 0.8em !important;
     }
 
     /* Navigation */
@@ -397,6 +438,14 @@
 
 /* Very Small Devices (320px - 375px) */
 @media (max-width: 375px) {
+    .container, section {
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+    .btn, .nav-link, .nav-cta {
+        font-size: 0.95rem !important;
+        padding: 0.7em 1em !important;
+    }
     .hero-title {
         font-size: 1.6rem;
     }

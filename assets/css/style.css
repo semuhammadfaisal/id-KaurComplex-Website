@@ -28,6 +28,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: none !important;
 }
 
 html {
@@ -125,7 +126,7 @@ section {
     border-radius: 50px;
     border: none;
     cursor: pointer;
-    transition: var(--transition);
+    transition: all 0.2s ease !important;
     gap: 8px;
 }
 
@@ -181,135 +182,6 @@ section {
     background: rgba(255, 0, 0, 0.2);
     border-color: rgba(255, 0, 0, 0.3);
     color: #ff6b6b;
-}
-
-/* Loading Screen */
-#loading-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    transition: opacity 0.5s ease;
-}
-
-.loader {
-    text-align: center;
-    color: var(--white);
-}
-
-.loader-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem; /* Relative unit for spacing */
-    max-width: 90%; /* Prevent overflow on small screens */
-}
-
-.logo-animation {
-    width: 10vw; /* Scales with viewport width */
-    max-width: 80px; /* Maximum size for larger screens */
-    min-width: 50px; /* Minimum size for smaller screens */
-    animation: pulse 2s infinite;
-}
-
-.logo-animation svg {
-    width: 100%;
-    height: auto; /* Maintain aspect ratio */
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
-}
-
-.loader h2 {
-    font-size: clamp(1.5rem, 4vw, 2rem); /* Scales between 24px and 32px */
-    font-weight: 700;
-    margin: 0;
-}
-
-.loader p {
-    font-size: clamp(0.875rem, 2.5vw, 1.125rem); /* Scales between 14px and 18px */
-    opacity: 0.8;
-    margin: 0;
-}
-
-.loading-bar {
-    width: clamp(150px, 40vw, 200px); /* Scales between 150px and 200px */
-    height: 4px;
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 2px;
-    overflow: hidden;
-    position: relative;
-}
-
-.loading-progress {
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: var(--white);
-    animation: loading 2s infinite;
-}
-
-@keyframes loading {
-    0% { left: -100%; }
-    100% { left: 100%; }
-}
-
-/* Media Queries for Additional Responsiveness */
-@media screen and (max-width: 768px) {
-    .loader-content {
-        gap: 1rem; /* Reduce spacing on smaller screens */
-    }
-
-    .logo-animation {
-        width: 12vw; /* Slightly larger relative size for tablets */
-        min-width: 40px; /* Smaller minimum for mobile */
-    }
-
-    .loader h2 {
-        font-size: clamp(1.25rem, 3.5vw, 1.75rem); /* Slightly smaller for tablets */
-    }
-
-    .loader p {
-        font-size: clamp(0.75rem, 2vw, 1rem); /* Smaller for tablets */
-    }
-
-    .loading-bar {
-        width: clamp(120px, 35vw, 160px); /* Smaller loading bar */
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .loader-content {
-        gap: 0.75rem; /* Further reduce spacing for mobile */
-    }
-
-    .logo-animation {
-        width: 15vw; /* Larger relative size for small screens */
-        min-width: 35px; /* Smallest size for tiny screens */
-    }
-
-    .loader h2 {
-        font-size: clamp(1rem, 3vw, 1.5rem); /* Smaller for mobile */
-    }
-
-    .loader p {
-        font-size: clamp(0.625rem, 2vw, 0.875rem); /* Smallest for mobile */
-    }
-
-    .shrank-bar {
-        width: clamp(100px, 30vw, 120px); /* Smallest loading bar */
-    }
 }
 
 /* Navigation */
