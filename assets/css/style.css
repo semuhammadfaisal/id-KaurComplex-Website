@@ -2416,12 +2416,11 @@ section {
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.1);
     color: var(--white);
-    transition: var(--transition);
+    transition: background 0.3s ease; /* Keep background transition, remove transform */
 }
 
 .social-links a:hover {
     background: var(--secondary-color);
-    transform: translateY(-3px);
 }
 
 .footer-section.links ul {
@@ -2436,13 +2435,12 @@ section {
     color: var(--medium-gray);
     text-decoration: none;
     font-size: 15px;
-    transition: var(--transition);
+    transition: color 0.3s ease; /* Keep color transition, remove transform */
     display: inline-block;
 }
 
 .footer-section.links a:hover {
     color: var(--secondary-color);
-    transform: translateX(5px);
 }
 
 .contact-info p {
@@ -2482,7 +2480,7 @@ section {
     height: 100%;
     background: rgba(212, 175, 55, 0.5);
     opacity: 0;
-    transition: var(--transition);
+    transition: opacity 0.3s ease; /* Keep opacity transition */
 }
 
 .instagram-grid a:hover::before {
@@ -2518,7 +2516,7 @@ section {
     color: var(--medium-gray);
     font-size: 14px;
     text-decoration: none;
-    transition: var(--transition);
+    transition: color 0.3s ease; /* Keep color transition */
 }
 
 .footer-links a:hover {
