@@ -67,6 +67,11 @@
 
 /* Mobile and Small Tablets (577px - 768px) */
 @media (max-width: 768px) {
+
+    .footer {
+        padding-bottom: 80px; /* Space for floating buttons */
+    }
+
     /* Navigation */
     .nav-container {
         padding: 1rem;
@@ -455,6 +460,9 @@
     .navbar,
     .whatsapp-float,
     .back-to-top,
+    .nav-toggle {
+    z-index: 1000;
+    }
     .scroll-indicator {
         display: none !important;
     }
@@ -523,4 +531,11 @@
     .nav-toggle {
         display: none; /* Hide hamburger on desktop */
     }
+}
+/* Add to responsive.css */
+.nav-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
 }

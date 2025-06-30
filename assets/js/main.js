@@ -262,16 +262,10 @@ function showNotification(message, type = 'info') {
 
 // Back to Top
 function initBackToTop() {
-    const backToTopBtn = document.getElementById('backToTop');
-    if (backToTopBtn) {
-        window.addEventListener('scroll', () => {
-            backToTopBtn.classList.toggle('show', window.scrollY > 300);
-        });
-        
-        backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    }
+window.addEventListener('scroll', () => {
+    const showPosition = window.innerHeight / 2;
+    backToTopBtn.classList.toggle('show', window.scrollY > showPosition);
+});
 }
 
 // WhatsApp
@@ -650,3 +644,12 @@ document.addEventListener('DOMContentLoaded', function() {
         faqItems[0].classList.add('active');
     }
 });
+
+// Add to your main.js
+function setViewportHeight() {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
+window.addEventListener('resize', setViewportHeight);
+setViewportHeight();
