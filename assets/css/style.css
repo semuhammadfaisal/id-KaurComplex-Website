@@ -320,7 +320,6 @@ section {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     z-index: 1000;
-    transition: var(--transition);
     box-shadow: var(--shadow-sm);
 }
 
@@ -369,7 +368,6 @@ section {
     color: var(--text-color);
     font-weight: 500;
     font-size: 16px;
-    transition: var(--transition);
     position: relative;
 }
 
@@ -386,7 +384,6 @@ section {
     width: 0;
     height: 2px;
     background: var(--primary-color);
-    transition: var(--transition);
 }
 
 .nav-link:hover::after,
@@ -400,12 +397,10 @@ section {
     padding: 10px 20px;
     border-radius: 50px;
     font-weight: 600;
-    transition: var(--transition);
 }
 
 .nav-cta:hover {
     background: var(--secondary-light);
-    transform: translateY(-2px);
     box-shadow: var(--shadow);
 }
 
@@ -421,7 +416,6 @@ section {
     height: 3px;
     background: var(--primary-color);
     margin: 4px 0;
-    transition: var(--transition);
 }
 
 /* Hero Section Styles */
