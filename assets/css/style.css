@@ -419,15 +419,95 @@ section {
 }
 
 /* Hero Section Styles */
-.hero {
-    position: relative;
-    height: 100vh;
-    min-height: 680px;
-    max-height: 1200px;
-    overflow: hidden;
-    color: #fff;
-    display: flex;
-    align-items: center;
+@media (max-width: 992px) {
+    section {
+        padding: 60px 0;
+    }
+    
+    .section-title {
+        font-size: 32px;
+    }
+    
+    .hero-title {
+        font-size: 42px;
+    }
+    
+    .hero-subtitle {
+        font-size: 18px;
+    }
+    
+    .nav-container {
+        position: relative; /* Ensure proper positioning */
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 300px;
+        height: 100vh;
+        background: var(--white);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 100px 30px 30px;
+        box-shadow: var(--shadow-xl);
+        display: flex; /* Ensure display is set */
+        z-index: 1000;
+    }
+    
+    .nav-menu.active {
+        right: 0;
+    }
+    
+    .nav-toggle {
+        display: flex; /* Show hamburger menu */
+    }
+    
+    .nav-toggle.active .bar:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .nav-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .nav-toggle.active .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+    
+    .hero-social {
+        display: none;
+    }
+    
+    .cta-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .cta-text p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .cta-form {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 500px;
+    }
+    
+    .location-grid {
+        flex-direction: column;
+    }
+    
+    .newsletter-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .newsletter-form {
+        flex: 0 0 auto;
+        width: 100%;
+    }
 }
 
 /* Background Slides */
@@ -2672,6 +2752,10 @@ section {
         font-size: 18px;
     }
     
+    .nav-container {
+        position: relative; /* Ensure proper positioning */
+    }
+    
     .nav-menu {
         position: fixed;
         top: 0;
@@ -2683,7 +2767,8 @@ section {
         align-items: flex-start;
         padding: 100px 30px 30px;
         box-shadow: var(--shadow-xl);
-        transition: var(--transition);
+        display: flex; /* Ensure display is set */
+        z-index: 1000;
     }
     
     .nav-menu.active {
@@ -2691,7 +2776,7 @@ section {
     }
     
     .nav-toggle {
-        display: flex;
+        display: flex; /* Show hamburger menu */
     }
     
     .nav-toggle.active .bar:nth-child(1) {

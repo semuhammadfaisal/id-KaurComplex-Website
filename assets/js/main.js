@@ -21,8 +21,8 @@ function initLoadingScreen() {
     if (loadingScreen) {
         setTimeout(() => {
             loadingScreen.style.opacity = '0';
-            setTimeout(() => loadingScreen.style.display = 'none', 500);
-        }, 2000);
+            setTimeout(() => loadingScreen.style.display = 'none', 300);
+        }, 1000);
     }
 }
 
@@ -33,10 +33,31 @@ function initNavigation() {
     const navMenu = document.getElementById('nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
 
+    // Function to set initial responsive state
+    function setInitialNavState() {
+        if (window.innerWidth <= 992) {
+            navMenu.classList.remove('active'); // Ensure menu is hidden on mobile
+            navToggle.style.display = 'flex'; // Show hamburger menu
+        } else {
+            navMenu.classList.remove('active'); // Ensure menu is visible on desktop
+            navToggle.style.display = 'none'; // Hide hamburger menu
+        }
+        // Set .scrolled class based on initial scroll position
+        navbar.classList.toggle('scrolled', window.scrollY > 100);
+    }
+
+    // Run on page load
+    setInitialNavState();
+
+    // Update on resize
+    window.addEventListener('resize', setInitialNavState);
+
+    // Scroll handler for .scrolled class
     window.addEventListener('scroll', () => {
         navbar.classList.toggle('scrolled', window.scrollY > 100);
     });
 
+    // Toggle mobile menu
     if (navToggle) {
         navToggle.addEventListener('click', () => {
             navToggle.classList.toggle('active');
@@ -44,6 +65,7 @@ function initNavigation() {
         });
     }
 
+    // Close menu when clicking a link
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             navToggle?.classList.remove('active');
@@ -51,6 +73,7 @@ function initNavigation() {
         });
     });
 
+    // Close menu when clicking outside
     document.addEventListener('click', (e) => {
         if (!navbar.contains(e.target)) {
             navToggle?.classList.remove('active');
@@ -58,6 +81,7 @@ function initNavigation() {
         }
     });
 
+    // Update active link based on scroll position
     const sections = document.querySelectorAll('section[id]');
     window.addEventListener('scroll', () => {
         let current = '';
@@ -261,9 +285,18 @@ function initWhatsApp() {
 function initAnimations() {
     const hero = document.querySelector('.hero');
     if (hero) {
-        window.addEventListener('scroll', () => {
-            hero.style.transform = `translateY(${window.pageYOffset * -0.5}px)`;
-        });
+        // Only apply parallax on larger screens
+        function updateHeroTransform() {
+            if (window.innerWidth > 768) {
+                hero.style.transform = `translateY(${window.pageYOffset * -0.5}px)`;
+            } else {
+                hero.style.transform = 'none'; // Reset transform on mobile
+            }
+        }
+        
+        window.addEventListener('scroll', updateHeroTransform);
+        window.addEventListener('resize', updateHeroTransform);
+        updateHeroTransform(); // Run on page load
     }
     
     new IntersectionObserver((entries) => {
@@ -278,8 +311,8 @@ function initTestimonialSlider() {
     const track = document.querySelector('.testimonial-track');
     if (!track) return;
     
-    const slides = document.querySelectorAll('.testimonial-slide');
-    const dotsContainer = document.querySelector('.slider-dots');
+    const slides = document.querySelectorAll('.testimonial-card'); // Changed from .testimonial-slide
+    const dotsContainer = document.querySelector('.testimonial-dots'); // Changed from .slider-dots
     let currentIndex = 0;
 
     slides.forEach((_, index) => {
@@ -296,8 +329,8 @@ function initTestimonialSlider() {
     function updateSlider() {
         track.style.transform = `translateX(-${currentIndex * getSlideWidth()}px)`;
         dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
-        document.querySelector('.slider-prev').disabled = currentIndex === 0;
-        document.querySelector('.slider-next').disabled = currentIndex === slides.length - 1;
+        document.querySelector('.nav-btn.prev-btn').disabled = currentIndex === 0;
+        document.querySelector('.nav-btn.next-btn').disabled = currentIndex === slides.length - 1;
     }
 
     function goToSlide(index) {
@@ -313,8 +346,8 @@ function initTestimonialSlider() {
         if (currentIndex > 0) goToSlide(currentIndex - 1);
     }
 
-    document.querySelector('.slider-prev').addEventListener('click', prevSlide);
-    document.querySelector('.slider-next').addEventListener('click', nextSlide);
+    document.querySelector('.nav-btn.prev-btn').addEventListener('click', prevSlide);
+    document.querySelector('.nav-btn.next-btn').addEventListener('click', nextSlide);
     document.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowRight') nextSlide();
         if (e.key === 'ArrowLeft') prevSlide();

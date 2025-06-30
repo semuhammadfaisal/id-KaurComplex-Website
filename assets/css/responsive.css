@@ -53,6 +53,16 @@
         grid-column: span 2;
         grid-row: span 1;
     }
+    /* Added: Ensure navigation is responsive for tablets */
+    .nav-menu {
+        display: none; /* Hide by default on smaller screens */
+    }
+    .nav-menu.active {
+        display: flex; /* Show when active */
+    }
+    .nav-toggle {
+        display: flex; /* Ensure hamburger is visible */
+    }
 }
 
 /* Mobile and Small Tablets (577px - 768px) */
@@ -60,6 +70,7 @@
     /* Navigation */
     .nav-container {
         padding: 1rem;
+        position: relative; /* Added: Ensure proper positioning for nav elements */
     }
     .nav-logo h2 {
         font-size: 1.2rem;
@@ -78,8 +89,11 @@
         padding: 2rem 0;
         height: calc(100vh - 60px);
         overflow-y: auto;
+        display: none; /* Added: Hide by default to ensure responsiveness at load */
+        z-index: 1000; /* Added: Ensure menu appears above other elements */
     }
     .nav-menu.active {
+        display: flex; /* Added: Show when active */
         left: 0;
     }
     .nav-link {
@@ -91,7 +105,7 @@
         border-bottom: none;
     }
     .nav-toggle {
-        display: flex;
+        display: flex; /* Ensure hamburger is visible */
     }
     .nav-toggle.active .bar:nth-child(2) {
         opacity: 0;
@@ -106,7 +120,7 @@
     /* Hero Section */
     .hero {
         height: auto;
-        min-height: 500px;
+        min-height: 500px; /* Updated: Consistent with your value */
         padding: 80px 0 40px;
     }
     .hero-content {
@@ -125,10 +139,17 @@
     }
     .hero-buttons {
         gap: 0.5rem;
+        flex-direction: column; /* Added: Stack buttons vertically */
     }
     .btn {
         padding: 0.8rem 1.5rem;
         font-size: 0.9rem;
+    }
+    .hero-social {
+        display: none; /* Added: Hide social links on mobile */
+    }
+    .slide-controls {
+        bottom: 20px; /* Added: Ensure slide controls are positioned correctly */
     }
 
     /* Other Sections */
@@ -136,11 +157,11 @@
         padding: 2rem 0;
     }
     .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* Updated: Keep your 2-column layout */
         gap: 15px;
     }
     .features-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* Updated: Keep your 2-column layout */
         gap: 20px;
     }
     .section-header h2 {
@@ -174,6 +195,19 @@
         flex-direction: column;
         align-items: center;
     }
+    /* Added: Ensure other grids are single-column for consistency */
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+    .property-grid {
+        grid-template-columns: 1fr;
+    }
+    .amenity-slide {
+        flex-direction: column;
+    }
+    .amenity-image {
+        height: 300px;
+    }
 }
 
 /* Mobile Portrait (320px - 576px) */
@@ -191,6 +225,10 @@
     /* Navigation */
     .nav-menu {
         padding: 80px 20px 30px;
+        display: none; /* Added: Reinforce hidden state */
+    }
+    .nav-menu.active {
+        display: flex; /* Added: Show when active */
     }
     .nav-link {
         font-size: 1rem;
@@ -224,7 +262,7 @@
 
     /* Stats Section */
     .stats-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Updated: Single column for smaller screens */
     }
     .stat-item {
         padding: 1.5rem;
@@ -253,7 +291,7 @@
     .badge-number {
         font-size: 1.5rem;
     }
-    .badge-textFamily: {
+    .badge-textFamily {
         font-size: 0.7rem;
     }
     .property-tabs {
@@ -383,6 +421,10 @@
     .nav-menu {
         height: calc(100vh - 60px);
         top: 60px;
+        display: none; /* Added: Reinforce hidden state */
+    }
+    .nav-menu.active {
+        display: flex; /* Added: Show when active */
     }
 }
 
@@ -470,5 +512,15 @@
     }
     .feature-card:hover {
         background: var(--white);
+    }
+}
+
+/* Added: Desktop Navigation (min-width: 769px) to ensure menu is visible */
+@media (min-width: 769px) {
+    .nav-menu {
+        display: flex; /* Ensure menu is visible on desktop */
+    }
+    .nav-toggle {
+        display: none; /* Hide hamburger on desktop */
     }
 }
