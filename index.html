@@ -28,6 +28,8 @@
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation (optional) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
@@ -35,776 +37,417 @@
     <!-- Removed loading screen for faster load -->
 
     <!-- Navigation -->
-<nav class="navbar" id="navbar">
-    <div class="nav-container">
-        <div class="nav-logo">
-            <a href="index.html">
-                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M20 0L40 20L20 40L0 20L20 0Z" fill="#D4AF37"/>
-                    <path d="M20 10L30 20L20 30L10 20L20 10Z" fill="#1E3A8A"/>
-                </svg>
-                <span>Kaur Complex</span>
-            </a>
-        </div>
-        
-        <div class="nav-menu" id="nav-menu">
-            <a href="index.html" class="nav-link active">Home</a>
-            <a href="pages/about.html" class="nav-link">About</a>
-            <a href="pages/apartments.html" class="nav-link">Apartments</a>
-            <a href="pages/shops.html" class="nav-link">Commercial</a>
-            <a href="pages/amenities.html" class="nav-link">Amenities</a>
-            <a href="pages/contact.html" class="nav-link">Contact</a>
-            <a href="tel:+923001234567" class="nav-cta">Call Now</a>
-        </div>
-        
-        <div class="nav-toggle" id="nav-toggle">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
-    </div>
-</nav>
-
-    <!-- Hero Section -->
-<section class="hero">
-    <div class="hero-background">
-        <div class="hero-slides">
-            <div class="slide active" style="background-image: url('assets/images/hero/hero-1.jpg')"></div>
-            <div class="slide" style="background-image: url('assets/images/hero/hero-2.jpg')"></div>
-            <div class="slide" style="background-image: url('assets/images/hero/hero-3.jpg')"></div>
-        </div>
-        <div class="hero-overlay"></div>
-    </div>
-    
-    <div class="hero-content">
-        <div class="container">
-            <div class="hero-badge">Luxury Living</div>
-            <h1 class="hero-title">Experience <span class="highlight">Premium</span> Living at Kaur Complex</h1>
-            <p class="hero-subtitle">Peshawar's most exclusive gated community with world-class amenities and breathtaking views</p>
-            
-            <div class="hero-features">
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <div class="feature-text">
-                        <span class="feature-value">600+</span>
-                        <span class="feature-label">Luxury Units</span>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <div class="feature-text">
-                        <span class="feature-value">24/7</span>
-                        <span class="feature-label">Security</span>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <div class="feature-text">
-                        <span class="feature-value">Prime</span>
-                        <span class="feature-label">Location</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="hero-buttons">
-                <a href="pages/apartments.html" class="btn btn-primary">
-                    <i class="fas fa-building"></i> Explore Properties
-                </a>
-                <a href="pages/contact.html" class="btn btn-secondary">
-                    <i class="fas fa-phone-alt"></i> Contact Agent
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 0L40 20L20 40L0 20L20 0Z" fill="#D4AF37"/>
+                        <path d="M20 10L30 20L20 30L10 20L20 10Z" fill="#1E3A8A"/>
+                    </svg>
+                    <span>Kaur Complex</span>
                 </a>
             </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="pages/about.html" class="nav-link">About</a>
+                <a href="pages/apartments.html" class="nav-link">Properties</a>
+                <a href="pages/contact.html" class="nav-link">Contact</a>
+                <a href="tel:+923001234567" class="nav-cta">Call Now</a>
+            </div>
+            
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </div>
-    </div>
-    
-    <div class="hero-social">
-        <span class="social-label">Follow Us</span>
-        <div class="social-icons">
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        </div>
-    </div>
-</section>
+    </nav>
 
-    <!-- Quick Stats Section -->
-<section class="stats-section">
-    <div class="container">
-        <div class="section-header">
-            <h2 class="section-title">Kaur Complex By The Numbers</h2>
-            <p class="section-subtitle">Discover the scale and excellence of our premium development</p>
-        </div>
-        
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-icon-wrapper">
-                    <div class="stat-icon-bg"></div>
-                    <i class="fas fa-building"></i>
-                </div>
-                <div class="stat-content">
-                    <div class="stat-number" data-target="600" data-suffix="+">0</div>
-                    <div class="stat-label">Luxury Apartments</div>
-                    <div class="stat-divider"></div>
-                    <p class="stat-description">Spacious living with premium finishes</p>
-                </div>
-            </div>
-            
-            <div class="stat-card">
-                <div class="stat-icon-wrapper">
-                    <div class="stat-icon-bg"></div>
-                    <i class="fas fa-shield-alt"></i>
-                </div>
-                <div class="stat-content">
-                    <div class="stat-number" data-target="100" data-suffix="%">0</div>
-                    <div class="stat-label">Secure Community</div>
-                    <div class="stat-divider"></div>
-                    <p class="stat-description">24/7 monitored gated community</p>
-                </div>
-            </div>
-            
-            <div class="stat-card">
-                <div class="stat-icon-wrapper">
-                    <div class="stat-icon-bg"></div>
-                    <i class="fas fa-crown"></i>
-                </div>
-                <div class="stat-content">
-                    <div class="stat-number" data-target="50" data-suffix="+">0</div>
-                    <div class="stat-label">Exclusive Penthouses</div>
-                    <div class="stat-divider"></div>
-                    <p class="stat-description">Panoramic views with private amenities</p>
-                </div>
-            </div>
-            
-            <div class="stat-card">
-                <div class="stat-icon-wrapper">
-                    <div class="stat-icon-bg"></div>
-                    <i class="fas fa-store"></i>
-                </div>
-                <div class="stat-content">
-                    <div class="stat-number" data-target="100" data-suffix="+">0</div>
-                    <div class="stat-label">Premium Shops</div>
-                    <div class="stat-divider"></div>
-                    <p class="stat-description">Curated retail and dining experiences</p>
-                </div>
-            </div>
-        </div>
+<!-- Modern Luxury Hero Section -->
+<section class="luxury-hero redesigned-hero">
+  <div class="hero-bg-image"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-main-content">
+    <div class="hero-logo-badge">
+      <img src="assets/images/gallery/logo-kc.png" alt="Kaur Complex Logo" class="hero-logo">
     </div>
+    <span class="hero-pretitle">Welcome to</span>
+    <h1 class="hero-heading">Kaur Complex</h1>
+    <h2 class="hero-subheading">Luxury Living in the Heart of Peshawar</h2>
+    <p class="hero-description">Experience world-class residences, penthouses, and commercial spaces in a secure, vibrant community.</p>
+  </div>
 </section>
 
     <!-- About Section -->
-<section class="about-section">
-    <div class="container">
-        <div class="about-grid">
-            <div class="about-content">
-                <div class="section-header">
-                    <span class="section-label">Our Story</span>
-                    <h2 class="section-title">Redefining Luxury Living in Peshawar</h2>
-                    <div class="section-divider"></div>
+    <section class="about-section" data-aos="fade-up">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <div class="section-header">
+                        <span class="section-label">About Kaur Complex</span>
+                        
+                        <div class="section-divider"></div>
+                    </div>
+                    <p class="about-text">Welcome to Peshawar's most exclusive address. Kaur Complex is more than a residence—it's a vibrant, secure community where modern design meets timeless comfort. Over 600 luxury apartments, penthouses, and commercial spaces, all crafted for those who expect the best.</p>
+                    <div class="mission-statement">Our mission: <strong>To set a new standard for luxury, security, and community in Peshawar real estate.</strong></div>
+                    <div class="about-features features-2x2">
+                        <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="feature-icon"><i class="fas fa-medal"></i></div>
+                            <div class="feature-content">
+                                <h4>Premium Construction</h4>
+                                <p>Built with the highest quality materials and craftsmanship.</p>
+                            </div>
+                        </div>
+                        <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="feature-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="feature-content">
+                                <h4>Prime Location</h4>
+                                <p>Strategically positioned in Peshawar's most desirable area.</p>
+                            </div>
+                        </div>
+                        <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                            <div class="feature-icon"><i class="fas fa-star"></i></div>
+                            <div class="feature-content">
+                                <h4>5-Star Amenities</h4>
+                                <p>World-class facilities for an exceptional lifestyle.</p>
+                            </div>
+                        </div>
+                        <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                            <div class="feature-icon"><i class="fas fa-users"></i></div>
+                            <div class="feature-content">
+                                <h4>Community Focus</h4>
+                                <p>Designed to foster connection, safety, and belonging.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                
-                <p class="about-text">Kaur Complex is a premier gated community offering an unparalleled living experience in the heart of Peshawar. With over 600 meticulously designed apartments, exclusive penthouses, and premium commercial spaces, we've created a sanctuary that combines modern luxury with timeless elegance.</p>
-                
-                <div class="about-features">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-medal"></i>
+                <div class="about-media">
+                    <div class="media-container">
+                        <div class="main-image" style="position:relative;">
+                            <img src="assets/images/gallery/exterior-1.jpg" alt="Kaur Complex Building" loading="lazy">
                         </div>
-                        <div class="feature-content">
-                            <h4>Premium Construction</h4>
-                            <p>Built with the highest quality materials and craftsmanship</p>
+                        <div class="secondary-image">
+                            <img src="assets/images/gallery/lobby-1.jpg" alt="Kaur Complex Lobby" loading="lazy">
                         </div>
+                        <div class="media-bg-element"></div>
                     </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="feature-content">
-                            <h4>Prime Location</h4>
-                            <p>Strategically positioned in Peshawar's most desirable area</p>
-                        </div>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <div class="feature-content">
-                            <h4>5-Star Amenities</h4>
-                            <p>World-class facilities for an exceptional lifestyle</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="about-media">
-                <div class="media-container">
-                    <div class="main-image">
-                        <img src="assets/images/gallery/exterior-1.jpg" alt="Kaur Complex Building" loading="lazy">
-                    </div>
-                    
-                    <div class="secondary-image">
-                        <img src="assets/images/gallery/lobby-1.jpg" alt="Kaur Complex Lobby" loading="lazy">
-                    </div>
-                    
-                    <div class="media-bg-element"></div>
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- Property Listings Section -->
+    <section class="kc-listings-section">
+  <div class="kc-listings-container">
+    <div class="kc-listings-header">
+      <h2>Our Listings</h2>
+      <h3>Detailed Price Information</h3>
+      <p>Explore the latest pricing for our commercial units and apartments across all towers.</p>
     </div>
+    <div class="kc-listings-table-wrap">
+      <h4>Commercial Shops - Price/Sqft</h4>
+      <div class="kc-table-scroll">
+      <table class="kc-listings-table">
+        <thead>
+          <tr>
+            <th>Floor</th>
+            <th>Price/Sqft.</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>GROUND FLOOR</td>
+            <td>Rs. 30,000 <span class="kc-badge">Best Value</span></td>
+          </tr>
+          <tr>
+            <td>FIRST FLOOR</td>
+            <td>Rs. 27,000</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+    <div class="kc-listings-table-wrap">
+      <h4>Commercial Shops - Available Units</h4>
+      <div class="kc-table-scroll">
+      <table class="kc-listings-table kc-table-wide">
+        <thead>
+          <tr>
+            <th>Shop No.</th>
+            <th>Floor</th>
+            <th>Area (Sqft)</th>
+            <th>Price (PKR)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>S-02</td><td>GF</td><td>773</td><td>25,509,000</td></tr>
+          <tr><td>S-01</td><td>GF</td><td>2348</td><td>77,484,000</td></tr>
+          <tr><td>S-05</td><td>GF</td><td>378</td><td>11,340,000</td></tr>
+          <tr><td>S-06</td><td>GF</td><td>378</td><td>11,340,000</td></tr>
+          <tr><td>S-07</td><td>GF</td><td>343</td><td>10,290,000</td></tr>
+          <tr><td>S-08</td><td>GF</td><td>343</td><td>10,290,000</td></tr>
+          <tr><td>S-09</td><td>GF</td><td>318</td><td>9,540,000</td></tr>
+          <tr><td>S-10</td><td>GF</td><td>318</td><td>9,540,000</td></tr>
+          <tr><td>S-11</td><td>GF</td><td>318</td><td>9,540,000</td></tr>
+          <tr><td>S-01</td><td>FF</td><td>479</td><td>9,540,000</td></tr>
+          <tr><td>S-11</td><td>FF</td><td>216</td><td>5,400,000</td></tr>
+          <tr><td>S-10</td><td>FF</td><td>216</td><td>5,400,000</td></tr>
+          <tr><td>S-09</td><td>FF</td><td>182</td><td>5,005,000</td></tr>
+          <tr><td>S-08</td><td>FF</td><td>235</td><td>6,462,500</td></tr>
+          <tr><td>S-07</td><td>FF</td><td>280</td><td>7,700,000</td></tr>
+          <tr><td>S-06</td><td>FF</td><td>387</td><td>10,642,500</td></tr>
+          <tr><td>S-02</td><td>FF</td><td>479</td><td>13,172,500</td></tr>
+          <tr><td>S-03</td><td>FF</td><td>479</td><td>13,172,500</td></tr>
+          <tr><td>S-04</td><td>FF</td><td>479</td><td>13,172,500</td></tr>
+          <tr><td>S-05</td><td>FF</td><td>383</td><td>10,532,500</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+    <div class="kc-listings-table-wrap">
+      <h4>Tower A Apartments - Price/Sqft</h4>
+      <div class="kc-table-scroll">
+      <table class="kc-listings-table">
+        <thead>
+          <tr>
+            <th>Floor</th>
+            <th>Price/Sqft.</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>GROUND - 3rd</td><td>9,500</td></tr>
+          <tr><td>4th - 6th</td><td>9,000</td></tr>
+          <tr><td>7th - 9th</td><td>8,500</td></tr>
+          <tr><td>PENTHOUSE</td><td>8,000</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+    <div class="kc-listings-table-wrap">
+      <h4>Tower B Apartments - Price/Sqft</h4>
+      <div class="kc-table-scroll">
+      <table class="kc-listings-table">
+        <thead>
+          <tr>
+            <th>Floor</th>
+            <th>Price/Sqft.</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>GROUND - 3rd</td><td>9,000</td></tr>
+          <tr><td>5th - 6th</td><td>8,500</td></tr>
+          <tr><td>7th - 9th</td><td>8,000</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+    <div class="kc-listings-table-wrap">
+      <h4>Tower B Apartments - Availability & Price</h4>
+      <div class="kc-table-scroll">
+      <table class="kc-listings-table kc-table-wide">
+        <thead>
+          <tr>
+            <th>Apartment Type</th>
+            <th>Floor</th>
+            <th>Size (sqft.)</th>
+            <th>Price (PKR)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>STUDIO</td><td>4th</td><td>454</td><td>38,590,000</td></tr>
+          <tr><td>STUDIO</td><td>5th</td><td>510</td><td>43,350,000</td></tr>
+          <tr><td>STUDIO</td><td>9th</td><td>540</td><td>43,200,000</td></tr>
+          <tr><td>2 BED</td><td>5th</td><td>1019</td><td>86,615,000</td></tr>
+          <tr><td>2 BED</td><td>7th–8th</td><td>1054</td><td>92,752,500</td></tr>
+          <tr><td>2 BED</td><td>5th</td><td>1087</td><td>92,395,000</td></tr>
+          <tr><td>2 BED</td><td>7th–9th</td><td>1087</td><td>86,960,000</td></tr>
+          <tr><td>2 BED</td><td>7th–8th</td><td>1102</td><td>88,160,000</td></tr>
+          <tr><td>3 BED</td><td>5th–6th</td><td>1138</td><td>96,730,000</td></tr>
+          <tr><td>3 BED</td><td>8th–9th</td><td>1138</td><td>91,040,000</td></tr>
+          <tr><td>3 BED</td><td>5th–6th</td><td>1166</td><td>99,110,000</td></tr>
+          <tr><td>3 BED</td><td>9th</td><td>1335</td><td>117,480,000</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+    <div class="kc-listings-table-wrap">
+      <h4>Tower C Apartments - Price/Sqft</h4>
+      <div class="kc-table-scroll">
+      <table class="kc-listings-table">
+        <thead>
+          <tr>
+            <th>Floor</th>
+            <th>Price/Sqft.</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1st - 3rd</td><td>9,000</td></tr>
+          <tr><td>4th - 6th</td><td>8,500</td></tr>
+          <tr><td>7th - 9th</td><td>8,000</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+    <div class="kc-listings-table-wrap">
+      <h4>Payment Plan</h4>
+      <div class="kc-payment-plan-info">
+        <p>20% down payment, 80% in 25 months flexible installment plan</p>
+      </div>
+    </div>
+    <div class="kc-listings-cta">
+      <h4>Ready to Invest or Need More Info?</h4>
+      <p>Contact our sales team for personalized offers, site visits, or detailed payment plans.</p>
+      <a href="#contact" class="kc-listings-cta-btn">Contact Sales</a>
+    </div>
+  </div>
 </section>
-
-    <!-- Features Section -->
-    <section class="features-section">
-        <div class="container">
-            <div class="section-header center">
-                <h2 class="section-subtitle">Why Choose Us</h2>
-                <h3 class="section-title">Unmatched Living Experience</h3>
-                <p class="section-description">Discover the perfect blend of luxury, comfort, and investment potential</p>
-            </div>
-            
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-location-arrow"></i>
-                    </div>
-                    <h4>Prime Location</h4>
-                    <p>Strategically located in the most desirable area of Peshawar with easy access to business districts, schools, and entertainment.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h4>24/7 Security</h4>
-                    <p>Gated community with round-the-clock security, CCTV surveillance, and professional security personnel for complete peace of mind.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-swimming-pool"></i>
-                    </div>
-                    <h4>Resort-Style Amenities</h4>
-                    <p>State-of-the-art facilities including infinity pool, fully-equipped gym, spa, and beautifully landscaped gardens.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h4>Smart Investment</h4>
-                    <p>High rental yield and appreciation potential in one of Peshawar's fastest-growing and most sought-after locations.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <h4>Premium Construction</h4>
-                    <p>Built with the finest materials and international construction standards for lasting quality and durability.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-concierge-bell"></i>
-                    </div>
-                    <h4>Concierge Services</h4>
-                    <p>Dedicated concierge team to assist with all your needs, from maintenance requests to lifestyle services.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Property Types Section -->
-    <section class="property-types">
-        <div class="container">
-            <div class="section-header center">
-                <h2 class="section-subtitle">Our Properties</h2>
-                <h3 class="section-title">Find Your Perfect Space</h3>
-                <p class="section-description">Explore our range of meticulously designed living and commercial spaces</p>
-            </div>
-            
-            <div class="property-tabs">
-                <div class="tab active" data-tab="apartments">Apartments</div>
-                <div class="tab" data-tab="penthouses">Penthouses</div>
-                <div class="tab" data-tab="shops">Commercial Shops</div>
-            </div>
-            
-            <div class="property-grid">
-                <div class="property-card">
-                    <div class="property-badge">Featured</div>
-                    <div class="property-image">
-                        <img src="assets/images/gallery/apartment-3bed.jpeg" alt="Luxury Apartment">
-                        <div class="property-overlay">
-                            <a href="pages/apartments.html" class="btn btn-primary">View Details</a>
-                        </div>
-                    </div>
-                    <div class="property-content">
-                        <h4>Luxury 3-Bed Apartment</h4>
-                        <div class="property-specs">
-                            <span><i class="fas fa-ruler-combined"></i> 2,200 sq.ft</span>
-                            <span><i class="fas fa-bed"></i> 3 Beds</span>
-                            <span><i class="fas fa-bath"></i> 3 Baths</span>
-                        </div>
-                        <div class="property-price">
-                            <span>Starting from</span>
-                            <h5>PKR 45 Million</h5>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="property-card">
-                    <div class="property-image">
-                        <img src="assets/images/gallery/apartment-2bed.jpg" alt="Executive Apartment">
-                        <div class="property-overlay">
-                            <a href="pages/apartments.html" class="btn btn-primary">View Details</a>
-                        </div>
-                    </div>
-                    <div class="property-content">
-                        <h4>Executive 2-Bed Apartment</h4>
-                        <div class="property-specs">
-                            <span><i class="fas fa-ruler-combined"></i> 1,800 sq.ft</span>
-                            <span><i class="fas fa-bed"></i> 2 Beds</span>
-                            <span><i class="fas fa-bath"></i> 2 Baths</span>
-                        </div>
-                        <div class="property-price">
-                            <span>Starting from</span>
-                            <h5>PKR 35 Million</h5>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="property-card">
-                    <div class="property-image">
-                        <img src="assets/images/gallery/penthouse-1.jpg" alt="Luxury Penthouse">
-                        <div class="property-overlay">
-                            <a href="pages/apartments.html" class="btn btn-primary">View Details</a>
-                        </div>
-                    </div>
-                    <div class="property-content">
-                        <h4>Premium Penthouse</h4>
-                        <div class="property-specs">
-                            <span><i class="fas fa-ruler-combined"></i> 3,500 sq.ft</span>
-                            <span><i class="fas fa-bed"></i> 4 Beds</span>
-                            <span><i class="fas fa-bath"></i> 4 Baths</span>
-                        </div>
-                        <div class="property-price">
-                            <span>Starting from</span>
-                            <h5>PKR 80 Million</h5>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="property-card">
-                    <div class="property-image">
-                        <img src="assets/images/gallery/shop-1.png" alt="Commercial Shop">
-                        <div class="property-overlay">
-                            <a href="pages/shops.html" class="btn btn-primary">View Details</a>
-                        </div>
-                    </div>
-                    <div class="property-content">
-                        <h4>Premium Commercial Shop</h4>
-                        <div class="property-specs">
-                            <span><i class="fas fa-ruler-combined"></i> 1,200 sq.ft</span>
-                            <span><i class="fas fa-door-open"></i> 2 Entrances</span>
-                        </div>
-                        <div class="property-price">
-                            <span>Starting from</span>
-                            <h5>PKR 25 Million</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="property-cta">
-                <a href="pages/apartments.html" class="btn btn-primary">
-                    <i class="fas fa-building"></i> View All Properties
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Amenities Section -->
-    <section class="amenities-section">
-        <div class="container">
-            <div class="section-header center">
-                <h2 class="section-subtitle">Lifestyle Amenities</h2>
-                <h3 class="section-title">World-Class Facilities</h3>
-                <p class="section-description">Designed to enhance your living experience with premium amenities</p>
-            </div>
-            
-            <div class="amenities-slider">
-                <div class="amenity-slide">
-                    <div class="amenity-image">
-                        <img src="assets/images/gallery/Infinity-Pool.jpg" alt="Infinity Pool">
-                    </div>
-                    <div class="amenity-content">
-                        <h4>Infinity Pool</h4>
-                        <p>Our temperature-controlled infinity pool offers breathtaking views of the city skyline, perfect for relaxation and exercise.</p>
-                        <div class="amenity-features">
-                            <span><i class="fas fa-sun"></i> Sun Deck</span>
-                            <span><i class="fas fa-umbrella-beach"></i> Poolside Cabanas</span>
-                            <span><i class="fas fa-life-ring"></i> Lifeguard on Duty</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="amenity-slide">
-                    <div class="amenity-image">
-                        <img src="assets/images/gallery/gym.jpg" alt="Fitness Center">
-                    </div>
-                    <div class="amenity-content">
-                        <h4>Fitness Center</h4>
-                        <p>State-of-the-art fitness facility with the latest equipment, personal training services, and group exercise classes.</p>
-                        <div class="amenity-features">
-                            <span><i class="fas fa-dumbbell"></i> Premium Equipment</span>
-                            <span><i class="fas fa-user-tie"></i> Personal Trainers</span>
-                            <span><i class="fas fa-calendar-alt"></i> Class Schedule</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="amenity-slide">
-                    <div class="amenity-image">
-                        <img src="assets/images/gallery/garden.webp" alt="Landscaped Gardens">
-                    </div>
-                    <div class="amenity-content">
-                        <h4>Landscaped Gardens</h4>
-                        <p>Beautifully designed green spaces with walking paths, seating areas, and water features for peaceful relaxation.</p>
-                        <div class="amenity-features">
-                            <span><i class="fas fa-tree"></i> Native Plants</span>
-                            <span><i class="fas fa-water"></i> Water Features</span>
-                            <span><i class="fas fa-walking"></i> Walking Paths</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="amenities-cta">
-                <a href="pages/amenities.html" class="btn btn-outline">
-                    <i class="fas fa-plus-circle"></i> See All Amenities
-                </a>
-            </div>
-        </div>
-    </section>
 
     <!-- Gallery Section -->
 <section class="gallery-section">
-    <div class="container">
-        <div class="section-header center">
-            <h2 class="section-subtitle">Our Gallery</h2>
-            <h3 class="section-title">Visual Journey Through Kaur Complex</h3>
-            <p class="section-description">Explore our stunning development through these captivating images</p>
-        </div>
-        
-        <!-- Gallery Filter Buttons -->
-        <div class="gallery-filter">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="exterior">Exterior</button>
-            <button class="filter-btn" data-filter="interior">Interior</button>
-            <button class="filter-btn" data-filter="amenities">Amenities</button>
-            <button class="filter-btn" data-filter="views">Views</button>
-        </div>
-        
-        <!-- Gallery Grid -->
-        <div class="gallery-grid">
-            <!-- Large Featured Item -->
-            <div class="gallery-item large">
-                <img src="assets/images/gallery/exterior-1.jpg" alt="Kaur Complex Exterior">
-                <div class="gallery-overlay">
-                    <div class="overlay-content">
-                        <h4>Grand Entrance</h4>
-                        <p>Impressive architectural design</p>
-                        <button class="view-btn" aria-label="View larger">
-                            <i class="fas fa-expand"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Regular Items -->
-            <div class="gallery-item">
-                <img src="assets/images/gallery/lobby-1.jpg" alt="Luxury Lobby">
-                <div class="gallery-overlay">
-                    <div class="overlay-content">
-                        <h4>Elegant Lobby</h4>
-                        <p>Luxurious reception area</p>
-                        <button class="view-btn" aria-label="View larger">
-                            <i class="fas fa-expand"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="gallery-item">
-                <img src="assets/images/gallery/apartment-1.jpg" alt="Luxury Apartment">
-                <div class="gallery-overlay">
-                    <div class="overlay-content">
-                        <h4>Modern Interiors</h4>
-                        <p>Sophisticated living spaces</p>
-                        <button class="view-btn" aria-label="View larger">
-                            <i class="fas fa-expand"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="gallery-item">
-                <img src="assets/images/gallery/amenity-1.jpg" alt="Swimming Pool">
-                <div class="gallery-overlay">
-                    <div class="overlay-content">
-                        <h4>Resort Pool</h4>
-                        <p>Relaxation and leisure</p>
-                        <button class="view-btn" aria-label="View larger">
-                            <i class="fas fa-expand"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="gallery-item">
-                <img src="assets/images/gallery/penthouse-1.jpg" alt="Penthouse View">
-                <div class="gallery-overlay">
-                    <div class="overlay-content">
-                        <h4>Penthouse View</h4>
-                        <p>Panoramic cityscapes</p>
-                        <button class="view-btn" aria-label="View larger">
-                            <i class="fas fa-expand"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
+  <div class="container">
+    <div class="section-header center">
+      <h2 class="section-subtitle"><i class="fas fa-images"></i> Our Gallery</h2>
+      <p class="section-description">Explore our stunning development through these captivating images</p>
     </div>
     
-    <!-- Lightbox Modal -->
+    <div class="gallery-filter">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="exterior">Exterior</button>
+      <button class="filter-btn" data-filter="interior">Interior</button>
+      <button class="filter-btn" data-filter="amenities">Amenities</button>
+      <button class="filter-btn" data-filter="views">Views</button>
+    </div>
+    
+    <div class="gallery-grid">
+      <!-- Featured Large Image -->
+      <div class="gallery-item large" data-category="exterior">
+        <div class="image-container">
+          <img src="assets/images/gallery/exterior-1.jpg" alt="Kaur Complex Exterior" loading="lazy">
+        </div>
+        <div class="gallery-overlay">
+          <div class="overlay-content">
+            <h4>Grand Entrance</h4>
+            <p>Impressive architectural design</p>
+            <button class="view-btn" aria-label="View larger">
+              <i class="fas fa-expand"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Regular Images -->
+      <div class="gallery-item" data-category="interior">
+        <div class="image-container">
+          <img src="assets/images/gallery/lobby-1.jpg" alt="Luxury Lobby" loading="lazy">
+        </div>
+        <div class="gallery-overlay">
+          <div class="overlay-content">
+            <h4>Elegant Lobby</h4>
+            <p>Luxurious reception area</p>
+            <button class="view-btn" aria-label="View larger">
+              <i class="fas fa-expand"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="gallery-item" data-category="interior">
+        <div class="image-container">
+          <img src="assets/images/gallery/apartment-1.jpg" alt="Luxury Apartment" loading="lazy">
+        </div>
+        <div class="gallery-overlay">
+          <div class="overlay-content">
+            <h4>Modern Interiors</h4>
+            <p>Sophisticated living spaces</p>
+            <button class="view-btn" aria-label="View larger">
+              <i class="fas fa-expand"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="gallery-item" data-category="amenities">
+        <div class="image-container">
+          <img src="assets/images/gallery/amenity-1.jpg" alt="Swimming Pool" loading="lazy">
+        </div>
+        <div class="gallery-overlay">
+          <div class="overlay-content">
+            <h4>Resort Pool</h4>
+            <p>Relaxation and leisure</p>
+            <button class="view-btn" aria-label="View larger">
+              <i class="fas fa-expand"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="gallery-item" data-category="views">
+        <div class="image-container">
+          <img src="assets/images/gallery/penthouse-1.jpg" alt="Penthouse View" loading="lazy">
+        </div>
+        <div class="gallery-overlay">
+          <div class="overlay-content">
+            <h4>Penthouse View</h4>
+            <p>Panoramic cityscapes</p>
+            <button class="view-btn" aria-label="View larger">
+              <i class="fas fa-expand"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
     <div class="lightbox-modal">
-        <div class="lightbox-content">
-            <span class="close-btn">&times;</span>
-            <img class="lightbox-image" src="" alt="">
-            <div class="lightbox-caption">
-                <h4 class="image-title"></h4>
-                <p class="image-description"></p>
-            </div>
-            <button class="lightbox-nav prev-btn"><i class="fas fa-chevron-left"></i></button>
-            <button class="lightbox-nav next-btn"><i class="fas fa-chevron-right"></i></button>
+      <div class="lightbox-content">
+        <span class="close-btn">&times;</span>
+        <img class="lightbox-image" src="" alt="">
+        <div class="lightbox-caption">
+          <h4 class="image-title"></h4>
+          <p class="image-description"></p>
         </div>
+        <button class="lightbox-nav prev-btn"><i class="fas fa-chevron-left"></i></button>
+        <button class="lightbox-nav next-btn"><i class="fas fa-chevron-right"></i></button>
+      </div>
     </div>
-</section>
-
-    <!-- Testimonials Section -->
-<section class="testimonials-section">
-    <div class="container">
-        <div class="section-header center">
-            <h2 class="section-subtitle">Voices of Kaur Complex</h2>
-            <h3 class="section-title">Resident Experiences</h3>
-            <p class="section-description">Discover why our residents love calling Kaur Complex home</p>
-        </div>
-        
-        <div class="testimonials-container">
-            <div class="testimonial-track">
-                <!-- Testimonial 1 -->
-                <div class="testimonial-card">
-                    <div class="testimonial-badge">
-                        <i class="fas fa-quote-left"></i>
-                    </div>
-                    <div class="testimonial-content">
-                        <p class="testimonial-text">"Moving to Kaur Complex was the best decision we made. The quality of construction, amenities, and security are unmatched in Peshawar. It truly feels like a luxury resort every day."</p>
-                        <div class="testimonial-author">
-                            <div class="author-image">
-                                <img src="assets/images/gallery/ahmad.jpg" alt="Ahmed Khan" loading="lazy">
-                                <div class="image-border"></div>
-                            </div>
-                            <div class="author-details">
-                                <h5>Ahmed Khan</h5>
-                                <span>Resident since 2022</span>
-                                <div class="testimonial-rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonial 2 -->
-                <div class="testimonial-card">
-                    <div class="testimonial-badge">
-                        <i class="fas fa-quote-left"></i>
-                    </div>
-                    <div class="testimonial-content">
-                        <p class="testimonial-text">"As an investor, I've seen my property value increase significantly since purchasing at Kaur Complex. The management team is professional and responsive, making it a worry-free investment."</p>
-                        <div class="testimonial-author">
-                            <div class="author-image">
-                                <img src="assets/images/gallery/fatima.jpg" alt="Fatima Ali" loading="lazy">
-                                <div class="image-border"></div>
-                            </div>
-                            <div class="author-details">
-                                <h5>Fatima Ali</h5>
-                                <span>Investor & Resident</span>
-                                <div class="testimonial-rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonial 3 -->
-                <div class="testimonial-card">
-                    <div class="testimonial-badge">
-                        <i class="fas fa-quote-left"></i>
-                    </div>
-                    <div class="testimonial-content">
-                        <p class="testimonial-text">"The amenities at Kaur Complex are exceptional. My children love the playground and pool, while my wife and I enjoy the gym and social events. It's a complete lifestyle package."</p>
-                        <div class="testimonial-author">
-                            <div class="author-image">
-                                <img src="assets/images/gallery/zahid.jpg" alt="Zahid Mahmood" loading="lazy">
-                                <div class="image-border"></div>
-                            </div>
-                            <div class="author-details">
-                                <h5>Zahid Mahmood</h5>
-                                <span>Family Resident</span>
-                                <div class="testimonial-rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="testimonial-nav">
-                <button class="nav-btn prev-btn" aria-label="Previous testimonial">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <div class="testimonial-dots"></div>
-                <button class="nav-btn next-btn" aria-label="Next testimonial">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
-        </div>
-    </div>
+  </div>
 </section>
 
     <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <div class="cta-text">
-                    <h3>Ready to Experience Luxury Living?</h3>
-                    <p>Schedule a private tour of Kaur Complex and discover your dream home today.</p>
-                </div>
-                <div class="cta-form">
-                    <form>
-                        <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Email Address" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="tel" placeholder="Phone Number" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary">
-                            <i class="fas fa-calendar-check"></i> Book Appointment
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
+    <section class="cta-section" style="background: #1a2238; color: #fff; text-align: center; padding: 64px 0;">
+      <div class="container">
+        <h2 style="color: #d4af37; font-size: 2.5rem; margin-bottom: 18px; font-family: 'Playfair Display', serif;">Ready to Experience True Luxury?</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 32px;">Book a private tour of Kaur Complex and discover the most exclusive residences and commercial spaces in Peshawar.</p>
+        <a href="#contact" style="display: inline-block; background: linear-gradient(90deg, #ffe082 0%, #d4af37 100%); color: #1a2238; font-weight: bold; font-size: 1.15rem; padding: 18px 44px; border-radius: 36px; text-decoration: none; transition: background 0.2s;">Book a Private Tour</a>
+      </div>
     </section>
 
     <!-- Location Section -->
-    <section class="location-section">
-        <div class="container">
-            <div class="section-header center">
-                <h2 class="section-subtitle">Our Location</h2>
-                <h3 class="section-title">Prime Position in Peshawar</h3>
-                <p class="section-description">Strategically located for convenience and connectivity</p>
-            </div>
-            
-            <div class="location-grid">
-                <div class="location-content">
-                    <div class="location-features">
-                        <div class="feature-item">
-                            <i class="fas fa-school"></i>
-                            <div class="feature-content">
-                                <h5>Premium Schools</h5>
-                                <p>Within 5km radius of top educational institutions</p>
-                            </div>
-                        </div>
-                        
-                        <div class="feature-item">
-                            <i class="fas fa-shopping-bag"></i>
-                            <div class="feature-content">
-                                <h5>Shopping Centers</h5>
-                                <p>Easy access to major retail and dining options</p>
-                            </div>
-                        </div>
-                        
-                        <div class="feature-item">
-                            <i class="fas fa-hospital"></i>
-                            <div class="feature-content">
-                                <h5>Medical Facilities</h5>
-                                <p>Proximity to leading hospitals and clinics</p>
-                            </div>
-                        </div>
-                        
-                        <div class="feature-item">
-                            <i class="fas fa-road"></i>
-                            <div class="feature-content">
-                                <h5>Transport Links</h5>
-                                <p>Excellent connectivity to major roads and highways</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="location-map">
-                    <div class="map-container">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3307.041292447689!2d71.5183153152177!3d34.00898098061356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38d919b445555555%3A0x1a1a1a1a1a1a1a1a!2sKaur%20Complex%2C%20Peshawar!5e0!3m2!1sen!2s!4v1620000000000!5m2!1sen!2s" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                    </div>
-                </div>
-            </div>
+    <section class="location-section best-location-section">
+      <div class="location-gradient"></div>
+      <div class="container">
+        <div class="location-header">
+          <span class="location-pin"><svg width="36" height="36" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="10" r="4" stroke="#d4af37" stroke-width="2"/><path d="M12 22C12 22 20 14.36 20 10C20 5.58 16.42 2 12 2C7.58 2 4 5.58 4 10C4 14.36 12 22 12 22Z" stroke="#d4af37" stroke-width="2"/></svg></span>
+          <h2 class="location-title">Our Location</h2>
+          <div class="location-accent"></div>
         </div>
-    </section>
-
-    <!-- Newsletter Section -->
-    <section class="newsletter-section">
-        <div class="container">
-            <div class="newsletter-content">
-                <div class="newsletter-text">
-                    <h3>Stay Updated</h3>
-                    <p>Subscribe to our newsletter for the latest updates, offers, and community news.</p>
-                </div>
-                <div class="newsletter-form">
-                    <form>
-                        <input type="email" placeholder="Enter your email address" required>
-                        <button type="submit" class="btn btn-primary">
-                            <i class="fas fa-paper-plane"></i> Subscribe
-                        </button>
-                    </form>
-                </div>
+        <div class="location-content-grid">
+          <div class="location-info-card">
+            <h3>Kaur Complex</h3>
+            <p class="location-address">Main University Road, Peshawar, Pakistan</p>
+            <div class="location-details">
+              <div><strong>Phone:</strong> <a href="tel:+923001234567">+92 300 1234567</a></div>
+              <div><strong>Email:</strong> <a href="mailto:info@kaurcomplex.com">info@kaurcomplex.com</a></div>
+              <div><strong>Hours:</strong> Mon-Sat, 9:00am – 8:00pm</div>
             </div>
+            <a class="location-map-btn" href="https://maps.app.goo.gl/RSrW3GYsxu4T8KDc6" target="_blank" rel="noopener">View on Google Maps</a>
+          </div>
+          <div class="location-map-card">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5164.429739922866!2d71.4603929329566!3d33.985623095204886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38d911c73a471387%3A0xfa759c62f32cdc38!2sKaur%20Complex!5e0!3m2!1sen!2s!4v1751886262308!5m2!1sen!2s" width="100%" height="420" style="border:0; border-radius: 18px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
@@ -834,9 +477,8 @@
                 <ul>
                     <li><a href="../index.html">Home</a></li>
                     <li><a href="../pages/about.html">About Us</a></li>
-                    <li><a href="../pages/apartments.html">Apartments</a></li>
-                    <li><a href="../pages/shops.html">Commercial Shops</a></li>
-                    <li><a href="../pages/amenities.html">Amenities</a></li>
+                    <li><a href="../pages/apartments.html">Properties</a></li>
+                    <li><a href="../pages/gallery.html">Gallery</a></li>
                     <li><a href="../pages/contact.html">Contact Us</a></li>
                 </ul>
             </div>
@@ -857,11 +499,6 @@
             <div class="copyright">
                 <p>© 2024 Kaur Complex. All rights reserved.</p>
             </div>
-            <div class="footer-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-                <a href="#">Sitemap</a>
-            </div>
         </div>
     </div>
 </footer>
@@ -879,18 +516,14 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- JavaScript Files -->
+    <!-- JavaScript -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/js/main.js"></script>
     <script>
-        // Remove AOS and GSAP initialization
-        // Make stats counter instant
-        window.addEventListener('load', function() {
-            const statNumbers = document.querySelectorAll('.stat-number');
-            statNumbers.forEach(stat => {
-                const target = stat.getAttribute('data-target');
-                const suffix = stat.getAttribute('data-suffix') || '';
-                stat.textContent = target + suffix;
-            });
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
         });
     </script>
 </body>
