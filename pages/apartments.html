@@ -3,21 +3,364 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore luxury apartments at Kaur Complex - 1-bed, 2-bed, 3-bed apartments and exclusive penthouses. View floor plans and book your dream home today.">
+    <meta name="description" content="Kaur Complex property price lists, availability, and shop prices.">
     <title>Properties - Kaur Complex</title>
-    
-    <!-- CSS Files -->
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/responsive.css">
-    
-    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- AOS Animation (optional) -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(120deg, #f8fafc 0%, #fffbe6 100%);
+        }
+        .property-section {
+            padding: 56px 0 40px 0;
+            position: relative;
+        }
+        .property-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('https://www.transparenttextures.com/patterns/gold-fish-scale.png') repeat;
+            opacity: 0.06;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .property-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 18px;
+            position: relative;
+            z-index: 2;
+        }
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin-bottom: 8px;
+            justify-content: center;
+        }
+        .section-header i {
+            color: #d4af37;
+            font-size: 2.1rem;
+        }
+        .property-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #1a2238;
+            margin-bottom: 0;
+            text-align: center;
+            letter-spacing: 0.5px;
+        }
+        .gold-accent {
+            width: 70px;
+            height: 5px;
+            background: linear-gradient(90deg, #d4af37 0%, #ffe082 100%);
+            border-radius: 3px;
+            margin: 0 auto 24px auto;
+        }
+        .property-subtitle {
+            font-size: 1.18rem;
+            color: #555;
+            text-align: center;
+            margin-bottom: 38px;
+        }
+        .property-table-section {
+            margin-bottom: 56px;
+        }
+        .property-table-card {
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(30,34,56,0.10), 0 2px 24px #1a223820;
+            margin-bottom: 32px;
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+        .property-table-card:hover {
+            box-shadow: 0 16px 48px rgba(212,175,55,0.13), 0 4px 32px #1a223820;
+        }
+        .property-table-responsive {
+            overflow-x: auto;
+            box-shadow: 0 2px 12px rgba(212,175,55,0.07);
+        }
+        .property-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 420px;
+        }
+        .property-table th, .property-table td {
+            padding: 15px 14px;
+            text-align: left;
+            font-size: 1.05rem;
+            transition: background 0.18s;
+        }
+        .property-table th {
+            background: linear-gradient(90deg, #d4af37 0%, #ffe082 100%);
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.09rem;
+            border-bottom: 2px solid #f8fafc;
+        }
+        .property-table tr {
+            transition: background 0.18s;
+        }
+        .property-table tr:nth-child(even) td {
+            background: #f8fafc;
+        }
+        .property-table tr:nth-child(odd) td {
+            background: #fff;
+        }
+        .property-table tr:hover td {
+            background: #fffbe6;
+        }
+        .property-table .category-cell {
+            background: #fffbe6;
+            color: #1a2238;
+            font-weight: 700;
+            text-align: center;
+            font-size: 1.18rem;
+            letter-spacing: 0.5px;
+            border-bottom: none;
+        }
+        .property-table .icon-cell {
+            text-align: center;
+            font-size: 1.5rem;
+            color: #d4af37;
+            background: #fffbe6;
+        }
+        .payment-plan, .contact-banner {
+            background: #fff;
+            color: #bfa046;
+            font-weight: 600;
+            border-radius: 14px;
+            padding: 18px 24px;
+            text-align: center;
+            margin: 18px 0 32px 0;
+            font-size: 1.13rem;
+            box-shadow: 0 4px 18px rgba(212,175,55,0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+        .payment-plan i, .contact-banner i {
+            color: #d4af37;
+            font-size: 1.3em;
+            margin-right: 8px;
+        }
+        .contact-banner {
+            color: #fff;
+            background: linear-gradient(90deg, #1a2238 60%, #bfa046 100%);
+            font-weight: 500;
+            margin-top: 0;
+            margin-bottom: 0;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .contact-banner strong {
+            color: #ffe082;
+        }
+        .contact-banner .contact-details {
+            color: #ffe082;
+            font-size: 0.98em;
+        }
+        @media (max-width: 900px) {
+            .property-table th, .property-table td { padding: 10px 7px; font-size: 0.98rem; }
+            .property-title { font-size: 1.5rem; }
+            .property-table-card { margin-bottom: 18px; }
+        }
+        @media (max-width: 600px) {
+            .property-section { padding: 24px 0 12px 0; }
+            .property-table-section { margin-bottom: 28px; }
+            .property-table th, .property-table td { padding: 8px 5px; font-size: 0.93rem; }
+            .payment-plan, .contact-banner { font-size: 0.98rem; padding: 10px 6px; border-radius: 8px; }
+            .contact-banner { flex-direction: column; gap: 4px; }
+        }
+        .property-table img, .property-table-card img, .property-table-responsive img, .section-header img,
+        .property-table svg, .property-table-card svg, .property-table-responsive svg, .section-header svg {
+            max-width: 100%;
+            height: auto;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .section-header i, .property-table .icon-cell i, .property-table .icon-cell svg {
+            font-size: 2.1rem;
+            max-width: 2.1rem;
+            height: auto;
+        }
+        @media (max-width: 600px) {
+            .section-header i, .property-table .icon-cell i, .property-table .icon-cell svg {
+                font-size: 1.3rem;
+                max-width: 1.3rem;
+            }
+        }
+        .property-thumb {
+            max-width: 100px;
+            max-height: 70px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 0 auto;
+            display: block;
+        }
+        @media (max-width: 600px) {
+            .property-thumb {
+                max-width: 70px;
+                max-height: 48px;
+            }
+        }
+        /* Example usage: <img src="../assets/images/gallery/bed1.jpg" alt="1 Bed" class="property-thumb"> */
+
+        /* Executive Tower C Posts Section */
+        .executive-tower-section {
+            background: linear-gradient(120deg, #f8fafc 60%, #fffbe6 100%);
+            border-radius: 24px;
+            box-shadow: 0 8px 32px rgba(30,34,56,0.10), 0 2px 24px #1a223820;
+            padding: 32px 0;
+            margin-bottom: 40px;
+        }
+        .glassy-card {
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: blur(8px);
+            border-radius: 22px;
+            box-shadow: 0 8px 32px rgba(212,175,55,0.10), 0 2px 24px #1a223820;
+            border: 1.5px solid #f5e7c3;
+            position: relative;
+            overflow: visible;
+        }
+        .exec-card-flex {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: stretch;
+            min-height: 340px;
+        }
+        .exec-card-img-wrap {
+            position: relative;
+            flex: 1 1 340px;
+            min-width: 260px;
+            max-width: 420px;
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            background: #fffbe6;
+            border-right: 1px solid #eee;
+            border-radius: 22px 0 0 22px;
+            overflow: hidden;
+        }
+        .exec-card-img {
+            width: 100%;
+            height: 100%;
+            min-height: 340px;
+            object-fit: cover;
+            display: block;
+            border-radius: 0;
+            box-shadow: 0 4px 24px #d4af3720;
+        }
+        .exec-card-gold-badge {
+            position: absolute;
+            top: 18px;
+            left: 18px;
+            background: linear-gradient(90deg, #d4af37 0%, #ffe082 100%);
+            color: #fff;
+            border-radius: 50%;
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            box-shadow: 0 2px 8px #d4af3740;
+            z-index: 2;
+        }
+        .exec-card-content {
+            flex: 2 1 420px;
+            padding: 48px 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-width: 260px;
+        }
+        .exec-card-title {
+            color: #1a2238;
+            margin: 0 0 10px 0;
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            position: relative;
+        }
+        .exec-card-title::after {
+            content: "";
+            display: block;
+            width: 48px;
+            height: 4px;
+            background: linear-gradient(90deg, #d4af37 0%, #ffe082 100%);
+            border-radius: 2px;
+            margin-top: 6px;
+        }
+        .exec-card-subtitle {
+            font-weight: 600;
+            margin: 0 0 18px 0;
+            font-size: 1.08rem;
+            color: #3a4a6b;
+        }
+        .exec-card-highlight {
+            background: #fffbe6;
+            padding: 10px 18px;
+            border-radius: 10px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            box-shadow: 0 2px 8px #d4af3720;
+        }
+        .exec-card-label {
+            color: #bfa046;
+            font-weight: 600;
+            margin-right: 6px;
+        }
+        .exec-card-value {
+            color: #d4af37;
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+        .exec-card-details {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 8px;
+        }
+        .exec-card-details .exec-card-label {
+            display: block;
+            font-size: 0.98rem;
+            color: #1a2238;
+            margin-bottom: 2px;
+        }
+        .exec-card-details .exec-card-value {
+            font-size: 1.05rem;
+            color: #3a4a6b;
+            font-weight: 600;
+        }
+        @media (max-width: 900px) {
+            .exec-card-flex { flex-direction: column; }
+            .exec-card-img-wrap { border-radius: 22px 22px 0 0; border-right: none; border-bottom: 1px solid #eee; }
+            .exec-card-content { padding: 32px 16px; }
+        }
+        @media (max-width: 600px) {
+            .glassy-card { border-radius: 12px; }
+            .exec-card-img-wrap { min-width: 100%; max-width: 100%; }
+            .exec-card-img { min-height: 180px; }
+            .exec-card-content { padding: 18px 8px; }
+            .exec-card-title { font-size: 1.05rem; }
+        }
+        .site-logo {
+            height: 40px;
+            width: auto;
+            vertical-align: middle;
+            display: inline-block;
+            margin-right: 8px;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -25,10 +368,7 @@
         <div class="nav-container">
             <div class="nav-logo">
                 <a href="../index.html">
-                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M20 0L40 20L20 40L0 20L20 0Z" fill="#D4AF37"/>
-                        <path d="M20 10L30 20L20 30L10 20L20 10Z" fill="#1E3A8A"/>
-                    </svg>
+                    <img src="../assets/images/gallery/logo-kc.png" alt="Kaur Complex Logo" class="site-logo">
                     <span>Kaur Complex</span>
                 </a>
             </div>
@@ -37,7 +377,7 @@
                 <a href="../pages/about.html" class="nav-link">About</a>
                 <a href="../pages/apartments.html" class="nav-link active">Properties</a>
                 <a href="../pages/contact.html" class="nav-link">Contact</a>
-                <a href="tel:+923001234567" class="nav-cta">Call Now</a>
+                <a href="tel:03320001888" class="nav-cta">Call Now</a>
             </div>
             <div class="nav-toggle" id="nav-toggle">
                 <span class="bar"></span>
@@ -46,398 +386,292 @@
             </div>
         </div>
     </nav>
-
     <main class="main-content">
-    <!-- Main Header -->
-    <header class="main-header">
-        <div class="container">
-            <h1>Premium Luxury Properties in Peshawar</h1>
-        </div>
-    </header>
-
-    <!-- Modern Apartment Section -->
-    <section class="apartment-section" id="properties">
-        <div class="container">
-            <header class="section-header">
-                <h2>Our Luxury Properties</h2>
-                <p>Discover our collection of premium apartments and commercial spaces in Peshawar, designed to offer the perfect blend of modern luxury and traditional Pakistani hospitality. Each property is crafted with attention to detail and quality finishes.</p>
-            </header>
-
-            <div class="apartment-grid">
-                <!-- Apartment Card 1 -->
-                <article class="apartment-card">
-                    <figure class="apartment-img">
-                        <img src="../assets/images/gallery/executive-3-Bedroom.avif" alt="Luxury 3-bedroom apartment with modern interior in Peshawar" loading="lazy">
-                        <span class="status-badge">Available</span>
-                    </figure>
-                    <div class="apartment-details">
-                        <h3 class="apartment-title">Executive 3-Bedroom Residence</h3>
-                        <div class="apartment-location">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                <path fill-rule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
-                            </svg>
-                            <span>North Tower, Floor 12</span>
+        <section class="property-section">
+            <div class="property-container">
+                <div class="section-header"><i class="fas fa-building"></i><h1 class="property-title">Kaur Complex Property Price List</h1></div>
+                <div class="gold-accent"></div>
+                <p class="property-subtitle">Latest prices and availability for apartments, shops, and commercial spaces</p>
+                <!-- Main Price List -->
+                <div class="property-table-section">
+                    <div class="property-table-card">
+                        <div class="property-table-responsive">
+                            <table class="property-table">
+                                <tr><th colspan="3" class="category-cell"><span class="icon-cell"><i class="fas fa-store"></i></span> Commercial</th></tr>
+                                <tr><th>Floor</th><th colspan="2">Price/Sqft.</th></tr>
+                                <tr><td>Ground</td><td colspan="2">Rs. 30,000</td></tr>
+                                <tr><td>First Floor</td><td colspan="2">Rs. 27,000</td></tr>
+                            </table>
                         </div>
-                        <div class="apartment-features">
-                            <div class="feature-item">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z" />
-                                    <path d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z" />
-                                </svg>
-                                <span>2,450 sq.ft</span>
-                            </div>
-                            <div class="feature-item">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" clip-rule="evenodd" />
-                                </svg>
-                                <span>3 Bedrooms</span>
-                            </div>
-                            <div class="feature-item">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M11.47 13.28a.75.75 0 001.06 0l3.75-3.75a.75.75 0 10-1.06-1.06L12 11.69 8.78 8.47a.75.75 0 00-1.06 1.06l3.75 3.75z" />
-                                    <path fill-rule="evenodd" d="M11.47 4.72a.75.75 0 011.06 0l7.5 7.5a.75.75 0 11-1.06 1.06L12 6.31l-6.97 6.97a.75.75 0 01-1.06-1.06l7.5-7.5zm.53 7.59l-6.97 6.97a.75.75 0 01-1.06-1.06l7.5-7.5a.75.75 0 011.06 0l7.5 7.5a.75.75 0 11-1.06 1.06L12 12.31z" clip-rule="evenodd" />
-                                </svg>
-                                <span>3 Bathrooms</span>
-                            </div>
-                        </div>
-                        <footer class="apartment-footer">
-                            <div class="price">PKR 85,000,000 <span>/ Starting Price</span></div>
-                        </footer>
                     </div>
-                </article>
-
-                <!-- Apartment Card 2 -->
-                <article class="apartment-card">
-                    <figure class="apartment-img">
-                        <img src="../assets/images/gallery/penthouse01_Living_Room.webp" alt="Penthouse suite with panoramic city views in Peshawar" loading="lazy">
-                        <span class="status-badge completed">Sold Out</span>
-                    </figure>
-                    <div class="apartment-details">
-                        <h3 class="apartment-title">Premium Penthouse Suite</h3>
-                        <div class="apartment-location">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                <path fill-rule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
-                            </svg>
-                            <span>South Tower, Floor 24</span>
+                    <div class="property-table-card">
+                        <div class="property-table-responsive">
+                            <table class="property-table">
+                                <tr><th colspan="3" class="category-cell"><span class="icon-cell">A</span> Tower</th></tr>
+                                <tr><th>Floor</th><th colspan="2">Price/Sqft.</th></tr>
+                                <tr><td>Ground – 3rd</td><td colspan="2">9,500</td></tr>
+                                <tr><td>4th – 6th</td><td colspan="2">9,000</td></tr>
+                                <tr><td>7th – 9th</td><td colspan="2">8,500</td></tr>
+                                <tr><td>Penthouse</td><td colspan="2">8,000</td></tr>
+                            </table>
                         </div>
-                        <div class="apartment-features">
-                            <div class="feature-item">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z" />
-                                    <path d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z" />
-                                </svg>
-                                <span>4,200 sq.ft</span>
-                            </div>
-                            <div class="feature-item">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" clip-rule="evenodd" />
-                                </svg>
-                                <span>4 Bedrooms</span>
-                            </div>
-                            <div class="feature-item">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M11.47 13.28a.75.75 0 001.06 0l3.75-3.75a.75.75 0 10-1.06-1.06L12 11.69 8.78 8.47a.75.75 0 00-1.06 1.06l3.75 3.75z" />
-                                    <path fill-rule="evenodd" d="M11.47 4.72a.75.75 0 011.06 0l7.5 7.5a.75.75 0 11-1.06 1.06L12 6.31l-6.97 6.97a.75.75 0 01-1.06-1.06l7.5-7.5zm.53 7.59l-6.97 6.97a.75.75 0 01-1.06-1.06l7.5-7.5a.75.75 0 011.06 0l7.5 7.5a.75.75 0 11-1.06 1.06L12 12.31z" clip-rule="evenodd" />
-                                </svg>
-                                <span>4.5 Bathrooms</span>
-                            </div>
-                        </div>
-                        <footer class="apartment-footer">
-                            <div class="price">PKR 220,000,000 <span>/ Starting Price</span></div>
-                        </footer>
                     </div>
-                </article>
-
-                <!-- Apartment Card 3 -->
-                <article class="apartment-card">
-                    <figure class="apartment-img">
-                        <img src="../assets/images/gallery/executive-studio-apartment.jpg" alt="Modern studio apartment with smart features in Peshawar" loading="lazy">
-                        <span class="status-badge">Available</span>
-                    </figure>
-                    <div class="apartment-details">
-                        <h3 class="apartment-title">Executive Studio Apartment</h3>
-                        <div class="apartment-location">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                <path fill-rule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
-                            </svg>
-                            <span>East Wing, Floor 8</span>
+                    <div class="property-table-card">
+                        <div class="property-table-responsive">
+                            <table class="property-table">
+                                <tr><th colspan="3" class="category-cell"><span class="icon-cell">B</span> Tower</th></tr>
+                                <tr><th>Floor</th><th colspan="2">Price/Sqft.</th></tr>
+                                <tr><td>Ground – 3rd</td><td colspan="2">9,000</td></tr>
+                                <tr><td>5th – 6th</td><td colspan="2">8,500</td></tr>
+                                <tr><td>7th – 9th</td><td colspan="2">8,000</td></tr>
+                            </table>
                         </div>
-                        <div class="apartment-features">
-                            <div class="feature-item">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z" />
-                                    <path d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z" />
-                                </svg>
-                                <span>1,200 sq.ft</span>
-                            </div>
-                            <div class="feature-item">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" clip-rule="evenodd" />
-                                </svg>
-                                <span>1 Bedroom</span>
-                            </div>
-                            <div class="feature-item">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M11.47 13.28a.75.75 0 001.06 0l3.75-3.75a.75.75 0 10-1.06-1.06L12 11.69 8.78 8.47a.75.75 0 00-1.06 1.06l3.75 3.75z" />
-                                    <path fill-rule="evenodd" d="M11.47 4.72a.75.75 0 011.06 0l7.5 7.5a.75.75 0 11-1.06 1.06L12 6.31l-6.97 6.97a.75.75 0 01-1.06-1.06l7.5-7.5zm.53 7.59l-6.97 6.97a.75.75 0 01-1.06-1.06l7.5-7.5a.75.75 0 011.06 0l7.5 7.5a.75.75 0 11-1.06 1.06L12 12.31z" clip-rule="evenodd" />
-                                </svg>
-                                <span>1 Bathroom</span>
-                            </div>
-                        </div>
-                        <footer class="apartment-footer">
-                            <div class="price">PKR 45,000,000 <span>/ Starting Price</span></div>
-                        </footer>
                     </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- BEGIN: Commercial Content from shops.html -->
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <div class="header-content">
-                <h1>Shops & Commercial Spaces</h1>
-               
-                <div class="header-cta">
-                    <a href="#available-shops" class="btn btn-primary">
-                        <i class="fas fa-store"></i> View Available Spaces
-                    </a>
-                    <a href="#contact" class="btn btn-outline">
-                        <i class="fas fa-phone-alt"></i> Contact Agent
-                    </a>
+                    <div class="property-table-card">
+                        <div class="property-table-responsive">
+                            <table class="property-table">
+                                <tr><th colspan="3" class="category-cell"><span class="icon-cell">C</span> Tower</th></tr>
+                                <tr><th>Floor</th><th colspan="2">Price/Sqft.</th></tr>
+                                <tr><td>1st – 3rd</td><td colspan="2">9,000</td></tr>
+                                <tr><td>4th – 6th</td><td colspan="2">8,500</td></tr>
+                                <tr><td>7th – 9th</td><td colspan="2">8,000</td></tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="payment-plan"><i class="fas fa-coins"></i> 20% DOWN PAYMENT, 80% INSTALLMENTS</div>
+                <!-- Tower B Availability -->
+                <div class="property-table-section">
+                    <div class="section-header"><i class="fas fa-building-circle-check"></i><h2 class="property-title" style="font-size:1.3rem; margin-bottom:10px;">Tower B Availability</h2></div>
+                    <div class="gold-accent" style="margin-bottom:12px;"></div>
+                    <div class="property-table-card">
+                        <div class="property-table-responsive">
+                            <table class="property-table">
+                                <tr><th>Apartment</th><th>Floor</th><th>Size (sqft.)</th><th>Price</th></tr>
+                                <tr><td>Studio</td><td>4th</td><td>454</td><td>38,59,000</td></tr>
+                                <tr><td>Studio</td><td>5th</td><td>510</td><td>43,35,000</td></tr>
+                                <tr><td>Studio</td><td>9th</td><td>540</td><td>43,20,000</td></tr>
+                                <tr><td>2 Bed</td><td>5th</td><td>1019</td><td>86,61,500</td></tr>
+                                <tr><td>2 Bed</td><td>7th–8th</td><td>1054</td><td>92,75,200</td></tr>
+                                <tr><td>2 Bed</td><td>5th</td><td>1087</td><td>92,39,500</td></tr>
+                                <tr><td>2 Bed</td><td>7th–9th</td><td>1087</td><td>86,96,000</td></tr>
+                                <tr><td>2 Bed</td><td>7th–8th</td><td>1102</td><td>88,16,000</td></tr>
+                                <tr><td>3 Bed</td><td>5th–6th</td><td>1138</td><td>96,73,020</td></tr>
+                                <tr><td>3 Bed</td><td>8th–9th</td><td>1138</td><td>91,04,000</td></tr>
+                                <tr><td>3 Bed</td><td>5th–6th</td><td>1166</td><td>99,11,000</td></tr>
+                                <tr><td>3 Bed</td><td>9th</td><td>1335</td><td>1,17,48,000</td></tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="payment-plan"><i class="fas fa-coins"></i> 20% down payment, 80% in 25 months flexible instalment plan</div>
+                <!-- Shops Price List -->
+                <div class="property-table-section">
+                    <div class="section-header"><i class="fas fa-shop"></i><h2 class="property-title" style="font-size:1.3rem; margin-bottom:10px;">Kaur Complex Shops Price List</h2></div>
+                    <div class="gold-accent" style="margin-bottom:12px;"></div>
+                    <div class="property-table-card">
+                        <div class="property-table-responsive">
+                            <table class="property-table">
+                                <tr><th colspan="4" class="category-cell">Ground Floor</th></tr>
+                                <tr><th>Shop No.</th><th>Floor</th><th>Area</th><th>Price</th></tr>
+                                <tr><td>S-02</td><td>GF</td><td>Shop-773</td><td>25,509,000</td></tr>
+                                <tr><td>S-01</td><td>GF</td><td>Shop-2348</td><td>77,484,000</td></tr>
+                                <tr><td>S-05</td><td>GF</td><td>Shop-378</td><td>11,340,000</td></tr>
+                                <tr><td>S-06</td><td>GF</td><td>Shop-378</td><td>11,340,000</td></tr>
+                                <tr><td>S-07</td><td>GF</td><td>Shop-343</td><td>10,290,000</td></tr>
+                                <tr><td>S-08</td><td>GF</td><td>Shop-343</td><td>10,290,000</td></tr>
+                                <tr><td>S-09</td><td>GF</td><td>Shop-318</td><td>9,540,000</td></tr>
+                                <tr><td>S-10</td><td>GF</td><td>Shop-318</td><td>9,540,000</td></tr>
+                                <tr><td>S-11</td><td>GF</td><td>Shop-318</td><td>9,540,000</td></tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="property-table-card">
+                        <div class="property-table-responsive">
+                            <table class="property-table">
+                                <tr><th colspan="4" class="category-cell">First Floor</th></tr>
+                                <tr><th>Shop No.</th><th>Floor</th><th>Area</th><th>Price</th></tr>
+                                <tr><td>S-01</td><td>FF</td><td>Shop-479</td><td>9,540,000</td></tr>
+                                <tr><td>S-11</td><td>FF</td><td>Shop-216</td><td>5,400,000</td></tr>
+                                <tr><td>S-10</td><td>FF</td><td>Shop-216</td><td>5,400,000</td></tr>
+                                <tr><td>S-09</td><td>FF</td><td>Shop-182</td><td>5,005,000</td></tr>
+                                <tr><td>S-08</td><td>FF</td><td>Shop-235</td><td>6,462,500</td></tr>
+                                <tr><td>S-07</td><td>FF</td><td>Shop-280</td><td>7,700,000</td></tr>
+                                <tr><td>S-06</td><td>FF</td><td>Shop-387</td><td>10,642,500</td></tr>
+                                <tr><td>S-02</td><td>FF</td><td>Shop-479</td><td>13,172,500</td></tr>
+                                <tr><td>S-03</td><td>FF</td><td>Shop-479</td><td>13,172,500</td></tr>
+                                <tr><td>S-04</td><td>FF</td><td>Shop-479</td><td>13,172,500</td></tr>
+                                <tr><td>S-05</td><td>FF</td><td>Shop-383</td><td>10,532,500</td></tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-banner">
+                    <span><i class="fas fa-phone"></i> <strong>For Details & Bookings:</strong> 0332 0001888</span>
+                    <span class="contact-details">kaurcomplexofficial@hotmail.com &nbsp;|&nbsp; www.kaurcomplex.com</span>
+                    <span class="contact-details">Site Office: Tower A, Main Tajabad road Opposite Basharat Market Near Bannu House Tajabad peshawar</span>
                 </div>
             </div>
-            <div class="header-stats">
-                <div class="stat-badge">
-                    <i class="fas fa-chart-line"></i>
-                    <span>15-18% Annual ROI</span>
-                </div>
-                <div class="stat-badge">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Prime Peshawar Location</span>
-                </div>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <i class="fas fa-chevron-down"></i>
-        </div>
-    </section>
+        </section>
 
-    <!-- Commercial Overview -->
-    <section class="commercial-overview">
-        <div class="container">
+        <!-- Executive Tower C Posts Section -->
+        <div class="property-table-section executive-tower-section">
             <div class="section-header">
-                <h2>Commercial Investment Opportunity</h2>
-                <p>Secure your stake in one of Peshawar's most promising commercial developments</p>
+                <i class="fas fa-building"></i>
+                <h2 class="property-title" style="font-size:1.3rem; margin-bottom:10px;">Executive Tower C - Modern & Luxury Apartments</h2>
             </div>
-            
-            <div class="commercial-stats">
-                <div class="stat-card">
-                    <div class="stat-icon">
-                        <i class="fas fa-store"></i>
-                    </div>
-                    <h3>100+</h3>
-                    <p>Commercial Units</p>
-                </div>
-                
-                <div class="stat-card">
-                    <div class="stat-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>2000+</h3>
-                    <p>Daily Foot Traffic</p>
-                </div>
-                
-                <div class="stat-card">
-                    <div class="stat-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>15%</h3>
-                    <p>Annual ROI</p>
-                </div>
-                
-                <div class="stat-card">
-                    <div class="stat-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <h3>Prime</h3>
-                    <p>Location</p>
-                </div>
-            </div>
-        </div>
-    </section>
+            <div class="gold-accent" style="margin-bottom:12px;"></div>
 
-    <!-- Shop Types -->
-    <section class="shop-types">
-        <div class="container">
-            <div class="section-header">
-                <h2>Shop Categories</h2>
-                <p>Choose from various shop sizes and configurations to suit your business needs</p>
-            </div>
-            
-            <div class="shop-categories">
-                <div class="shop-category">
-                    <div class="category-image">
-                        <img src="../assets/images/gallery/small-shop.webp" alt="Small Shop">
+            <!-- Cover Post -->
+            <div class="property-table-card exec-card glassy-card">
+                <div class="exec-card-flex">
+                    <div class="exec-card-img-wrap">
+                        <img src="../assets/images/gallery/cover.jpg" alt="Kaur Complex Executive Tower C Cover" class="exec-card-img">
+                        <div class="exec-card-gold-badge"><i class="fas fa-crown"></i></div>
                     </div>
-                    <div class="category-content">
-                        <h3>Small Shops</h3>
-                        <p>Perfect for retail stores, boutiques, and specialty shops</p>
-                        <ul>
-                            <li><i class="fas fa-ruler-combined"></i> Area: 200 - 400 sq ft</li>
-                            <li><i class="fas fa-dollar-sign"></i> Price: PKR 15M - 25M</li>
-                            <li><i class="fas fa-users"></i> High foot traffic</li>
-                            <li><i class="fas fa-parking"></i> Parking available</li>
-                        </ul>
-                        <a href="#small-shops" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-                
-                <div class="shop-category">
-                    <div class="category-image">
-                        <img src="../assets/images/gallery/medium-shops.webp" alt="Medium Shop">
-                    </div>
-                    <div class="category-content">
-                        <h3>Medium Shops</h3>
-                        <p>Ideal for restaurants, cafes, and larger retail stores</p>
-                        <ul>
-                            <li><i class="fas fa-ruler-combined"></i> Area: 500 - 800 sq ft</li>
-                            <li><i class="fas fa-dollar-sign"></i> Price: PKR 30M - 45M</li>
-                            <li><i class="fas fa-users"></i> Excellent visibility</li>
-                            <li><i class="fas fa-parking"></i> Multiple parking spaces</li>
-                        </ul>
-                        <a href="#medium-shops" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-                
-                <div class="shop-category">
-                    <div class="category-image">
-                        <img src="../assets/images/gallery/large-commercial-spaces.webp" alt="Large Shop">
-                    </div>
-                    <div class="category-content">
-                        <h3>Large Commercial Spaces</h3>
-                        <p>Perfect for supermarkets, banks, and corporate offices</p>
-                        <ul>
-                            <li><i class="fas fa-ruler-combined"></i> Area: 1000 - 2000 sq ft</li>
-                            <li><i class="fas fa-dollar-sign"></i> Price: PKR 60M - 100M</li>
-                            <li><i class="fas fa-users"></i> Maximum exposure</li>
-                            <li><i class="fas fa-parking"></i> Dedicated parking area</li>
-                        </ul>
-                        <a href="#large-shops" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Investment Benefits -->
-    <section class="investment-benefits">
-        <div class="container">
-            <div class="section-header">
-                <h2>Why Invest in Kaur Complex Shops?</h2>
-                <p>Discover the advantages of commercial investment in our development</p>
-            </div>
-            
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <!-- ... (rest of shops.html content continues here, to be appended) ... -->
-                    </div>
-                    <h3>Benefit Title</h3>
-                    <p>Benefit description goes here...</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- END: Commercial Content from shops.html -->
-
-    <!-- Location Section -->
-    <section class="location-section">
-        <div class="container">
-            <div class="location-content">
-                <div class="location-info">
-                    <h3>Prime Location in Peshawar</h3>
-                    <p>Our luxury apartments are situated in the most prestigious area of Peshawar, offering easy access to major landmarks, business districts, and cultural attractions of the city.</p>
-                    <p>Enjoy the perfect blend of urban convenience and peaceful living in the heart of Khyber Pakhtunkhwa.</p>
-                    
-                    <div class="location-features">
-                        <div class="location-feature">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                <path fill-rule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
-                            </svg>
-                            <div>
-                                <strong>5 minutes</strong> from Peshawar's central business district
-                            </div>
+                    <div class="exec-card-content">
+                        <h3 class="exec-card-title">KAUR COMPLEX - EXECUTIVE TOWER C</h3>
+                        <p class="exec-card-subtitle">MODERN & LUXURY APARTMENTS IN PESHAWAR</p>
+                        <div class="exec-card-highlight">
+                            <span class="exec-card-label">BOOKING ONLY FROM</span>
+                            <span class="exec-card-value">6 LAC</span>
                         </div>
-                        <div class="location-feature">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                <path fill-rule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
-                            </svg>
+                        <div class="exec-card-details">
                             <div>
-                                <strong>10 minutes</strong> from Bacha Khan International Airport
+                                <span class="exec-card-label">FOR DETAILS & BOOKINGS</span>
+                                <span class="exec-card-value">0332 0001888</span>
                             </div>
-                        </div>
-                        <div class="location-feature">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                <path fill-rule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
-                            </svg>
                             <div>
-                                <strong>Walking distance</strong> to top schools and hospitals
+                                <span class="exec-card-label">LOCATION</span>
+                                <span class="exec-card-value">WEST BLOCK 9, Opposite Basharat Market<br>Hayatabad Phase-3, Peshawar</span>
                             </div>
                         </div>
                     </div>
-                    
-                    <a href="#contact" class="btn btn-primary" style="margin-top: 1.5rem;">
-                        Get Directions
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z" clip-rule="evenodd" />
-                        </svg>
-                    </a>
-                </div>
-                <div class="location-map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3307.041292035884!2d71.5243153152106!3d34.00898098061314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38d917b90f0e79cf%3A0xa816b2637558a412!2sPeshawar%2C%20Khyber%20Pakhtunkhwa%2C%20Pakistan!5e0!3m2!1sen!2s!4v1625060000000!5m2!1sen!2s" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section" id="contact">
-        <div class="container">
-            <div class="cta-content">
-                <h2 style="color: white;">Ready to Experience Luxury Living in Peshawar?</h2>
-                <div style="display: flex; gap: 1rem; justify-content: center;">
-                    <a href="tel:+92911234567" class="btn btn-secondary">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-                            <path fill-rule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z" clip-rule="evenodd" />
-                        </svg>
-                        Call Now
-                    </a>
-                    <a href="mailto:info@peshawarluxury.com" class="btn btn-secondary">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-                            <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
-                            <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
-                        </svg>
-                        Email Us
-                    </a>
+            <!-- 1 Bed Apartment Post -->
+            <div class="property-table-card exec-card glassy-card">
+                <div class="exec-card-flex">
+                    <div class="exec-card-img-wrap">
+                        <img src="../assets/images/gallery/1bed.jpg" alt="1 Bed Apartment at Kaur Complex" class="exec-card-img">
+                        <div class="exec-card-gold-badge"><i class="fas fa-bed"></i></div>
+                    </div>
+                    <div class="exec-card-content">
+                        <h3 class="exec-card-title">1 BED APARTMENT</h3>
+                        <p class="exec-card-subtitle">STARTING FROM TOTAL PRICE</p>
+                        <div class="exec-card-highlight">
+                            <span class="exec-card-label">BOOKING STARTS FROM</span>
+                            <span class="exec-card-value">Rs 600,000</span>
+                        </div>
+                        <div class="exec-card-highlight">
+                            <span class="exec-card-label">48 MONTHS INSTALLMENTS</span>
+                            <span class="exec-card-value">Rs 60,000</span>
+                        </div>
+                        <div class="exec-card-details">
+                            <div>
+                                <span class="exec-card-label">AVAILABLE SIZES (sqft.)</span>
+                                <span class="exec-card-value">579, 600, 623, 637</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            <!-- 2 Bed Apartment Post -->
+            <div class="property-table-card exec-card glassy-card">
+                <div class="exec-card-flex">
+                    <div class="exec-card-img-wrap">
+                        <img src="../assets/images/gallery/2bed.jpg" alt="2 Bed Apartment at Kaur Complex" class="exec-card-img">
+                        <div class="exec-card-gold-badge"><i class="fas fa-bed"></i></div>
+                    </div>
+                    <div class="exec-card-content">
+                        <h3 class="exec-card-title">2 BED APARTMENT</h3>
+                        <p class="exec-card-subtitle">STARTING FROM TOTAL PRICE</p>
+                        <div class="exec-card-highlight">
+                            <span class="exec-card-label">BOOKING STARTS FROM</span>
+                            <span class="exec-card-value">Rs 600,000</span>
+                        </div>
+                        <div class="exec-card-highlight">
+                            <span class="exec-card-label">48 MONTHS INSTALLMENTS</span>
+                            <span class="exec-card-value">Rs 100,000</span>
+                        </div>
+                        <div class="exec-card-details">
+                            <div>
+                                <span class="exec-card-label">AVAILABLE SIZES (sqft.)</span>
+                                <span class="exec-card-value">1052, 1097, 1116, 1181</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3 Bed Apartment Post -->
+            <div class="property-table-card exec-card glassy-card">
+                <div class="exec-card-flex">
+                    <div class="exec-card-img-wrap">
+                        <img src="../assets/images/gallery/3bed.jpg" alt="3 Bed Apartment at Kaur Complex" class="exec-card-img">
+                        <div class="exec-card-gold-badge"><i class="fas fa-bed"></i></div>
+                    </div>
+                    <div class="exec-card-content">
+                        <h3 class="exec-card-title">3 BED APARTMENT</h3>
+                        <p class="exec-card-subtitle">STARTING FROM TOTAL PRICE</p>
+                        <div class="exec-card-highlight">
+                            <span class="exec-card-label">BOOKING STARTS FROM</span>
+                            <span class="exec-card-value">Rs 600,000</span>
+                        </div>
+                        <div class="exec-card-highlight">
+                            <span class="exec-card-label">TOTAL PRICE</span>
+                            <span class="exec-card-value">Rs 12,416,000</span>
+                        </div>
+                        <div class="exec-card-highlight">
+                            <span class="exec-card-label">48 MONTHS INSTALLMENTS</span>
+                            <span class="exec-card-value">Rs 120,000</span>
+                        </div>
+                        <div class="exec-card-details">
+                            <div>
+                                <span class="exec-card-label">SIZE (sqft.)</span>
+                                <span class="exec-card-value">1552</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Construction Update Post -->
+            <div class="property-table-card exec-card glassy-card">
+                <div class="exec-card-flex">
+                    <div class="exec-card-img-wrap">
+                        <img src="../assets/images/gallery/contruction-updatee.jpg" alt="Construction Update" class="exec-card-img">
+                        <div class="exec-card-gold-badge"><i class="fas fa-hard-hat"></i></div>
+                    </div>
+                    <div class="exec-card-content">
+                        <h3 class="exec-card-title">CONSTRUCTION UPDATE</h3>
+                        <p class="exec-card-subtitle">Latest progress photos of Executive Tower C</p>
+                        <div class="exec-card-details">
+                            <div>
+                                <span class="exec-card-label">Status</span>
+                                <span class="exec-card-value">Ongoing - 2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Banner -->
+            <div class="contact-banner">
+                <span><i class="fas fa-phone"></i> <strong>For Details & Bookings:</strong> 0332 0001888</span>
+                <span class="contact-details">Site Office: Tower A, Main Tajabad road Opposite Basharat Market Near Bannu House Tajabad peshawar</span>
+            </div>
         </div>
-    </section>
     </main>
-
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section about">
                     <div class="footer-logo">
-                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M20 0L40 20L20 40L0 20L20 0Z" fill="#D4AF37"/>
-                            <path d="M20 10L30 20L20 30L10 20L20 10Z" fill="#1E3A8A"/>
-                        </svg>
+                        <img src="../assets/images/gallery/logo-kc.png" alt="Kaur Complex Logo" class="site-logo">
                         <span>Kaur Complex</span>
                     </div>
                     <p>Peshawar's premier luxury gated community offering world-class living experiences with unmatched amenities and security.</p>
@@ -449,7 +683,6 @@
                         <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
-                
                 <div class="footer-section links">
                     <h4>Quick Links</h4>
                     <ul>
@@ -459,22 +692,19 @@
                         <li><a href="../pages/contact.html">Contact Us</a></li>
                     </ul>
                 </div>
-                
                 <div class="footer-section contact">
                     <h4>Contact Info</h4>
                     <div class="contact-info">
-                        <p><i class="fas fa-map-marker-alt"></i> Kaur Complex, Prime Location, Peshawar, Pakistan</p>
-                        <p><i class="fas fa-phone"></i> +92 300 123 4567</p>
-                        <p><i class="fas fa-envelope"></i> info@kaurcomplex.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Tower A, Main Tajabad road Opposite Basharat Market Near Bannu House Tajabad peshawar</p>
+                        <p><i class="fas fa-phone"></i> 0332 0001888</p>
+                        <p><i class="fas fa-envelope"></i> kaurcomplexofficial@hotmail.com</p>
                         <p><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 6:00 PM</p>
                     </div>
                 </div>
-                
             </div>
-            
             <div class="footer-bottom">
                 <div class="copyright">
-                    <p>© 2024 Kaur Complex. All rights reserved.</p>
+                    <p>&copy; 2024 Kaur Complex. All rights reserved.</p>
                 </div>
                 <div class="footer-links">
                     <a href="#">Privacy Policy</a>
@@ -484,17 +714,12 @@
             </div>
         </div>
     </footer>
-
-    <!-- JavaScript -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <div class="whatsapp-float">
+        <a href="https://wa.me/923320001888" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
     <script src="../assets/js/main.js"></script>
-    <script>
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true
-        });
-    </script>
     <button class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></button>
 </body>
 </html>
