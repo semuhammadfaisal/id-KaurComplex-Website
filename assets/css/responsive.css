@@ -588,3 +588,11 @@
     right: 20px;
     z-index: 1001;
 }
+
+/* Responsive: Call Floating Button - match WhatsApp */
+@media (max-width: 600px) {
+  .call-float {
+    right: 16px;
+    bottom: 110px;
+  }
+}
