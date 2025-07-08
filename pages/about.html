@@ -48,42 +48,13 @@
     </nav>
 
     <main class="main-content">
-    <!-- Hero Banner -->
-    <!-- REMOVE FROM HERE -->
-    <section class="about-hero heavy-luxury-hero">
-        <div class="hero-bg-svg">
-            <svg width="100%" height="100%" viewBox="0 0 1440 600" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;">
-                <defs>
-                    <radialGradient id="goldRadial" cx="50%" cy="40%" r="80%" fx="50%" fy="40%" gradientTransform="rotate(10)">
-                        <stop offset="0%" stop-color="#fffbe6"/>
-                        <stop offset="60%" stop-color="#ffe082"/>
-                        <stop offset="100%" stop-color="#d4af37"/>
-                    </radialGradient>
-                </defs>
-                <ellipse cx="720" cy="320" rx="700" ry="260" fill="url(#goldRadial)" opacity="0.35"/>
-                <ellipse cx="1100" cy="100" rx="220" ry="90" fill="#d4af37" opacity="0.08"/>
-                <ellipse cx="300" cy="500" rx="180" ry="60" fill="#d4af37" opacity="0.10"/>
-                <text x="50%" y="70%" text-anchor="middle" font-size="220" font-family="Playfair Display, serif" fill="#d4af37" fill-opacity="0.07" letter-spacing="-10">K</text>
-            </svg>
-        </div>
-        <div class="container hero-content-wrapper">
-            <div class="hero-content luxury-hero-content">
-                <h1 class="luxury-hero-title">Redefining Luxury Living in Peshawar</h1>
-                <div class="luxury-hero-accent"></div>
-                <p class="luxury-hero-subtitle">Where Vision, Craft, and Community Converge<br>to Create the Most Exclusive Address</p>
-                <a href="#contact" class="luxury-hero-btn">Schedule a Visit</a>
-            </div>
-        </div>
-    </section>
-    <!-- REMOVE UP TO HERE -->
-
     <!-- Introduction Section -->
     <section class="about-section realistic-about">
         <div class="container about-container">
             <div class="about-card about-card-combined">
                 <div class="about-content realistic-about-content">
                     <h2 class="section-title">About Us</h2>
-                    <div class="about-gold-accent"></div>
+                    
                     <h3 class="section-subtitle" style="color: #000; font-size: 1.25rem; margin-bottom: 18px;">Welcome to Kaur Complex – A Vision for Modern Family Living in Peshawar</h3>
                     <p style="margin-bottom: 12px;">Kaur Complex is a thoughtfully planned residential project dedicated to providing a safe, comfortable, and modern lifestyle for families in Peshawar. Strategically located, the complex offers a secure gated community environment that reflects international living standards with a focus on family values and long-term investment potential.</p>
                     <p style="margin-bottom: 12px;">We are proud to introduce a state-of-the-art residential and commercial development featuring:</p>
@@ -200,187 +171,544 @@
         </style>
     </section>
 
-    <section class="features-section why-choose-us-section">
+    <section class="features-section why-choose-us-section" aria-label="Why Choose Kaur Complex">
         <div class="container">
             <div class="section-header center">
                 <h2 class="section-title">Why Choose Us</h2>
-                <div class="why-gold-accent"></div>
-                <h3 class="section-subtitle">Unmatched Living Experience</h3>
+                <div class="why-gold-accent shimmer"></div>
+                <p class="section-intro" style="max-width: 520px; margin: 0 auto 18px auto; color: #6b5b2b; font-size: 1.13rem; font-weight: 500; letter-spacing: 0.01em;">Experience the gold standard in luxury living, security, and investment. Here's what sets Kaur Complex apart:</p>
+                <h3 class="section-subtitle" style="color: #1a2238; font-size: 1.15rem; margin-bottom: 8px;">Unmatched Living Experience</h3>
                 <p class="section-description">Discover the perfect blend of luxury, comfort, and investment potential</p>
             </div>
-            <div class="features-grid why-features-grid">
-                <div class="feature-card why-feature-card">
-                    <div class="feature-icon why-feature-icon"><i class="fas fa-location-arrow"></i></div>
-                    <h4>Prime Location</h4>
-                    <p>Strategically located in the most desirable area of Peshawar with easy access to business districts, schools, and entertainment.</p>
-                </div>
-                <div class="feature-card why-feature-card">
-                    <div class="feature-icon why-feature-icon"><i class="fas fa-shield-alt"></i></div>
-                    <h4>24/7 Security</h4>
-                    <p>Gated community with round-the-clock security, CCTV surveillance, and professional security personnel for complete peace of mind.</p>
-                </div>
-                <div class="feature-card why-feature-card">
-                    <div class="feature-icon why-feature-icon"><i class="fas fa-swimming-pool"></i></div>
-                    <h4>Resort-Style Amenities</h4>
-                    <p>State-of-the-art facilities including infinity pool, fully-equipped gym, spa, and beautifully landscaped gardens.</p>
-                </div>
-                <div class="feature-card why-feature-card">
-                    <div class="feature-icon why-feature-icon"><i class="fas fa-chart-line"></i></div>
-                    <h4>Smart Investment</h4>
-                    <p>High rental yield and appreciation potential in one of Peshawar's fastest-growing and most sought-after locations.</p>
-                </div>
-                <div class="feature-card why-feature-card">
-                    <div class="feature-icon why-feature-icon"><i class="fas fa-home"></i></div>
-                    <h4>Premium Construction</h4>
-                    <p>Built with the finest materials and international construction standards for lasting quality and durability.</p>
-                </div>
-                <div class="feature-card why-feature-card">
-                    <div class="feature-icon why-feature-icon"><i class="fas fa-concierge-bell"></i></div>
-                    <h4>Concierge Services</h4>
-                    <p>Dedicated concierge team to assist with all your needs, from maintenance requests to lifestyle services.</p>
-                </div>
-            </div>
+            <ul class="features-grid why-features-grid" role="list">
+                <li class="feature-card why-feature-card" data-aos="fade-up" data-aos-delay="0" tabindex="0" aria-label="Prime Location">
+                    <span class="feature-icon why-feature-icon floating-icon" aria-hidden="true"><i class="fas fa-location-arrow"></i></span>
+                    <div class="card-content">
+                        <h4>Prime Location</h4>
+                        <p>Strategically located in the most desirable area of Peshawar with easy access to business districts, schools, and entertainment.</p>
+                    </div>
+                </li>
+                <li class="feature-card why-feature-card" data-aos="fade-up" data-aos-delay="100" tabindex="0" aria-label="24/7 Security">
+                    <span class="feature-icon why-feature-icon floating-icon" aria-hidden="true"><i class="fas fa-shield-alt"></i></span>
+                    <div class="card-content">
+                        <h4>24/7 Security</h4>
+                        <p>Gated community with round-the-clock security, CCTV surveillance, and professional security personnel for complete peace of mind.</p>
+                    </div>
+                </li>
+                <li class="feature-card why-feature-card" data-aos="fade-up" data-aos-delay="200" tabindex="0" aria-label="Resort-Style Amenities">
+                    <span class="feature-icon why-feature-icon floating-icon" aria-hidden="true"><i class="fas fa-swimming-pool"></i></span>
+                    <div class="card-content">
+                        <h4>Resort-Style Amenities</h4>
+                        <p>State-of-the-art facilities including infinity pool, fully-equipped gym, spa, and beautifully landscaped gardens.</p>
+                    </div>
+                </li>
+                <li class="feature-card why-feature-card" data-aos="fade-up" data-aos-delay="300" tabindex="0" aria-label="Smart Investment">
+                    <span class="feature-icon why-feature-icon floating-icon" aria-hidden="true"><i class="fas fa-chart-line"></i></span>
+                    <div class="card-content">
+                        <h4>Smart Investment</h4>
+                        <p>High rental yield and appreciation potential in one of Peshawar's fastest-growing and most sought-after locations.</p>
+                    </div>
+                </li>
+                <li class="feature-card why-feature-card" data-aos="fade-up" data-aos-delay="400" tabindex="0" aria-label="Premium Construction">
+                    <span class="feature-icon why-feature-icon floating-icon" aria-hidden="true"><i class="fas fa-home"></i></span>
+                    <div class="card-content">
+                        <h4>Premium Construction</h4>
+                        <p>Built with the finest materials and international construction standards for lasting quality and durability.</p>
+                    </div>
+                </li>
+                <li class="feature-card why-feature-card" data-aos="fade-up" data-aos-delay="500" tabindex="0" aria-label="Concierge Services">
+                    <span class="feature-icon why-feature-icon floating-icon" aria-hidden="true"><i class="fas fa-concierge-bell"></i></span>
+                    <div class="card-content">
+                        <h4>Concierge Services</h4>
+                        <p>Dedicated concierge team to assist with all your needs, from maintenance requests to lifestyle services.</p>
+                    </div>
+                </li>
+            </ul>
         </div>
         <style>
         .why-choose-us-section {
-            background: linear-gradient(120deg, #f8fafc 0%, #fffbe6 100%);
-            padding: 64px 0 56px 0;
+            background: linear-gradient(120deg, #fffbe6 0%, #f8fafc 100%);
+            padding: 80px 0 68px 0;
+            position: relative;
+            z-index: 1;
+        }
+        .why-choose-us-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('https://www.transparenttextures.com/patterns/gold-fish-scale.png') repeat;
+            opacity: 0.07;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .why-choose-us-section .container {
+            position: relative;
+            z-index: 2;
         }
         .why-choose-us-section .section-header.center {
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
             text-align: center;
-            margin-bottom: 38px;
+            margin-bottom: 48px;
         }
         .why-gold-accent {
-            width: 60px;
-            height: 3px;
+            width: 80px;
+            height: 5px;
             background: linear-gradient(90deg, #d4af37 0%, #ffe082 100%);
-            border-radius: 2px;
-            margin: 0 auto 18px auto;
+            border-radius: 3px;
+            margin: 0 auto 22px auto;
+            position: relative;
+            overflow: hidden;
+        }
+        .why-gold-accent.shimmer::after {
+            content: '';
+            position: absolute;
+            left: -60px;
+            top: 0;
+            width: 60px;
+            height: 100%;
+            background: linear-gradient(120deg, rgba(255,255,255,0.0) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0.0) 100%);
+            animation: shimmer 2.5s infinite linear;
+        }
+        @keyframes shimmer {
+            0% { left: -60px; }
+            100% { left: 100%; }
+        }
+        .section-intro {
+            animation: fadeIn 1.2s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         .why-features-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 36px;
+            gap: 44px 36px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
         }
         .why-feature-card {
-            background: #fff;
-            border-radius: 20px;
-            box-shadow: 0 6px 28px rgba(30,34,56,0.10);
-            padding: 36px 28px 32px 28px;
+            background: rgba(255,255,255,0.90) url('https://www.transparenttextures.com/patterns/diamond-upholstery.png') repeat;
+            border-radius: 32px;
+            box-shadow: 0 8px 32px rgba(30,34,56,0.10), 0 2px 24px #1a223820;
+            padding: 64px 32px 44px 32px;
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            transition: box-shadow 0.18s, transform 0.18s;
-            border: 1.5px solid #f3e7c3;
+            transition: box-shadow 0.18s, transform 0.18s, background 0.2s, border 0.2s;
+            border: 2.5px solid transparent;
+            position: relative;
+            overflow: visible;
+            backdrop-filter: blur(2.5px);
+            outline: none;
+            margin-top: 40px;
         }
-        .why-feature-card:hover {
-            box-shadow: 0 16px 48px rgba(212,175,55,0.13), 0 4px 32px #1a223820;
-            transform: translateY(-6px) scale(1.025);
+        .why-feature-card:focus {
+            box-shadow: 0 0 0 3px #d4af37cc, 0 16px 48px rgba(212,175,55,0.13), 0 4px 32px #1a223820;
             border-color: #d4af37;
         }
-        .why-feature-icon {
-            width: 64px;
-            height: 64px;
+        .why-feature-card:hover, .why-feature-card:focus {
+            box-shadow: 0 20px 56px rgba(212,175,55,0.16), 0 4px 32px #1a223820;
+            transform: translateY(-12px) scale(1.04);
+            border-image: linear-gradient(120deg, #ffe082 0%, #d4af37 100%) 1;
+            border-width: 2.5px;
+            background: rgba(255,255,255,0.98) url('https://www.transparenttextures.com/patterns/diamond-upholstery.png') repeat;
+        }
+        .why-feature-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 32px;
+            pointer-events: none;
+            box-shadow: 0 2px 24px 0 #d4af3720 inset;
+            opacity: 0.7;
+        }
+        .floating-icon {
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%) scale(1);
+            z-index: 2;
+            box-shadow: 0 6px 24px #d4af3730, 0 1.5px 8px #fffbe6cc;
+            transition: box-shadow 0.2s, transform 0.2s;
             background: linear-gradient(135deg, #ffe082 0%, #d4af37 100%);
-            border-radius: 50%;
+            border: 4px solid #fffbe6;
+            width: 86px;
+            height: 86px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
-            color: #fff;
-            margin-bottom: 18px;
-            box-shadow: 0 2px 12px #d4af3720;
-            border: 2.5px solid #fffbe6;
+            font-size: 2.7rem;
+        }
+        .why-feature-card:hover .floating-icon, .why-feature-card:focus .floating-icon {
+            box-shadow: 0 12px 36px #d4af37cc, 0 2px 12px #fffbe6cc;
+            transform: translateX(-50%) scale(1.10) rotate(-6deg);
+            background: linear-gradient(120deg, #fffbe6 0%, #d4af37 100%);
+        }
+        .card-content {
+            margin-top: 24px;
         }
         .why-feature-card h4 {
-            font-size: 1.18rem;
+            font-size: 1.28rem;
             font-weight: 700;
             color: #1a2238;
-            margin-bottom: 10px;
+            margin-bottom: 14px;
             margin-top: 0;
+            letter-spacing: 0.5px;
         }
         .why-feature-card p {
-            font-size: 1.04rem;
+            font-size: 1.09rem;
             color: #555;
             margin-bottom: 0;
+            line-height: 1.7;
         }
         @media (max-width: 1100px) {
-            .why-features-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 24px;
+            .why-feature-card {
+                padding: 56px 18px 36px 18px;
             }
         }
         @media (max-width: 700px) {
-            .why-features-grid {
-                grid-template-columns: 1fr;
-                gap: 18px;
-            }
             .why-feature-card {
-                padding: 28px 12px 24px 12px;
+                padding: 48px 8px 28px 8px;
+                margin-top: 32px;
+            }
+            .floating-icon {
+                width: 68px;
+                height: 68px;
+                font-size: 2rem;
+                top: -32px;
             }
         }
         </style>
     </section>
 
     <!-- Unified Mission & Vision Section -->
-    <section class="unified-mission-vision">
-        <!-- Mission Card -->
-        <div class="mission-card unified-card">
-            <div class="card-image" style="background-image: url('../assets/images/about/mission-image.jpg');"></div>
-            <div class="card-content">
-                <span class="card-label">Our Core Purpose</span>
-                <h2 class="card-title">Mission</h2>
-                <div class="gold-divider"></div>
-                <p class="card-text">To craft exceptional living and commercial spaces that seamlessly blend luxury, sustainability, and community-focused design, delivering unparalleled quality and comfort to our residents and tenants.</p>
-                
-                <div class="card-details">
-                    <div class="detail-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--secondary-color)" width="20" height="20">
-                            <path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3zm-1.06 13.54L7.4 12l1.41-1.41 2.12 2.12 4.24-4.24 1.41 1.41-5.64 5.66z"/>
-                        </svg>
-                        <div class="detail-content">
-                            <h4>Quality Commitment</h4>
-                            <p>Premium materials and craftsmanship in every project</p>
-                        </div>
+    <section class="unified-mission-vision premium-mission-vision" aria-label="Mission and Vision">
+        <div class="mv-container">
+            <!-- Mission Card -->
+            <div class="mv-card mission-card" data-aos="fade-right" tabindex="0" aria-label="Our Mission">
+                <div class="mv-floating-icon mission-icon" aria-hidden="true">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <div class="mv-card-inner mv-row">
+                    <div class="mv-image mv-image-left">
+                        <img src="../assets/images/about/mission-image.jpg" alt="Mission - Kaur Complex" />
                     </div>
-                    
-                    <div class="detail-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--secondary-color)" width="20" height="20">
-                            <path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3zm0 4.5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5.67-1.5 1.5-1.5z"/>
-                        </svg>
-                        <div class="detail-content">
-                            <h4>Community Focus</h4>
-                            <p>Designing spaces that foster connection and belonging</p>
+                    <div class="mv-content mv-content-right">
+                        <span class="mv-label">Our Core Purpose</span>
+                        <h2 class="mv-title">Mission</h2>
+                        <div class="mv-gold-divider"></div>
+                        <p class="mv-text">To craft exceptional living and commercial spaces that seamlessly blend luxury, sustainability, and community-focused design, delivering unparalleled quality and comfort to our residents and tenants.</p>
+                        <ul class="mv-details-list">
+                            <li><i class="fas fa-gem"></i> <span>Premium materials and craftsmanship in every project</span></li>
+                            <li><i class="fas fa-users"></i> <span>Designing spaces that foster connection and belonging</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Vision Card -->
+            <div class="mv-card vision-card" data-aos="fade-left" tabindex="0" aria-label="Our Vision">
+                <div class="mv-floating-icon vision-icon" aria-hidden="true">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <div class="mv-card-inner mv-row mv-row-reverse">
+                    <div class="mv-image mv-image-right">
+                        <img src="../assets/images/about/vision-image.jpg" alt="Vision - Kaur Complex" />
+                    </div>
+                    <div class="mv-content mv-content-left">
+                        <span class="mv-label">Our Future Aspiration</span>
+                        <h2 class="mv-title">Vision</h2>
+                        <div class="mv-gold-divider"></div>
+                        <p class="mv-text">To establish Kaur Complex as a global benchmark for residential and commercial spaces in Pakistan, fostering vibrant, connected communities that elevate lifestyles and inspire pride.</p>
+                        <div class="mv-milestones">
+                            <h3 class="milestone-title">Key Milestones:</h3>
+                            <ul class="milestone-list">
+                                <li><i class="fas fa-check-circle"></i> Become the most trusted real estate brand in Pakistan by 2030</li>
+                                <li><i class="fas fa-leaf"></i> Develop 10+ sustainable communities nationwide</li>
+                                <li><i class="fas fa-award"></i> Achieve international recognition for architectural excellence</li>
+                                <li><i class="fas fa-smile"></i> Maintain 98%+ customer satisfaction across all projects</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- Vision Card -->
-        <div class="vision-card unified-card">
-            <div class="card-image" style="background-image: url('../assets/images/about/vision-image.jpg');"></div>
-            <div class="card-content">
-                <span class="card-label">Our Future Aspiration</span>
-                <h2 class="card-title">Vision</h2>
-                <div class="gold-divider"></div>
-                <p class="card-text">To establish Kaur Complex as a global benchmark for residential and commercial spaces in Pakistan, fostering vibrant, connected communities that elevate lifestyles and inspire pride.</p>
-                
-                <div class="milestones">
-                    <h3 class="milestone-title">Key Milestones:</h3>
-                    <ul class="milestone-list">
-                        <li>Become the most trusted real estate brand in Pakistan by 2030</li>
-                        <li>Develop 10+ sustainable communities nationwide</li>
-                        <li>Achieve international recognition for architectural excellence</li>
-                        <li>Maintain 98%+ customer satisfaction across all projects</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        <style>
+        .premium-mission-vision {
+            background: linear-gradient(120deg, #f8fafc 0%, #fffbe6 100%);
+            padding: 80px 0 60px 0;
+            position: relative;
+        }
+        .premium-mission-vision::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('https://www.transparenttextures.com/patterns/gold-fish-scale.png') repeat;
+            opacity: 0.06;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .mv-container {
+            display: flex;
+            flex-direction: column;
+            gap: 56px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 18px;
+            position: relative;
+            z-index: 2;
+            align-items: center;
+        }
+        .mv-card {
+            background: rgba(255,255,255,0.94) url('https://www.transparenttextures.com/patterns/diamond-upholstery.png') repeat;
+            border-radius: 36px;
+            box-shadow: 0 12px 40px rgba(30,34,56,0.13), 0 4px 32px #1a223820;
+            min-width: 320px;
+            max-width: 900px;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            overflow: visible;
+            padding: 0;
+            margin-top: 64px;
+            transition: box-shadow 0.18s, transform 0.18s, border 0.2s, background 0.2s;
+            border: 2.5px solid transparent;
+            backdrop-filter: blur(2.5px);
+            outline: none;
+        }
+        .mv-card:focus, .mv-card:hover {
+            box-shadow: 0 24px 64px rgba(212,175,55,0.18), 0 8px 36px #1a223820;
+            border-image: linear-gradient(120deg, #ffe082 0%, #d4af37 100%) 1;
+            border-width: 2.5px;
+            background: rgba(255,255,255,0.98) url('https://www.transparenttextures.com/patterns/diamond-upholstery.png') repeat;
+            transform: translateY(-10px) scale(1.03);
+        }
+        .mv-floating-icon {
+            position: absolute;
+            top: -48px;
+            left: 50%;
+            transform: translateX(-50%) scale(1);
+            z-index: 2;
+            box-shadow: 0 8px 32px #d4af3730, 0 2px 12px #fffbe6cc;
+            background: linear-gradient(135deg, #ffe082 0%, #d4af37 100%);
+            border: 4px solid #fffbe6;
+            width: 92px;
+            height: 92px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.9rem;
+            color: #fff;
+            border-radius: 50%;
+            transition: box-shadow 0.2s, transform 0.2s, background 0.2s;
+        }
+        .mv-card:hover .mv-floating-icon, .mv-card:focus .mv-floating-icon {
+            box-shadow: 0 16px 40px #d4af37cc, 0 4px 16px #fffbe6cc;
+            transform: translateX(-50%) scale(1.12) rotate(-6deg);
+            background: linear-gradient(120deg, #fffbe6 0%, #d4af37 100%);
+        }
+        .mv-card-inner.mv-row {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            width: 100%;
+            border-radius: 36px;
+            overflow: hidden;
+            min-height: 340px;
+            height: 100%;
+        }
+        .mv-card-inner.mv-row-reverse {
+            flex-direction: row-reverse;
+        }
+        .mv-image {
+            flex: 1 1 45%;
+            min-width: 180px;
+            max-width: 340px;
+            height: auto;
+            display: flex;
+            align-items: stretch;
+            justify-content: stretch;
+            width: 100%;
+        }
+        .mv-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 0;
+        }
+        .mv-image-left {
+            border-radius: 36px 0 0 36px;
+        }
+        .mv-image-right {
+            border-radius: 0 36px 36px 0;
+        }
+        .mv-image-left img {
+            border-radius: 36px 0 0 36px;
+        }
+        .mv-image-right img {
+            border-radius: 0 36px 36px 0;
+        }
+        .mv-content {
+            flex: 1 1 55%;
+            padding: 54px 44px 44px 44px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            text-align: left;
+            height: 100%;
+        }
+        .mv-content-right {
+            border-radius: 0 36px 36px 0;
+        }
+        .mv-content-left {
+            border-radius: 36px 0 0 36px;
+        }
+        .mv-label {
+            font-size: 1.07rem;
+            color: #d4af37;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        .mv-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #1a2238;
+            margin-bottom: 10px;
+            margin-top: 0;
+            letter-spacing: 0.5px;
+        }
+        .mv-gold-divider {
+            width: 64px;
+            height: 5px;
+            background: linear-gradient(90deg, #d4af37 0%, #ffe082 100%);
+            border-radius: 2.5px;
+            margin: 0 0 22px 0;
+        }
+        .mv-text {
+            font-size: 1.15rem;
+            color: #555;
+            margin-bottom: 22px;
+            line-height: 1.7;
+        }
+        .mv-details-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .mv-details-list li {
+            display: flex;
+            align-items: center;
+            font-size: 1.08rem;
+            color: #1a2238;
+            font-weight: 500;
+        }
+        .mv-details-list i {
+            color: #d4af37;
+            margin-right: 12px;
+            font-size: 1.25em;
+        }
+        .mv-milestones {
+            margin-top: 22px;
+            width: 100%;
+        }
+        .milestone-title {
+            font-size: 1.13rem;
+            color: #d4af37;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+        .milestone-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .milestone-list li {
+            display: flex;
+            align-items: center;
+            font-size: 1.08rem;
+            color: #1a2238;
+            font-weight: 500;
+        }
+        .milestone-list i {
+            color: #d4af37;
+            margin-right: 12px;
+            font-size: 1.25em;
+        }
+        @media (max-width: 1100px) {
+            .mv-card {
+                max-width: 600px;
+            }
+            .mv-card-inner.mv-row, .mv-card-inner.mv-row-reverse {
+                flex-direction: column !important;
+                border-radius: 36px;
+                min-height: unset;
+                height: auto;
+            }
+            .mv-image {
+                width: 100%;
+                max-width: 100%;
+                min-height: 180px;
+                height: 180px;
+                border-radius: 36px 36px 0 0 !important;
+            }
+            .mv-image img {
+                border-radius: 36px 36px 0 0 !important;
+            }
+            .mv-content {
+                padding: 36px 18px 24px 18px;
+                border-radius: 0 0 36px 36px !important;
+                align-items: center;
+                text-align: center;
+                height: auto;
+            }
+        }
+        @media (max-width: 700px) {
+            .premium-mission-vision {
+                padding: 48px 0 32px 0;
+            }
+            .mv-card {
+                border-radius: 22px;
+                margin-top: 36px;
+                max-width: 98vw;
+            }
+            .mv-image {
+                height: 120px;
+                min-height: 120px;
+                border-radius: 22px 22px 0 0 !important;
+            }
+            .mv-image img {
+                border-radius: 22px 22px 0 0 !important;
+            }
+            .mv-floating-icon {
+                width: 62px;
+                height: 62px;
+                font-size: 1.5rem;
+                top: -28px;
+            }
+            .mv-content {
+                padding: 24px 8px 0 8px;
+            }
+        }
+        </style>
     </section>
     </main>
 
