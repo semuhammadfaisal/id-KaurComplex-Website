@@ -9,64 +9,379 @@
     <link rel="stylesheet" href="../assets/css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Clean Tower Page Styles */
+        .tower-hero-container {
+            position: relative;
+            width: 100%;
+            height: 65vh;
+            min-height: 500px;
+            overflow: hidden;
+            margin-bottom: 80px;
+        }
+        
+        .tower-hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        
+        .tower-title-container {
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1200px;
+            background: white;
+            padding: 30px;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.08);
+            border-top: 4px solid #D4AF37;
+        }
+        
+        .tower-title {
+            font-family: 'Playfair Display', serif;
+            color: #1E3A8A;
+            font-size: 2.5rem;
+            margin: 0;
+            text-align: center;
+        }
+        
+        .tower-content-container {
+            max-width: 1200px;
+            margin: 100px auto 60px;
+            padding: 0 20px;
+        }
+        
+        .tower-description {
+            max-width: 800px;
+            margin: 0 auto 60px;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #555;
+        }
+        
+        .tower-features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 4px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            border-left: 3px solid #D4AF37;
+        }
+        
+        .feature-card i {
+            color: #D4AF37;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .feature-card h3 {
+            font-family: 'Playfair Display', serif;
+            color: #1E3A8A;
+            margin: 0 0 15px 0;
+            font-size: 1.3rem;
+        }
+        
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+            margin: 0;
+        }
+        
+        .tower-details-container {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .pricing-section, .amenities-section {
+            flex: 1;
+            background: white;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            color: #1E3A8A;
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #EEE;
+        }
+        
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .pricing-table th {
+            text-align: left;
+            padding: 12px 0;
+            font-weight: 500;
+            color: #555;
+            border-bottom: 1px solid #EEE;
+        }
+        
+        .pricing-table td {
+            padding: 12px 0;
+            border-bottom: 1px solid #EEE;
+            color: #333;
+        }
+        
+        .download-plan-btn {
+            display: inline-block;
+            margin-top: 18px;
+            background: #1E3A8A;
+            color: #fff;
+            padding: 10px 28px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+        
+        .download-plan-btn:hover {
+            background: #D4AF37;
+            color: #1E3A8A;
+        }
+        
+        .amenities-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .amenities-list li {
+            padding: 8px 0;
+            color: #555;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .amenities-list li:before {
+            content: "•";
+            color: #D4AF37;
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+        
+        .tower-cta-section {
+            text-align: center;
+            padding: 50px 20px;
+            background: #F9F9F9;
+            margin-top: 60px;
+        }
+        
+        .tower-cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            color: #1E3A8A;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .tower-cta-button {
+            display: inline-block;
+            background: #1E3A8A;
+            color: white;
+            padding: 14px 35px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .tower-cta-button:hover {
+            background: #D4AF37;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 1024px) {
+            .tower-hero-container {
+                height: 55vh;
+                min-height: 400px;
+            }
+            
+            .tower-title-container {
+                padding: 25px;
+            }
+            
+            .tower-title {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .tower-hero-container {
+                height: 45vh;
+                min-height: 350px;
+                margin-bottom: 70px;
+            }
+            
+            .tower-title-container {
+                padding: 20px;
+                bottom: -30px;
+            }
+            
+            .tower-title {
+                font-size: 1.8rem;
+            }
+            
+            .tower-details-container {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .tower-content-container {
+                margin-top: 80px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .tower-hero-container {
+                height: 40vh;
+                min-height: 300px;
+            }
+            
+            .tower-title {
+                font-size: 1.5rem;
+            }
+            
+            .tower-features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .amenities-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="../index.html">
-                    <img width="40" height="40" src="../assets/images/gallery/logo-kc.png" alt="Kaur Complex Logo">
-                    <span>Kaur Complex</span>
-                </a>
-            </div>
-            <div class="nav-menu">
-                <a href="../index.html" class="nav-link">Home</a>
-                <a href="about.html" class="nav-link">About</a>
-                <a href="apartments.html" class="nav-link">Properties</a>
-                <a href="contact.html" class="nav-link">Contact</a>
-                <a href="tel:03320001888" class="nav-cta">Call Now</a>
-            </div>
-        </div>
-    </nav>
-    <section class="tower-split-bg">
-      <div class="tower-split-container">
-        <div class="tower-split-image">
-          <img src="../assets/images/gallery/exterior-1.jpg" alt="Tower A" />
-        </div>
-        <div class="tower-split-content">
-          <div class="tower-split-accent"></div>
-          <h1 class="tower-split-title">Tower A</h1>
-          <p class="tower-split-subtitle">Luxury Family Living</p>
-          <div class="tower-split-card">
-            <h2>About Tower A</h2>
-            <p>Premium apartments with panoramic city views, modern amenities, and exclusive penthouse options. Ideal for families seeking luxury and comfort in the heart of Peshawar.</p>
-            <h3>Pricing</h3>
-            <table class="tower-pricing-table">
-              <thead>
-                <tr><th>Floor</th><th>Price/Sqft (PKR)</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>Ground - 3rd</td><td>9,500</td></tr>
-                <tr><td>4th - 6th</td><td>9,000</td></tr>
-                <tr><td>7th - 9th</td><td>8,500</td></tr>
-                <tr><td>Penthouse</td><td>8,000</td></tr>
-              </tbody>
-            </table>
-            <h3>Available Options</h3>
-            <ul class="tower-options-list tower-options-icons">
-              <li><i class="fas fa-bed"></i> 1, 2, and 3 Bedroom Apartments</li>
-              <li><i class="fas fa-crown"></i> Penthouses with private terraces</li>
-              <li><i class="fas fa-utensils"></i> Modern kitchens and bathrooms</li>
-              <li><i class="fas fa-car"></i> Secure parking and 24/7 security</li>
-              <li><i class="fas fa-swimming-pool"></i> Access to all community amenities</li>
-            </ul>
-            <div class="tower-split-cta">
-              <h3>Interested in Tower A?</h3>
-              <a href="contact.html" class="tower-contact-btn">Contact Sales</a>
-            </div>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+          <div class="nav-logo">
+              <a href="../index.html">
+                  <img width="40" height="40" viewBox="0 0 40 40" fill="none" src="../assets/images/gallery/logo-kc.png">
+                      <path d="M20 0L40 20L20 40L0 20L20 0Z" fill="#D4AF37"/>
+                      <path d="M20 10L30 20L20 30L10 20L20 10Z" fill="#1E3A8A"/>
+                  </svg>
+                  <span>Kaur Complex</span>
+              </a>
           </div>
-        </div>
+          <div class="nav-menu" id="nav-menu">
+              <a href="../index.html" class="nav-link">Home</a>
+              <a href="../pages/about.html" class="nav-link active">About</a>
+              <a href="../pages/apartments.html" class="nav-link">Properties</a>
+              <a href="../pages/contact.html" class="nav-link">Contact</a>
+              <a href="tel:03320001888" class="nav-cta">Call Now</a>
+          </div>
+          <div class="nav-toggle" id="nav-toggle">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+          </div>
       </div>
+    </nav>
+
+    <section class="tower-detail-section">
+        <div class="tower-hero-container">
+            <img class="tower-hero-image" src="../assets/images/gallery/exterior-1.jpg" alt="Tower A">
+            <div class="tower-title-container">
+                <h1 class="tower-title">Tower A</h1>
+            </div>
+        </div>
+        
+        <div class="tower-content-container">
+            <p class="tower-description">
+                Premium apartments with panoramic city views, modern amenities, and exclusive penthouse options. 
+                Ideal for families seeking luxury and comfort in the heart of Peshawar.
+            </p>
+            
+            <div class="tower-features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-bed"></i>
+                    <h3>Spacious Layouts</h3>
+                    <p>1, 2, and 3 bedroom apartments designed for modern living with optimal space utilization.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-crown"></i>
+                    <h3>Exclusive Penthouses</h3>
+                    <p>Luxurious penthouses with private terraces offering breathtaking city views.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-star"></i>
+                    <h3>Premium Finishes</h3>
+                    <p>High-quality materials and finishes throughout, with modern kitchens and bathrooms.</p>
+                </div>
+            </div>
+            
+            <div class="tower-details-container">
+                <div class="pricing-section">
+                    <h2 class="section-title">Pricing</h2>
+                    <table class="pricing-table">
+                        <tr>
+                            <th>Floor</th>
+                            <th>Price/Sqft (PKR)</th>
+                        </tr>
+                        <tr>
+                            <td>Ground - 3rd</td>
+                            <td>9,500</td>
+                        </tr>
+                        <tr>
+                            <td>4th - 6th</td>
+                            <td>9,000</td>
+                        </tr>
+                        <tr>
+                            <td>7th - 9th</td>
+                            <td>8,500</td>
+                        </tr>
+                        <tr>
+                            <td>Penthouse</td>
+                            <td>8,000</td>
+                        </tr>
+                    </table>
+                    <a class="download-plan-btn" href="../assets/docs/tower-a-payment-plan.pdf" download>Download Payment Plan</a>
+                </div>
+                
+                <div class="amenities-section">
+                    <h2 class="section-title">Amenities</h2>
+                    <ul class="amenities-list">
+                        <li>CCTV Surveillance</li>
+                        <li>Two Layered Parking</li>
+                        <li>Garbage Chute System</li>
+                        <li>24/7 Electricity</li>
+                        <li>Fire Safety Systems</li>
+                        <li>High-Speed Elevators</li>
+                        <li>Security Personnel</li>
+                        <li>Grand Entrance Gate</li>
+                        <li>Society Office</li>
+                        <li>Emergency Exits</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tower-cta-section">
+            <h2>Interested in Tower A?</h2>
+            <a href="contact.html" class="tower-cta-button">Contact Sales</a>
+        </div>
     </section>
+    <script src="../assets/js/main.js"></script>
 </body>
-</html> 
+</html>
