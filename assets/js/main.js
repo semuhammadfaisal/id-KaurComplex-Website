@@ -13,6 +13,37 @@ document.addEventListener('DOMContentLoaded', function() {
     initWhatsApp();
     initAnimations();
     initTestimonialSlider();
+    // Improved dropdown logic for mobile
+    document.querySelectorAll('.nav-dropdown').forEach(function(navDropdown) {
+        var trigger = navDropdown.querySelector('span');
+        if (trigger) {
+            trigger.addEventListener('click', function(e) {
+                if (window.innerWidth <= 900) {
+                    e.stopPropagation();
+                    navDropdown.classList.toggle('dropdown-open');
+                }
+            });
+        }
+        // Prevent closing when clicking inside dropdown menu
+        var dropdownMenu = navDropdown.querySelector('.dropdown-menu');
+        if (dropdownMenu) {
+            dropdownMenu.addEventListener('click', function(e) {
+                if (window.innerWidth <= 900) {
+                    e.stopPropagation();
+                }
+            });
+        }
+    });
+    // Close all dropdowns when clicking outside
+    document.addEventListener('click', function(e) {
+        if (window.innerWidth <= 900) {
+            document.querySelectorAll('.nav-dropdown.dropdown-open').forEach(function(openDropdown) {
+                if (!openDropdown.contains(e.target)) {
+                    openDropdown.classList.remove('dropdown-open');
+                }
+            });
+        }
+    });
 });
 
 // Loading Screen
