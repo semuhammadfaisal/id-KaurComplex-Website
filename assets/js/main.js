@@ -19,12 +19,12 @@ document.addEventListener('DOMContentLoaded', function() {
         if (trigger) {
             trigger.addEventListener('click', function(e) {
                 if (window.innerWidth <= 900) {
+                    e.preventDefault();
                     e.stopPropagation();
                     navDropdown.classList.toggle('dropdown-open');
                 }
             });
         }
-        // Prevent closing when clicking inside dropdown menu
         var dropdownMenu = navDropdown.querySelector('.dropdown-menu');
         if (dropdownMenu) {
             dropdownMenu.addEventListener('click', function(e) {
@@ -34,16 +34,20 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     });
-    // Close all dropdowns when clicking outside
-    document.addEventListener('click', function(e) {
-        if (window.innerWidth <= 900) {
-            document.querySelectorAll('.nav-dropdown.dropdown-open').forEach(function(openDropdown) {
-                if (!openDropdown.contains(e.target)) {
-                    openDropdown.classList.remove('dropdown-open');
+
+    // Dropdown for Properties (mobile)
+    const navDropdown = document.querySelector('.nav-dropdown');
+    if (navDropdown) {
+        const dropdownToggle = navDropdown.querySelector('span');
+        if (dropdownToggle) {
+            dropdownToggle.addEventListener('click', function (e) {
+                if (window.innerWidth <= 991) {
+                    e.preventDefault();
+                    navDropdown.classList.toggle('open');
                 }
             });
         }
-    });
+    }
 });
 
 // Loading Screen
