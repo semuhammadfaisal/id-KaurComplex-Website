@@ -63,62 +63,52 @@
         </div>
     </nav>
 
-<!-- Modern Luxury Hero Section -->
-<section class="luxury-hero redesigned-hero">
-  <div class="hero-bg-image"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-main-content">
-    <div class="hero-logo-badge">
-      <img src="assets/images/gallery/logo-kc.png" alt="Kaur Complex Logo" class="hero-logo">
+<!-- Fully Responsive Luxury Hero Section -->
+<section class="luxury-hero">
+  <div class="hero-bg-container">
+    <div class="hero-bg-image" style="background-image: url('assets/images/gallery/hero-bg.jpg')"></div>
+    <div class="hero-gradient-overlay"></div>
+  </div>
+  
+  <div class="hero-content-container">
+    <div class="hero-content">
+      <div class="hero-logo-badge animate-pop-in">
+        <img src="assets/images/gallery/logo-kc.png" alt="Kaur Complex Logo" class="hero-logo" loading="eager">
+      </div>
+      
+      <div class="hero-text-content">
+        <span class="hero-pretitle animate-fade-in">
+          <span class="gold-line"></span>
+          Welcome to
+        </span>
+        <h1 class="hero-heading animate-slide-up">Kaur Complex</h1>
+        <h2 class="hero-subheading animate-slide-up" style="animation-delay: 0.2s">
+          Luxury Living in the Heart of Peshawar
+        </h2>
+      </div>
     </div>
-    <span class="hero-pretitle">Welcome to</span>
-    <h1 class="hero-heading">Kaur Complex</h1>
-    <h2 class="hero-subheading">Luxury Living in the Heart of Peshawar</h2>
-    <p class="hero-description">Experience world-class residences, penthouses, and commercial spaces in a secure, vibrant community.</p>
   </div>
 </section>
 
-<!-- About Section -->
-<section class="about-section" data-aos="fade-up">
-    <div class="container">
-        <div class="about-grid">
-            <div class="about-content">
-                <div class="section-header">
-                    <span class="section-label">Our Towers</span>
-                    <div class="section-divider"></div>
-                    <p class="about-text">Tower A ready to move in | Towers B & C under construction</p>
-                </div>
-                <div class="towers-overview tower-fullrow-overview">
-                    <!-- Tower A -->
-                    <a href="pages/tower-a.html" class="tower-fullrow-card" data-aos="fade-up" data-aos-delay="100">
-                        <img src="assets/images/gallery/tower-a.png" alt="Tower A" class="tower-fullrow-img">
-                        <div class="tower-fullrow-overlay">
-                            
-                        </div>
-                    </a>
-                    <div class="tower-divider"></div>
-                    <!-- Tower B -->
-                    <a href="pages/tower-b.html" class="tower-fullrow-card" data-aos="fade-up" data-aos-delay="200">
-                        <img src="assets/images/gallery/tower-b.png" alt="Tower B" class="tower-fullrow-img">
-                        <div class="tower-fullrow-overlay">
-                        
-                        </div>
-                    </a>
-                    <div class="tower-divider"></div>
-                    <!-- Tower C -->
-                    <a href="pages/tower-c.html" class="tower-fullrow-card" data-aos="fade-up" data-aos-delay="300">
-                        <img src="assets/images/gallery/tower-c.png" alt="Tower C" class="tower-fullrow-img">
-                        <div class="tower-fullrow-overlay">
-                        
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
+<!-- Minimalist Tower Section -->
+<section class="towers-section">
+  <div class="container">
+    <div class="section-intro">
+      <span class="section-tag">Our Towers</span>
+      <p class="section-description">Tower A ready to move in | Towers B & C under construction</p>
     </div>
+    <div class="towers-list">
+      <!-- Tower A -->
+      <a href="pages/tower-a.html" class="tower-item"><div class="tower-image-wrapper"><img src="assets/images/gallery/tower-a.png" alt="Tower A" loading="lazy"><span class="tower-badge ready">Ready</span></div></a>
+      <!-- Tower B -->
+      <a href="pages/tower-b.html" class="tower-item"><div class="tower-image-wrapper"><img src="assets/images/gallery/tower-b.png" alt="Tower B" loading="lazy"><span class="tower-badge">Coming Soon</span></div></a>
+      <!-- Tower C -->
+      <a href="pages/tower-c.html" class="tower-item"><div class="tower-image-wrapper"><img src="assets/images/gallery/tower-c.png" alt="Tower C" loading="lazy"><span class="tower-badge">Coming Soon</span></div></a>
+    </div>
+  </div>
 </section>
 
-    <!-- Property Listings Section
+<!-- Property Listings Section
     <section class="kc-listings-section">
   <div class="kc-listings-container">
     <div class="kc-listings-header">
