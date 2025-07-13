@@ -86,6 +86,66 @@
             line-height: 1.6;
             margin: 0;
         }
+        
+        .hidden-feature {
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+        }
+        
+        .hidden-feature.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .features-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        
+        .features-expand-container {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        
+        .features-expand-btn {
+            background: #1E3A8A;
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(30,58,138,0.2);
+        }
+        
+        .features-expand-btn:hover {
+            background: #D4AF37;
+            color: #1E3A8A;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(212,175,55,0.3);
+        }
+        
+        .features-expand-btn:active {
+            transform: translateY(0);
+        }
+        
+        .features-expand-btn i {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .features-expand-btn.expanded i {
+            transform: rotate(180deg);
+        }
         .tower-details-container {
             display: flex;
             gap: 40px;
@@ -183,6 +243,14 @@
         .tower-cta-button:hover {
             background: #D4AF37;
         }
+        
+        /* Apartment Type Button Hover Effects */
+        .apartment-type-btn:hover {
+            background: #D4AF37 !important;
+            color: #1E3A8A !important;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 16px rgba(212,175,55,0.3) !important;
+        }
         @media (max-width: 1024px) {
             .tower-hero-container { height: 55vh; min-height: 400px; }
             .tower-title-container { padding: 25px; }
@@ -194,12 +262,16 @@
             .tower-title { font-size: 1.8rem; }
             .tower-details-container { flex-direction: column; gap: 30px; }
             .tower-content-container { margin-top: 80px; }
+            .apartment-buttons-row { gap: 15px !important; }
+            .apartment-type-btn { padding: 14px 24px !important; min-width: 120px !important; }
         }
         @media (max-width: 480px) {
             .tower-hero-container { height: 40vh; min-height: 300px; }
             .tower-title { font-size: 1.5rem; }
             .tower-features-grid { grid-template-columns: 1fr; }
             .amenities-list { grid-template-columns: 1fr; }
+            .apartment-buttons-row { flex-direction: column; gap: 12px !important; }
+            .apartment-type-btn { min-width: 100% !important; }
         }
     </style>
 </head>
@@ -238,25 +310,82 @@
                 <p style="color:#555;font-size:1.1rem;margin:8px 0 0 0;">Under Construction</p>
             </div>
         </div>
+        
+        <!-- Apartment Type Buttons -->
+        <div class="apartment-buttons-container" style="max-width: 800px; margin: 0 auto 60px; padding: 0 20px; text-align: center;">
+            <h3 style="font-family: 'Playfair Display', serif; color: #1E3A8A; font-size: 1.4rem; margin-bottom: 30px;">Choose Your Apartment Type</h3>
+            <div class="apartment-buttons-row" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                <a href="tower-b-2-bed.html" class="apartment-type-btn" style="display: inline-block; background: #1E3A8A; color: white; padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: 500; transition: all 0.3s ease; min-width: 140px; box-shadow: 0 2px 8px rgba(30,58,138,0.2);">
+                    <i class="fas fa-bed" style="display: block; font-size: 1.5rem; margin-bottom: 8px;"></i>
+                    <span style="font-size: 1.1rem;">2 Bed</span>
+                </a>
+                <a href="tower-b-3-bed.html" class="apartment-type-btn" style="display: inline-block; background: #1E3A8A; color: white; padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: 500; transition: all 0.3s ease; min-width: 140px; box-shadow: 0 2px 8px rgba(30,58,138,0.2);">
+                    <i class="fas fa-bed" style="display: block; font-size: 1.5rem; margin-bottom: 8px;"></i>
+                    <span style="font-size: 1.1rem;">3 Bed</span>
+                </a>
+                <a href="tower-b-studio.html" class="apartment-type-btn" style="display: inline-block; background: #1E3A8A; color: white; padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: 500; transition: all 0.3s ease; min-width: 140px; box-shadow: 0 2px 8px rgba(30,58,138,0.2);">
+                    <i class="fas fa-home" style="display: block; font-size: 1.5rem; margin-bottom: 8px;"></i>
+                    <span style="font-size: 1.1rem;">Studio</span>
+                </a>
+            </div>
+        </div>
+        
         <div class="tower-content-container tower-content-container">
-            <h2 class="section-title" style="font-family:'Playfair Display',serif;color:#1E3A8A;font-size:1.5rem;margin-bottom:18px;text-align:center;">Features</h2>
-            <div class="tower-features-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-bottom:32px;">
-                <div class="feature-card">
+            <div class="features-header">
+                <h2 class="section-title" style="font-family:'Playfair Display',serif;color:#1E3A8A;font-size:1.5rem;margin-bottom:0;text-align:left;">Features</h2>
+                <div class="features-expand-container">
+                    <button class="features-expand-btn" id="features-expand-btn" title="Show/Hide Features">
+                        <i class="fas fa-chevron-down expand-icon"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="tower-features-grid" id="features-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-bottom:32px;">
+                <div class="feature-card hidden-feature">
                     <i class="fas fa-bed"></i>
                     <h3>Flexible Options</h3>
                     <p>Studio, 2, and 3 bedroom apartments designed for a variety of lifestyles.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card hidden-feature">
                     <i class="fas fa-users"></i>
                     <h3>Community Spaces</h3>
                     <p>Lounges and play areas for socializing and relaxation.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card hidden-feature">
                     <i class="fas fa-star"></i>
                     <h3>Modern Finishes</h3>
                     <p>Contemporary kitchens and bathrooms with premium fittings.</p>
                 </div>
-            </div>
+                <div class="feature-card hidden-feature">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>24/7 Security</h3>
+                    <p>Round-the-clock security with CCTV surveillance and trained personnel for your safety.</p>
+                </div>
+                <div class="feature-card hidden-feature">
+                    <i class="fas fa-parking"></i>
+                    <h3>Secure Parking</h3>
+                    <p>Two-layered parking system with dedicated spaces for residents and visitors.</p>
+                </div>
+                <div class="feature-card hidden-feature">
+                    <i class="fas fa-elevator"></i>
+                    <h3>High-Speed Elevators</h3>
+                    <p>Modern, fast elevators providing quick and smooth access to all floors.</p>
+                </div>
+                <div class="feature-card hidden-feature">
+                    <i class="fas fa-fire-extinguisher"></i>
+                    <h3>Fire Safety</h3>
+                    <p>Advanced fire safety systems with alarms and extinguishers throughout the building.</p>
+                </div>
+                <div class="feature-card hidden-feature">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Backup Power</h3>
+                    <p>Uninterrupted power supply with reliable backup systems for all apartments.</p>
+                </div>
+                <div class="feature-card hidden-feature">
+                    <i class="fas fa-building"></i>
+                    <h3>Management Office</h3>
+                    <p>On-site management office for resident support and building maintenance.</p>
+                </div>
+
             <h2 class="section-title" style="font-family:'Playfair Display',serif;color:#1E3A8A;font-size:1.5rem;margin-bottom:18px;text-align:center;">Pricing</h2>
             <div class="pricing-section" style="background:#fff;padding:32px 24px 24px 24px;box-shadow:0 4px 24px rgba(30,58,138,0.07);margin-bottom:32px;border-radius:18px;max-width:500px;margin-left:auto;margin-right:auto;">
                 <table class="pricing-table" style="width:100%;border-collapse:separate;border-spacing:0 8px;">
@@ -277,7 +406,7 @@
                         <td style="padding:12px 12px 12px 0;text-align:right;">8,000</td>
                     </tr>
                 </table>
-                <a class="download-plan-btn" href="../assets/docs/tower-b-payment-plan.pdf" download style="margin-top:20px;box-shadow:0 2px 8px rgba(212,175,55,0.08);font-size:1.08rem;">Download Payment Plan</a>
+                <a class="download-plan-btn" href="../assets/images/gallery/tower-b-payment plan.jpg" download style="margin-top:20px;box-shadow:0 2px 8px rgba(212,175,55,0.08);font-size:1.08rem;">Download Payment Plan</a>
             </div>
             <div class="amenities-section-card">
                 <svg class="amenities-bg-svg" viewBox="0 0 600 300" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="500" cy="80" r="120" fill="#d4af37" fill-opacity="0.12"/><rect x="-60" y="180" width="320" height="80" rx="40" fill="#ffe082" fill-opacity="0.08"/></svg>
@@ -367,5 +496,44 @@
         </div>
     </div>
     <script src="../assets/js/main.js"></script>
+    <script>
+        // Features expand functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const expandBtn = document.getElementById('features-expand-btn');
+            const hiddenFeatures = document.querySelectorAll('.hidden-feature');
+            const expandIcon = document.querySelector('.expand-icon');
+            
+            if (expandBtn) {
+                expandBtn.addEventListener('click', function() {
+                    const isExpanded = expandBtn.classList.contains('expanded');
+                    
+                    if (!isExpanded) {
+                        // Show hidden features
+                        hiddenFeatures.forEach((feature, index) => {
+                            setTimeout(() => {
+                                feature.classList.add('show');
+                            }, index * 100);
+                        });
+                        
+                        // Update button state
+                        expandBtn.classList.add('expanded');
+                        expandIcon.classList.remove('fa-chevron-down');
+                        expandIcon.classList.add('fa-chevron-up');
+                        
+                    } else {
+                        // Hide features
+                        hiddenFeatures.forEach(feature => {
+                            feature.classList.remove('show');
+                        });
+                        
+                        // Update button state
+                        expandBtn.classList.remove('expanded');
+                        expandIcon.classList.remove('fa-chevron-up');
+                        expandIcon.classList.add('fa-chevron-down');
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html> 

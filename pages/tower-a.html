@@ -16,8 +16,10 @@
             width: 100%;
             height: 65vh;
             min-height: 500px;
-            overflow: hidden;
+            overflow: visible;
             margin-bottom: 80px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+            border-radius: 10px;
         }
         
         .tower-hero-image {
@@ -25,19 +27,32 @@
             height: 100%;
             object-fit: cover;
             object-position: center;
+            display: block;
+            border-radius: 10px;
+            filter: brightness(0.85);
         }
         
         .tower-title-container {
             position: absolute;
-            bottom: -40px;
+            bottom: -30px;
             left: 50%;
             transform: translateX(-50%);
-            width: 90%;
-            max-width: 1200px;
-            background: white;
-            padding: 30px;
-            box-shadow: 0 5px 30px rgba(0,0,0,0.08);
+            width: 80%;
+            max-width: 400px;
+            background: rgba(255,255,255,0.95);
+            padding: 20px 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
             border-top: 4px solid #D4AF37;
+            text-align: center;
+            border-radius: 12px;
+            z-index: 10;
+        }
+        
+        .tower-title-container p {
+            color: #555;
+            font-size: 1.1rem;
+            margin: 8px 0 0 0;
+            font-weight: 500;
         }
         
         .tower-title {
@@ -97,6 +112,125 @@
             margin: 0;
         }
         
+        .hidden-feature {
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+        }
+        
+        .hidden-feature.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .features-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        
+        .features-expand-container {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        
+        .features-expand-btn {
+            background: #1E3A8A;
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(30,58,138,0.2);
+        }
+        
+        .features-expand-btn:hover {
+            background: #D4AF37;
+            color: #1E3A8A;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(212,175,55,0.3);
+        }
+        
+        .features-expand-btn:active {
+            transform: translateY(0);
+        }
+        
+        .features-expand-btn i {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .features-expand-btn.expanded i {
+            transform: rotate(180deg);
+        }
+        
+        .payment-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        
+        .payment-expand-container {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        
+        .payment-expand-btn {
+            background: #1E3A8A;
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(30,58,138,0.2);
+        }
+        
+        .payment-expand-btn:hover {
+            background: #D4AF37;
+            color: #1E3A8A;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(212,175,55,0.3);
+        }
+        
+        .payment-expand-btn:active {
+            transform: translateY(0);
+        }
+        
+        .payment-expand-btn i {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .payment-expand-btn.expanded i {
+            transform: rotate(180deg);
+        }
+        
+        .pricing-section {
+            transition: all 0.4s ease;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .pricing-section.hidden {
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
         .tower-details-container {
             display: flex;
             gap: 40px;
@@ -110,6 +244,17 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.03);
         }
         
+        .pricing-section {
+            background: #fff;
+            padding: 32px 24px 24px 24px;
+            box-shadow: 0 4px 24px rgba(30,58,138,0.07);
+            margin-bottom: 32px;
+            border-radius: 18px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
         .section-title {
             font-family: 'Playfair Display', serif;
             color: #1E3A8A;
@@ -118,11 +263,13 @@
             margin-bottom: 25px;
             padding-bottom: 10px;
             border-bottom: 1px solid #EEE;
+            display: inline-block;
         }
         
         .pricing-table {
             width: 100%;
             border-collapse: collapse;
+            table-layout: fixed;
         }
         
         .pricing-table th {
@@ -185,6 +332,7 @@
             padding: 50px 20px;
             background: #F9F9F9;
             margin-top: 60px;
+            border-radius: 8px;
         }
         
         .tower-cta-section h2 {
@@ -217,11 +365,22 @@
             }
             
             .tower-title-container {
-                padding: 25px;
+                padding: 18px 12px;
+                width: 85%;
+                max-width: 350px;
+                bottom: -25px;
             }
             
             .tower-title {
                 font-size: 2.2rem;
+            }
+            
+            .tower-content-container {
+                padding: 0 15px;
+            }
+            
+            .pricing-section {
+                max-width: 550px;
             }
         }
         
@@ -229,12 +388,14 @@
             .tower-hero-container {
                 height: 45vh;
                 min-height: 350px;
-                margin-bottom: 70px;
+                margin-bottom: 80px;
             }
             
             .tower-title-container {
-                padding: 20px;
-                bottom: -30px;
+                padding: 15px 10px;
+                bottom: -20px;
+                width: 90%;
+                max-width: 300px;
             }
             
             .tower-title {
@@ -248,6 +409,76 @@
             
             .tower-content-container {
                 margin-top: 80px;
+                padding: 0 15px;
+            }
+            
+            .tower-features-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 20px;
+            }
+            
+            .features-header, .payment-header {
+                margin-bottom: 25px;
+            }
+            
+            .features-expand-btn, .payment-expand-btn {
+                width: 45px;
+                height: 45px;
+            }
+            
+            .features-expand-btn {
+                width: 45px;
+                height: 45px;
+            }
+            
+            .pricing-section {
+                max-width: 100%;
+                padding: 25px 20px;
+            }
+            
+            .pricing-table th,
+            .pricing-table td {
+                padding: 10px 8px;
+                font-size: 0.95rem;
+            }
+            
+            .section-title {
+                font-size: 1.4rem;
+            }
+            
+            .tower-description {
+                font-size: 1rem;
+                padding: 0 10px;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .pricing-table {
+                font-size: 0.9rem;
+            }
+            
+            .pricing-table th,
+            .pricing-table td {
+                padding: 8px 6px;
+            }
+            
+            .pricing-section {
+                padding: 20px 15px;
+            }
+            
+            .pricing-table th:nth-child(1),
+            .pricing-table td:nth-child(1) {
+                min-width: 80px;
+            }
+            
+            .pricing-table th:nth-child(2),
+            .pricing-table td:nth-child(2) {
+                min-width: 60px;
+            }
+            
+            .pricing-table th:nth-child(3),
+            .pricing-table td:nth-child(3) {
+                min-width: 90px;
             }
         }
         
@@ -255,18 +486,195 @@
             .tower-hero-container {
                 height: 40vh;
                 min-height: 300px;
+                margin-bottom: 70px;
+            }
+            
+            .tower-title-container {
+                width: 95%;
+                padding: 12px 8px;
+                bottom: -15px;
+                max-width: 280px;
             }
             
             .tower-title {
                 font-size: 1.5rem;
             }
             
+            .tower-content-container {
+                margin-top: 70px;
+                padding: 0 10px;
+            }
+            
             .tower-features-grid {
                 grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .feature-card {
+                padding: 20px;
+            }
+            
+            .feature-card h3 {
+                font-size: 1.2rem;
+            }
+            
+            .features-header, .payment-header {
+                margin-bottom: 20px;
+            }
+            
+            .features-expand-btn, .payment-expand-btn {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .features-expand-btn {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .pricing-section {
+                padding: 15px 10px;
+                border-radius: 12px;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: thin;
+                scrollbar-color: #D4AF37 #f0f0f0;
+            }
+            
+            .pricing-section::-webkit-scrollbar {
+                height: 6px;
+            }
+            
+            .pricing-section::-webkit-scrollbar-track {
+                background: #f0f0f0;
+                border-radius: 3px;
+            }
+            
+            .pricing-section::-webkit-scrollbar-thumb {
+                background: #D4AF37;
+                border-radius: 3px;
+            }
+            
+            .pricing-table {
+                font-size: 0.85rem;
+                min-width: 280px;
+                width: 100%;
+                table-layout: auto;
+            }
+            
+            .pricing-table th,
+            .pricing-table td {
+                padding: 6px 4px;
+                white-space: nowrap;
+            }
+            
+            .pricing-table th:nth-child(1),
+            .pricing-table td:nth-child(1) {
+                min-width: 70px;
+            }
+            
+            .pricing-table th:nth-child(2),
+            .pricing-table td:nth-child(2) {
+                min-width: 50px;
+            }
+            
+            .pricing-table th:nth-child(3),
+            .pricing-table td:nth-child(3) {
+                min-width: 80px;
+            }
+            
+            .section-title {
+                font-size: 1.3rem;
+                margin-bottom: 15px;
+            }
+            
+            .tower-description {
+                font-size: 0.95rem;
+                margin-bottom: 40px;
             }
             
             .amenities-list {
                 grid-template-columns: 1fr;
+            }
+            
+            .tower-cta-section {
+                padding: 25px 10px;
+            }
+            
+            .tower-cta-section h2 {
+                font-size: 1.2rem;
+            }
+            
+            .tower-cta-button {
+                padding: 10px 24px;
+                font-size: 0.95rem;
+            }
+        }
+        
+        @media (max-width: 360px) {
+            .tower-hero-container {
+                height: 35vh;
+                min-height: 250px;
+                margin-bottom: 60px;
+            }
+            
+            .tower-title-container {
+                width: 98%;
+                padding: 10px 6px;
+                bottom: -12px;
+                max-width: 260px;
+            }
+            
+            .tower-title {
+                font-size: 1.3rem;
+            }
+            
+            .tower-content-container {
+                padding: 0 8px;
+            }
+            
+            .pricing-section {
+                padding: 12px 8px;
+                overflow-x: auto;
+            }
+            
+            .pricing-table {
+                font-size: 0.8rem;
+                min-width: 260px;
+                width: 100%;
+            }
+            
+            .pricing-table th,
+            .pricing-table td {
+                padding: 5px 3px;
+                white-space: nowrap;
+            }
+            
+            .pricing-table th:nth-child(1),
+            .pricing-table td:nth-child(1) {
+                min-width: 65px;
+            }
+            
+            .pricing-table th:nth-child(2),
+            .pricing-table td:nth-child(2) {
+                min-width: 45px;
+            }
+            
+            .pricing-table th:nth-child(3),
+            .pricing-table td:nth-child(3) {
+                min-width: 75px;
+            }
+            
+            .feature-card {
+                padding: 15px;
+            }
+            
+            .feature-card h3 {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 1.2rem;
             }
         }
     </style>
@@ -300,57 +708,115 @@
     </nav>
 
     <section class="tower-detail-section">
-        <div class="tower-hero-container" style="position:relative;width:100%;height:55vh;min-height:350px;overflow:hidden;margin-bottom:32px;box-shadow:0 2px 10px rgba(0,0,0,0.04);border-radius:10px;">
-            <img class="tower-hero-image" src="../assets/images/gallery/exterior-1.jpg" alt="Tower A Hero" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;border-radius:10px 10px 0 0;filter:brightness(0.85);">
-            <div class="tower-title-container" style="position:absolute;bottom:24px;left:50%;transform:translateX(-50%);width:54%;max-width:260px;background:rgba(255,255,255,0.92);padding:7px 0;box-shadow:0 2px 10px rgba(0,0,0,0.04);border-top:3px solid #D4AF37;text-align:center;border-radius:8px;">
-                <h1 class="tower-title" style="font-family:'Playfair Display',serif;color:#1E3A8A;font-size:2.2rem;margin:0;">Tower A</h1>
-                <p style="color:#555;font-size:1.1rem;margin:8px 0 0 0;">Ready to Move In</p>
+        <div class="tower-hero-container">
+            <img class="tower-hero-image" src="../assets/images/gallery/exterior-1.jpg" alt="Tower A Hero">
+            <div class="tower-title-container">
+                <h1 class="tower-title">Tower A</h1>
+                <p>Ready to Move In</p>
             </div>
         </div>
-        <div class="tower-content-container tower-content-container">
-            <h2 class="section-title" style="font-family:'Playfair Display',serif;color:#1E3A8A;font-size:1.5rem;margin-bottom:18px;text-align:center;">Features</h2>
-            <div class="tower-features-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-bottom:32px;">
-                <div class="feature-card">
+        <div class="tower-content-container">
+            <div class="features-header">
+                <h2 class="section-title">Features</h2>
+                <div class="features-expand-container">
+                    <button class="features-expand-btn" id="features-expand-btn" title="Show/Hide Features">
+                        <i class="fas fa-chevron-down expand-icon"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="tower-features-grid" id="features-grid">
+                <div class="feature-card hidden-feature">
                     <i class="fas fa-bed"></i>
                     <h3>Spacious Layouts</h3>
                     <p>1, 2, and 3 bedroom apartments designed for modern living with optimal space utilization.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card hidden-feature">
                     <i class="fas fa-crown"></i>
                     <h3>Exclusive Penthouses</h3>
                     <p>Luxurious penthouses with private terraces offering breathtaking city views.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card hidden-feature">
                     <i class="fas fa-star"></i>
                     <h3>Premium Finishes</h3>
                     <p>High-quality materials and finishes throughout, with modern kitchens and bathrooms.</p>
                 </div>
+                <div class="feature-card hidden-feature">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>24/7 Security</h3>
+                    <p>Round-the-clock security with CCTV surveillance and trained personnel for your safety.</p>
+                </div>
+                <div class="feature-card hidden-feature">
+                    <i class="fas fa-parking"></i>
+                    <h3>Secure Parking</h3>
+                    <p>Two-layered parking system with dedicated spaces for residents and visitors.</p>
+                </div>
+                <div class="feature-card hidden-feature">
+                    <i class="fas fa-elevator"></i>
+                    <h3>High-Speed Elevators</h3>
+                    <p>Modern, fast elevators providing quick and smooth access to all floors.</p>
+                </div>
+                <div class="feature-card hidden-feature">
+                    <i class="fas fa-fire-extinguisher"></i>
+                    <h3>Fire Safety</h3>
+                    <p>Advanced fire safety systems with alarms and extinguishers throughout the building.</p>
+                </div>
+                <div class="feature-card hidden-feature">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Backup Power</h3>
+                    <p>Uninterrupted power supply with reliable backup systems for all apartments.</p>
+                </div>
+                <div class="feature-card hidden-feature">
+                    <i class="fas fa-building"></i>
+                    <h3>Management Office</h3>
+                    <p>On-site management office for resident support and building maintenance.</p>
+                </div>
+
+            <div class="payment-header">
+                <h2 class="section-title">Payment Plan</h2>
+                <div class="payment-expand-container">
+                    <button class="payment-expand-btn" id="payment-expand-btn" title="Show/Hide Payment Plan">
+                        <i class="fas fa-chevron-down payment-expand-icon"></i>
+                    </button>
+                </div>
             </div>
-            <h2 class="section-title" style="font-family:'Playfair Display',serif;color:#1E3A8A;font-size:1.5rem;margin-bottom:18px;text-align:center;">Pricing</h2>
-            <div class="pricing-section" style="background:#fff;padding:32px 24px 24px 24px;box-shadow:0 4px 24px rgba(30,58,138,0.07);margin-bottom:32px;border-radius:18px;max-width:500px;margin-left:auto;margin-right:auto;">
+            <div class="pricing-section hidden" id="pricing-section">
                 <table class="pricing-table" style="width:100%;border-collapse:separate;border-spacing:0 8px;">
                     <tr style="background:#f7f7f7;">
-                        <th style="padding:12px 0 12px 12px;font-size:1.08rem;color:#1E3A8A;border-radius:8px 0 0 8px;">Floor</th>
-                        <th style="padding:12px 12px 12px 0;font-size:1.08rem;color:#1E3A8A;text-align:right;border-radius:0 8px 8px 0;">Price/Sqft (PKR)</th>
+                        <th style="padding:12px 0 12px 12px;font-size:1.08rem;color:#1E3A8A;border-radius:8px 0 0 8px;">Apartment Type</th>
+                        <th style="padding:12px 12px 12px 0;font-size:1.08rem;color:#1E3A8A;text-align:center;border-radius:0 8px 8px 0;">Size (Sqft)</th>
+                        <th style="padding:12px 12px 12px 0;font-size:1.08rem;color:#1E3A8A;text-align:right;border-radius:0 8px 8px 0;">Price Range (PKR)</th>
                     </tr>
                     <tr style="background:#faf9f6;">
-                        <td style="padding:12px 0 12px 12px;">Ground - 3rd</td>
-                        <td style="padding:12px 12px 12px 0;text-align:right;">9,500</td>
+                        <td style="padding:12px 0 12px 12px;">Studio</td>
+                        <td style="padding:12px 12px 12px 0;text-align:center;">502</td>
+                        <td style="padding:12px 12px 12px 0;text-align:right;">40-45 Lac</td>
                     </tr>
                     <tr style="background:#fff;">
-                        <td style="padding:12px 0 12px 12px;">4th - 6th</td>
-                        <td style="padding:12px 12px 12px 0;text-align:right;">9,000</td>
+                        <td style="padding:12px 0 12px 12px;">One Bed</td>
+                        <td style="padding:12px 12px 12px 0;text-align:center;">581</td>
+                        <td style="padding:12px 12px 12px 0;text-align:right;">46-52 Lac</td>
                     </tr>
                     <tr style="background:#faf9f6;">
-                        <td style="padding:12px 0 12px 12px;">7th - 9th</td>
-                        <td style="padding:12px 12px 12px 0;text-align:right;">8,500</td>
+                        <td style="padding:12px 0 12px 12px;">One Bed</td>
+                        <td style="padding:12px 12px 12px 0;text-align:center;">615</td>
+                        <td style="padding:12px 12px 12px 0;text-align:right;">49-55 Lac</td>
                     </tr>
                     <tr style="background:#fff;">
-                        <td style="padding:12px 0 12px 12px;">Penthouse</td>
-                        <td style="padding:12px 12px 12px 0;text-align:right;">8,000</td>
+                        <td style="padding:12px 0 12px 12px;">Two Bed</td>
+                        <td style="padding:12px 12px 12px 0;text-align:center;">1080</td>
+                        <td style="padding:12px 12px 12px 0;text-align:right;">86-97 Lac</td>
+                    </tr>
+                    <tr style="background:#faf9f6;">
+                        <td style="padding:12px 0 12px 12px;">Three Bed</td>
+                        <td style="padding:12px 12px 12px 0;text-align:center;">1345</td>
+                        <td style="padding:12px 12px 12px 0;text-align:right;">107-121 Lac</td>
+                    </tr>
+                    <tr style="background:#fff;">
+                        <td style="padding:12px 0 12px 12px;">Three Bed</td>
+                        <td style="padding:12px 12px 12px 0;text-align:center;">1421</td>
+                        <td style="padding:12px 12px 12px 0;text-align:right;">113-127 Lac</td>
                     </tr>
                 </table>
-                <a class="download-plan-btn" href="../assets/docs/tower-a-payment-plan.pdf" download style="margin-top:20px;box-shadow:0 2px 8px rgba(212,175,55,0.08);font-size:1.08rem;">Download Payment Plan</a>
             </div>
             <div class="amenities-section-card">
                 <svg class="amenities-bg-svg" viewBox="0 0 600 300" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="500" cy="80" r="120" fill="#d4af37" fill-opacity="0.12"/><rect x="-60" y="180" width="320" height="80" rx="40" fill="#ffe082" fill-opacity="0.08"/></svg>
@@ -377,9 +843,9 @@
                 <svg class="gold-divider" viewBox="0 0 900 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 24C150 48 300 0 450 24C600 48 750 0 900 24V48H0V24Z" fill="url(#goldWave)"/><defs><linearGradient id="goldWave" x1="0" y1="24" x2="900" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#ffe082"/><stop offset="1" stop-color="#d4af37"/></linearGradient></defs></svg>
             </div>
         </div>
-        <div class="tower-cta-section" style="text-align:center;padding:32px 16px;background:#F9F9F9;margin-top:32px;border-radius:8px;">
-            <h2 style="font-family:'Playfair Display',serif;color:#1E3A8A;font-size:1.3rem;margin-bottom:16px;">Interested in Tower A?</h2>
-            <a href="../pages/contact.html" class="tower-cta-button" style="display:inline-block;background:#1E3A8A;color:white;padding:12px 28px;border-radius:4px;text-decoration:none;font-weight:500;">Contact Sales</a>
+        <div class="tower-cta-section">
+            <h2>Interested in Tower A?</h2>
+            <a href="../pages/contact.html" class="tower-cta-button">Contact Sales</a>
         </div>
     </section>
     <!-- Footer -->
@@ -440,5 +906,82 @@
         </div>
     </div>
     <script src="../assets/js/main.js"></script>
+    <script>
+        // Features expand functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const expandBtn = document.getElementById('features-expand-btn');
+            const hiddenFeatures = document.querySelectorAll('.hidden-feature');
+            const expandIcon = document.querySelector('.expand-icon');
+            
+            if (expandBtn) {
+                expandBtn.addEventListener('click', function() {
+                    const isExpanded = expandBtn.classList.contains('expanded');
+                    
+                    if (!isExpanded) {
+                        // Show hidden features
+                        hiddenFeatures.forEach((feature, index) => {
+                            setTimeout(() => {
+                                feature.classList.add('show');
+                            }, index * 100);
+                        });
+                        
+                        // Update button state
+                        expandBtn.classList.add('expanded');
+                        expandIcon.classList.remove('fa-chevron-down');
+                        expandIcon.classList.add('fa-chevron-up');
+                        
+                    } else {
+                        // Hide features
+                        hiddenFeatures.forEach(feature => {
+                            feature.classList.remove('show');
+                        });
+                        
+                        // Update button state
+                        expandBtn.classList.remove('expanded');
+                        expandIcon.classList.remove('fa-chevron-up');
+                        expandIcon.classList.add('fa-chevron-down');
+                    }
+                });
+            }
+            
+            // Payment plan expand functionality
+            const paymentExpandBtn = document.getElementById('payment-expand-btn');
+            const pricingSection = document.getElementById('pricing-section');
+            const paymentExpandIcon = document.querySelector('.payment-expand-icon');
+            
+            if (paymentExpandBtn) {
+                paymentExpandBtn.addEventListener('click', function() {
+                    const isExpanded = paymentExpandBtn.classList.contains('expanded');
+                    
+                    if (!isExpanded) {
+                        // Show payment plan
+                        pricingSection.classList.remove('hidden');
+                        setTimeout(() => {
+                            pricingSection.style.opacity = '1';
+                            pricingSection.style.transform = 'translateY(0)';
+                        }, 10);
+                        
+                        // Update button state
+                        paymentExpandBtn.classList.add('expanded');
+                        paymentExpandIcon.classList.remove('fa-chevron-down');
+                        paymentExpandIcon.classList.add('fa-chevron-up');
+                        
+                    } else {
+                        // Hide payment plan
+                        pricingSection.style.opacity = '0';
+                        pricingSection.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            pricingSection.classList.add('hidden');
+                        }, 400);
+                        
+                        // Update button state
+                        paymentExpandBtn.classList.remove('expanded');
+                        paymentExpandIcon.classList.remove('fa-chevron-up');
+                        paymentExpandIcon.classList.add('fa-chevron-down');
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>

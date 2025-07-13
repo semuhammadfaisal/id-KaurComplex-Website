@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tower C - 3 Bedroom Apartments - Kaur Complex</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Apartment Detail Page Styles */
+        .apartment-hero-container {
+            position: relative;
+            width: 100%;
+            height: 60vh;
+            min-height: 500px;
+            overflow: hidden;
+            margin-bottom: 60px;
+        }
+        .apartment-hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        .apartment-title-container {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1000px;
+            background: white;
+            padding: 25px;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.08);
+            border-top: 4px solid #D4AF37;
+            text-align: center;
+        }
+        .apartment-title {
+            font-family: 'Playfair Display', serif;
+            color: #1E3A8A;
+            font-size: 2.2rem;
+            margin: 0 0 10px 0;
+        }
+        .apartment-subtitle {
+            color: #666;
+            font-size: 1.1rem;
+            margin: 0;
+        }
+        .apartment-content-container {
+            max-width: 1200px;
+            margin: 80px auto 60px;
+            padding: 0 20px;
+        }
+        .apartment-gallery {
+            margin-bottom: 60px;
+        }
+        .back-to-tower {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #1E3A8A;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .back-btn:hover {
+            background: #D4AF37;
+            color: #1E3A8A;
+        }
+        @media (max-width: 768px) {
+            .apartment-hero-container { height: 50vh; min-height: 400px; }
+            .apartment-title-container { padding: 20px; }
+            .apartment-title { font-size: 1.8rem; }
+        }
+        @media (max-width: 480px) {
+            .apartment-hero-container { height: 45vh; min-height: 350px; }
+            .apartment-title { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html">
+                    <img width="40" height="40" src="../assets/images/gallery/logo-kc.png" alt="Kaur Complex Logo">
+                    <span>Kaur Complex</span>
+                </a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="apartments.html" class="nav-link active">Properties</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="tel:03320001888" class="nav-cta">Call Now</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="apartment-detail-section">
+
+        <div class="apartment-content-container">
+            <div class="apartment-gallery" style="margin: 0; padding: 0;">
+                <img src="../assets/images/gallery/t-c-3bed-apartment.jpg" alt="3 Bedroom Apartment" style="width: 100%; height: auto; display: block; margin: 0; padding: 0;">
+            </div>
+            
+            <div class="back-to-tower">
+                <a href="tower-c.html" class="back-btn">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Tower C
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <div class="footer-logo">
+                        <img width="40" height="40" src="../assets/images/gallery/logo-kc.png" alt="Kaur Complex Logo">
+                        <span>Kaur Complex</span>
+                    </div>
+                    <p>Peshawar's premier luxury gated community offering world-class living experiences with unmatched amenities and security.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="apartments.html">Properties</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section contact">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Tower A, Main Tajabad road Opposite Basharat Market Near Bannu House Tajabad peshawar</p>
+                        <p><i class="fas fa-phone"></i> 0332 0001888</p>
+                        <p><i class="fas fa-envelope"></i> kaurcomplexofficial@hotmail.com</p>
+                        <p><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 6:00 PM</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>© 2024 Kaur Complex. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Button Row for mobile -->
+    <div class="floating-btn-row">
+        <div class="call-float">
+            <a href="tel:03320001888">
+                <i class="fas fa-phone"></i>
+            </a>
+        </div>
+        <div class="whatsapp-float">
+            <a href="https://wa.me/923320001888" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+    </div>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html> 
