@@ -78,7 +78,7 @@ function initNavigation() {
             navToggle.style.display = 'none'; // Hide hamburger menu
         }
         // Set .scrolled class based on initial scroll position
-        navbar.classList.toggle('scrolled', window.scrollY > 100);
+        navbar.classList.toggle('scrolled', window.scrollY > 200);
     }
 
     // Run on page load
@@ -89,7 +89,7 @@ function initNavigation() {
 
     // Scroll handler for .scrolled class
     window.addEventListener('scroll', () => {
-        navbar.classList.toggle('scrolled', window.scrollY > 100);
+        navbar.classList.toggle('scrolled', window.scrollY > 200);
     });
 
     // Toggle mobile menu

@@ -41,7 +41,7 @@
                 <a href="index.html">
                     <img width="40" height="40" viewBox="0 0 40 40" fill="none" src="./assets/images/gallery/logo-kc.png">
                         <path d="M20 0L40 20L20 40L0 20L20 0Z" fill="#D4AF37"/>
-                        <path d="M20 10L30 20L20 30L10 20L20 10Z" fill="#1E3A8A"/>
+                        <path d="M20 10L30 20L20 30L10 20L20 10Z" fill="#E49E22"/>
                     </svg>
                     <span>Kaur Complex</span>
                 </a>
@@ -73,7 +73,9 @@
 <!-- Fully Responsive Luxury Hero Section -->
 <section class="luxury-hero">
   <div class="hero-bg-container">
-    <div class="hero-bg-image" style="background-image: url('assets/images/gallery/hero-bg.jpg')"></div>
+    <div class="hero-bg-image hero-bg-slide" style="background-image: url('assets/images/gallery/hero-bg.jpg'); opacity: 1;"></div>
+    <div class="hero-bg-image hero-bg-slide" style="background-image: url('assets/images/gallery/kaur-complex-img.jpg'); opacity: 0;"></div>
+    <div class="hero-bg-image hero-bg-slide" style="background-image: url('assets/images/gallery/exterior-1.jpg'); opacity: 0;"></div>
     <div class="hero-gradient-overlay"></div>
   </div>
   <div class="hero-content-container">
@@ -104,11 +106,11 @@
     </div>
     <div class="towers-list">
       <!-- Tower A -->
-      <a href="pages/tower-a.html" class="tower-item"><div class="tower-image-wrapper"><img src="assets/images/gallery/tower-a.png" alt="Tower A" loading="lazy"><span class="tower-badge ready">Ready</span></div></a>
+      <a href="pages/tower-a.html" class="tower-item"><div class="tower-image-wrapper"><img src="assets/images/gallery/tower-a.png" alt="Tower A" loading="lazy"><span class="tower-badge ready">Ready to move</span></div></a>
       <!-- Tower B -->
-      <a href="pages/tower-b.html" class="tower-item"><div class="tower-image-wrapper"><img src="assets/images/gallery/tower-b.png" alt="Tower B" loading="lazy"><span class="tower-badge">Coming Soon</span></div></a>
+      <a href="pages/tower-b.html" class="tower-item"><div class="tower-image-wrapper"><img src="assets/images/gallery/tower-b.png" alt="Tower B" loading="lazy"><span class="tower-badge">Under Construction 60%</span></div></a>
       <!-- Tower C -->
-      <a href="pages/tower-c.html" class="tower-item"><div class="tower-image-wrapper"><img src="assets/images/gallery/tower-c.png" alt="Tower C" loading="lazy"><span class="tower-badge">Coming Soon</span></div></a>
+      <a href="pages/tower-c.html" class="tower-item"><div class="tower-image-wrapper"><img src="assets/images/gallery/tower-c.png" alt="Tower C" loading="lazy"><span class="tower-badge">Under Construction 40%</span></div></a>
     </div>
   </div>
 </section>
@@ -344,11 +346,9 @@
 </section>
 
     <!-- CTA Section -->
-    <section class="cta-section" style="background: #1a2238; color: #fff; text-align: center; padding: 64px 0;">
+    <section class="cta-section" style="background: #000; color: #fff; text-align: center; padding: 64px 0;">
       <div class="container">
         <h2 style="color: #d4af37; font-size: 2.5rem; margin-bottom: 18px; font-family: 'Playfair Display', serif;">Ready to Experience True Luxury?</h2>
-        <p style="font-size: 1.2rem; margin-bottom: 32px;">Book a private tour of Kaur Complex and discover the most exclusive residences and commercial spaces in Peshawar.</p>
-        <a href="#contact" style="display: inline-block; background: linear-gradient(90deg, #ffe082 0%, #d4af37 100%); color: #1a2238; font-weight: bold; font-size: 1.15rem; padding: 18px 44px; border-radius: 36px; text-decoration: none; transition: background 0.2s;">Book a Private Tour</a>
       </div>
     </section>
 
@@ -388,17 +388,15 @@
                 <div class="footer-logo">
                     <img width="40" height="40" viewBox="0 0 40 40" fill="none" src="./assets/images/gallery/logo-kc.png">
                         <path d="M20 0L40 20L20 40L0 20L20 0Z" fill="#D4AF37"/>
-                        <path d="M20 10L30 20L20 30L10 20L20 10Z" fill="#1E3A8A"/>
+                        <path d="M20 10L30 20L20 30L10 20L20 10Z" fill="#E49E22"/>
                     </svg>
                     <span>Kaur Complex</span>
                 </div>
                 <p>Peshawar's premier luxury gated community offering world-class living experiences with unmatched amenities and security.</p>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/kaur.projects" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/kaurcomplex/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/kaurprojects/?originalSubdomain=pk" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
             
@@ -460,6 +458,18 @@
             easing: 'ease-in-out',
             once: true
         });
+    </script>
+    <script>
+    // Minimal classic hero slider
+    (function() {
+      const slides = document.querySelectorAll('.hero-bg-slide');
+      let current = 0;
+      setInterval(() => {
+        slides[current].style.opacity = 0;
+        current = (current + 1) % slides.length;
+        slides[current].style.opacity = 1;
+      }, 4000);
+    })();
     </script>
 </body>
 </html>

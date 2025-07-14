@@ -1,12 +1,12 @@
 :root {
-    --primary-color: #d4af37;
-    --secondary-color: #1a2238;
-    --secondary-light: #f8c537;
+    --primary-color: #E49E22;
+    --secondary-color: #5D4A1F;
+    --secondary-light: #E49E22;
     --white: #fff;
     --light-gray: #f7f7fa;
     --medium-gray: #e5e7eb;
-    --dark-gray: #1a2238;
-    --text-light: #888;
+    --dark-gray: #000000;
+    --text-light: #5D4A1F;
     --radius: 12px;
     --radius-xl: 18px;
     --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
@@ -51,7 +51,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.6) 100%);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.655) 0%, rgba(0, 0, 0, 0.447) 100%);
   z-index: 2;
 }
 
@@ -76,15 +76,15 @@
   width: clamp(80px, 25vw, 120px);
   height: clamp(80px, 25vw, 120px);
   margin-bottom: clamp(1rem, 5vw, 2rem);
-  background: rgba(255,255,255,0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(212,175,55,0.3);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
 .hero-logo {
@@ -421,7 +421,7 @@
     display: inline-block;
     margin: 0 auto 8px auto;
     font-size: 1.1rem;
-    color: #d4af37;
+    color: var(--primary-color);
     font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -430,7 +430,7 @@
 .section-divider {
     width: 48px;
     height: 4px;
-    background: #d4af37;
+    background: var(--primary-color);
     border-radius: 2px;
     margin: 10px auto 18px auto;
     display: block;
@@ -438,7 +438,7 @@
 
 .section-header .about-text {
     font-size: 1.15rem;
-    color: var(--text-light, #666);
+    color: var(--text-light);
     font-weight: 400;
     line-height: 1.7;
     margin-bottom: 0;
@@ -1385,7 +1385,7 @@ table td:last-child {
 }
 .tower-pricing-table th {
   background: #f9f6ef;
-  color: #1e3a8a;
+  color: var(--primary-color);
   font-weight: 600;
 }
 .tower-options-list {
@@ -1404,7 +1404,7 @@ table td:last-child {
   content: '\f00c';
   font-family: 'Font Awesome 6 Free';
   font-weight: 900;
-  color: #d4af37;
+  color: var(--primary-color);
   position: absolute;
   left: 0;
   top: 2px;
@@ -1419,7 +1419,7 @@ table td:last-child {
   box-shadow: 0 2px 12px rgba(212,175,55,0.08);
 }
 .tower-cta h3 {
-  color: #1e3a8a;
+  color: var(--primary-color);
   font-family: 'Playfair Display', serif;
   margin-bottom: 10px;
 }
@@ -1429,8 +1429,8 @@ table td:last-child {
 }
 .tower-contact-btn {
   display: inline-block;
-  background: #1e3a8a;
-  color: #fff;
+  background: var(--secondary-color);
+  color: var(--white);
   font-weight: 600;
   font-size: 1rem;
   padding: 12px 32px;
@@ -1439,8 +1439,8 @@ table td:last-child {
   transition: background 0.2s, color 0.2s;
 }
 .tower-contact-btn:hover {
-  background: #d4af37;
-  color: #1e3a8a;
+  background: var(--primary-color);
+  color: var(--secondary-color);
 }
 
 /* --- Tower Page Hero Section --- */
@@ -1517,7 +1517,7 @@ table td:last-child {
   z-index: 2;
 }
 .tower-detail-card h2 {
-  color: #1e3a8a;
+  color: var(--primary-color);
   font-family: 'Playfair Display', serif;
   font-size: 1.5rem;
   margin-bottom: 10px;
@@ -1560,7 +1560,7 @@ table td:last-child {
   z-index: 1;
 }
 .redesigned-tower-cta h3 {
-  color: #1e3a8a;
+  color: var(--primary-color);
   font-family: 'Playfair Display', serif;
   font-size: 1.3rem;
   margin-bottom: 10px;
@@ -2251,13 +2251,13 @@ html, body {
   box-shadow: 0 2px 12px rgba(212,175,55,0.08);
 }
 .tower-modern-cta h3 {
-  color: #1e3a8a;
+  color: var(--primary-color);
   font-family: 'Playfair Display', serif;
   margin-bottom: 10px;
 }
 .tower-modern-cta .tower-contact-btn {
-  background: #1e3a8a;
-  color: #fff;
+  background: var(--primary-color);
+  color: var(--white);
   font-weight: 600;
   font-size: 1rem;
   padding: 12px 32px;
@@ -2268,8 +2268,8 @@ html, body {
   display: inline-block;
 }
 .tower-modern-cta .tower-contact-btn:hover {
-  background: #d4af37;
-  color: #1e3a8a;
+  background: var(--secondary-color);
+  color: var(--primary-color);
 }
 @media (max-width: 900px) {
   .tower-hero-modern {
@@ -2722,7 +2722,7 @@ html, body {
 }
 .amenity-label {
   font-size: 1.08rem;
-  color: #1e3a8a;
+  color: #000;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -2934,7 +2934,7 @@ html, body {
 }
 .amenity-label {
   font-size: 1.04rem;
-  color: #1e3a8a;
+  color: #000;
   font-family: 'Poppins', sans-serif;
   text-align: center;
   margin-top: 2px;

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../assets/css/responsive.css">
     <link rel="stylesheet" href="../assets/css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         /* Apartment Detail Page Styles */
         .apartment-hero-container {
@@ -35,12 +35,12 @@
             background: white;
             padding: 25px;
             box-shadow: 0 5px 30px rgba(0,0,0,0.08);
-            border-top: 4px solid #D4AF37;
+            border-top: 4px solid #E49E22;
             text-align: center;
         }
         .apartment-title {
-            font-family: 'Playfair Display', serif;
-            color: #1E3A8A;
+            font-family: 'Poppins', sans-serif;
+            color: #E49E22;
             font-size: 2.2rem;
             margin: 0 0 10px 0;
         }
@@ -65,7 +65,7 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: #1E3A8A;
+            background: #E49E22;
             color: white;
             padding: 12px 24px;
             border-radius: 6px;
@@ -74,8 +74,8 @@
             transition: all 0.3s ease;
         }
         .back-btn:hover {
-            background: #D4AF37;
-            color: #1E3A8A;
+            background: #5D4A1F;
+            color: #E49E22;
         }
         @media (max-width: 768px) {
             .apartment-hero-container { height: 50vh; min-height: 400px; }
@@ -85,6 +85,18 @@
         @media (max-width: 480px) {
             .apartment-hero-container { height: 45vh; min-height: 350px; }
             .apartment-title { font-size: 1.5rem; }
+        }
+        .apartment-gallery h3 {
+            color: #E49E22 !important;
+        }
+        .download-btn {
+            border: 1px solid #E49E22 !important;
+            color: #E49E22 !important;
+        }
+        .download-btn:hover {
+            background: #5D4A1F !important;
+            color: #fff !important;
+            border: 1px solid #5D4A1F !important;
         }
     </style>
 </head>
@@ -122,11 +134,11 @@
             
             <!-- 3D Gallery Section -->
             <div class="apartment-gallery" style="margin: 40px 0; padding: 0;">
-                <h3 style="text-align: center; font-family: 'Playfair Display', serif; color: #1E3A8A; font-size: 1.8rem; margin-bottom: 30px;">3D Visualization</h3>
+                <h3 style="text-align: center; font-family: 'Poppins', sans-serif; color: #E49E22; font-size: 1.8rem; margin-bottom: 30px;">3D Visualization</h3>
                 <img src="../assets/images/gallery/tower-c-3bed-3d.jpg" alt="3 Bedroom Apartment 3D View" style="width: 100%; height: auto; display: block; margin: 0; padding: 0;">
                 <!-- Download All Images Button -->
                 <div style="text-align: center; margin-top: 25px;">
-                    <a href="../assets/images/gallery/tower-c-3-bed-all-images/3 bed ISO with Pictures.pdf" download class="download-btn" style="display: inline-block; padding: 12px 28px; background: #fff; color: #1E3A8A; border: 1px solid #1E3A8A; border-radius: 6px; font-family: 'Poppins', sans-serif; font-size: 1rem; font-weight: 500; text-decoration: none; transition: background 0.2s, color 0.2s; margin-top: 10px;">Download All Images (PDF)</a>
+                    <a href="../assets/images/gallery/tower-c-3-bed-all-images/3 bed ISO with Pictures.pdf" download class="download-btn" style="display: inline-block; padding: 12px 28px; background: #fff; color: #E49E22; border: 1px solid #E49E22; border-radius: 6px; font-family: 'Poppins', sans-serif; font-size: 1rem; font-weight: 500; text-decoration: none; transition: background 0.2s, color 0.2s; margin-top: 10px;">Download All Images (PDF)</a>
                 </div>
             </div>
             
@@ -150,11 +162,9 @@
                     </div>
                     <p>Peshawar's premier luxury gated community offering world-class living experiences with unmatched amenities and security.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.facebook.com/kaur.projects" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/kaurcomplex/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/kaurprojects/?originalSubdomain=pk" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="footer-section links">

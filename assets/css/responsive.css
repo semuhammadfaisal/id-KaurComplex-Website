@@ -555,13 +555,13 @@
 /* Dark Mode */
 @media (prefers-color-scheme: dark) {
     :root {
-        --white: #1a1a1a;
+        --white: #000000;
         --light-gray: #2d2d2d;
-        --text-color: #e5e5e5;
-        --border-color: #404040;
+        --text-color: #E49E22;
+        --border-color: #5D4A1F;
     }
     .navbar {
-        background: rgba(26, 26, 26, 0.95);
+        background: var(--dark-gray);
     }
     .feature-card {
         background: var(--light-gray);
