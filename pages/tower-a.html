@@ -211,6 +211,7 @@
         }
         
         .payment-expand-btn i {
+            color: white;
             font-size: 1.2rem;
             transition: transform 0.3s ease;
         }
@@ -918,74 +919,68 @@
     </div>
     <script src="../assets/js/main.js"></script>
     <script>
-        // Features expand functionality
+        // Features expand functionality (improved for smoothness and accessibility)
         document.addEventListener('DOMContentLoaded', function() {
             const expandBtn = document.getElementById('features-expand-btn');
             const hiddenFeatures = document.querySelectorAll('.hidden-feature');
             const expandIcon = document.querySelector('.expand-icon');
-            
             if (expandBtn) {
-                expandBtn.addEventListener('click', function() {
-                    const isExpanded = expandBtn.classList.contains('expanded');
-                    
-                    if (!isExpanded) {
-                        // Show hidden features
-                        hiddenFeatures.forEach((feature, index) => {
-                            setTimeout(() => {
-                                feature.classList.add('show');
-                            }, index * 100);
-                        });
-                        
-                        // Update button state
-                        expandBtn.classList.add('expanded');
-                        expandIcon.classList.remove('fa-chevron-down');
-                        expandIcon.classList.add('fa-chevron-up');
-                        
-                    } else {
-                        // Hide features
-                        hiddenFeatures.forEach(feature => {
-                            feature.classList.remove('show');
-                        });
-                        
-                        // Update button state
-                        expandBtn.classList.remove('expanded');
-                        expandIcon.classList.remove('fa-chevron-up');
-                        expandIcon.classList.add('fa-chevron-down');
+                expandBtn.setAttribute('aria-expanded', 'false');
+                expandBtn.setAttribute('tabindex', '0');
+                expandBtn.addEventListener('click', toggleFeatures);
+                expandBtn.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        toggleFeatures();
                     }
                 });
             }
-            
-            // Payment plan expand functionality
+            function toggleFeatures() {
+                const isExpanded = expandBtn.classList.contains('expanded');
+                if (!isExpanded) {
+                    hiddenFeatures.forEach((feature, index) => {
+                        setTimeout(() => {
+                            feature.classList.add('show');
+                        }, index * 80);
+                    });
+                    expandBtn.classList.add('expanded');
+                    expandIcon.classList.remove('fa-chevron-down');
+                    expandIcon.classList.add('fa-chevron-up');
+                    expandBtn.setAttribute('aria-expanded', 'true');
+                } else {
+                    hiddenFeatures.forEach((feature, index) => {
+                        setTimeout(() => {
+                            feature.classList.remove('show');
+                        }, index * 60);
+                    });
+                    expandBtn.classList.remove('expanded');
+                    expandIcon.classList.remove('fa-chevron-up');
+                    expandIcon.classList.add('fa-chevron-down');
+                    expandBtn.setAttribute('aria-expanded', 'false');
+                }
+            }
+            // Payment plan expand functionality (unchanged)
             const paymentExpandBtn = document.getElementById('payment-expand-btn');
             const pricingSection = document.getElementById('pricing-section');
             const paymentExpandIcon = document.querySelector('.payment-expand-icon');
-            
             if (paymentExpandBtn) {
                 paymentExpandBtn.addEventListener('click', function() {
                     const isExpanded = paymentExpandBtn.classList.contains('expanded');
-                    
                     if (!isExpanded) {
-                        // Show payment plan
                         pricingSection.classList.remove('hidden');
                         setTimeout(() => {
                             pricingSection.style.opacity = '1';
                             pricingSection.style.transform = 'translateY(0)';
                         }, 10);
-                        
-                        // Update button state
                         paymentExpandBtn.classList.add('expanded');
                         paymentExpandIcon.classList.remove('fa-chevron-down');
                         paymentExpandIcon.classList.add('fa-chevron-up');
-                        
                     } else {
-                        // Hide payment plan
                         pricingSection.style.opacity = '0';
                         pricingSection.style.transform = 'translateY(20px)';
                         setTimeout(() => {
                             pricingSection.classList.add('hidden');
                         }, 400);
-                        
-                        // Update button state
                         paymentExpandBtn.classList.remove('expanded');
                         paymentExpandIcon.classList.remove('fa-chevron-up');
                         paymentExpandIcon.classList.add('fa-chevron-down');

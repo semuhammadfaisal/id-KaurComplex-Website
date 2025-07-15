@@ -43,16 +43,8 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  filter: brightness(0.8);
+  /* filter: brightness(0.8); */
   animation: kenburns 30s infinite alternate;
-}
-
-.hero-gradient-overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.655) 0%, rgba(0, 0, 0, 0.447) 100%);
-  z-index: 2;
 }
 
 .hero-content-container {
@@ -137,7 +129,7 @@
 }
 
 /* Animations */
-@keyframes kenburns {
+/* @keyframes kenburns {
   0% { transform: scale(1) translate(0, 0); }
   100% { transform: scale(1.1) translate(-5%, -5%); }
 }
@@ -171,7 +163,7 @@
   0% { opacity: 0; transform: scale(0.5); }
   80% { transform: scale(1.1); }
   100% { opacity: 1; transform: scale(1); }
-}
+} */
 
 /* Mobile-First Responsive Adjustments */
 @media (min-width: 400px) {
@@ -3037,5 +3029,300 @@ html, body {
     max-width: 100%;
     padding-left: 8px;
     padding-right: 8px;
+  }
+}
+
+html {
+  font-size: 16px;
+}
+body {
+  font-size: 1rem;
+}
+
+h1, .section-title, .hero-heading {
+  font-size: clamp(2.2rem, 6vw, 3rem);
+  font-weight: 700;
+  line-height: 1.1;
+}
+h2, .section-subtitle {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.15;
+}
+h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+h4 {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+h5 {
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+h6 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.section-description, p, li, td, th {
+  font-size: 1rem;
+}
+.small, .footer, .footer-section, .footer-content, .footer-bottom {
+  font-size: 0.9rem;
+}
+
+.nav-link, .nav-cta {
+  font-size: 1rem;
+}
+
+.btn, button, input, select, textarea {
+  font-size: 1rem;
+}
+
+/* Remove/override inconsistent font-size rules */
+.section-tag, .tower-badge, .gallery-caption, .gallery-item, .gallery-overlay, .view-btn, .lightbox-caption, .location-info-row, .location-map-btn-wide, .call-float, .whatsapp-float, .back-to-top {
+  font-size: 0.95rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+  h1, .section-title, .hero-heading {
+    font-size: clamp(1.5rem, 7vw, 2.2rem);
+  }
+  h2, .section-subtitle {
+    font-size: 1.3rem;
+  }
+  h3 {
+    font-size: 1.1rem;
+  }
+  .nav-link, .nav-cta, .btn, button {
+    font-size: 0.95rem;
+  }
+}
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+  h1, .section-title, .hero-heading {
+    font-size: clamp(1.2rem, 8vw, 1.7rem);
+  }
+  h2, .section-subtitle {
+    font-size: 1.1rem;
+  }
+}
+
+/* --- Classic Minimal Font Families --- */
+body, p, li, td, th, .nav-link, .nav-cta, .btn, input, select, textarea {
+  font-family: 'Poppins', Arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+h1, h2, h3, .section-title, .hero-heading {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+h4, h5, h6, .section-subtitle {
+  font-family: 'Poppins', Arial, sans-serif;
+  font-weight: 500;
+}
+
+/* --- Classic Minimal Font Sizes (already present, but ensure coverage) --- */
+html {
+  font-size: 16px;
+}
+body {
+  font-size: 1rem;
+}
+
+h1, .section-title, .hero-heading {
+  font-size: clamp(2.2rem, 6vw, 3rem);
+  font-weight: 700;
+  line-height: 1.1;
+}
+h2, .section-subtitle {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.15;
+}
+h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+h4 {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+h5 {
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+h6 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.section-description, p, li, td, th {
+  font-size: 1rem;
+}
+.small, .footer, .footer-section, .footer-content, .footer-bottom {
+  font-size: 0.9rem;
+}
+
+.nav-link, .nav-cta {
+  font-size: 1rem;
+}
+
+.btn, button, input, select, textarea {
+  font-size: 1rem;
+}
+
+.section-tag, .tower-badge, .gallery-caption, .gallery-item, .gallery-overlay, .view-btn, .lightbox-caption, .location-info-row, .location-map-btn-wide, .call-float, .whatsapp-float, .back-to-top {
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+  h1, .section-title, .hero-heading {
+    font-size: clamp(1.5rem, 7vw, 2.2rem);
+  }
+  h2, .section-subtitle {
+    font-size: 1.3rem;
+  }
+  h3 {
+    font-size: 1.1rem;
+  }
+  .nav-link, .nav-cta, .btn, button {
+    font-size: 0.95rem;
+  }
+}
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+  h1, .section-title, .hero-heading {
+    font-size: clamp(1.2rem, 8vw, 1.7rem);
+  }
+  h2, .section-subtitle {
+    font-size: 1.1rem;
+  }
+}
+
+/* --- Icon Perfection: Classic Minimal --- */
+.fa, .fas, .fab, .far, .fal, .svg-icon {
+  font-size: 1.25rem;
+  vertical-align: middle;
+}
+
+.section-header i, .gallery-section i, .location-pin-icon svg, .footer-section i, .feature-icon, .amenity-icon, .lightbox-nav i, .back-to-top i, .call-float i, .whatsapp-float i {
+  font-size: 1.5rem;
+}
+
+.btn i, .nav-link i, .nav-cta i {
+  font-size: 1.1rem;
+  margin-right: 0.4em;
+}
+
+@media (max-width: 768px) {
+  .fa, .fas, .fab, .far, .fal, .svg-icon {
+    font-size: 1.1rem;
+  }
+  .section-header i, .gallery-section i, .location-pin-icon svg, .footer-section i, .feature-icon, .amenity-icon, .lightbox-nav i, .back-to-top i, .call-float i, .whatsapp-float i {
+    font-size: 1.2rem;
+  }
+}
+
+/* --- Tower Inner Pages: Icon & Font Size Perfection --- */
+/* Feature card icons (e.g., .feature-card i) */
+.feature-card i,
+.tower-features-grid i,
+.amenities-list li:before {
+  font-size: 1.5rem !important;
+  color: #E49E22;
+  vertical-align: middle;
+}
+
+/* Feature card headings */
+.feature-card h3,
+.tower-features-grid h3 {
+  font-size: 1.25rem !important;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  color: #E49E22;
+  margin-bottom: 0.5em;
+}
+
+/* Tower/Apartment Titles */
+.tower-title,
+.apartment-title,
+.section-title {
+  font-size: clamp(2rem, 5vw, 2.5rem) !important;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  color: #E49E22;
+  text-align: center;
+}
+
+/* Tower/Apartment Subtitles & Descriptions */
+.tower-description,
+.apartment-subtitle,
+.tower-title-container p {
+  font-size: 1.1rem !important;
+  color: #555;
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+/* Amenities list icon (dot) */
+.amenities-list li:before {
+  font-size: 1.2rem !important;
+  color: #E49E22;
+}
+
+/* CTA Button on tower pages */
+.tower-cta-button {
+  font-size: 1rem !important;
+  padding: 0.9em 2em !important;
+  border-radius: 0.5em;
+}
+
+@media (max-width: 768px) {
+  .tower-title,
+  .apartment-title,
+  .section-title {
+    font-size: clamp(1.3rem, 6vw, 1.8rem) !important;
+  }
+  .feature-card h3,
+  .tower-features-grid h3 {
+    font-size: 1.1rem !important;
+  }
+  .feature-card i,
+  .tower-features-grid i,
+  .amenities-list li:before {
+    font-size: 1.2rem !important;
+  }
+}
+@media (max-width: 480px) {
+  .tower-title,
+  .apartment-title,
+  .section-title {
+    font-size: clamp(1.1rem, 7vw, 1.5rem) !important;
+  }
+  .feature-card h3,
+  .tower-features-grid h3 {
+    font-size: 1rem !important;
+  }
+  .feature-card i,
+  .tower-features-grid i,
+  .amenities-list li:before {
+    font-size: 1rem !important;
   }
 }
