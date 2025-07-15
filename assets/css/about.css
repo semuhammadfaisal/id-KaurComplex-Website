@@ -1215,4 +1215,146 @@
   .text {
     font-size: 12px;
   }
+  
+  .about-image, .about-image.realistic-about-image {
+    width: 100% !important;
+    height: 160px !important;
+    min-height: 120px !important;
+    max-height: 200px !important;
+    display: flex !important;
+    align-items: stretch !important;
+    justify-content: center !important;
+    border-radius: 0 0 12px 12px !important;
+    overflow: hidden !important;
+  }
+  .about-image img, .about-image.realistic-about-image img {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 120px !important;
+    max-height: 200px !important;
+    object-fit: cover !important;
+    border-radius: 0 0 12px 12px !important;
+    display: block !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+}
+
+.section-title, h2, h3, .section-subtitle {
+    font-weight: 700;
+}
+
+@media (max-width: 576px) {
+  body {
+    font-size: 0.97rem !important;
+    line-height: 1.7 !important;
+    color: #222 !important;
+  }
+  .section-title, h2, h3, .section-subtitle {
+    font-size: 1.2rem !important;
+    text-align: center !important;
+    font-weight: 700 !important;
+    color: #1a2238 !important;
+    margin-bottom: 0.7rem !important;
+    margin-top: 0.7rem !important;
+  }
+  .about-section, .features-section, .unified-mission-vision {
+    padding: 18px 0 12px 0 !important;
+  }
+  .about-content, .about-card, .about-card-combined, .about-container {
+    padding: 0 4px !important;
+  }
+  .about-features-list {
+    margin-bottom: 10px !important;
+    padding-left: 16px !important;
+  }
+  .about-features-list li {
+    font-size: 0.98rem !important;
+    color: #bfa13a !important;
+    margin-bottom: 4px !important;
+  }
+  .about-image img {
+    border-radius: 0 0 12px 12px !important;
+    min-height: 120px !important;
+    max-height: 140px !important;
+    object-fit: cover !important;
+  }
+  .why-features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px 0 !important;
+  }
+  .why-feature-card {
+    padding: 32px 8px 18px 8px !important;
+    border-radius: 18px !important;
+    margin-top: 18px !important;
+    box-shadow: 0 2px 8px rgba(30,34,56,0.08) !important;
+  }
+  .floating-icon, .why-feature-icon {
+    width: 38px !important;
+    height: 38px !important;
+    font-size: 1.2rem !important;
+    top: -18px !important;
+    border-width: 2px !important;
+  }
+  .card-title, .mv-title {
+    font-size: 1.1rem !important;
+    margin-bottom: 0.5rem !important;
+    margin-top: 0.5rem !important;
+  }
+  .mv-floating-icon {
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 1.1rem !important;
+    top: -14px !important;
+  }
+  .mv-content, .mv-content-left, .mv-content-right {
+    padding: 12px 4px 8px 4px !important;
+  }
+  .mv-label {
+    font-size: 0.85rem !important;
+    margin-bottom: 4px !important;
+  }
+  .mv-gold-divider, .gold-divider, .why-gold-accent {
+    height: 2px !important;
+    width: 32px !important;
+    margin: 0 auto 8px auto !important;
+    background: #e5c97a !important;
+    border-radius: 1px !important;
+    opacity: 0.5 !important;
+    display: block !important;
+  }
+  .mv-text, .section-intro, .section-description, .card-text {
+    font-size: 0.97rem !important;
+    color: #444 !important;
+    margin-bottom: 0.7rem !important;
+    text-align: center !important;
+  }
+  .mv-details-list li, .milestone-list li {
+    font-size: 0.95rem !important;
+    margin-bottom: 4px !important;
+  }
+  .milestone-list li::before {
+    width: 6px !important;
+    height: 6px !important;
+    top: 6px !important;
+  }
+  .mv-milestones {
+    margin-top: 10px !important;
+  }
+  .features-section, .why-choose-us-section, .unified-mission-vision {
+    background: #fffbe6 !important;
+  }
+  .why-feature-card::after, .section-divider, .gold-divider, .mv-gold-divider, .why-gold-accent {
+    display: none !important;
+  }
+  .about-section.realistic-about, .features-section.why-choose-us-section, .unified-mission-vision.premium-mission-vision {
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
 }
