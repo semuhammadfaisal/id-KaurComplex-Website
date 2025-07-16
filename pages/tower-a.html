@@ -154,7 +154,7 @@
         
         .features-expand-btn:hover {
             background: #D4AF37;
-            color: #E49E22;
+            color: #fff;
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(212,175,55,0.3);
         }
@@ -269,22 +269,47 @@
         
         .pricing-table {
             width: 100%;
-            border-collapse: collapse;
-            table-layout: fixed;
+            border-collapse: separate;
+            border-spacing: 0 10px;
+            background: transparent;
+            border-radius: 14px;
+            overflow: hidden;
+            font-size: 1rem;
+            margin-top: 10px;
         }
         
         .pricing-table th {
+            background: #fff8e1;
+            color: #d4af37;
+            font-weight: 600;
+            padding: 14px 12px;
             text-align: left;
-            padding: 12px 0;
-            font-weight: 500;
-            color: #555;
-            border-bottom: 1px solid #EEE;
+            border-radius: 10px 10px 0 0;
+            border-bottom: 2px solid #f3e6c4;
+            font-size: 1.08rem;
+            letter-spacing: 0.2px;
         }
         
         .pricing-table td {
-            padding: 12px 0;
-            border-bottom: 1px solid #EEE;
+            background: #fff;
             color: #333;
+            padding: 14px 12px;
+            border-radius: 8px;
+            border-bottom: 1px solid #f3e6c4;
+            transition: background 0.2s;
+        }
+        
+        .pricing-table tr {
+            transition: box-shadow 0.2s, background 0.2s;
+        }
+        
+        .pricing-table tr:hover td {
+            background: #fffbe7;
+            box-shadow: 0 2px 8px rgba(212,175,55,0.07);
+        }
+        
+        .pricing-table tr:nth-child(even) td {
+            background: #faf9f6;
         }
         
         .download-plan-btn {
@@ -455,29 +480,29 @@
         }
         
         @media (max-width: 600px) {
+            .pricing-table, .pricing-table th, .pricing-table td {
+                font-size: 0.95rem;
+                padding: 10px 6px;
+            }
+            .pricing-table th, .pricing-table td {
+                white-space: nowrap;
+            }
             .pricing-table {
-                font-size: 0.9rem;
+                min-width: 320px;
+                overflow-x: auto;
+                display: block;
             }
-            
-            .pricing-table th,
-            .pricing-table td {
-                padding: 8px 6px;
-            }
-            
             .pricing-section {
                 padding: 20px 15px;
             }
-            
             .pricing-table th:nth-child(1),
             .pricing-table td:nth-child(1) {
                 min-width: 80px;
             }
-            
             .pricing-table th:nth-child(2),
             .pricing-table td:nth-child(2) {
                 min-width: 60px;
             }
-            
             .pricing-table th:nth-child(3),
             .pricing-table td:nth-child(3) {
                 min-width: 90px;
@@ -691,6 +716,71 @@
             background: #E49E22 !important;
             color: #fff !important;
         }
+        
+        .payment-breakdown-card {
+          max-width: 420px;
+          margin: 0 auto 32px auto;
+          background: #fff;
+          border-radius: 16px;
+          box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+          padding: 28px 20px 18px 20px;
+          text-align: center;
+          border-top: 4px solid #d4af37;
+        }
+        .payment-breakdown-title {
+          font-family: 'Playfair Display', serif;
+          color: #222;
+          font-size: 1.3rem;
+          margin-bottom: 18px;
+          letter-spacing: 0.5px;
+        }
+        .payment-breakdown-details {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 28px;
+          margin-bottom: 10px;
+        }
+        .payment-breakdown-item {
+          flex: 1;
+        }
+        .payment-breakdown-percent {
+          font-size: 2.2rem;
+          font-weight: 700;
+          margin-bottom: 4px;
+        }
+        .payment-breakdown-label {
+          font-size: 1.05rem;
+          color: #444;
+          margin-bottom: 2px;
+        }
+        .payment-breakdown-desc {
+          font-size: 0.95rem;
+          color: #888;
+        }
+        .payment-breakdown-divider {
+          width: 2px;
+          height: 40px;
+          background: #eee;
+          border-radius: 1px;
+        }
+        .payment-breakdown-note {
+          margin-top: 10px;
+          font-size: 1rem;
+          color: #d4af37;
+          font-weight: 500;
+        }
+        @media (max-width: 600px) {
+          .payment-breakdown-details {
+            flex-direction: column;
+            gap: 10px;
+          }
+          .payment-breakdown-divider {
+            width: 80%;
+            height: 2px;
+            margin: 0 auto;
+          }
+        }
     </style>
 </head>
 <body>
@@ -794,43 +884,65 @@
                 </div>
             </div>
             <div class="pricing-section hidden" id="pricing-section">
-                <table class="pricing-table" style="width:100%;border-collapse:separate;border-spacing:0 8px;">
-                    <tr style="background:#f7f7f7;">
-                        <th style="padding:12px 0 12px 12px;font-size:1.08rem;color:#E49E22;border-radius:8px 0 0 8px;">Apartment Type</th>
-                        <th style="padding:12px 12px 12px 0;font-size:1.08rem;color:#E49E22;text-align:center;border-radius:0 8px 8px 0;">Size (Sqft)</th>
-                        <th style="padding:12px 12px 12px 0;font-size:1.08rem;color:#E49E22;text-align:right;border-radius:0 8px 8px 0;">Price Range (PKR)</th>
-                    </tr>
-                    <tr style="background:#faf9f6;">
-                        <td style="padding:12px 0 12px 12px;">Studio</td>
-                        <td style="padding:12px 12px 12px 0;text-align:center;">502</td>
-                        <td style="padding:12px 12px 12px 0;text-align:right;">40-45 Lac</td>
-                    </tr>
-                    <tr style="background:#fff;">
-                        <td style="padding:12px 0 12px 12px;">One Bed</td>
-                        <td style="padding:12px 12px 12px 0;text-align:center;">581</td>
-                        <td style="padding:12px 12px 12px 0;text-align:right;">46-52 Lac</td>
-                    </tr>
-                    <tr style="background:#faf9f6;">
-                        <td style="padding:12px 0 12px 12px;">One Bed</td>
-                        <td style="padding:12px 12px 12px 0;text-align:center;">615</td>
-                        <td style="padding:12px 12px 12px 0;text-align:right;">49-55 Lac</td>
-                    </tr>
-                    <tr style="background:#fff;">
-                        <td style="padding:12px 0 12px 12px;">Two Bed</td>
-                        <td style="padding:12px 12px 12px 0;text-align:center;">1080</td>
-                        <td style="padding:12px 12px 12px 0;text-align:right;">86-97 Lac</td>
-                    </tr>
-                    <tr style="background:#faf9f6;">
-                        <td style="padding:12px 0 12px 12px;">Three Bed</td>
-                        <td style="padding:12px 12px 12px 0;text-align:center;">1345</td>
-                        <td style="padding:12px 12px 12px 0;text-align:right;">107-121 Lac</td>
-                    </tr>
-                    <tr style="background:#fff;">
-                        <td style="padding:12px 0 12px 12px;">Three Bed</td>
-                        <td style="padding:12px 12px 12px 0;text-align:center;">1421</td>
-                        <td style="padding:12px 12px 12px 0;text-align:right;">113-127 Lac</td>
-                    </tr>
-                </table>
+              <div class="payment-breakdown-card">
+                <h3 class="payment-breakdown-title"><i class="fas fa-coins"></i> Payment Plan</h3>
+                <div class="payment-breakdown-details">
+                  <div class="payment-breakdown-item">
+                    <div class="payment-breakdown-percent" style="color:#d4af37;">20%</div>
+                    <div class="payment-breakdown-label">Down Payment</div>
+                    <div class="payment-breakdown-desc">On Booking</div>
+                  </div>
+                  <div class="payment-breakdown-divider"></div>
+                  <div class="payment-breakdown-item">
+                    <div class="payment-breakdown-percent" style="color:#d4af37;">80%</div>
+                    <div class="payment-breakdown-label">Installments</div>
+                    <div class="payment-breakdown-desc">In 25 Months</div>
+                  </div>
+                </div>
+                <div class="payment-breakdown-note">Flexible monthly installments available</div>
+              </div>
+              <div style="height: 4px; background: #d4af37; border-radius: 2px 2px 0 0; margin-bottom: 0;"></div>
+              <table class="pricing-table">
+                <thead>
+                  <tr>
+                    <th>Apartment Type</th>
+                    <th>Size (Sqft)</th>
+                    <th>Price Range (PKR)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Studio</td>
+                    <td>502</td>
+                    <td>40-45 Lac</td>
+                  </tr>
+                  <tr>
+                    <td>One Bed</td>
+                    <td>581</td>
+                    <td>46-52 Lac</td>
+                  </tr>
+                  <tr>
+                    <td>One Bed</td>
+                    <td>615</td>
+                    <td>49-55 Lac</td>
+                  </tr>
+                  <tr>
+                    <td>Two Bed</td>
+                    <td>1080</td>
+                    <td>86-97 Lac</td>
+                  </tr>
+                  <tr>
+                    <td>Three Bed</td>
+                    <td>1345</td>
+                    <td>107-121 Lac</td>
+                  </tr>
+                  <tr>
+                    <td>Three Bed</td>
+                    <td>1421</td>
+                    <td>113-127 Lac</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
             <div class="amenities-section-card">
                 <svg class="amenities-bg-svg" viewBox="0 0 600 300" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="500" cy="80" r="120" fill="#d4af37" fill-opacity="0.12"/><rect x="-60" y="180" width="320" height="80" rx="40" fill="#ffe082" fill-opacity="0.08"/></svg>
