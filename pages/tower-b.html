@@ -503,43 +503,44 @@
     </div>
     <script src="../assets/js/main.js"></script>
     <script>
-        // Features expand functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const expandBtn = document.getElementById('features-expand-btn');
-            const hiddenFeatures = document.querySelectorAll('.hidden-feature');
-            const expandIcon = document.querySelector('.expand-icon');
-            
-            if (expandBtn) {
-                expandBtn.addEventListener('click', function() {
-                    const isExpanded = expandBtn.classList.contains('expanded');
-                    
-                    if (!isExpanded) {
-                        // Show hidden features
-                        hiddenFeatures.forEach((feature, index) => {
-                            setTimeout(() => {
-                                feature.classList.add('show');
-                            }, index * 100);
-                        });
-                        
-                        // Update button state
-                        expandBtn.classList.add('expanded');
-                        expandIcon.classList.remove('fa-chevron-down');
-                        expandIcon.classList.add('fa-chevron-up');
-                        
-                    } else {
-                        // Hide features
-                        hiddenFeatures.forEach(feature => {
+    document.addEventListener('DOMContentLoaded', function() {
+        const expandBtn = document.getElementById('features-expand-btn');
+        const hiddenFeatures = document.querySelectorAll('.hidden-feature');
+        const expandIcon = document.querySelector('.expand-icon');
+        let isAnimating = false;
+
+        if (expandBtn) {
+            expandBtn.setAttribute('aria-expanded', 'false');
+            expandBtn.addEventListener('click', function() {
+                if (isAnimating) return;
+                isAnimating = true;
+                const isExpanded = expandBtn.classList.contains('expanded');
+                if (!isExpanded) {
+                    hiddenFeatures.forEach((feature, index) => {
+                        setTimeout(() => {
+                            feature.classList.add('show');
+                            if (index === hiddenFeatures.length - 1) isAnimating = false;
+                        }, index * 80);
+                    });
+                    expandBtn.classList.add('expanded');
+                    expandIcon.classList.remove('fa-chevron-down');
+                    expandIcon.classList.add('fa-chevron-up');
+                    expandBtn.setAttribute('aria-expanded', 'true');
+                } else {
+                    hiddenFeatures.forEach((feature, index) => {
+                        setTimeout(() => {
                             feature.classList.remove('show');
-                        });
-                        
-                        // Update button state
-                        expandBtn.classList.remove('expanded');
-                        expandIcon.classList.remove('fa-chevron-up');
-                        expandIcon.classList.add('fa-chevron-down');
-                    }
-                });
-            }
-        });
+                            if (index === hiddenFeatures.length - 1) isAnimating = false;
+                        }, index * 60);
+                    });
+                    expandBtn.classList.remove('expanded');
+                    expandIcon.classList.remove('fa-chevron-up');
+                    expandIcon.classList.add('fa-chevron-down');
+                    expandBtn.setAttribute('aria-expanded', 'false');
+                }
+            });
+        }
+    });
     </script>
 </body>
 </html> 
