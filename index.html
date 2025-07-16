@@ -39,6 +39,10 @@
 .footer .social-links a:hover {
   text-decoration: none !important;
 }
+      /* Hide gallery items except the first by default */
+      .gallery-item.hidden-gallery {
+        display: none;
+      }
     </style>
 </head>
 <body>
@@ -102,11 +106,11 @@
     </div>
     <div class="towers-list">
       <!-- Tower A -->
-      <a href="pages/tower-a.html" class="tower-item"><div class="tower-image-wrapper"><img src="assets/images/gallery/tower-a.png" alt="Tower A" loading="lazy"><span class="tower-badge ready">Ready to move</span></div></a>
+      <a href="pages/tower-a.html" class="tower-item"><div class="tower-image-wrapper"><img src="assets/images/gallery/1.png" alt="Tower A" loading="lazy"><span class="tower-badge ready">Ready to move</span></div></a>
       <!-- Tower B -->
-      <a href="pages/tower-b.html" class="tower-item"><div class="tower-image-wrapper"><img src="assets/images/gallery/tower-b.png" alt="Tower B" loading="lazy"><span class="tower-badge">Under Construction 60%</span></div></a>
+      <a href="pages/tower-b.html" class="tower-item"><div class="tower-image-wrapper"><img src="assets/images/gallery/2.png" alt="Tower B" loading="lazy"><span class="tower-badge">Under Construction 60%</span></div></a>
       <!-- Tower C -->
-      <a href="pages/tower-c.html" class="tower-item"><div class="tower-image-wrapper"><img src="assets/images/gallery/tower-c.png" alt="Tower C" loading="lazy"><span class="tower-badge">Under Construction 40%</span></div></a>
+      <a href="pages/tower-c.html" class="tower-item"><div class="tower-image-wrapper"><img src="assets/images/gallery/3.png" alt="Tower C" loading="lazy"><span class="tower-badge">Under Construction 40%</span></div></a>
     </div>
   </div>
 </section>
@@ -293,32 +297,32 @@
       <button class="filter-btn" data-filter="views">Views</button>
     </div> -->
     
-    <div class="gallery-grid">
+    <div class="gallery-grid gallery-collapsed">
       <div class="gallery-item" data-category="exterior">
         <div class="image-container">
           <img src="assets/images/gallery/kaur-complex-img.jpg" alt="Kaur Complex Exterior" loading="lazy">
           
         </div>
       </div>
-      <div class="gallery-item" data-category="interior">
+      <div class="gallery-item hidden-gallery" data-category="interior">
         <div class="image-container">
           <img src="assets/images/gallery/hero-bg.jpg" alt="Luxury Lobby" loading="lazy">
           
         </div>
       </div>
-      <div class="gallery-item" data-category="interior">
+      <div class="gallery-item hidden-gallery" data-category="interior">
         <div class="image-container">
           <img src="assets/images/gallery/top-img .jpg" alt="Luxury Apartment" loading="lazy">
           
         </div>
       </div>
-      <div class="gallery-item" data-category="amenities">
+      <div class="gallery-item hidden-gallery" data-category="amenities">
         <div class="image-container">
           <img src="assets/images/gallery/c-t.jpg" alt="Swimming Pool" loading="lazy">
           
         </div>
       </div>
-      <div class="gallery-item" data-category="views">
+      <div class="gallery-item hidden-gallery" data-category="views">
         <div class="image-container">
           <img src="assets/images/gallery/b-t.jpg" alt="Penthouse View" loading="lazy">
           
@@ -466,6 +470,19 @@
         slides[current].style.opacity = 1;
       }, 4000);
     })();
+    // Gallery expand on click
+    document.addEventListener('DOMContentLoaded', function() {
+      var firstGalleryItem = document.querySelector('.gallery-grid .gallery-item');
+      var galleryGrid = document.querySelector('.gallery-grid');
+      if (firstGalleryItem && galleryGrid) {
+        firstGalleryItem.addEventListener('click', function() {
+          document.querySelectorAll('.gallery-item.hidden-gallery').forEach(function(item) {
+            item.classList.remove('hidden-gallery');
+          });
+          galleryGrid.classList.remove('gallery-collapsed');
+        }, { once: true });
+      }
+    });
     </script>
 </body>
 </html>
