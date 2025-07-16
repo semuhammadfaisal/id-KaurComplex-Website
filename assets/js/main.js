@@ -13,41 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initWhatsApp();
     initAnimations();
     initTestimonialSlider();
-    // Improved dropdown logic for mobile
-    document.querySelectorAll('.nav-dropdown').forEach(function(navDropdown) {
-        var trigger = navDropdown.querySelector('span');
-        if (trigger) {
-            trigger.addEventListener('click', function(e) {
-                if (window.innerWidth <= 900) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    navDropdown.classList.toggle('dropdown-open');
-                }
-            });
-        }
-        var dropdownMenu = navDropdown.querySelector('.dropdown-menu');
-        if (dropdownMenu) {
-            dropdownMenu.addEventListener('click', function(e) {
-                if (window.innerWidth <= 900) {
-                    e.stopPropagation();
-                }
-            });
-        }
-    });
-
-    // Dropdown for Properties (mobile)
-    const navDropdown = document.querySelector('.nav-dropdown');
-    if (navDropdown) {
-        const dropdownToggle = navDropdown.querySelector('span');
-        if (dropdownToggle) {
-            dropdownToggle.addEventListener('click', function (e) {
-                if (window.innerWidth <= 991) {
-                    e.preventDefault();
-                    navDropdown.classList.toggle('open');
-                }
-            });
-        }
-    }
+    initNavbarDropdown();
 });
 
 // Loading Screen
@@ -322,17 +288,17 @@ function initAnimations() {
                 hero.style.transform = 'none'; // Reset transform on mobile
             }
         }
-        
         window.addEventListener('scroll', updateHeroTransform);
         window.addEventListener('resize', updateHeroTransform);
         updateHeroTransform(); // Run on page load
     }
-    
-    new IntersectionObserver((entries) => {
+    // Fix: Observe each section element individually
+    const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) entry.target.classList.add('section-visible');
         });
-    }, { threshold: 0.1 }).observe(document.querySelectorAll('section'));
+    }, { threshold: 0.1 });
+    document.querySelectorAll('section').forEach(section => observer.observe(section));
 }
 
 // Testimonial Slider
@@ -688,3 +654,57 @@ function setViewportHeight() {
 
 window.addEventListener('resize', setViewportHeight);
 setViewportHeight();
+
+// Modern dropdown menu logic for navbar
+function initNavbarDropdown() {
+  const navDropdown = document.querySelector('.nav-dropdown');
+  if (!navDropdown) return;
+  const dropdownToggle = navDropdown.querySelector('span');
+  const dropdownMenu = navDropdown.querySelector('.dropdown-menu');
+
+  // Mobile: Toggle dropdown on click
+  if (dropdownToggle && dropdownMenu) {
+    dropdownToggle.addEventListener('click', function(e) {
+      if (window.innerWidth <= 991) {
+        e.preventDefault();
+        e.stopPropagation();
+        navDropdown.classList.toggle('dropdown-open');
+      }
+    });
+  }
+
+  // Close dropdown when clicking outside (mobile only)
+  document.addEventListener('click', function(e) {
+    if (window.innerWidth <= 991) {
+      if (!navDropdown.contains(e.target)) {
+        navDropdown.classList.remove('dropdown-open');
+      }
+    }
+  });
+
+  // Desktop: Show dropdown on hover (CSS handles display)
+}
+
+// Navbar dropdown for mobile
+document.querySelectorAll('.nav-dropdown > span').forEach(function(trigger) {
+  trigger.addEventListener('click', function(e) {
+    if (window.innerWidth <= 991) {
+      e.preventDefault();
+      const parent = this.parentElement;
+      parent.classList.toggle('open');
+      // Optionally close other open dropdowns
+      document.querySelectorAll('.nav-dropdown').forEach(function(drop) {
+        if (drop !== parent) drop.classList.remove('open');
+      });
+    }
+  });
+});
+
+// Close dropdown when clicking outside (mobile)
+document.addEventListener('click', function(e) {
+  if (window.innerWidth <= 991) {
+    document.querySelectorAll('.nav-dropdown').forEach(function(drop) {
+      if (!drop.contains(e.target)) drop.classList.remove('open');
+    });
+  }
+});

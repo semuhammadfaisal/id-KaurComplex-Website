@@ -321,13 +321,13 @@
 }
 
 .tower-image-wrapper {
-  background-color: #635a48;
+  background-color: #fff;
   position: relative;
-  height: 120px;
+  height: 180px !important;
   border-radius: 8px;
   overflow: hidden;
   margin-bottom: 0.5rem;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.188);
   display: flex;
   align-items: flex-end;
   justify-content: center;

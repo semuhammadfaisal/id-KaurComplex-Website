@@ -285,6 +285,14 @@
         .footer .social-links a:hover {
             text-decoration: none !important;
         }
+        /* Blinking animation for offer text */
+        .blinking-offer-text {
+            animation: blink-offer 1s steps(2, start) infinite;
+        }
+        @keyframes blink-offer {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
     </style>
 </head>
 <body>
@@ -314,30 +322,30 @@
           </div>
       </div>
   </nav>
-    <section class="tower-detail-section">
-        <div class="tower-hero-container" style="position:relative;width:100%;height:55vh;min-height:350px;overflow:hidden;margin-bottom:32px;box-shadow:0 2px 10px rgba(0,0,0,0.04);border-radius:10px;">
+    <section class="tower-detail-section" style="margin-bottom: 24px;">
+        <div class="tower-hero-container" style="position:relative;width:100%;height:50vh;min-height:260px;overflow:hidden;margin-bottom:18px;box-shadow:0 2px 10px rgba(0,0,0,0.04);border-radius:10px;">
             <img class="tower-hero-image" src="../assets/images/gallery/c-t.jpg" alt="Tower C Hero" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;border-radius:10px 10px 0 0;filter:brightness(0.85);">
-            <div class="tower-title-container" style="position:absolute;bottom:24px;left:50%;transform:translateX(-50%);width:54%;max-width:260px;background:rgba(255,255,255,0.92);padding:7px 0;box-shadow:0 2px 10px rgba(0,0,0,0.04);border-top:3px solid #E49E22;text-align:center;border-radius:8px;">
-                <h1 class="tower-title" style="font-family:'Poppins',sans-serif;color:#E49E22;font-size:2.2rem;margin:0;">Tower C</h1>
-                <p style="color:#555;font-size:1.1rem;margin:8px 0 0 0;">Under Construction</p>
+            <div class="tower-title-container" style="position:absolute;bottom:16px;left:50%;transform:translateX(-50%);width:54%;max-width:260px;background:rgba(255,255,255,0.92);padding:5px 0;box-shadow:0 2px 10px rgba(0,0,0,0.04);border-top:3px solid #E49E22;text-align:center;border-radius:8px;">
+                <h1 class="tower-title" style="font-family:'Poppins',sans-serif;color:#E49E22;font-size:2.1rem;margin:0;">Tower C</h1>
+                <p style="color:#555;font-size:1.05rem;margin:6px 0 0 0;">Under Construction</p>
             </div>
         </div>
         
         <!-- Apartment Type Buttons -->
-        <div class="apartment-buttons-container" style="max-width: 800px; margin: 0 auto 60px; padding: 0 20px; text-align: center;">
-            <h3 style="font-family: 'Poppins', sans-serif; color: #E49E22; font-size: 1.4rem; margin-bottom: 30px;">Choose Your Apartment Type</h3>
-            <div class="apartment-buttons-row" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-                <a href="tower-c-1bed.html" class="apartment-type-btn" style="display: inline-block; background: #E49E22; color: white; padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: 500; transition: all 0.3s ease; min-width: 140px; box-shadow: 0 2px 8px rgba(30,58,138,0.2);">
-                    <i class="fas fa-bed" style="display: block; font-size: 1.5rem; margin-bottom: 8px;"></i>
-                    <span style="font-size: 1.1rem;">1 Bed</span>
+        <div class="apartment-buttons-container" style="max-width: 800px; margin: 0 auto 36px; padding: 0 20px; text-align: center;">
+            <h3 style="font-family: 'Poppins', sans-serif; color: #E49E22; font-size: 1.2rem; margin-bottom: 18px;">Choose Your Apartment Type</h3>
+            <div class="apartment-buttons-row" style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+                <a href="tower-c-1bed.html" class="apartment-type-btn" style="display: inline-block; background: #E49E22; color: white; padding: 13px 24px; border-radius: 8px; text-decoration: none; font-weight: 500; transition: all 0.3s ease; min-width: 120px; box-shadow: 0 2px 8px rgba(30,58,138,0.2);">
+                    <i class="fas fa-bed" style="display: block; font-size: 1.3rem; margin-bottom: 6px;"></i>
+                    <span style="font-size: 1rem;">1 Bed</span>
                 </a>
-                <a href="tower-c-2bed.html" class="apartment-type-btn" style="display: inline-block; background: #E49E22; color: white; padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: 500; transition: all 0.3s ease; min-width: 140px; box-shadow: 0 2px 8px rgba(30,58,138,0.2);">
-                    <i class="fas fa-bed" style="display: block; font-size: 1.5rem; margin-bottom: 8px;"></i>
-                    <span style="font-size: 1.1rem;">2 Bed</span>
+                <a href="tower-c-2bed.html" class="apartment-type-btn" style="display: inline-block; background: #E49E22; color: white; padding: 13px 24px; border-radius: 8px; text-decoration: none; font-weight: 500; transition: all 0.3s ease; min-width: 120px; box-shadow: 0 2px 8px rgba(30,58,138,0.2);">
+                    <i class="fas fa-bed" style="display: block; font-size: 1.3rem; margin-bottom: 6px;"></i>
+                    <span style="font-size: 1rem;">2 Bed</span>
                 </a>
-                <a href="tower-c-3bed.html" class="apartment-type-btn" style="display: inline-block; background: #E49E22; color: white; padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: 500; transition: all 0.3s ease; min-width: 140px; box-shadow: 0 2px 8px rgba(30,58,138,0.2);">
-                    <i class="fas fa-bed" style="display: block; font-size: 1.5rem; margin-bottom: 8px;"></i>
-                    <span style="font-size: 1.1rem;">3 Bed</span>
+                <a href="tower-c-3bed.html" class="apartment-type-btn" style="display: inline-block; background: #E49E22; color: white; padding: 13px 24px; border-radius: 8px; text-decoration: none; font-weight: 500; transition: all 0.3s ease; min-width: 120px; box-shadow: 0 2px 8px rgba(30,58,138,0.2);">
+                    <i class="fas fa-bed" style="display: block; font-size: 1.3rem; margin-bottom: 6px;"></i>
+                    <span style="font-size: 1rem;">3 Bed</span>
                 </a>
             </div>
         </div>
@@ -398,31 +406,41 @@
                     <p>On-site management office for resident support and building maintenance.</p>
                 </div>
             </div>
-            <h2 class="section-title" style="font-family:'Poppins',sans-serif;color:#E49E22;font-size:1.5rem;margin-bottom:18px;text-align:center;">Pricing</h2>
-            <div class="pricing-section" style="background:#fff;padding:32px 24px 24px 24px;box-shadow:0 4px 24px rgba(30,58,138,0.07);margin-bottom:32px;border-radius:18px;max-width:500px;margin-left:auto;margin-right:auto;">
-                <table class="pricing-table" style="width:100%;border-collapse:separate;border-spacing:0 8px;">
+            <h2 class="section-title" style="font-family:'Poppins',sans-serif;color:#E49E22;font-size:1.5rem;margin-bottom:10px;text-align:center;">Pricing</h2>
+            <div class="pricing-section" style="background:#fff;padding:20px 16px 14px 16px;box-shadow:0 4px 24px rgba(30,58,138,0.07);margin-bottom:18px;border-radius:18px;max-width:500px;margin-left:auto;margin-right:auto;">
+                <table class="pricing-table" style="width:100%;border-collapse:separate;border-spacing:0 4px; margin-bottom: 10px;">
                     <tr style="background:#f7f7f7;">
-                        <th style="padding:12px 0 12px 12px;font-size:1.08rem;color:#E49E22;border-radius:8px 0 0 8px;">Floor</th>
-                        <th style="padding:12px 12px 12px 0;font-size:1.08rem;color:#E49E22;text-align:right;border-radius:0 8px 8px 0;">Price/Sqft (PKR)</th>
+                        <th style="padding:8px 0 8px 8px;font-size:1.02rem;color:#E49E22;border-radius:8px 0 0 8px;">Floor</th>
+                        <th style="padding:8px 8px 8px 0;font-size:1.02rem;color:#E49E22;text-align:right;border-radius:0 8px 8px 0;">Price/Sqft (PKR)</th>
                     </tr>
                     <tr style="background:#faf9f6;">
-                        <td style="padding:12px 0 12px 12px;">1st - 3rd</td>
-                        <td style="padding:12px 12px 12px 0;text-align:right;">9,000</td>
+                        <td style="padding:8px 0 8px 8px;">1st - 3rd</td>
+                        <td style="padding:8px 8px 8px 0;text-align:right;">9,000</td>
                     </tr>
                     <tr style="background:#fff;">
-                        <td style="padding:12px 0 12px 12px;">4th - 6th</td>
-                        <td style="padding:12px 12px 12px 0;text-align:right;">8,500</td>
+                        <td style="padding:8px 0 8px 8px;">4th - 6th</td>
+                        <td style="padding:8px 8px 8px 0;text-align:right;">8,500</td>
                     </tr>
                     <tr style="background:#faf9f6;">
-                        <td style="padding:12px 0 12px 12px;">7th - 9th</td>
-                        <td style="padding:12px 12px 12px 0;text-align:right;">8,000</td>
+                        <td style="padding:8px 0 8px 8px;">7th - 9th</td>
+                        <td style="padding:8px 8px 8px 0;text-align:right;">8,000</td>
                     </tr>
                 </table>
-                <div style="display: flex; gap: 15px; margin-top: 20px; justify-content: flex-start; flex-wrap: wrap;">
-                    <a class="download-plan-btn" href="../assets/images/gallery/west-block-paymentPlan.jpg" download style="box-shadow:0 2px 8px rgba(212,175,55,0.08);font-size:1.08rem;">West Block Payment Plan</a>
-                    <a class="download-plan-btn" href="../assets/images/gallery/east-block-paymentPlan.jpg" download style="box-shadow:0 2px 8px rgba(212,175,55,0.08);font-size:1.08rem;">East Block Payment Plan</a>
+                <div style="display: flex; gap: 4px; margin-top: 8px; justify-content: flex-start; flex-wrap: wrap;">
+                    <a class="download-plan-btn" href="../assets/images/gallery/west-block-paymentPlan.jpg" download style="box-shadow:0 2px 8px rgba(212,175,55,0.08);font-size:0.95rem;padding:7px 18px;">West Block Payment Plan</a>
+                    <a class="download-plan-btn" href="../assets/images/gallery/east-block-paymentPlan.jpg" download style="box-shadow:0 2px 8px rgba(212,175,55,0.08);font-size:0.95rem;padding:7px 18px;">East Block Payment Plan</a>
                 </div>
             </div>
+            <!-- Special Offers Section -->
+            <section class="special-offers-section" style="text-align:center; margin: 40px 0 32px 0;">
+                <h2 class="special-offers-title" style="font-family:'Poppins',sans-serif;color:#E49E22;font-size:1.7rem;margin-bottom:18px;">
+                    <span class="blinking-offer-text" style="color:#d0021b;">Special Offers!</span>
+                </h2>
+                <div class="special-offers-gallery" style="display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; align-items: stretch;">
+                    <img src="../assets/images/gallery/15&discount-on-full-payment.jpg" alt="15% Discount on Full Payment" style="width:100%; max-width:500px; border-radius: 14px; box-shadow: 0 2px 12px rgba(212,175,55,0.13); margin-bottom: 10px;">
+                    <img src="../assets/images/gallery/3-lac-offer.jpg" alt="3 Lakh Offer" style="width:100%; max-width:500px; border-radius: 14px; box-shadow: 0 2px 12px rgba(212,175,55,0.13); margin-bottom: 10px;">
+                </div>
+            </section>
             <!-- Construction Update Section Start -->
             <section class="construction-update-section" style="max-width: 1200px; margin: 60px auto 48px; padding: 0 20px;">
                 <h2 class="section-title" style="text-align: center; margin-bottom: 28px;">Construction Update</h2>
