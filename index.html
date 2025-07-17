@@ -105,164 +105,131 @@
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="index.html">
-                    <img width="40" height="40" viewBox="0 0 40 40" fill="none" src="./assets/images/gallery/logo-kc.png">
-                        <path d="M20 0L40 20L20 40L0 20L20 0Z" fill="#D4AF37"/>
-                        <path d="M20 10L30 20L20 30L10 20L20 10Z" fill="#E49E22"/>
-                    </svg>
-                    <span>Kaur Complex</span>
-                </a>
-            </div>
-            
-            <div class="nav-menu" id="nav-menu">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="pages/about.html" class="nav-link">About</a>
-                <div class="nav-link nav-dropdown">
-                    <span>Properties <i class="fa fa-caret-down"></i></span>
-                    <div class="dropdown-menu">
-                        <a href="pages/tower-a.html">Tower A</a>
-                        <a href="pages/tower-b.html">Tower B</a>
-                        <a href="pages/tower-c.html">Tower C</a>
-                    </div>
-                </div>
-                <a href="pages/contact.html" class="nav-link">Contact</a>
-                <a href="tel:03320001888" class="nav-cta">Call Now</a>
-            </div>
-            
-            <div class="nav-toggle" id="nav-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+    <!-- Navbar Include -->
+    <div id="navbar-include"></div>
+
+    <!-- Fully Responsive Luxury Hero Section -->
+    <section class="luxury-hero">
+      <div class="hero-bg-container">
+        <div class="hero-bg-image hero-bg-slide" style="background-image: url('assets/images/gallery/WELCOME\ TO_20250715_104649_0000.png'); opacity: 1;"></div>
+        <div class="hero-bg-image hero-bg-slide" style="background-image: url('assets/images/gallery/WELCOME\ TO_20250715_104649_0000.png'); opacity: 0;"></div>
+        <div class="hero-bg-image hero-bg-slide" style="background-image: url('assets/images/gallery/WELCOME\ TO_20250715_104649_0000.png'); opacity: 0;"></div>
+        <div class="hero-gradient-overlay"></div>
+      </div>
+      <div class="hero-content-container">
+        <div class="hero-content">
         </div>
-    </nav>
+      </div>
+    </section>
 
-<!-- Fully Responsive Luxury Hero Section -->
-<section class="luxury-hero">
-  <div class="hero-bg-container">
-    <div class="hero-bg-image hero-bg-slide" style="background-image: url('assets/images/gallery/WELCOME\ TO_20250715_104649_0000.png'); opacity: 1;"></div>
-    <div class="hero-bg-image hero-bg-slide" style="background-image: url('assets/images/gallery/WELCOME\ TO_20250715_104649_0000.png'); opacity: 0;"></div>
-    <div class="hero-bg-image hero-bg-slide" style="background-image: url('assets/images/gallery/WELCOME\ TO_20250715_104649_0000.png'); opacity: 0;"></div>
-    <div class="hero-gradient-overlay"></div>
-  </div>
-  <div class="hero-content-container">
-    <div class="hero-content">
-    </div>
-  </div>
-</section>
+    <!-- Minimalist Tower Section -->
+    <section class="towers-section">
+      <div class="container">
+        <div class="section-intro" style="text-align:center; margin-bottom: 24px;">
+          <span class="section-tag" style="display:inline-block; font-size:1.2rem; letter-spacing:1px; color:#d4af37; font-family:'Poppins',sans-serif; font-weight:700; background:linear-gradient(90deg,#fffbe622 60%,#ffe08218 100%); padding:6px 22px; border-radius:18px; box-shadow:0 2px 8px rgba(212,175,55,0.07); margin-bottom:8px;">Our Towers</span>
+          <p class="section-description" style="font-size:1.13rem; color:#111; font-weight:600; margin-top:8px;">
+            Tower A ready to move in | Towers B &amp; C under construction
+          </p>
+        </div>
+        <div class="towers-list">
+          <!-- Tower A -->
+          <a href="pages/tower-a.html" class="tower-item"><div class="tower-image-wrapper"><img src="assets/images/gallery/1.png" alt="Tower A" loading="lazy"><span class="tower-badge ready">Ready to move</span></div></a>
+          <!-- Tower B -->
+          <a href="pages/tower-b.html" class="tower-item"><div class="tower-image-wrapper"><img src="assets/images/gallery/2.png" alt="Tower B" loading="lazy"><span class="tower-badge">Under Construction 60%</span></div></a>
+          <!-- Tower C -->
+          <a href="pages/tower-c.html" class="tower-item"><div class="tower-image-wrapper"><img src="assets/images/gallery/3.png" alt="Tower C" loading="lazy"><span class="tower-badge">Under Construction 40%</span></div></a>
+        </div>
+      </div>
+    </section>
 
-<!-- Minimalist Tower Section -->
-<section class="towers-section">
-  <div class="container">
-    <div class="section-intro" style="text-align:center; margin-bottom: 24px;">
-      <span class="section-tag" style="display:inline-block; font-size:1.2rem; letter-spacing:1px; color:#d4af37; font-family:'Poppins',sans-serif; font-weight:700; background:linear-gradient(90deg,#fffbe622 60%,#ffe08218 100%); padding:6px 22px; border-radius:18px; box-shadow:0 2px 8px rgba(212,175,55,0.07); margin-bottom:8px;">Our Towers</span>
-      <p class="section-description" style="font-size:1.13rem; color:#111; font-weight:600; margin-top:8px;">
-        Tower A ready to move in | Towers B &amp; C under construction
-      </p>
-    </div>
-    <div class="towers-list">
-      <!-- Tower A -->
-      <a href="pages/tower-a.html" class="tower-item"><div class="tower-image-wrapper"><img src="assets/images/gallery/1.png" alt="Tower A" loading="lazy"><span class="tower-badge ready">Ready to move</span></div></a>
-      <!-- Tower B -->
-      <a href="pages/tower-b.html" class="tower-item"><div class="tower-image-wrapper"><img src="assets/images/gallery/2.png" alt="Tower B" loading="lazy"><span class="tower-badge">Under Construction 60%</span></div></a>
-      <!-- Tower C -->
-      <a href="pages/tower-c.html" class="tower-item"><div class="tower-image-wrapper"><img src="assets/images/gallery/3.png" alt="Tower C" loading="lazy"><span class="tower-badge">Under Construction 40%</span></div></a>
-    </div>
-  </div>
-</section>
-
-<!-- Masterplan Section: Towers A, B, C Locations -->
-<section class="masterplan-section" style="background: #faf9f6; padding: 64px 0 48px 0;">
-  <div class="container" style="max-width: 1100px; margin: 0 auto;">
-    <div class="section-header center" style="margin-bottom: 28px;">
-      <span class="section-tag" style="display:inline-block; font-size:1.1rem; letter-spacing:1px; color:#d4af37; font-family:'Poppins',sans-serif; font-weight:700; background:linear-gradient(90deg,#fffbe622 60%,#ffe08218 100%); padding:6px 22px; border-radius:18px; box-shadow:0 2px 8px rgba(212,175,55,0.07); margin-bottom:8px;">Masterplan</span>
-      <h2 style="font-size:2.1rem; font-family:'Poppins',sans-serif; font-weight:700; color:#222; margin:0;">Kaur Complex Masterplan</h2>
-      <p style="font-size:1.08rem; color:#444; font-family:'Poppins',sans-serif; font-weight:400; margin-top:10px;">Explore the layout of Towers A, B & C and their prime locations.</p>
-    </div>
-    <div class="masterplan-image-wrapper" style="display:flex; justify-content:center; align-items:center;">
-      <img src="assets/images/gallery/Master Plan-01-01.png" alt="Kaur Complex Masterplan" style="width:100%; max-width:900px; border-radius:18px; box-shadow:0 4px 24px rgba(0,0,0,0.08); border:2px solid #e7e2d6;">
-    </div>
-    <div class="masterplan-legend" style="display:flex; justify-content:center; gap:32px; margin-top:28px; flex-wrap:wrap;">
-      <a href="pages/tower-a.html" style="text-decoration:none;">
-        <span class="blink-legend" style="display:inline-block; width:32px; height:32px; background:#d4af37; border-radius:50%; text-align:center; color:#fff; font-weight:700; line-height:32px; font-size:1.2rem; font-family:'Poppins',sans-serif; box-shadow:0 2px 8px rgba(212,175,55,0.10); transition:box-shadow 0.2s;">A</span>
-      </a>
-      <a href="pages/tower-b.html" style="text-decoration:none;">
-        <span class="blink-legend" style="display:inline-block; width:32px; height:32px; background:#bfae9c; border-radius:50%; text-align:center; color:#fff; font-weight:700; line-height:32px; font-size:1.2rem; font-family:'Poppins',sans-serif; box-shadow:0 2px 8px rgba(191,174,156,0.10); transition:box-shadow 0.2s;">B</span>
-      </a>
-      <a href="pages/tower-c.html" style="text-decoration:none;">
-        <span class="blink-legend" style="display:inline-block; width:32px; height:32px; background:#888; border-radius:50%; text-align:center; color:#fff; font-weight:700; line-height:32px; font-size:1.2rem; font-family:'Poppins',sans-serif; box-shadow:0 2px 8px rgba(136,136,136,0.10); transition:box-shadow 0.2s;">C</span>
-      </a>
-    </div>
-  </div>
-</section>
+    <!-- Masterplan Section: Towers A, B, C Locations -->
+    <section class="masterplan-section" style="background: #faf9f6; padding: 64px 0 48px 0;">
+      <div class="container" style="max-width: 1100px; margin: 0 auto;">
+        <div class="section-header center" style="margin-bottom: 28px;">
+          <span class="section-tag" style="display:inline-block; font-size:1.1rem; letter-spacing:1px; color:#d4af37; font-family:'Poppins',sans-serif; font-weight:700; background:linear-gradient(90deg,#fffbe622 60%,#ffe08218 100%); padding:6px 22px; border-radius:18px; box-shadow:0 2px 8px rgba(212,175,55,0.07); margin-bottom:8px;">Masterplan</span>
+          <h2 style="font-size:2.1rem; font-family:'Poppins',sans-serif; font-weight:700; color:#222; margin:0;">Kaur Complex Masterplan</h2>
+          <p style="font-size:1.08rem; color:#444; font-family:'Poppins',sans-serif; font-weight:400; margin-top:10px;">Explore the layout of Towers A, B & C and their prime locations.</p>
+        </div>
+        <div class="masterplan-image-wrapper" style="display:flex; justify-content:center; align-items:center;">
+          <img src="assets/images/gallery/Master Plan-01-01.png" alt="Kaur Complex Masterplan" style="width:100%; max-width:900px; border-radius:18px; box-shadow:0 4px 24px rgba(0,0,0,0.08); border:2px solid #e7e2d6;">
+        </div>
+        <div class="masterplan-legend" style="display:flex; justify-content:center; gap:32px; margin-top:28px; flex-wrap:wrap;">
+          <a href="pages/tower-a.html" style="text-decoration:none;">
+            <span class="blink-legend" style="display:inline-block; width:32px; height:32px; background:#d4af37; border-radius:50%; text-align:center; color:#fff; font-weight:700; line-height:32px; font-size:1.2rem; font-family:'Poppins',sans-serif; box-shadow:0 2px 8px rgba(212,175,55,0.10); transition:box-shadow 0.2s;">A</span>
+          </a>
+          <a href="pages/tower-b.html" style="text-decoration:none;">
+            <span class="blink-legend" style="display:inline-block; width:32px; height:32px; background:#bfae9c; border-radius:50%; text-align:center; color:#fff; font-weight:700; line-height:32px; font-size:1.2rem; font-family:'Poppins',sans-serif; box-shadow:0 2px 8px rgba(191,174,156,0.10); transition:box-shadow 0.2s;">B</span>
+          </a>
+          <a href="pages/tower-c.html" style="text-decoration:none;">
+            <span class="blink-legend" style="display:inline-block; width:32px; height:32px; background:#888; border-radius:50%; text-align:center; color:#fff; font-weight:700; line-height:32px; font-size:1.2rem; font-family:'Poppins',sans-serif; box-shadow:0 2px 8px rgba(136,136,136,0.10); transition:box-shadow 0.2s;">C</span>
+          </a>
+        </div>
+      </div>
+    </section>
 
     <!-- Gallery Section -->
-<section class="gallery-section">
-  <div class="container">
-    <div class="section-header center">
-      <h2 class="section-subtitle"><i class="fas fa-images"></i> Our Gallery</h2>
-      <!-- <p class="section-description">Explore our stunning development through these captivating images</p> -->
-    </div>
-    
-    <!-- <div class="gallery-filter">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="exterior">Exterior</button>
-      <button class="filter-btn" data-filter="interior">Interior</button>
-      <button class="filter-btn" data-filter="amenities">Amenities</button>
-      <button class="filter-btn" data-filter="views">Views</button>
-    </div> -->
-    
-    <div class="gallery-grid gallery-collapsed">
-      <div class="gallery-item" data-category="exterior">
-        <div class="image-container">
-          <img src="assets/images/gallery/kaur-complex-img.jpg" alt="Kaur Complex Exterior" loading="lazy">
-          
+    <section class="gallery-section">
+      <div class="container">
+        <div class="section-header center">
+          <h2 class="section-subtitle"><i class="fas fa-images"></i> Our Gallery</h2>
+          <!-- <p class="section-description">Explore our stunning development through these captivating images</p> -->
+        </div>
+        
+        <!-- <div class="gallery-filter">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="exterior">Exterior</button>
+          <button class="filter-btn" data-filter="interior">Interior</button>
+          <button class="filter-btn" data-filter="amenities">Amenities</button>
+          <button class="filter-btn" data-filter="views">Views</button>
+        </div> -->
+        
+        <div class="gallery-grid gallery-collapsed">
+          <div class="gallery-item" data-category="exterior">
+            <div class="image-container">
+              <img src="assets/images/gallery/kaur-complex-img.jpg" alt="Kaur Complex Exterior" loading="lazy">
+              
+            </div>
+          </div>
+          <div class="gallery-item hidden-gallery" data-category="interior">
+            <div class="image-container">
+              <img src="assets/images/gallery/hero-bg.jpg" alt="Luxury Lobby" loading="lazy">
+              
+            </div>
+          </div>
+          <div class="gallery-item hidden-gallery" data-category="interior">
+            <div class="image-container">
+              <img src="assets/images/gallery/top-img .jpg" alt="Luxury Apartment" loading="lazy">
+              
+            </div>
+          </div>
+          <div class="gallery-item hidden-gallery" data-category="amenities">
+            <div class="image-container">
+              <img src="assets/images/gallery/c-t.jpg" alt="Swimming Pool" loading="lazy">
+              
+            </div>
+          </div>
+          <div class="gallery-item hidden-gallery" data-category="views">
+            <div class="image-container">
+              <img src="assets/images/gallery/b-t.jpg" alt="Penthouse View" loading="lazy">
+              
+            </div>
+          </div>
+        </div>
+        
+        <div class="lightbox-modal">
+          <div class="lightbox-content">
+            <span class="close-btn">&times;</span>
+            <img class="lightbox-image" src="" alt="">
+            <div class="lightbox-caption">
+              <h4 class="image-title"></h4>
+              <p class="image-description"></p>
+            </div>
+            <button class="lightbox-nav prev-btn"><i class="fas fa-chevron-left"></i></button>
+            <button class="lightbox-nav next-btn"><i class="fas fa-chevron-right"></i></button>
+          </div>
         </div>
       </div>
-      <div class="gallery-item hidden-gallery" data-category="interior">
-        <div class="image-container">
-          <img src="assets/images/gallery/hero-bg.jpg" alt="Luxury Lobby" loading="lazy">
-          
-        </div>
-      </div>
-      <div class="gallery-item hidden-gallery" data-category="interior">
-        <div class="image-container">
-          <img src="assets/images/gallery/top-img .jpg" alt="Luxury Apartment" loading="lazy">
-          
-        </div>
-      </div>
-      <div class="gallery-item hidden-gallery" data-category="amenities">
-        <div class="image-container">
-          <img src="assets/images/gallery/c-t.jpg" alt="Swimming Pool" loading="lazy">
-          
-        </div>
-      </div>
-      <div class="gallery-item hidden-gallery" data-category="views">
-        <div class="image-container">
-          <img src="assets/images/gallery/b-t.jpg" alt="Penthouse View" loading="lazy">
-          
-        </div>
-      </div>
-    </div>
-    
-    <div class="lightbox-modal">
-      <div class="lightbox-content">
-        <span class="close-btn">&times;</span>
-        <img class="lightbox-image" src="" alt="">
-        <div class="lightbox-caption">
-          <h4 class="image-title"></h4>
-          <p class="image-description"></p>
-        </div>
-        <button class="lightbox-nav prev-btn"><i class="fas fa-chevron-left"></i></button>
-        <button class="lightbox-nav next-btn"><i class="fas fa-chevron-right"></i></button>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
     <!-- CTA Section -->
     <section class="cta-section" style="background: #000; color: #fff; text-align: center; padding: 64px 0;">
@@ -301,55 +268,8 @@
       </div>
     </section>
 
-    <!-- Footer -->
-<footer class="footer">
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-section about">
-                <div class="footer-logo">
-                    <img width="40" height="40" viewBox="0 0 40 40" fill="none" src="./assets/images/gallery/logo-kc.png">
-                        <path d="M20 0L40 20L20 40L0 20L20 0Z" fill="#D4AF37"/>
-                        <path d="M20 10L30 20L20 30L10 20L20 10Z" fill="#E49E22"/>
-                    </svg>
-                    <span>Kaur Complex</span>
-                </div>
-                <p>Peshawar's premier luxury gated community offering world-class living experiences with unmatched amenities and security.</p>
-                <div class="social-links">
-                    <a href="https://www.facebook.com/kaur.projects" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/kaurcomplex/" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/company/kaurprojects/?originalSubdomain=pk" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-            
-            <div class="footer-section links">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="pages/about.html">About Us</a></li>
-                    <li><a href="pages/apartments.html">Properties</a></li>
-                    <li><a href="pages/contact.html">Contact Us</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section contact">
-                <h4>Contact Info</h4>
-                <div class="contact-info">
-                    <p><i class="fas fa-map-marker-alt"></i> Tower A, Main Tajabad road Opposite Basharat Market Near Bannu House Tajabad peshawar</p>
-                    <p><i class="fas fa-phone"></i> 0332 0001888</p>
-                    <p><i class="fas fa-envelope"></i> kaurcomplexofficial@hotmail.com</p>
-                    <p><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 6:00 PM</p>
-                </div>
-            </div>
-            
-        </div>
-        
-        <div class="footer-bottom">
-            <div class="copyright">
-                <p>© 2024 Kaur Complex. All rights reserved.</p>
-            </div>
-        </div>
-    </div>
-</footer>
+    <!-- Footer Include -->
+    <div id="footer-include"></div>
 
     <!-- Floating Button Row for mobile -->
     <div class="floating-btn-row">
@@ -374,11 +294,26 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/js/main.js"></script>
     <script>
+        // Initialize AOS animation
         AOS.init({
             duration: 800,
             easing: 'ease-in-out',
             once: true
         });
+        // HTML includes for navbar and footer
+        function includeHTML(id, url, callback) {
+          fetch(url)
+            .then(res => res.text())
+            .then(data => {
+              document.getElementById(id).innerHTML = data;
+              if (callback) callback();
+            });
+        }
+        // Load navbar, then initialize navigation
+        includeHTML('navbar-include', 'assets/includes/navbar.html', function() {
+          if (typeof initNavigation === 'function') initNavigation();
+        });
+        includeHTML('footer-include', 'assets/includes/footer.html');
     </script>
     <script>
     // Minimal classic hero slider

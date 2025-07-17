@@ -9,7 +9,7 @@
     <!-- CSS Files -->
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/responsive.css">
-    <link rel="stylesheet" href="../assets/css/about.css">
+    <!-- <link rel="stylesheet" href="../assets/css/about.css"> -->
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -26,35 +26,267 @@
 .footer .social-links a:hover {
   text-decoration: none !important;
 }
+/* ====== About Us Page Styles (migrated from about.css and style.css) ====== */
+/* About Us Page */
+
+/* ===== Hero Section ===== */
+.about-hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    max-height: 1200px;
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    margin-top: 80px;
+    background: var(--dark-gray);
+}
+
+.hero-media-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.7);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(0,0,0,0.7) 60%, rgba(228,158,34,0.2) 100%);
+    z-index: 1;
+}
+
+.modern-hero .hero-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-align: left;
+  max-width: 600px;
+  padding: 60px 40px;
+  border-radius: 18px;
+  background: rgba(30,58,138,0.15);
+  box-shadow: 0 8px 32px rgba(30,58,138,0.08);
+  margin-left: 5vw;
+}
+
+.modern-hero .pre-title {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
+.modern-hero .gold-line {
+  display: inline-block;
+  width: 40px;
+  height: 2px;
+  background: var(--primary-color);
+  margin-right: 15px;
+}
+
+.modern-hero h1 {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  line-height: 1.15;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.modern-hero .highlight {
+  color: var(--primary-color);
+}
+
+.modern-hero .hero-text {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 2.2rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.modern-hero .cta-buttons {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 0;
+}
+
+.hero-stats-bar {
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 2px 24px rgba(30,58,138,0.07);
+  padding: 0 0 12px 0;
+}
+
+.hero-stats-bar .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-stats-bar .stats-bar {
+  display: flex;
+  gap: 40px;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 24px 0 0 0;
+}
+
+.hero-stats-bar .stat-item {
+  text-align: left;
+  padding: 0 10px;
+  min-width: 120px;
+}
+
+.hero-stats-bar .number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+  margin-bottom: 2px;
+}
+
+.hero-stats-bar .label {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #E49E22;
+}
+
+@media (max-width: 900px) {
+  .modern-hero .hero-content {
+    padding: 40px 18px;
+    margin-left: 0;
+    max-width: 95vw;
+  }
+  .hero-stats-bar .stats-bar {
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 600px) {
+  .modern-hero {
+    min-height: 60vh;
+    padding: 0;
+  }
+  .modern-hero .hero-content {
+    padding: 24px 8px;
+    border-radius: 10px;
+  }
+  .modern-hero h1 {
+    font-size: 1.5rem;
+  }
+  .modern-hero .hero-text {
+    font-size: 1rem;
+  }
+  .hero-stats-bar .stats-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 12px 0 0 0;
+  }
+  .hero-stats-bar .stat-item {
+    min-width: 0;
+    padding: 0;
+  }
+}
+
+/* ===== Introduction Section ===== */
+.intro-section {
+    padding: 6rem 0;
+    background: var(--white);
+    position: relative;
+}
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 4rem;
+    align-items: center;
+}
+
+.intro-content {
+    padding-right: 2rem;
+}
+
+.section-label {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.section-title {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    line-height: 1.3;
+    color: var(--dark-gray);
+    margin-bottom: 1.5rem;
+}
+
+.section-divider {
+    width: 80px;
+    height: 4px;
+    background: var(--secondary-color);
+    margin: 1.5rem 0;
+}
+
+.intro-text p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+}
+
+.signature-block {
+    display: flex;
+    align-items: center;
+    margin-top: 2.5rem;
+    gap: 1.5rem;
+}
+
+.signature {
+    height: 70px;
+    width: auto;
+}
+
+.signature-info h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.25rem;
+    color: var(--dark-gray);
+    margin-bottom: 0.25rem;
+}
+
+.signature-info p {
+    font-size: 1.08rem;
+    color: #555;
+    margin-bottom: 0;
+    line-height: 1.7;
+}
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="../index.html">
-                    <img width="40" height="40" viewBox="0 0 40 40" fill="none" src="../assets/images/gallery/logo-kc.png">
-                        <path d="M20 0L40 20L20 40L0 20L20 0Z" fill="#D4AF37"/>
-                        <path d="M20 10L30 20L20 30L10 20L20 10Z" fill="#1E3A8A"/>
-                    </svg>
-                    <span>Kaur Complex</span>
-                </a>
-            </div>
-            <div class="nav-menu" id="nav-menu">
-                <a href="../index.html" class="nav-link">Home</a>
-                <a href="../pages/about.html" class="nav-link active">About</a>
-                <a href="../pages/apartments.html" class="nav-link">Properties</a>
-                <a href="../pages/contact.html" class="nav-link">Contact</a>
-                <a href="tel:03320001888" class="nav-cta">Call Now</a>
-            </div>
-            <div class="nav-toggle" id="nav-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
+    <!-- Navbar Include -->
+    <div id="navbar-include"></div>
 
     <main class="main-content">
     <!-- Introduction Section -->
@@ -717,60 +949,8 @@
     </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section about">
-                    <div class="footer-logo">
-                        <img width="40" height="40" viewBox="0 0 40 40" fill="none" src="../assets/images/gallery/logo-kc.png">
-                            <path d="M20 0L40 20L20 40L0 20L20 0Z" fill="#D4AF37"/>
-                            <path d="M20 10L30 20L20 30L10 20L20 10Z" fill="#1E3A8A"/>
-                        </svg>
-                        <span>Kaur Complex</span>
-                    </div>
-                    <p>Peshawar's premier luxury gated community offering world-class living experiences with unmatched amenities and security.</p>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/kaur.projects" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/kaurcomplex/" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/company/kaurprojects/?originalSubdomain=pk" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-section links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="../pages/about.html">About Us</a></li>
-                        <li><a href="../pages/apartments.html">Properties</a></li>
-                        <li><a href="../pages/contact.html">Contact Us</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section contact">
-                    <h4>Contact Info</h4>
-                    <div class="contact-info">
-                        <p><i class="fas fa-map-marker-alt"></i> Tower A, Main Tajabad road Opposite Basharat Market Near Bannu House Tajabad peshawar</p>
-                        <p><i class="fas fa-phone"></i> 0332 0001888</p>
-                        <p><i class="fas fa-envelope"></i> kaurcomplexofficial@hotmail.com</p>
-                        <p><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 6:00 PM</p>
-                    </div>
-                </div>
-                
-            </div>
-            
-            <div class="footer-bottom">
-                <div class="copyright">
-                    <p>&copy; 2024 Kaur Complex. All rights reserved.</p>
-                </div>
-                <div class="footer-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                    <a href="#">Sitemap</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <!-- Footer Include -->
+    <div id="footer-include"></div>
 
     <!-- Floating Button Row for mobile -->
     <div class="floating-btn-row">
@@ -796,7 +976,20 @@
             easing: 'ease-in-out',
             once: true
         });
-        
+        // HTML includes for navbar and footer
+        function includeHTML(id, url, callback) {
+          fetch(url)
+            .then(res => res.text())
+            .then(data => {
+              document.getElementById(id).innerHTML = data;
+              if (callback) callback();
+            });
+        }
+        // Load navbar, then initialize navigation
+        includeHTML('navbar-include', '../assets/includes/navbar.html', function() {
+          if (typeof initNavigation === 'function') initNavigation();
+        });
+        includeHTML('footer-include', '../assets/includes/footer.html');
         // Testimonial slider functionality would be implemented here
     </script>
     <button class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></button>

@@ -179,29 +179,8 @@
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="../index.html">
-                    <img width="40" height="40" src="../assets/images/gallery/logo-kc.png" alt="Kaur Complex Logo">
-                    <span>Kaur Complex</span>
-                </a>
-            </div>
-            <div class="nav-menu" id="nav-menu">
-                <a href="../index.html" class="nav-link">Home</a>
-                <a href="about.html" class="nav-link">About</a>
-                <a href="apartments.html" class="nav-link active">Properties</a>
-                <a href="contact.html" class="nav-link">Contact</a>
-                <a href="tel:03320001888" class="nav-cta">Call Now</a>
-            </div>
-            <div class="nav-toggle" id="nav-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
+    <!-- Navbar Include -->
+    <div id="navbar-include"></div>
 
     <section class="apartment-detail-section">
         <div class="apartment-hero-container">
@@ -226,48 +205,8 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section about">
-                    <div class="footer-logo">
-                        <img width="40" height="40" src="../assets/images/gallery/logo-kc.png" alt="Kaur Complex Logo">
-                        <span>Kaur Complex</span>
-                    </div>
-                    <p>Peshawar's premier luxury gated community offering world-class living experiences with unmatched amenities and security.</p>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/kaur.projects" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/kaurcomplex/" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/company/kaurprojects/?originalSubdomain=pk" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="footer-section links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="apartments.html">Properties</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section contact">
-                    <h4>Contact Info</h4>
-                    <div class="contact-info">
-                        <p><i class="fas fa-map-marker-alt"></i> Tower A, Main Tajabad road Opposite Basharat Market Near Bannu House Tajabad peshawar</p>
-                        <p><i class="fas fa-phone"></i> 0332 0001888</p>
-                        <p><i class="fas fa-envelope"></i> kaurcomplexofficial@hotmail.com</p>
-                        <p><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 6:00 PM</p>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <div class="copyright">
-                    <p>© 2024 Kaur Complex. All rights reserved.</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <!-- Footer Include -->
+    <div id="footer-include"></div>
 
     <!-- Floating Button Row for mobile -->
     <div class="floating-btn-row">
@@ -283,6 +222,30 @@
         </div>
     </div>
 
+    <!-- JavaScript -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="../assets/js/main.js"></script>
+    <script>
+        // Initialize AOS animation
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        // HTML includes for navbar and footer
+        function includeHTML(id, url, callback) {
+          fetch(url)
+            .then(res => res.text())
+            .then(data => {
+              document.getElementById(id).innerHTML = data;
+              if (callback) callback();
+            });
+        }
+        // Load navbar, then initialize navigation
+        includeHTML('navbar-include', '../assets/includes/navbar.html', function() {
+          if (typeof initNavigation === 'function') initNavigation();
+        });
+        includeHTML('footer-include', '../assets/includes/footer.html');
+    </script>
 </body>
 </html> 
