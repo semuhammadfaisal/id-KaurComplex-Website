@@ -864,6 +864,11 @@ table td:last-child {
   display: none;
   align-items: center;
   justify-content: center;
+  pointer-events: none;
+}
+
+.lightbox-modal.active {
+  pointer-events: auto;
 }
 
 .lightbox-content {
