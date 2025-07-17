@@ -40,6 +40,55 @@
       .gallery-item.hidden-gallery {
         display: none;
       }
+      /* Enhanced blinking animation for masterplan legend icons */
+      .masterplan-legend a .blink-legend {
+        animation: blink-shadow-scale 1.2s infinite alternate;
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: border-color 0.2s;
+      }
+      @keyframes blink-shadow-scale {
+        0% {
+          box-shadow: 0 0 0 0 rgba(212,175,55,0.18);
+          transform: scale(1);
+          border-color: transparent;
+        }
+        100% {
+          box-shadow: 0 0 18px 7px rgba(212,175,55,0.32);
+          transform: scale(1.12);
+          border-color: #d4af37;
+        }
+      }
+      .masterplan-legend a:nth-child(2) .blink-legend {
+        animation: blink-shadow-scale-b 1.2s infinite alternate;
+      }
+      @keyframes blink-shadow-scale-b {
+        0% {
+          box-shadow: 0 0 0 0 rgba(191,174,156,0.18);
+          transform: scale(1);
+          border-color: transparent;
+        }
+        100% {
+          box-shadow: 0 0 18px 7px rgba(191,174,156,0.32);
+          transform: scale(1.12);
+          border-color: #bfae9c;
+        }
+      }
+      .masterplan-legend a:nth-child(3) .blink-legend {
+        animation: blink-shadow-scale-c 1.2s infinite alternate;
+      }
+      @keyframes blink-shadow-scale-c {
+        0% {
+          box-shadow: 0 0 0 0 rgba(136,136,136,0.18);
+          transform: scale(1);
+          border-color: transparent;
+        }
+        100% {
+          box-shadow: 0 0 18px 7px rgba(136,136,136,0.32);
+          transform: scale(1.12);
+          border-color: #888;
+        }
+      }
     </style>
 </head>
 <body>
@@ -114,173 +163,32 @@
   </div>
 </section>
 
-<!-- Property Listings Section
-    <section class="kc-listings-section">
-  <div class="kc-listings-container">
-    <div class="kc-listings-header">
-      <h2>Our Listings</h2>
-      <h3>Detailed Price Information</h3>
-      <p>Explore the latest pricing for our commercial units and apartments across all towers.</p>
+<!-- Masterplan Section: Towers A, B, C Locations -->
+<section class="masterplan-section" style="background: #faf9f6; padding: 64px 0 48px 0;">
+  <div class="container" style="max-width: 1100px; margin: 0 auto;">
+    <div class="section-header center" style="margin-bottom: 28px;">
+      <span class="section-tag" style="display:inline-block; font-size:1.1rem; letter-spacing:1px; color:#d4af37; font-family:'Poppins',sans-serif; font-weight:700; background:linear-gradient(90deg,#fffbe622 60%,#ffe08218 100%); padding:6px 22px; border-radius:18px; box-shadow:0 2px 8px rgba(212,175,55,0.07); margin-bottom:8px;">Masterplan</span>
+      <h2 style="font-size:2.1rem; font-family:'Poppins',sans-serif; font-weight:700; color:#222; margin:0;">Kaur Complex Masterplan</h2>
+      <p style="font-size:1.08rem; color:#444; font-family:'Poppins',sans-serif; font-weight:400; margin-top:10px;">Explore the layout of Towers A, B & C and their prime locations.</p>
     </div>
-    <div class="kc-listings-table-wrap">
-      <h4 style="color: white;">Commercial Shops - Price/Sqft</h4>
-      <div class="kc-table-scroll">
-      <table class="kc-listings-table">
-        <thead>
-          <tr>
-            <th>Floor</th>
-            <th>Price/Sqft.</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>GROUND FLOOR</td>
-            <td>Rs. 30,000 <span class="kc-badge">Best Value</span></td>
-          </tr>
-          <tr>
-            <td>FIRST FLOOR</td>
-            <td>Rs. 27,000</td>
-          </tr>
-        </tbody>
-      </table>
-      </div>
+    <div class="masterplan-image-wrapper" style="display:flex; justify-content:center; align-items:center;">
+      <img src="assets/images/gallery/Master Plan-01-01.png" alt="Kaur Complex Masterplan" style="width:100%; max-width:900px; border-radius:18px; box-shadow:0 4px 24px rgba(0,0,0,0.08); border:2px solid #e7e2d6;">
     </div>
-    <div class="kc-listings-table-wrap">
-      <h4 style="color: white;">Commercial Shops - Available Units</h4>
-      <div class="kc-table-scroll">
-      <table class="kc-listings-table kc-table-wide">
-        <thead>
-          <tr>
-            <th>Shop No.</th>
-            <th>Floor</th>
-            <th>Area (Sqft)</th>
-            <th>Price (PKR)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>S-02</td><td>GF</td><td>773</td><td>25,509,000</td></tr>
-          <tr><td>S-01</td><td>GF</td><td>2348</td><td>77,484,000</td></tr>
-          <tr><td>S-05</td><td>GF</td><td>378</td><td>11,340,000</td></tr>
-          <tr><td>S-06</td><td>GF</td><td>378</td><td>11,340,000</td></tr>
-          <tr><td>S-07</td><td>GF</td><td>343</td><td>10,290,000</td></tr>
-          <tr><td>S-08</td><td>GF</td><td>343</td><td>10,290,000</td></tr>
-          <tr><td>S-09</td><td>GF</td><td>318</td><td>9,540,000</td></tr>
-          <tr><td>S-10</td><td>GF</td><td>318</td><td>9,540,000</td></tr>
-          <tr><td>S-11</td><td>GF</td><td>318</td><td>9,540,000</td></tr>
-          <tr><td>S-01</td><td>FF</td><td>479</td><td>9,540,000</td></tr>
-          <tr><td>S-11</td><td>FF</td><td>216</td><td>5,400,000</td></tr>
-          <tr><td>S-10</td><td>FF</td><td>216</td><td>5,400,000</td></tr>
-          <tr><td>S-09</td><td>FF</td><td>182</td><td>5,005,000</td></tr>
-          <tr><td>S-08</td><td>FF</td><td>235</td><td>6,462,500</td></tr>
-          <tr><td>S-07</td><td>FF</td><td>280</td><td>7,700,000</td></tr>
-          <tr><td>S-06</td><td>FF</td><td>387</td><td>10,642,500</td></tr>
-          <tr><td>S-02</td><td>FF</td><td>479</td><td>13,172,500</td></tr>
-          <tr><td>S-03</td><td>FF</td><td>479</td><td>13,172,500</td></tr>
-          <tr><td>S-04</td><td>FF</td><td>479</td><td>13,172,500</td></tr>
-          <tr><td>S-05</td><td>FF</td><td>383</td><td>10,532,500</td></tr>
-        </tbody>
-      </table>
-      </div>
-    </div>
-    <div class="kc-listings-table-wrap">
-      <h4 style="color: white;">Tower A Apartments - Price/Sqft</h4>
-      <div class="kc-table-scroll">
-      <table class="kc-listings-table">
-        <thead>
-          <tr>
-            <th>Floor</th>
-            <th>Price/Sqft.</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>GROUND - 3rd</td><td>9,500</td></tr>
-          <tr><td>4th - 6th</td><td>9,000</td></tr>
-          <tr><td>7th - 9th</td><td>8,500</td></tr>
-          <tr><td>PENTHOUSE</td><td>8,000</td></tr>
-        </tbody>
-      </table>
-      </div>
-    </div>
-    <div class="kc-listings-table-wrap">
-      <h4 style="color: white;">Tower B Apartments - Price/Sqft</h4>
-      <div class="kc-table-scroll">
-      <table class="kc-listings-table">
-        <thead>
-          <tr>
-            <th>Floor</th>
-            <th>Price/Sqft.</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>GROUND - 3rd</td><td>9,000</td></tr>
-          <tr><td>5th - 6th</td><td>8,500</td></tr>
-          <tr><td>7th - 9th</td><td>8,000</td></tr>
-        </tbody>
-      </table>
-      </div>
-    </div>
-    <div class="kc-listings-table-wrap">
-      <h4 style="color: white;">Tower B Apartments - Availability & Price</h4>
-      <div class="kc-table-scroll">
-      <table class="kc-listings-table kc-table-wide">
-        <thead>
-          <tr>
-            <th>Apartment Type</th>
-            <th>Floor</th>
-            <th>Size (sqft.)</th>
-            <th>Price (PKR)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>STUDIO</td><td>4th</td><td>454</td><td>38,590,000</td></tr>
-          <tr><td>STUDIO</td><td>5th</td><td>510</td><td>43,350,000</td></tr>
-          <tr><td>STUDIO</td><td>9th</td><td>540</td><td>43,200,000</td></tr>
-          <tr><td>2 BED</td><td>5th</td><td>1019</td><td>86,615,000</td></tr>
-          <tr><td>2 BED</td><td>7th–8th</td><td>1054</td><td>92,752,500</td></tr>
-          <tr><td>2 BED</td><td>5th</td><td>1087</td><td>92,395,000</td></tr>
-          <tr><td>2 BED</td><td>7th–9th</td><td>1087</td><td>86,960,000</td></tr>
-          <tr><td>2 BED</td><td>7th–8th</td><td>1102</td><td>88,160,000</td></tr>
-          <tr><td>3 BED</td><td>5th–6th</td><td>1138</td><td>96,730,000</td></tr>
-          <tr><td>3 BED</td><td>8th–9th</td><td>1138</td><td>91,040,000</td></tr>
-          <tr><td>3 BED</td><td>5th–6th</td><td>1166</td><td>99,110,000</td></tr>
-          <tr><td>3 BED</td><td>9th</td><td>1335</td><td>117,480,000</td></tr>
-        </tbody>
-      </table>
-      </div>
-    </div>
-    <div class="kc-listings-table-wrap">
-      <h4 style="color: white;">Tower C Apartments - Price/Sqft</h4>
-      <div class="kc-table-scroll">
-      <table class="kc-listings-table">
-        <thead>
-          <tr>
-            <th>Floor</th>
-            <th>Price/Sqft.</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>1st - 3rd</td><td>9,000</td></tr>
-          <tr><td>4th - 6th</td><td>8,500</td></tr>
-          <tr><td>7th - 9th</td><td>8,000</td></tr>
-        </tbody>
-      </table>
-      </div>
-    </div>
-    <div class="kc-listings-table-wrap">
-      <h4>Payment Plan</h4>
-      <div class="kc-payment-plan-info">
-        <p>20% down payment, 80% in 25 months flexible installment plan</p>
-      </div>
-    </div>
-    <div class="kc-listings-cta">
-      <h4>Ready to Invest or Need More Info?</h4>
-      <p>Contact our sales team for personalized offers, site visits, or detailed payment plans.</p>
-      <a href="#contact" class="kc-listings-cta-btn">Contact Sales</a>
+    <div class="masterplan-legend" style="display:flex; justify-content:center; gap:32px; margin-top:28px; flex-wrap:wrap;">
+      <a href="pages/tower-a.html" style="text-decoration:none;">
+        <span class="blink-legend" style="display:inline-block; width:32px; height:32px; background:#d4af37; border-radius:50%; text-align:center; color:#fff; font-weight:700; line-height:32px; font-size:1.2rem; font-family:'Poppins',sans-serif; box-shadow:0 2px 8px rgba(212,175,55,0.10); transition:box-shadow 0.2s;">A</span>
+      </a>
+      <a href="pages/tower-b.html" style="text-decoration:none;">
+        <span class="blink-legend" style="display:inline-block; width:32px; height:32px; background:#bfae9c; border-radius:50%; text-align:center; color:#fff; font-weight:700; line-height:32px; font-size:1.2rem; font-family:'Poppins',sans-serif; box-shadow:0 2px 8px rgba(191,174,156,0.10); transition:box-shadow 0.2s;">B</span>
+      </a>
+      <a href="pages/tower-c.html" style="text-decoration:none;">
+        <span class="blink-legend" style="display:inline-block; width:32px; height:32px; background:#888; border-radius:50%; text-align:center; color:#fff; font-weight:700; line-height:32px; font-size:1.2rem; font-family:'Poppins',sans-serif; box-shadow:0 2px 8px rgba(136,136,136,0.10); transition:box-shadow 0.2s;">C</span>
+      </a>
     </div>
   </div>
-</section> -->
+</section>
 
-    <!-- Gallery Section -->
+<!-- Gallery Section -->
 <section class="gallery-section">
   <div class="container">
     <div class="section-header center">
