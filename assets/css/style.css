@@ -138,7 +138,7 @@ section {
     color: var(--secondary-color);
 }
 
-.section-title:after {
+/* .section-title:after {
     content: '';
     position: absolute;
     bottom: -10px;
@@ -146,7 +146,7 @@ section {
     width: 60px;
     height: 3px;
     background: var(--secondary-color);
-}
+} */
 
 .section-header.center .section-title:after {
     left: 50%;
@@ -3301,7 +3301,7 @@ section {
   position: relative;
   display: inline-block;
 }
-.section-title::after {
+/* .section-title::after {
   content: '';
   display: block;
   width: 60px;
@@ -3310,7 +3310,7 @@ section {
   margin: 12px auto 0;
   border-radius: 2px;
   opacity: 0.7;
-}
+} */
 .section-subtitle {
   color: #bfc8e6;
   font-size: 1.2em;
