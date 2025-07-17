@@ -6035,3 +6035,104 @@ table tbody tr:hover {
   color: #222 !important;
   pointer-events: auto !important;
 }
+
+/* Re-Floating Buttons */
+.re-floating-btn-row {
+    position: fixed;
+    right: 8px;
+    bottom: 8px;
+    z-index: 1001;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.re-call-float, .re-whatsapp-float {
+    position: static;
+    margin: 0;
+    right: auto;
+    bottom: auto;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    transition: box-shadow 0.2s, background 0.2s;
+}
+.re-call-float {
+    background: #25d366;
+}
+.re-whatsapp-float {
+    background: #25d366;
+}
+.re-call-float a, .re-whatsapp-float a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    font-size: 2rem;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    animation: re-pulse 1.5s infinite;
+    box-shadow: 0 0 0 rgba(212, 175, 55, 0.7);
+}
+.re-whatsapp-float a {
+    animation-delay: 0.75s;
+}
+.re-call-float a:hover, .re-whatsapp-float a:hover {
+    background: #128c7e;
+    color: #fff;
+}
+.re-call-float i, .re-whatsapp-float i {
+    font-size: 2rem;
+    color: #fff;
+    margin: 0;
+}
+@keyframes re-pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7);
+        transform: scale(1);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(212, 175, 55, 0);
+        transform: scale(1.1);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+        transform: scale(1);
+    }
+}
+.re-back-to-top {
+    position: fixed;
+    bottom: 70px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--secondary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.re-back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+.re-back-to-top:hover {
+    background: var(--secondary-light);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-xl);
+}

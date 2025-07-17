@@ -36,6 +36,7 @@ function initNavigation() {
 
     // Function to set initial responsive state
     function setInitialNavState() {
+        if (!navMenu || !navToggle || !navbar) return; // Prevent TypeError if elements are missing
         if (window.innerWidth <= 992) {
             navMenu.classList.remove('active'); // Ensure menu is hidden on mobile
             navToggle.style.display = 'flex'; // Show hamburger menu
@@ -55,7 +56,9 @@ function initNavigation() {
 
     // Scroll handler for .scrolled class
     window.addEventListener('scroll', () => {
-        navbar.classList.toggle('scrolled', window.scrollY > 200);
+        if (navbar) {
+            navbar.classList.toggle('scrolled', window.scrollY > 200);
+        }
     });
 
     // Toggle mobile menu
@@ -263,10 +266,12 @@ function showNotification(message, type = 'info') {
 
 // Back to Top
 function initBackToTop() {
-window.addEventListener('scroll', () => {
-    const showPosition = window.innerHeight / 2;
-    backToTopBtn.classList.toggle('show', window.scrollY > showPosition);
-});
+    const backToTopBtn = document.getElementById('backToTop');
+    if (!backToTopBtn) return;
+    window.addEventListener('scroll', () => {
+        const showPosition = window.innerHeight / 2;
+        backToTopBtn.classList.toggle('show', window.scrollY > showPosition);
+    });
 }
 
 // WhatsApp

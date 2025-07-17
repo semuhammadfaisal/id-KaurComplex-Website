@@ -146,24 +146,39 @@
     <section class="masterplan-section" style="background: #faf9f6; padding: 64px 0 48px 0;">
       <div class="container" style="max-width: 1100px; margin: 0 auto;">
         <div class="section-header center" style="margin-bottom: 28px;">
-          <span class="section-tag" style="display:inline-block; font-size:1.1rem; letter-spacing:1px; color:#d4af37; font-family:'Poppins',sans-serif; font-weight:700; background:linear-gradient(90deg,#fffbe622 60%,#ffe08218 100%); padding:6px 22px; border-radius:18px; box-shadow:0 2px 8px rgba(212,175,55,0.07); margin-bottom:8px;">Masterplan</span>
-          <h2 style="font-size:2.1rem; font-family:'Poppins',sans-serif; font-weight:700; color:#222; margin:0;">Kaur Complex Masterplan</h2>
-          <p style="font-size:1.08rem; color:#444; font-family:'Poppins',sans-serif; font-weight:400; margin-top:10px;">Explore the layout of Towers A, B & C and their prime locations.</p>
+          <span class="section-tag" style="display:inline-block; font-size:1.1rem; letter-spacing:1px; color:#d4af37; font-family:'Poppins',sans-serif; font-weight:700; background:linear-gradient(90deg,#fffbe622 60%,#ffe08218 100%); padding:6px 22px; border-radius:18px; box-shadow:0 2px 8px rgba(212,175,55,0.07); margin-bottom:8px;">Kaur Complex</span>
+          <h2 style="font-size:2.1rem; font-family:'Poppins',sans-serif; font-weight:700; color:#222; margin:0;">Masterplan</h2>
+          <p style="font-size:1.08rem; color:#444; font-family:'Poppins',sans-serif; font-weight:400; margin-top:10px;">the layout of Towers A, B & C and their prime locations.</p>
         </div>
         <div class="masterplan-image-wrapper" style="display:flex; justify-content:center; align-items:center;">
           <img src="assets/images/gallery/Master Plan-01-01.png" alt="Kaur Complex Masterplan" style="width:100%; max-width:900px; border-radius:18px; box-shadow:0 4px 24px rgba(0,0,0,0.08); border:2px solid #e7e2d6;">
         </div>
         <div class="masterplan-legend" style="display:flex; justify-content:center; gap:32px; margin-top:28px; flex-wrap:wrap;">
           <a href="pages/tower-a.html" style="text-decoration:none;">
-            <span class="blink-legend" style="display:inline-block; width:32px; height:32px; background:#d4af37; border-radius:50%; text-align:center; color:#fff; font-weight:700; line-height:32px; font-size:1.2rem; font-family:'Poppins',sans-serif; box-shadow:0 2px 8px rgba(212,175,55,0.10); transition:box-shadow 0.2s;">A</span>
+            <span class="legend-btn legend-a" style="display:inline-flex; align-items:center; justify-content:center; width:48px; height:48px; background:#d4af37; border-radius:50%; color:#fff; font-weight:700; font-size:1.35rem; font-family:'Poppins',sans-serif; box-shadow:0 2px 12px rgba(212,175,55,0.13); border:3px solid #fffbe6; transition:box-shadow 0.2s, border-color 0.2s, transform 0.2s; cursor:pointer; outline:none; position:relative;">A</span>
           </a>
           <a href="pages/tower-b.html" style="text-decoration:none;">
-            <span class="blink-legend" style="display:inline-block; width:32px; height:32px; background:#bfae9c; border-radius:50%; text-align:center; color:#fff; font-weight:700; line-height:32px; font-size:1.2rem; font-family:'Poppins',sans-serif; box-shadow:0 2px 8px rgba(191,174,156,0.10); transition:box-shadow 0.2s;">B</span>
+            <span class="legend-btn legend-b" style="display:inline-flex; align-items:center; justify-content:center; width:48px; height:48px; background:#bfae9c; border-radius:50%; color:#fff; font-weight:700; font-size:1.35rem; font-family:'Poppins',sans-serif; box-shadow:0 2px 12px rgba(191,174,156,0.13); border:3px solid #fffbe6; transition:box-shadow 0.2s, border-color 0.2s, transform 0.2s; cursor:pointer; outline:none; position:relative;">B</span>
           </a>
           <a href="pages/tower-c.html" style="text-decoration:none;">
-            <span class="blink-legend" style="display:inline-block; width:32px; height:32px; background:#888; border-radius:50%; text-align:center; color:#fff; font-weight:700; line-height:32px; font-size:1.2rem; font-family:'Poppins',sans-serif; box-shadow:0 2px 8px rgba(136,136,136,0.10); transition:box-shadow 0.2s;">C</span>
+            <span class="legend-btn legend-c" style="display:inline-flex; align-items:center; justify-content:center; width:48px; height:48px; background:#888; border-radius:50%; color:#fff; font-weight:700; font-size:1.35rem; font-family:'Poppins',sans-serif; box-shadow:0 2px 12px rgba(136,136,136,0.13); border:3px solid #fffbe6; transition:box-shadow 0.2s, border-color 0.2s, transform 0.2s; cursor:pointer; outline:none; position:relative;">C</span>
           </a>
         </div>
+        <style>
+          .legend-btn:hover, .legend-btn:focus {
+            box-shadow: 0 0 0 6px rgba(212,175,55,0.18), 0 4px 18px rgba(212,175,55,0.18);
+            border-color: #d4af37;
+            transform: scale(1.08);
+            z-index: 2;
+          }
+          .legend-btn:active {
+            transform: scale(0.97);
+            box-shadow: 0 0 0 2px #d4af37, 0 2px 8px rgba(212,175,55,0.13);
+          }
+          @media (max-width: 600px) {
+            .legend-btn { width: 38px !important; height: 38px !important; font-size: 1.1rem !important; }
+          }
+        </style>
       </div>
     </section>
 
@@ -231,14 +246,75 @@
       </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section" style="background: #000; color: #fff; text-align: center; padding: 64px 0;">
-      <div class="container">
-        <h2 style="color: #d4af37; font-size: 2.5rem; margin-bottom: 14px; font-family: 'Poppins', sans-serif; font-weight: 700;">Ready to Experience True Luxury?</h2>
-        <p style="font-size: 1.15rem; color: #fffbe6; margin-bottom: 28px; font-family: 'Poppins', sans-serif; font-weight: 400;">Book your private tour or get a personalized offer today.</p>
-        
-      </div>
-    </section>
+    <!-- Redesigned CTA Section -->
+<section class="glass-cta-section" style="
+background: rgba(255, 255, 255, 0.7);
+backdrop-filter: blur(8px);
+border-radius: 22px;
+box-shadow: 0 8px 32px rgba(212,175,55,0.13);
+border: 1.5px solid #f5e7c6;
+max-width: 540px;
+margin: 56px auto 48px auto;
+padding: 48px 32px 40px 32px;
+text-align: center;
+position: relative;
+">
+<h2 style="
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 16px;
+  letter-spacing: -1px;
+  line-height: 1.2;
+">
+  <span style="color: #d4af37;">Live the Luxury</span> You Deserve
+</h2>
+<p style="
+  font-size: 1.13rem;
+  color: #444;
+  margin-bottom: 32px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+">
+  Book a private tour or get exclusive offers on luxury apartments and shops at Kaur Complex.
+</p>
+<a href="pages/contact.html" class="btn glass-cta-btn" style="
+  padding: 15px 44px;
+  font-size: 1.13rem;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #d4af37 60%, #fffbe6 100%);
+  color: #222;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 2px 12px rgba(212,175,55,0.13);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  transition: background 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
+">
+  <i class="fas fa-arrow-right" style="font-size: 1.2em;"></i>
+  Book a Visit
+</a>
+<style>
+  @media (max-width: 700px) {
+    .glass-cta-section { padding: 28px 8px 24px 8px; border-radius: 14px; }
+    .glass-cta-section h2 { font-size: 1.3rem !important; }
+    .glass-cta-section p { font-size: 1rem !important; }
+  }
+  .glass-cta-btn:hover, .glass-cta-btn:focus {
+    background: linear-gradient(90deg, #bfae9c 60%, #fffbe6 100%) !important;
+    color: #fff !important;
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 6px 24px rgba(212,175,55,0.18);
+    text-decoration: none;
+  }
+  .glass-cta-btn i { transition: transform 0.2s; }
+  .glass-cta-btn:hover i, .glass-cta-btn:focus i { transform: scale(1.15) translateX(4px); }
+</style>
+</section>
 
     <!-- Location Section -->
     <section class="location-section redesigned-location-section">
@@ -270,25 +346,6 @@
 
     <!-- Footer Include -->
     <div id="footer-include"></div>
-
-    <!-- Floating Button Row for mobile -->
-    <div class="floating-btn-row">
-        <div class="call-float">
-            <a href="tel:03320001888">
-                <i class="fas fa-phone"></i>
-            </a>
-        </div>
-        <div class="whatsapp-float">
-            <a href="https://wa.me/923320001888" target="_blank">
-                <i class="fab fa-whatsapp"></i>
-            </a>
-        </div>
-    </div>
-
-    <!-- Back to Top Button -->
-    <button class="back-to-top" id="backToTop">
-        <i class="fas fa-arrow-up"></i>
-    </button>
 
     <!-- JavaScript -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
