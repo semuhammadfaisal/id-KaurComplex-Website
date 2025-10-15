@@ -1,51 +1,66 @@
-<footer class="footer">
+<footer class="modern-footer">
+    <div class="footer-bg-pattern"></div>
     <div class="container">
-        <div class="footer-content">
-            <div class="footer-section about">
-                <div class="footer-logo">
-                    <img width="40" height="40" viewBox="0 0 40 40" fill="none" src="../assets/images/gallery/logo-kc.png">
-                        <path d="M20 0L40 20L20 40L0 20L20 0Z" fill="#D4AF37"/>
-                        <path d="M20 10L30 20L20 30L10 20L20 10Z" fill="#1E3A8A"/>
-                    </svg>
-                    <span>Kaur Complex</span>
+        <div class="footer-main">
+            <div class="footer-brand">
+                <div class="footer-brand-logo">
+                    <img src="../assets/images/gallery/logo-kc.png" alt="Kaur Complex" width="50" height="50" class="footer-logo-img">
+                    <h3 class="footer-brand-title">Kaur Complex</h3>
                 </div>
-                <p>Peshawar's premier luxury gated community offering world-class living experiences with unmatched amenities and security.</p>
-                <div class="social-links">
-                    <a href="https://www.facebook.com/kaur.projects" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/kaurcomplex/" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/company/kaurprojects/?originalSubdomain=pk" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-            
-            <div class="footer-section links">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="../pages/about.html">About Us</a></li>
-                    <li><a href="../pages/apartments.html">Properties</a></li>
-                    <li><a href="../pages/contact.html">Contact Us</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section contact">
-                <h4>Contact Info</h4>
-                <div class="contact-info">
-                    <p><i class="fas fa-map-marker-alt"></i> Tower A, Main Tajabad road Opposite Basharat Market Near Bannu House Tajabad peshawar</p>
-                    <p><i class="fas fa-phone"></i> 0332 0001888</p>
-                    <p><i class="fas fa-envelope"></i> kaurcomplexofficial@hotmail.com</p>
-                    <p><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 6:00 PM</p>
+                <p class="brand-description">Peshawar's premier luxury gated community offering world-class living experiences with unmatched amenities and security.</p>
+                <div class="social-media">
+                    <a href="https://www.facebook.com/kaur.projects" target="_blank" class="social-link">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/kaurcomplex/" target="_blank" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/kaurprojects/?originalSubdomain=pk" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
                 </div>
             </div>
             
+            <div class="footer-links">
+                <div class="link-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../pages/about.html">About Us</a></li>
+                        <li><a href="../pages/contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="link-column">
+                    <h4>Contact Info</h4>
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Tower A, Main Tajabad road Opposite Basharat Market Near Bannu House Tajabad peshawar</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:03320001888">0332 0001888</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:kaurcomplexofficial@hotmail.com">kaurcomplexofficial@hotmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Mon-Sat: 9:00 AM - 5:00 PM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         
         <div class="footer-bottom">
-            <div class="copyright">
-                <p>&copy; 2024 Kaur Complex. All rights reserved.</p>
-            </div>
+            <p>&copy; 2024 Kaur Complex. All rights reserved.</p>
         </div>
     </div>
 </footer>
+
 <!-- Re-Floating Button Row for mobile -->
 <div class="re-floating-btn-row" id="re-floating-btn-row">
     <div class="re-call-float" id="re-call-float">
@@ -59,4 +74,332 @@
         </a>
     </div>
 </div>
-<button class="re-back-to-top" id="reBackToTop"><i class="fas fa-arrow-up"></i></button> 
+<button class="re-back-to-top" id="reBackToTop"><i class="fas fa-arrow-up"></i></button>
+
+<style>
+.modern-footer {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fb 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 30px 0 0;
+    border-top: 4px solid #d4af37;
+}
+
+.footer-bg-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 20%, rgba(212,175,55,0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(212,175,55,0.03) 0%, transparent 50%);
+    z-index: 1;
+}
+
+.modern-footer .container {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-main {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.footer-brand {
+    max-width: 400px;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.brand-logo img {
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(212,175,55,0.2);
+    display: block;
+    margin: -10px auto 0 auto;
+}
+
+.brand-text h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a2238;
+    margin: 0 0 5px 0;
+}
+
+.brand-text p {
+    font-size: 0.9rem;
+    color: #d4af37;
+    margin: 0;
+    font-weight: 600;
+}
+
+.brand-description {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    font-size: 0.95rem;
+    text-align: left;
+}
+
+.social-media {
+    display: flex;
+    gap: 12px;
+}
+
+.social-link {
+    width: 45px;
+    height: 45px;
+    background: rgba(212,175,55,0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d4af37;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(212,175,55,0.2);
+}
+
+.social-link:hover {
+    background: linear-gradient(135deg, #d4af37, #ffe082);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(212,175,55,0.3);
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.link-column h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1a2238;
+    margin-bottom: 20px;
+}
+
+.link-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.link-column ul li {
+    margin-bottom: 12px;
+}
+
+.link-column ul li a {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.link-column ul li a:hover {
+    color: #d4af37;
+}
+
+.contact-items {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.contact-item i {
+    color: #d4af37;
+    font-size: 16px;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.contact-item span,
+.contact-item a {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    text-decoration: none;
+}
+
+.contact-item a:hover {
+    color: #d4af37;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(212,175,55,0.1);
+    padding: 15px 0;
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.re-floating-btn-row {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 15px;
+    z-index: 1000;
+}
+
+.re-call-float, .re-whatsapp-float {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+    animation: blink-shadow-scale 1.2s infinite alternate;
+}
+
+.re-call-float {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.re-whatsapp-float {
+    background: linear-gradient(135deg, #25d366, #128c7e);
+}
+
+.re-call-float a, .re-whatsapp-float a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes blink-shadow-scale {
+    0% {
+        box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        transform: scale(1);
+    }
+    100% {
+        box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+        transform: scale(1.05);
+    }
+}
+
+.re-back-to-top {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    background: rgba(212,175,55,0.9);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.re-back-to-top:hover {
+    background: #d4af37;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .footer-main {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .footer-links {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .footer-brand {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    
+    .brand-logo {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+    
+    .brand-logo img {
+        margin: 0;
+    }
+    
+    .brand-description {
+        margin-top: 20px;
+    }
+    
+    .floating-actions {
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .floating-btn {
+        width: 55px;
+        height: 55px;
+        font-size: 20px;
+    }
+    
+    .back-to-top {
+        bottom: 20px;
+        left: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 16px;
+    }
+}
+</style>
+
+<script>
+// Back to top functionality
+window.addEventListener('scroll', function() {
+    const backToTop = document.getElementById('reBackToTop');
+    if (window.pageYOffset > 300) {
+        backToTop.style.display = 'flex';
+    } else {
+        backToTop.style.display = 'none';
+    }
+});
+
+document.getElementById('reBackToTop').addEventListener('click', function() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+</script>

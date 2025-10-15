@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/gallery.css">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -122,251 +123,1136 @@
       </div>
     </section>
 
-    <!-- Minimalist Tower Section -->
+    <!-- Modern Towers Section -->
     <section class="towers-section">
       <div class="container">
-        <div class="section-intro" style="text-align:center; margin-bottom: 24px;">
+        <div class="section-intro" style="text-align:center; margin-bottom: 50px;">
           <span class="section-tag" style="display:inline-block; font-size:1.2rem; letter-spacing:1px; color:#d4af37; font-family:'Poppins',sans-serif; font-weight:700; background:linear-gradient(90deg,#fffbe622 60%,#ffe08218 100%); padding:6px 22px; border-radius:18px; box-shadow:0 2px 8px rgba(212,175,55,0.07); margin-bottom:8px;">Our Towers</span>
           <p class="section-description" style="font-size:1.13rem; color:#111; font-weight:600; margin-top:8px;">
             Tower A ready to move in | Towers B &amp; C under construction
           </p>
         </div>
-        <div class="towers-list">
-          <!-- Tower A -->
-          <a href="pages/tower-a.html" class="tower-item"><div class="tower-image-wrapper"><img src="assets/images/gallery/1.png" alt="Tower A" loading="lazy"><span class="tower-badge ready">Ready to move</span></div></a>
-          <!-- Tower B -->
-          <a href="pages/tower-b.html" class="tower-item"><div class="tower-image-wrapper"><img src="assets/images/gallery/2.png" alt="Tower B" loading="lazy"><span class="tower-badge">Under Construction 60%</span></div></a>
-          <!-- Tower C -->
-          <a href="pages/tower-c.html" class="tower-item"><div class="tower-image-wrapper"><img src="assets/images/gallery/3.png" alt="Tower C" loading="lazy"><span class="tower-badge">Under Construction 40%</span></div></a>
+        
+        <div class="towers-showcase">
+          <a href="pages/tower-a.html" class="tower-item" data-tower="a">
+            <div class="tower-visual">
+              <div class="tower-image-container">
+                <img src="assets/images/gallery/1.png" alt="Tower A">
+                <div class="tower-badge ready">Ready</div>
+              </div>
+              <div class="tower-progress">
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 100%;"></div>
+                </div>
+                <span class="progress-text">100% Complete</span>
+              </div>
+            </div>
+            <div class="tower-info">
+              <div class="tower-header">
+                <h3>Tower A</h3>
+                <span class="tower-letter">A</span>
+              </div>
+              <p>Premium apartments ready for immediate move-in with modern amenities and luxury finishes.</p>
+              <div class="tower-link">
+                <span>Explore Details</span>
+                <i class="fas fa-arrow-right"></i>
+              </div>
+            </div>
+          </a>
+          
+          <a href="pages/tower-b.html" class="tower-item" data-tower="b">
+            <div class="tower-visual">
+              <div class="tower-image-container">
+                <img src="assets/images/gallery/2.png" alt="Tower B">
+              </div>
+              <div class="tower-progress">
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 60%;"></div>
+                </div>
+                <span class="progress-text">60% Complete</span>
+              </div>
+            </div>
+            <div class="tower-info">
+              <div class="tower-header">
+                <h3>Tower B</h3>
+                <span class="tower-letter">B</span>
+              </div>
+              <p>Luxury residences with panoramic views, featuring premium amenities and spacious layouts.</p>
+              <div class="tower-link">
+                <span>Explore Details</span>
+                <i class="fas fa-arrow-right"></i>
+              </div>
+            </div>
+          </a>
+          
+          <a href="pages/tower-c.html" class="tower-item" data-tower="c">
+            <div class="tower-visual">
+              <div class="tower-image-container">
+                <img src="assets/images/gallery/3.png" alt="Tower C">
+              </div>
+              <div class="tower-progress">
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 40%;"></div>
+                </div>
+                <span class="progress-text">40% Complete</span>
+              </div>
+            </div>
+            <div class="tower-info">
+              <div class="tower-header">
+                <h3>Tower C</h3>
+                <span class="tower-letter">C</span>
+              </div>
+              <p>Executive penthouses and premium units with exclusive amenities and luxury services.</p>
+              <div class="tower-link">
+                <span>Explore Details</span>
+                <i class="fas fa-arrow-right"></i>
+              </div>
+            </div>
+          </a>
         </div>
       </div>
     </section>
+    
+    <style>
+    .towers-section {
+      background: #ffffff;
+      padding: 100px 0;
+      position: relative;
+    }
+    
+    .towers-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #fafbfc 0%, #f8fafc 100%);
+      z-index: 1;
+    }
+    
+    .towers-section .container {
+      position: relative;
+      z-index: 2;
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 70px;
+    }
+    
+    .section-badge {
+      display: inline-block;
+      background: rgba(212,175,55,0.1);
+      color: #d4af37;
+      padding: 8px 20px;
+      border-radius: 25px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      border: 1px solid rgba(212,175,55,0.2);
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .section-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 3.2rem;
+      font-weight: 800;
+      color: #1a2238;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+    }
+    
+    .highlight {
+      background: linear-gradient(135deg, #d4af37, #ffe082);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .section-subtitle {
+      font-size: 1.2rem;
+      color: #666;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .towers-showcase {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    
+    .tower-item {
+      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(212,175,55,0.1);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      text-decoration: none;
+      display: block;
+      color: inherit;
+    }
+    
+    .tower-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px rgba(212,175,55,0.15);
+      border-color: rgba(212,175,55,0.3);
+    }
+    
+    .tower-visual {
+      position: relative;
+    }
+    
+    .tower-image-container {
+      position: relative;
+      height: 220px;
+      overflow: hidden;
+    }
+    
+    .tower-image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+    
+    .tower-item:hover .tower-image-container img {
+      transform: scale(1.05);
+    }
+    
+    .tower-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      padding: 6px 12px;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .tower-badge.ready {
+      background: rgba(34,197,94,0.9);
+      color: white;
+    }
+    
+    .tower-badge.construction {
+      background: rgba(251,191,36,0.9);
+      color: white;
+    }
+    
+    .tower-progress {
+      padding: 20px;
+      background: rgba(248,250,252,0.8);
+    }
+    
+    .progress-bar {
+      width: 100%;
+      height: 6px;
+      background: rgba(212,175,55,0.2);
+      border-radius: 3px;
+      overflow: hidden;
+      margin-bottom: 8px;
+    }
+    
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #d4af37, #ffe082);
+      border-radius: 3px;
+      transition: width 2s ease;
+    }
+    
+    .progress-text {
+      font-size: 0.85rem;
+      color: #666;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .tower-info {
+      padding: 25px;
+    }
+    
+    .tower-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    
+    .tower-header h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #1a2238;
+      margin: 0;
+    }
+    
+    .tower-letter {
+      width: 35px;
+      height: 35px;
+      background: linear-gradient(135deg, #d4af37, #ffe082);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.1rem;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .tower-info p {
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .tower-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #d4af37;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      font-family: 'Poppins', sans-serif;
+      transition: all 0.3s ease;
+    }
+    
+    .tower-link:hover {
+      color: #b8941f;
+    }
+    
+    .tower-link i {
+      transition: transform 0.3s ease;
+    }
+    
+    .tower-link:hover i {
+      transform: translateX(5px);
+    }
+    
+    @media (max-width: 768px) {
+      .towers-section {
+        padding: 80px 0;
+      }
+      
+      .section-title {
+        font-size: 2.5rem;
+      }
+      
+      .section-subtitle {
+        font-size: 1.1rem;
+      }
+      
+      .towers-showcase {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      
+      .tower-image-container {
+        height: 200px;
+      }
+      
+      .tower-info {
+        padding: 20px;
+      }
+    }
+    </style>
 
     <!-- Masterplan Section: Towers A, B, C Locations -->
-    <section class="masterplan-section" style="background: #faf9f6; padding: 64px 0 48px 0;">
-      <div class="container" style="max-width: 1100px; margin: 0 auto;">
-        <div class="section-header center" style="margin-bottom: 28px;">
-          <span class="section-tag" style="display:inline-block; font-size:1.1rem; letter-spacing:1px; color:#d4af37; font-family:'Poppins',sans-serif; font-weight:700; background:linear-gradient(90deg,#fffbe622 60%,#ffe08218 100%); padding:6px 22px; border-radius:18px; box-shadow:0 2px 8px rgba(212,175,55,0.07); margin-bottom:8px;">Kaur Complex</span>
-          <h2 style="font-size:2.1rem; font-family:'Poppins',sans-serif; font-weight:700; color:#222; margin:0;">Masterplan</h2>
-          <p style="font-size:1.08rem; color:#444; font-family:'Poppins',sans-serif; font-weight:400; margin-top:10px;">the layout of Towers A, B & C and their prime locations.</p>
-        </div>
-        <div class="masterplan-image-wrapper" style="display:flex; justify-content:center; align-items:center;">
-          <img src="assets/images/gallery/Master Plan-01-01.png" alt="Kaur Complex Masterplan" style="width:100%; max-width:900px; border-radius:18px; box-shadow:0 4px 24px rgba(0,0,0,0.08); border:2px solid #e7e2d6;">
-        </div>
-        <div class="masterplan-legend" style="display:flex; justify-content:center; gap:32px; margin-top:28px; flex-wrap:wrap;">
-          <a href="pages/tower-a.html" style="text-decoration:none;">
-            <span class="legend-btn legend-a" style="display:inline-flex; align-items:center; justify-content:center; width:48px; height:48px; background:#d4af37; border-radius:50%; color:#fff; font-weight:700; font-size:1.35rem; font-family:'Poppins',sans-serif; box-shadow:0 2px 12px rgba(212,175,55,0.13); border:3px solid #fffbe6; transition:box-shadow 0.2s, border-color 0.2s, transform 0.2s; cursor:pointer; outline:none; position:relative;">A</span>
-          </a>
-          <a href="pages/tower-b.html" style="text-decoration:none;">
-            <span class="legend-btn legend-b" style="display:inline-flex; align-items:center; justify-content:center; width:48px; height:48px; background:#bfae9c; border-radius:50%; color:#fff; font-weight:700; font-size:1.35rem; font-family:'Poppins',sans-serif; box-shadow:0 2px 12px rgba(191,174,156,0.13); border:3px solid #fffbe6; transition:box-shadow 0.2s, border-color 0.2s, transform 0.2s; cursor:pointer; outline:none; position:relative;">B</span>
-          </a>
-          <a href="pages/tower-c.html" style="text-decoration:none;">
-            <span class="legend-btn legend-c" style="display:inline-flex; align-items:center; justify-content:center; width:48px; height:48px; background:#888; border-radius:50%; color:#fff; font-weight:700; font-size:1.35rem; font-family:'Poppins',sans-serif; box-shadow:0 2px 12px rgba(136,136,136,0.13); border:3px solid #fffbe6; transition:box-shadow 0.2s, border-color 0.2s, transform 0.2s; cursor:pointer; outline:none; position:relative;">C</span>
-          </a>
-        </div>
-        <style>
-          .legend-btn:hover, .legend-btn:focus {
-            box-shadow: 0 0 0 6px rgba(212,175,55,0.18), 0 4px 18px rgba(212,175,55,0.18);
-            border-color: #d4af37;
-            transform: scale(1.08);
-            z-index: 2;
-          }
-          .legend-btn:active {
-            transform: scale(0.97);
-            box-shadow: 0 0 0 2px #d4af37, 0 2px 8px rgba(212,175,55,0.13);
-          }
-          @media (max-width: 600px) {
-            .legend-btn { width: 38px !important; height: 38px !important; font-size: 1.1rem !important; }
-          }
-        </style>
-      </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section class="gallery-section">
+    <section class="masterplan-section">
+      <div class="masterplan-bg"></div>
       <div class="container">
-        <div class="section-header center">
-          <h2 class="section-subtitle"><i class="fas fa-images"></i> Our Gallery</h2>
-          <!-- <p class="section-description">Explore our stunning development through these captivating images</p> -->
+        <div class="section-intro" style="text-align:center; margin-bottom: 50px;">
+          <span class="section-tag" style="display:inline-block; font-size:1.2rem; letter-spacing:1px; color:#d4af37; font-family:'Poppins',sans-serif; font-weight:700; background:linear-gradient(90deg,#fffbe622 60%,#ffe08218 100%); padding:6px 22px; border-radius:18px; box-shadow:0 2px 8px rgba(212,175,55,0.07); margin-bottom:8px;">Development Layout</span>
+          <h2 style="font-size:2.5rem; font-family:'Poppins',sans-serif; font-weight:800; color:#1a2238; margin:0 0 12px 0; letter-spacing:-1px;">Project Masterplan</h2>
+          <p style="font-size:1.1rem; color:#666; font-family:'Poppins',sans-serif; font-weight:400; margin:0; max-width:600px; margin:0 auto; line-height:1.6;">Explore the architectural blueprint of Kaur Complex featuring three premium towers strategically positioned for optimal living experience.</p>
         </div>
         
-        <!-- <div class="gallery-filter">
-          <button class="filter-btn active" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="exterior">Exterior</button>
-          <button class="filter-btn" data-filter="interior">Interior</button>
-          <button class="filter-btn" data-filter="amenities">Amenities</button>
-          <button class="filter-btn" data-filter="views">Views</button>
-        </div> -->
-        
-        <div class="gallery-grid gallery-collapsed">
-          <div class="gallery-item" data-category="exterior">
-            <div class="image-container">
-              <img src="assets/images/gallery/kaur-complex-img.jpg" alt="Kaur Complex Exterior" loading="lazy">
-              
+        <div class="masterplan-grid">
+          <div class="masterplan-visual">
+            <div class="plan-image-container">
+              <img src="assets/images/gallery/Master Plan-01-01.png" alt="Kaur Complex Masterplan" class="masterplan-image">
             </div>
           </div>
-          <div class="gallery-item hidden-gallery" data-category="interior">
-            <div class="image-container">
-              <img src="assets/images/gallery/hero-bg.jpg" alt="Luxury Lobby" loading="lazy">
-              
+          
+          <div class="towers-navigation">
+            <div class="nav-header">
+              <h3>Select Tower</h3>
+              <p>Click to explore each tower's details</p>
             </div>
-          </div>
-          <div class="gallery-item hidden-gallery" data-category="interior">
-            <div class="image-container">
-              <img src="assets/images/gallery/top-img .jpg" alt="Luxury Apartment" loading="lazy">
+            
+            <div class="tower-cards">
+              <a href="pages/tower-a.html" class="tower-card tower-a">
+                <div class="tower-icon">A</div>
+                <div class="tower-info">
+                  <h4>Tower A</h4>
+                  <span class="tower-status ready">Ready to Move</span>
+                  <p>Premium apartments with modern amenities</p>
+                </div>
+                <div class="tower-arrow">
+                  <i class="fas fa-arrow-right"></i>
+                </div>
+              </a>
               
-            </div>
-          </div>
-          <div class="gallery-item hidden-gallery" data-category="amenities">
-            <div class="image-container">
-              <img src="assets/images/gallery/g-img-1.jpg" alt="Swimming Pool" loading="lazy">
+              <a href="pages/tower-b.html" class="tower-card tower-b">
+                <div class="tower-icon">B</div>
+                <div class="tower-info">
+                  <h4>Tower B</h4>
+                  <span class="tower-status construction">60% Complete</span>
+                  <p>Luxury residences with panoramic views</p>
+                </div>
+                <div class="tower-arrow">
+                  <i class="fas fa-arrow-right"></i>
+                </div>
+              </a>
               
-            </div>
-          </div>
-          <div class="gallery-item hidden-gallery" data-category="views">
-            <div class="image-container">
-              <img src="assets/images/gallery/g-img-2.jpg" alt="Penthouse View" loading="lazy">
-              
-            </div>
-          </div>
-          <div class="gallery-item hidden-gallery" data-category="views">
-            <div class="image-container">
-              <img src="assets/images/gallery/g-img-3.jpg" alt="Penthouse View" loading="lazy">
-              
-            </div>
-          </div>
-          <div class="gallery-item hidden-gallery" data-category="views">
-            <div class="image-container">
-              <img src="assets/images/gallery/g-img-4.jpg" alt="Penthouse View" loading="lazy">
-              
-            </div>
-          </div>
-          <div class="gallery-item hidden-gallery" data-category="views">
-            <div class="image-container">
-              <img src="assets/images/gallery/g-img-5.jpg" alt="Penthouse View" loading="lazy">
-              
-            </div>
-          </div>
-          <div class="gallery-item hidden-gallery" data-category="views">
-            <div class="image-container">
-              <img src="assets/images/gallery/g-img-6.jpg" alt="Penthouse View" loading="lazy">
-              
+              <a href="pages/tower-c.html" class="tower-card tower-c">
+                <div class="tower-icon">C</div>
+                <div class="tower-info">
+                  <h4>Tower C</h4>
+                  <span class="tower-status construction">40% Complete</span>
+                  <p>Executive penthouses and premium units</p>
+                </div>
+                <div class="tower-arrow">
+                  <i class="fas fa-arrow-right"></i>
+                </div>
+              </a>
             </div>
           </div>
         </div>
-        
-        <div class="lightbox-modal">
-          <div class="lightbox-content">
-            <span class="close-btn">&times;</span>
-            <img class="lightbox-image" src="" alt="">
-            <div class="lightbox-caption">
-              <h4 class="image-title"></h4>
-              <p class="image-description"></p>
+      </div>
+    </section>
+    
+    <style>
+    .masterplan-section {
+      background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+      padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .masterplan-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 20% 30%, rgba(212,175,55,0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(212,175,55,0.06) 0%, transparent 50%),
+        linear-gradient(45deg, transparent 49%, rgba(212,175,55,0.02) 50%, transparent 51%);
+      z-index: 1;
+    }
+    
+    .masterplan-section .container {
+      position: relative;
+      z-index: 2;
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 70px;
+    }
+    
+    .masterplan-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(212,175,55,0.1);
+      color: #d4af37;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 25px;
+      border: 1px solid rgba(212,175,55,0.2);
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .masterplan-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: #1a2238;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+    }
+    
+    .title-highlight {
+      background: linear-gradient(135deg, #d4af37, #ffe082);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .masterplan-subtitle {
+      font-size: 1.2rem;
+      color: #666;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.7;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .masterplan-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    
+    .plan-image-container {
+      position: relative;
+      border-radius: 25px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+      border: 3px solid rgba(212,175,55,0.1);
+    }
+    
+    .masterplan-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    
+
+    
+    .nav-header {
+      margin-bottom: 30px;
+    }
+    
+    .nav-header h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1a2238;
+      margin-bottom: 10px;
+    }
+    
+    .nav-header p {
+      color: #666;
+      font-size: 1rem;
+      margin: 0;
+    }
+    
+    .tower-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    .tower-card {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background: rgba(255,255,255,0.8);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(212,175,55,0.1);
+      border-radius: 20px;
+      padding: 25px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    }
+    
+    .tower-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(212,175,55,0.15);
+      border-color: rgba(212,175,55,0.3);
+    }
+    
+    .tower-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      flex-shrink: 0;
+    }
+    
+    .tower-a .tower-icon {
+      background: linear-gradient(135deg, #d4af37, #ffe082);
+    }
+    
+    .tower-b .tower-icon {
+      background: linear-gradient(135deg, #bfae9c, #d4c4b0);
+    }
+    
+    .tower-c .tower-icon {
+      background: linear-gradient(135deg, #888, #a0a0a0);
+    }
+    
+    .tower-info {
+      flex: 1;
+    }
+    
+    .tower-info h4 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #1a2238;
+      margin: 0 0 8px 0;
+    }
+    
+    .tower-status {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .tower-status.ready {
+      background: rgba(34,197,94,0.1);
+      color: #16a34a;
+    }
+    
+    .tower-status.construction {
+      background: rgba(251,191,36,0.1);
+      color: #d97706;
+    }
+    
+    .tower-info p {
+      color: #666;
+      font-size: 0.95rem;
+      margin: 0;
+      line-height: 1.4;
+    }
+    
+    .tower-arrow {
+      color: #d4af37;
+      font-size: 1.2rem;
+      transition: transform 0.3s ease;
+    }
+    
+    .tower-card:hover .tower-arrow {
+      transform: translateX(5px);
+    }
+    
+    @media (max-width: 1024px) {
+      .masterplan-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+      
+      .masterplan-title {
+        font-size: 3rem;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .masterplan-section {
+        padding: 80px 0;
+      }
+      
+      .masterplan-title {
+        font-size: 2.5rem;
+      }
+      
+      .masterplan-subtitle {
+        font-size: 1.1rem;
+      }
+      
+      .tower-card {
+        padding: 20px;
+        gap: 15px;
+      }
+      
+      .tower-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+      }
+      
+      .tower-info h4 {
+        font-size: 1.1rem;
+      }
+    }
+    </style>
+
+    <!-- Premium Gallery Showcase -->
+    <section class="premium-gallery-showcase">
+      <div class="gallery-ambient-bg"></div>
+      <div class="container">
+        <div class="gallery-intro">
+          <h2 class="showcase-title">Gallery</h2>
+          <p class="showcase-subtitle">Experience the pinnacle of architectural excellence</p>
+        </div>
+        <div class="gallery-single-view">
+          <div class="main-gallery-card" id="mainGalleryCard">
+            <div class="main-image-container">
+              <img src="assets/images/gallery/kaur-complex-img.jpg" alt="Kaur Complex" loading="lazy">
             </div>
-            <button class="lightbox-nav prev-btn"><i class="fas fa-chevron-left"></i></button>
-            <button class="lightbox-nav next-btn"><i class="fas fa-chevron-right"></i></button>
+            <div class="gallery-click-text">Click to see all images</div>
+          </div>
+          
+          <div class="hidden-gallery" id="hiddenGallery" style="display: none;">
+            <div class="gallery-grid">
+              <div class="gallery-item">
+                <img src="assets/images/gallery/g-img-5.jpg" alt="Gallery Image 5" loading="lazy">
+              </div>
+              <div class="gallery-item">
+                <img src="assets/images/gallery/g-img-2.jpg" alt="Gallery Image 2" loading="lazy">
+              </div>
+              <div class="gallery-item">
+                <img src="assets/images/gallery/g-img-1.jpg" alt="Gallery Image 1" loading="lazy">
+              </div>
+              <div class="gallery-item">
+                <img src="assets/images/gallery/g-img-4.jpg" alt="Gallery Image 4" loading="lazy">
+              </div>
+              <div class="gallery-item">
+                <img src="assets/images/gallery/g-img-6.jpg" alt="Gallery Image 6" loading="lazy">
+              </div>
+              <div class="gallery-item">
+                <img src="assets/images/gallery/kaur-complex-img.jpg" alt="Kaur Complex" loading="lazy">
+              </div>
+              <div class="gallery-item">
+                <img src="assets/images/gallery/hero-bg.jpg" alt="Hero Background" loading="lazy">
+              </div>
+              <div class="gallery-item">
+                <img src="assets/images/gallery/exterior-1.jpg" alt="Exterior View" loading="lazy">
+              </div>
+            </div>
+            <button class="close-gallery-btn" id="closeGalleryBtn">
+              <i class="fas fa-times"></i> Close Gallery
+            </button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Redesigned CTA Section -->
-<section class="glass-cta-section" style="
-background: rgba(255, 255, 255, 0.7);
-backdrop-filter: blur(8px);
-border-radius: 22px;
-box-shadow: 0 8px 32px rgba(212,175,55,0.13);
-border: 1.5px solid #f5e7c6;
-max-width: 540px;
-margin: 56px auto 48px auto;
-padding: 48px 32px 40px 32px;
-text-align: center;
-position: relative;
-">
-<h2 style="
-  font-family: 'Poppins', sans-serif;
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: #222;
-  margin-bottom: 16px;
-  letter-spacing: -1px;
-  line-height: 1.2;
-">
-  <span style="color: #d4af37;">Live the Luxury</span> You Deserve
-</h2>
-<p style="
-  font-size: 1.13rem;
-  color: #444;
-  margin-bottom: 32px;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 400;
-  line-height: 1.6;
-">
-  Book a private tour or get exclusive offers on luxury apartments and shops at Kaur Complex.
-</p>
-<a href="pages/contact.html" class="btn glass-cta-btn" style="
-  padding: 15px 44px;
-  font-size: 1.13rem;
-  border-radius: 10px;
-  background: linear-gradient(90deg, #d4af37 60%, #fffbe6 100%);
-  color: #222;
-  font-weight: 600;
-  text-decoration: none;
-  box-shadow: 0 2px 12px rgba(212,175,55,0.13);
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  border: none;
-  transition: background 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
-">
-  <i class="fas fa-arrow-right" style="font-size: 1.2em;"></i>
-  Book a Visit
-</a>
-<style>
-  @media (max-width: 700px) {
-    .glass-cta-section { padding: 28px 8px 24px 8px; border-radius: 14px; }
-    .glass-cta-section h2 { font-size: 1.3rem !important; }
-    .glass-cta-section p { font-size: 1rem !important; }
-  }
-  .glass-cta-btn:hover, .glass-cta-btn:focus {
-    background: linear-gradient(90deg, #bfae9c 60%, #fffbe6 100%) !important;
-    color: #fff !important;
-    transform: translateY(-2px) scale(1.04);
-    box-shadow: 0 6px 24px rgba(212,175,55,0.18);
-    text-decoration: none;
-  }
-  .glass-cta-btn i { transition: transform 0.2s; }
-  .glass-cta-btn:hover i, .glass-cta-btn:focus i { transform: scale(1.15) translateX(4px); }
-</style>
+    <!-- Bold CTA Section -->
+<section class="bold-cta-section">
+  <div class="container">
+    <div class="cta-card">
+      <h2 class="cta-heading">
+        Experience<br>
+        <span class="highlight">Luxury Living</span><br>
+        at Kaur Complex
+      </h2>
+      <p class="cta-text">
+        Schedule your exclusive tour and discover premium apartments, penthouses, and commercial spaces in Peshawar's most prestigious development.
+      </p>
+      <div class="cta-buttons">
+        <a href="pages/contact.html" class="btn-primary">
+          <i class="fas fa-calendar-check"></i>
+          Book Private Tour
+        </a>
+        <a href="tel:03320001888" class="btn-secondary">
+          <i class="fas fa-phone"></i>
+          Call Now
+        </a>
+      </div>
+    </div>
+  </div>
 </section>
 
-    <!-- Location Section -->
-    <section class="location-section redesigned-location-section">
-      <div class="location-bg-gradient"></div>
+<style>
+.bold-cta-section {
+  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+  padding: 100px 0;
+  position: relative;
+}
+
+.bold-cta-section .container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.cta-card {
+  text-align: center;
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(212,175,55,0.1);
+  border-radius: 25px;
+  padding: 60px 40px;
+  box-shadow: 0 25px 60px rgba(212,175,55,0.15);
+}
+
+.cta-heading {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: #1a2238;
+  margin-bottom: 25px;
+  line-height: 1.1;
+}
+
+.highlight {
+  background: linear-gradient(135deg, #d4af37, #ffe082);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+}
+
+.cta-text {
+  font-size: 1.2rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary, .btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #d4af37, #ffe082);
+  color: white;
+  box-shadow: 0 8px 25px rgba(212,175,55,0.4);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #1a2238;
+  border: 2px solid rgba(212,175,55,0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(212,175,55,0.5);
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: rgba(212,175,55,0.1);
+  border-color: #d4af37;
+  color: #d4af37;
+  transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+  .bold-cta-section {
+    padding: 80px 0;
+  }
+  
+  .cta-card {
+    padding: 40px 25px;
+  }
+  
+  .cta-heading {
+    font-size: 2.5rem;
+  }
+  
+  .cta-text {
+    font-size: 1.1rem;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn-primary, .btn-secondary {
+    width: 100%;
+    max-width: 250px;
+    justify-content: center;
+  }
+}
+</style>
+
+    <!-- Enhanced Location Section -->
+    <section class="enhanced-location-section">
+      <div class="location-ambient-bg"></div>
       <div class="container">
-        <div class="location-card">
-          <div class="location-card-header">
-            <span class="location-pin-icon">
-              <svg width="38" height="38" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="10" r="4" stroke="#d4af37" stroke-width="2"/><path d="M12 22C12 22 20 14.36 20 10C20 5.58 16.42 2 12 2C7.58 2 4 5.58 4 10C4 14.36 12 22 12 22Z" stroke="#d4af37" stroke-width="2"/></svg>
-            </span>
-            <h2 class="location-card-title">Our Location</h2>
-          </div>
-          <div class="location-card-content">
-            <div class="location-card-info">
-              <div class="location-info-row"><i class="fas fa-building"></i> <span>Kaur Complex</span></div>
-              <div class="location-info-row"><i class="fas fa-map-marker-alt"></i> <span>Tower A, Main Tajabad road Opposite Basharat Market Near Bannu House Tajabad peshawar</span></div>
-              <div class="location-info-row"><i class="fas fa-phone"></i> <a href="tel:03320001888">0332 0001888</a></div>
-              <div class="location-info-row"><i class="fas fa-envelope"></i> <a href="mailto:kaurcomplexofficial@hotmail.com">kaurcomplexofficial@hotmail.com</a></div>
-              <div class="location-info-row"><i class="fas fa-clock"></i> <span>Mon-Sat, 9:00am – 8:00pm</span></div>
-              <a class="location-map-btn-wide" href="https://maps.app.goo.gl/RSrW3GYsxu4T8KDc6" target="_blank" rel="noopener">View on Google Maps</a>
+        <div class="location-header">
+
+          <h2 class="location-title">Our <span class="title-accent">Location</span></h2>
+          <p class="location-subtitle">Visit us at the heart of Peshawar's premium residential district</p>
+        </div>
+        
+        <div class="location-content">
+          <div class="location-info-panel">
+            <div class="info-card">
+              <div class="info-icon">
+                <i class="fas fa-building"></i>
+              </div>
+              <div class="info-details">
+                <h4>Property</h4>
+                <p>Kaur Complex</p>
+              </div>
             </div>
-            <div class="location-card-map">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5164.429739922866!2d71.4603929329566!3d33.985623095204886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38d911c73a471387%3A0xfa759c62f32cdc38!2sKaur%20Complex!5e0!3m2!1sen!2s!4v1751886262308!5m2!1sen!2s" width="100%" height="220" style="border:0; border-radius: 14px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            
+            <div class="info-card">
+              <div class="info-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="info-details">
+                <h4>Address</h4>
+                <p>Tower A, Main Tajabad road Opposite Basharat Market Near Bannu House Tajabad peshawar</p>
+              </div>
+            </div>
+            
+            <div class="info-card">
+              <div class="info-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div class="info-details">
+                <h4>Phone</h4>
+                <p><a href="tel:03320001888">0332 0001888</a></p>
+              </div>
+            </div>
+            
+            <div class="info-card">
+              <div class="info-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="info-details">
+                <h4>Email</h4>
+                <p><a href="mailto:kaurcomplexofficial@hotmail.com">kaurcomplexofficial@hotmail.com</a></p>
+              </div>
+            </div>
+            
+            <div class="info-card">
+              <div class="info-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="info-details">
+                <h4>Hours</h4>
+                <p>Mon-Sat, 9:00am – 5:00pm</p>
+              </div>
+            </div>
+            
+            <a href="https://maps.app.goo.gl/RSrW3GYsxu4T8KDc6" target="_blank" class="directions-btn">
+              <i class="fas fa-directions"></i>
+              Get Directions
+            </a>
+          </div>
+          
+          <div class="location-map-panel">
+            <div class="map-container">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5164.429739922866!2d71.4603929329566!3d33.985623095204886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38d911c73a471387%3A0xfa759c62f32cdc38!2sKaur%20Complex!5e0!3m2!1sen!2s!4v1751886262308!5m2!1sen!2s" width="100%" height="400" style="border:0; border-radius: 20px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
           </div>
         </div>
       </div>
     </section>
+    
+    <style>
+    .enhanced-location-section {
+      background: linear-gradient(135deg, #f8f9fb 0%, #ffffff 100%);
+      padding: 40px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .location-ambient-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 20% 30%, rgba(212,175,55,0.06) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 70%, rgba(212,175,55,0.04) 0%, transparent 50%);
+      z-index: 1;
+    }
+    
+    .enhanced-location-section .container {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .location-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    
+    .location-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(212,175,55,0.1);
+      color: #d4af37;
+      padding: 8px 20px;
+      border-radius: 25px;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      border: 1px solid rgba(212,175,55,0.2);
+    }
+    
+    .location-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #1a2238;
+      margin-bottom: 15px;
+      letter-spacing: -0.5px;
+    }
+    
+    .location-subtitle {
+      font-size: 1.1rem;
+      color: #666;
+      max-width: 500px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    
+    .location-content {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 50px;
+      align-items: start;
+    }
+    
+    .location-info-panel {
+      background: rgba(255,255,255,0.8);
+      backdrop-filter: blur(10px);
+      border-radius: 25px;
+      padding: 40px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+      border: 1px solid rgba(212,175,55,0.1);
+    }
+    
+    .info-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      margin-bottom: 25px;
+      padding: 15px 0;
+      border-bottom: 1px solid rgba(212,175,55,0.1);
+    }
+    
+    .info-card:last-of-type {
+      border-bottom: none;
+      margin-bottom: 30px;
+    }
+    
+    .info-icon {
+      width: 45px;
+      height: 45px;
+      background: linear-gradient(135deg, #d4af37, #ffe082);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    
+    .info-details h4 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #1a2238;
+      margin-bottom: 5px;
+    }
+    
+    .info-details p {
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin: 0;
+    }
+    
+    .info-details a {
+      color: #d4af37;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    
+    .info-details a:hover {
+      color: #b8941f;
+    }
+    
+    .directions-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #d4af37, #ffe082);
+      color: white;
+      padding: 15px 25px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(212,175,55,0.3);
+    }
+    
+    .directions-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(212,175,55,0.4);
+      color: white;
+    }
+    
+    .location-map-panel {
+      position: relative;
+    }
+    
+    .map-container {
+      border-radius: 25px;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+      border: 3px solid rgba(212,175,55,0.1);
+    }
+    
+    @media (max-width: 768px) {
+      .location-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      
+      .location-title {
+        font-size: 2.2rem;
+      }
+      
+      .location-info-panel {
+        padding: 25px;
+      }
+      
+      .map-container iframe {
+        height: 300px;
+      }
+    }
+    </style>
 
     <!-- Footer Include -->
     <div id="footer-include"></div>
@@ -423,11 +1309,21 @@ position: relative;
     </script>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
-      var ctaBtn = document.querySelector('.cta-btn[href="pages/contact.html"]');
-      if (ctaBtn) {
-        ctaBtn.addEventListener('click', function(e) {
-          console.log('CTA Contact Sales button clicked');
-          alert('CTA Contact Sales button clicked!');
+      var mainCard = document.getElementById('mainGalleryCard');
+      var hiddenGallery = document.getElementById('hiddenGallery');
+      var closeBtn = document.getElementById('closeGalleryBtn');
+      
+      if (mainCard && hiddenGallery) {
+        mainCard.addEventListener('click', function() {
+          hiddenGallery.style.display = 'block';
+          mainCard.style.display = 'none';
+        });
+      }
+      
+      if (closeBtn && hiddenGallery && mainCard) {
+        closeBtn.addEventListener('click', function() {
+          hiddenGallery.style.display = 'none';
+          mainCard.style.display = 'block';
         });
       }
     });
