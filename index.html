@@ -152,7 +152,7 @@
                 <h3>Tower A</h3>
                 <span class="tower-letter">A</span>
               </div>
-              <p>Premium apartments ready for immediate move-in with modern amenities and luxury finishes.</p>
+              <p>Premium apartments with modern amenities.</p>
               <div class="tower-link">
                 <span>Explore Details</span>
                 <i class="fas fa-arrow-right"></i>
@@ -177,7 +177,7 @@
                 <h3>Tower B</h3>
                 <span class="tower-letter">B</span>
               </div>
-              <p>Luxury residences with panoramic views, featuring premium amenities and spacious layouts.</p>
+              <p>Luxury residences with panoramic views.</p>
               <div class="tower-link">
                 <span>Explore Details</span>
                 <i class="fas fa-arrow-right"></i>
@@ -202,9 +202,35 @@
                 <h3>Tower C</h3>
                 <span class="tower-letter">C</span>
               </div>
-              <p>Executive penthouses and premium units with exclusive amenities and luxury services.</p>
+              <p>Executive penthouses and premium units.</p>
               <div class="tower-link">
                 <span>Explore Details</span>
+                <i class="fas fa-arrow-right"></i>
+              </div>
+            </div>
+          </a>
+          
+          <a href="pages/rentals.html" class="tower-item" data-tower="rental">
+            <div class="tower-visual">
+              <div class="tower-image-container">
+                <img src="assets/images/gallery/rent-tower-a.png" alt="Rental Apartments">
+                <div class="tower-badge rental">Available</div>
+              </div>
+              <div class="tower-progress">
+                <div class="progress-bar">
+                  <div class="progress-fill rental-fill" style="width: 100%;"></div>
+                </div>
+                <span class="progress-text">Ready to Rent</span>
+              </div>
+            </div>
+            <div class="tower-info">
+              <div class="tower-header">
+                <h3>Rentals</h3>
+                <span class="tower-letter"><i class="fas fa-key"></i></span>
+              </div>
+              <p>Fully furnished apartments for rent.</p>
+              <div class="tower-link">
+                <span>View Rentals</span>
                 <i class="fas fa-arrow-right"></i>
               </div>
             </div>
@@ -270,7 +296,20 @@
       background: linear-gradient(135deg, #d4af37, #ffe082);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      background-clip: text;
+    }
+    
+    .tower-badge.rental {
+      background: linear-gradient(135deg, #d4af37, #ffe082);
+      color: white;
+    }
+    
+    .progress-fill.rental-fill {
+      background: linear-gradient(90deg, #d4af37, #ffe082);
+    }
+    
+    .tower-item[data-tower="rental"] .tower-letter {
+      background: linear-gradient(135deg, #d4af37, #ffe082);
+      color: white;
     }
     
     .section-subtitle {

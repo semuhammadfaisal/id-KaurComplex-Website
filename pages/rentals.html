@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rentals - Kaur Complex</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background: #ffffff; color: #2c2c2c; line-height: 1.7; }
+        
+
+        .hero {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            padding: 25px 0;
+            text-align: center;
+            height: auto;
+            min-height: unset;
+            border-bottom: 1px solid rgba(212,175,55,0.1);
+        }
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #E49E22 0%, #d4af37 50%, #E49E22 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 0 0 8px 0;
+            padding: 0;
+            line-height: 1.2;
+        }
+        .hero h1 i {
+            color: #d4af37;
+            margin-right: 10px;
+            background: none;
+            -webkit-text-fill-color: #d4af37;
+        }
+        .hero p {
+            font-size: 1rem;
+            color: #666;
+            margin: 0;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .container { max-width: 100%; margin: 0 auto; padding: 0 15px; }
+        .section { padding: 20px 0; }
+        .section-title { 
+            font-family: 'Montserrat', sans-serif; 
+            font-size: 1.8rem; 
+            font-weight: 700; 
+            text-align: center; 
+            margin-bottom: 15px; 
+            color: #2c2c2c; 
+        }
+        
+        .rental-table { 
+            background: white; 
+            border-radius: 15px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
+            overflow: hidden; 
+            margin: 10px auto; 
+            max-width: 800px;
+        }
+        .rental-table table { width: 100%; border-collapse: collapse; }
+        .rental-table th { 
+            background: linear-gradient(135deg, #E49E22, #d4af37); 
+            color: white; 
+            padding: 10px 8px; 
+            font-weight: 600; 
+            text-align: left; 
+            font-size: 0.85rem;
+        }
+        .rental-table td { 
+            padding: 10px 8px; 
+            border-bottom: 1px solid #f0f0f0; 
+            font-weight: 500; 
+            font-size: 0.85rem;
+        }
+        .rental-table tr:hover { background: #f8f9fa; }
+        .price { color: #E49E22; font-weight: 700; }
+        
+        .cta { 
+            background: linear-gradient(135deg, #1a1a1a, #2d2d2d); 
+            color: white; 
+            text-align: center; 
+            padding: 50px 15px;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(212,175,55,0.1) 0%, transparent 50%);
+        }
+        .cta-content {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .cta h2 { 
+            font-family: 'Montserrat', sans-serif; 
+            font-size: 2.2rem; 
+            font-weight: 700; 
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #E49E22, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .cta p { 
+            font-size: 1.1rem; 
+            margin-bottom: 35px; 
+            opacity: 0.9;
+            color: #e0e0e0;
+        }
+        .cta-buttons { 
+            display: flex; 
+            flex-direction: column;
+            gap: 20px; 
+            align-items: center;
+        }
+        .cta-button { 
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px 35px; 
+            background: linear-gradient(135deg, #E49E22, #d4af37); 
+            color: white; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            font-weight: 600; 
+            transition: all 0.4s ease; 
+            width: 100%;
+            max-width: 280px;
+            font-size: 1rem;
+            box-shadow: 0 8px 25px rgba(228,158,34,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.6s;
+        }
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        .cta-button:hover { 
+            transform: translateY(-3px) scale(1.02); 
+            box-shadow: 0 15px 35px rgba(228,158,34,0.4); 
+            text-decoration: none; 
+            color: white; 
+        }
+        
+        /* Tablet Styles */
+        @media (min-width: 768px) {
+            .hero { padding: 30px 0; height: auto; min-height: unset; }
+            .hero h1 { font-size: 2.8rem; margin: 0 0 10px 0; padding: 0; }
+            .hero p { font-size: 1.1rem; }
+            .container { max-width: 750px; padding: 0 20px; }
+            .section { padding: 30px 0; }
+            .section-title { font-size: 2.2rem; margin-bottom: 20px; }
+            
+            .rental-table th, .rental-table td { padding: 12px 12px; font-size: 0.9rem; }
+            
+            .cta { padding: 60px 20px; }
+            .cta h2 { font-size: 2.5rem; margin-bottom: 20px; }
+            .cta p { font-size: 1.2rem; margin-bottom: 40px; }
+            .cta-buttons { flex-direction: row; gap: 25px; justify-content: center; }
+            .cta-button { width: auto; padding: 20px 40px; font-size: 1.1rem; max-width: none; }
+        }
+        
+        /* Desktop Styles */
+        @media (min-width: 1024px) {
+            .hero { padding: 35px 0; height: auto; min-height: unset; }
+            .hero h1 { font-size: 3.5rem; margin: 0 0 12px 0; padding: 0; }
+            .hero p { font-size: 1.2rem; }
+            .container { max-width: 1200px; }
+            .section { padding: 40px 0; }
+            .section-title { font-size: 2.8rem; margin-bottom: 25px; }
+            
+            .rental-table th, .rental-table td { padding: 14px 16px; }
+            
+            .cta { padding: 70px 20px; }
+            .cta h2 { font-size: 3rem; }
+            .cta p { font-size: 1.3rem; margin-bottom: 45px; }
+            .cta-button { padding: 22px 45px; font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar-include"></div>
+
+    <section class="hero">
+        <div class="container">
+            <h1><i class="fas fa-key"></i>RENTALS</h1>
+            <p>Ready to move apartments available for rent</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Rental Pricing</h2>
+            <div class="rental-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th><i class="fas fa-home" style="margin-right: 8px;"></i>Apartment Type</th>
+                            <th><i class="fas fa-money-bill-wave" style="margin-right: 8px;"></i>Monthly Rent</th>
+                            <th><i class="fas fa-tools" style="margin-right: 8px;"></i>Maintenance</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Studio</td><td class="price">PKR 18,000</td><td>PKR 4,000</td></tr>
+                        <tr><td>1 Bed (Internal)</td><td class="price">PKR 21,000</td><td>PKR 4,000</td></tr>
+                        <tr><td>1 Bed (Corner)</td><td class="price">PKR 24,000</td><td>PKR 4,000</td></tr>
+                        <tr><td>2 Bed (Backside)</td><td class="price">PKR 32,000</td><td>PKR 5,000</td></tr>
+                        <tr><td>2 Bed (Front Facing)</td><td class="price">PKR 36,000</td><td>PKR 5,000</td></tr>
+                        <tr><td>3 Bed (Backside)</td><td class="price">PKR 42,000</td><td>PKR 6,000</td></tr>
+                        <tr><td>3 Bed (Front Facing)</td><td class="price">PKR 45,000</td><td>PKR 6,000</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Move In?</h2>
+            <p>Contact us today to schedule a viewing</p>
+            <div class="cta-buttons">
+                <a href="tel:03320001888" class="cta-button">
+                    <i class="fas fa-phone" style="margin-right: 8px;"></i>Call: 0332 0001888
+                </a>
+                <a href="mailto:kaurcomplexofficial@hotmail.com" class="cta-button">
+                    <i class="fas fa-envelope" style="margin-right: 8px;"></i>Email Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-include"></div>
+
+    <script src="../assets/js/main.js"></script>
+    <script>
+        function includeHTML(id, url, callback) {
+            fetch(url).then(res => res.text()).then(data => {
+                document.getElementById(id).innerHTML = data;
+                if (callback) callback();
+            });
+        }
+        
+        includeHTML('navbar-include', '../assets/includes/navbar.html', function() {
+            if (typeof initNavigation === 'function') initNavigation();
+        });
+        includeHTML('footer-include', '../assets/includes/footer.html');
+    </script>
+</body>
+</html>
