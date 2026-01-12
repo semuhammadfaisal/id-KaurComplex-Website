@@ -1251,10 +1251,6 @@ body.nav-open {
         font-size: 28px;
     }
     
-    .hero {
-        min-height: 700px;
-    }
-    
     .hero-title {
         font-size: 36px;
     }
@@ -1323,10 +1319,6 @@ body.nav-open {
     
     .section-description {
         font-size: 16px;
-    }
-    
-    .hero {
-        min-height: 600px;
     }
     
     .hero-content {
@@ -3416,10 +3408,6 @@ body.nav-open {
     .cta-buttons .btn {
         width: 100%;
     }
-}
-.hero {
-    height: 100vh; /* Fallback */
-    height: calc(var(--vh, 1vh) * 100);
 }
 
 /* Improved About Section Styles */

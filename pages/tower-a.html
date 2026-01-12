@@ -17,569 +17,148 @@
             color: #2c2c2c;
             line-height: 1.7;
             overflow-x: hidden;
-            scroll-behavior: smooth;
             margin: 0;
             padding: 0;
         }
         
-        .luxury-heading {
-            font-family: 'Montserrat', sans-serif;
+        #navbar-include {
+            margin: 0;
+            padding: 0;
         }
         
         .hero {
             position: relative;
-            overflow: hidden;
+            width: 100%;
             margin: 0;
-            padding: 0;
             display: block;
+            line-height: 0;
+            font-size: 0;
         }
         
         .hero-image {
             width: 100%;
-            height: 80vh;
-            object-fit: cover;
-            object-position: center;
-            position: relative;
-        }
-        
-        .hero-image::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 100px;
-            background: linear-gradient(transparent, rgba(255,255,255,0.8));
-        }
-        
-        .hero-text-section {
-            background: #ffffff;
-            padding: 20px 40px 0;
-            text-align: center;
-            position: relative;
-            margin-bottom: -30px;
-        }
-        
-        .hero-text-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(90deg, #E49E22, #d4af37, #E49E22);
-            border-radius: 2px;
-        }
-        
-        .hero-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: clamp(3.5rem, 6vw, 5rem);
-            font-weight: 700;
-            background: linear-gradient(135deg, #E49E22 0%, #d4af37 50%, #E49E22 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 20px;
-            letter-spacing: -0.02em;
-            position: relative;
-            animation: fadeInUp 1.2s ease-out;
-        }
-        
-        .hero-title::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #E49E22, transparent);
-            opacity: 0.6;
-        }
-        
-        .hero-subtitle {
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 30px;
-            font-weight: 400;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            position: relative;
-            animation: fadeInUp 1.4s ease-out;
-        }
-        
-        .hero-tagline {
-            font-size: 1.1rem;
-            color: #888;
-            font-style: italic;
-            margin: 0;
-            animation: fadeInUp 1.6s ease-out;
-        }
-        
-        .hero-subtitle::before,
-        .hero-subtitle::after {
-            content: '◆';
-            color: #E49E22;
-            font-size: 0.8rem;
-            margin: 0 15px;
-            opacity: 0.7;
-        }
-        
-        .hero-divider {
-            width: 150px;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #E49E22, #d4af37, #E49E22, transparent);
-            margin: 0 auto;
-            border-radius: 1px;
-            animation: fadeInUp 1.8s ease-out;
-        }
-        
-
-        
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-8px); }
-            60% { transform: translateY(-4px); }
-        }
-        
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .hero-text-section .fade-in {
-            animation: fadeInUp 1s ease-out;
-        }
-        
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-        
-        .section:first-of-type {
-            margin-top: -30px;
-            padding-top: 0;
-        }
-        
-        .section:first-of-type .container {
-            padding-top: 0;
-        }
-        
-        .section:first-of-type .section-title {
-            margin-top: 0;
-            padding-top: 0;
-        }
-        
-        .section {
-            padding: 40px 0;
-            position: relative;
-            margin-top: 0;
-        }
-        
-        .section-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: clamp(2.5rem, 4vw, 3.5rem);
-            font-weight: 700;
-            text-align: center !important;
-            margin: 0;
-            color: #2c2c2c;
-            position: relative;
-            width: 100%;
+            height: auto;
             display: block;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: linear-gradient(90deg, #E49E22, #d4af37);
-            border-radius: 2px;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: linear-gradient(90deg, #d4af37, #ffe082);
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .feature-card {
-            background: #ffffff;
-            border-radius: 20px;
-            padding: 50px 30px;
-            text-align: center;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-            border: 1px solid rgba(228,158,34,0.1);
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #E49E22, #d4af37);
-            transform: scaleX(0);
-            transition: transform 0.4s ease;
-        }
-        
-        .feature-card:hover::before {
-            transform: scaleX(1);
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 25px 60px rgba(0,0,0,0.15);
-        }
-        
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #d4af37, #ffe082);
-            transform: scaleX(0);
-            transition: transform 0.4s ease;
-        }
-        
-        .feature-card:hover::before {
-            transform: scaleX(1);
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 25px 60px rgba(0,0,0,0.15), 0 0 0 1px rgba(212,175,55,0.2);
-        }
-        
-        .feature-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #E49E22, #d4af37);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 30px;
-            font-size: 2rem;
-            color: white;
-            box-shadow: 0 15px 35px rgba(228,158,34,0.3);
-            transition: all 0.3s ease;
-        }
-        
-        .feature-card:hover .feature-icon {
-            transform: scale(1.1);
-            box-shadow: 0 20px 45px rgba(228,158,34,0.4);
-        }
-        
-        .feature-card h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-            color: #2c2c2c;
-            text-align: center;
-        }
-        
-        .feature-card p {
-            color: #666;
-            line-height: 1.7;
-            font-size: 1rem;
-            text-align: center;
-        }
-        
-        .pricing-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 60px;
-        }
-        
-        .pricing-header .section-title {
-            text-align: center;
-            flex: 1;
             margin: 0;
+            padding: 0;
+            vertical-align: bottom;
+            border: 0;
         }
-        
-        .download-brochure-btn {
-            background: linear-gradient(135deg, #E49E22, #d4af37);
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 700;
             color: white;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 30px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(228,158,34,0.3);
+            margin: 0;
+            padding: 0;
+            line-height: 1.1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+        .hero h1 i {
+            color: #d4af37;
+            margin-right: 10px;
+        }
+        .hero p {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.95);
+            margin: 5px 0 0 0;
+            padding: 0;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
         }
         
-        .download-brochure-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 35px rgba(228,158,34,0.4);
+        .container { max-width: 100%; margin: 0 auto; padding: 0 15px; text-align: center; }
+        .section { padding: 20px 0; margin: 0; }
+        .section-title { 
+            font-family: 'Montserrat', sans-serif; 
+            font-size: 1.8rem; 
+            font-weight: 700; 
+            text-align: center !important; 
+            margin-bottom: 15px; 
+            color: #2c2c2c; 
         }
         
-        .pricing-section {
-            background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
-            border-radius: 30px;
-            padding: 60px 40px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.08);
-            position: relative;
-        }
-        
-        .pricing-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        
-        .pricing-card {
-            background: linear-gradient(145deg, #ffffff 0%, #fafafa 100%);
-            border-radius: 20px;
-            padding: 40px 25px;
-            border: 2px solid transparent;
-            transition: all 0.4s ease;
-            position: relative;
-            text-align: center;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+        .pricing-table {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
             overflow: hidden;
+            margin: 20px auto;
+            max-width: 600px;
         }
-        
-        .pricing-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #E49E22, #d4af37);
-            transform: scaleX(0);
-            transition: transform 0.4s ease;
+        .pricing-table table {
+            width: 100%;
+            border-collapse: collapse;
         }
-        
-        .pricing-card:hover::before {
-            transform: scaleX(1);
-        }
-        
-        .pricing-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 60px rgba(0,0,0,0.15);
-        }
-        
-        .apartment-icon {
-            width: 35px;
-            height: 35px;
-            background: linear-gradient(135deg, #d4af37, #ffe082);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 0.5rem;
-            font-size: 1rem;
-            color: white;
-            box-shadow: 0 2px 8px rgba(212,175,55,0.2);
-        }
-        
-        .pricing-card.popular {
-            border: 2px solid #E49E22;
-            transform: scale(1.05);
-        }
-        
-        .pricing-card.popular::before {
-            transform: scaleX(1);
-            animation: shimmer 2s infinite;
-        }
-        
-        @keyframes shimmer {
-            0% { background-position: -200px 0; }
-            100% { background-position: 200px 0; }
-        }
-        
-        .popular-badge {
-            position: absolute;
-            top: -10px;
-            right: 20px;
+        .pricing-table th {
             background: #d4af37;
             color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-        
-        .pricing-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-        }
-        
-        .apartment-type {
-            font-family: 'Montserrat', sans-serif;
+            padding: 15px 20px;
+            font-weight: 700;
             font-size: 1rem;
-            font-weight: 500;
-            color: #1a1a1a;
-            margin-bottom: 0.3rem;
+            text-transform: uppercase;
             text-align: center;
         }
-        
-        .apartment-size {
-            color: #666;
-            margin-bottom: 0.5rem;
-            font-size: 0.8rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 4px;
-        }
-        
-        .apartment-size i {
-            color: #d4af37;
-        }
-        
-        .apartment-price {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #d4af37;
-        }
-        
-        .amenities-section {
-            background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
-            padding: 40px 0;
-            position: relative;
-        }
-        
-        .amenities-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 100px;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="%23E49E22"></path></svg>') no-repeat center top;
-            background-size: cover;
-        }
-        
-        .amenities-categories {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .amenity-category {
-            background: #ffffff;
-            border-radius: 25px;
-            padding: 40px 30px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-            transition: all 0.4s ease;
-            border: 1px solid rgba(228,158,34,0.1);
-        }
-        
-        .amenity-category:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 60px rgba(0,0,0,0.12);
-        }
-        
-        .category-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: #2c2c2c;
-            margin-bottom: 30px;
-            text-align: center;
-            position: relative;
-        }
-        
-        .category-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 50px;
-            height: 2px;
-            background: linear-gradient(90deg, #E49E22, #d4af37);
-        }
-        
-        .amenity-item {
-            display: flex;
-            align-items: center;
-            padding: 0.6rem 0;
+        .pricing-table td {
+            padding: 12px 20px;
             border-bottom: 1px solid #f0f0f0;
+            font-size: 0.95rem;
+            font-weight: 600;
             transition: all 0.3s ease;
         }
-        
-        .amenity-item:last-child {
+        .pricing-table tr:hover {
+            background: #f8f9fa;
+        }
+        .pricing-table tr.featured {
+            background: transparent;
+        }
+        .pricing-table tr:last-child td {
             border-bottom: none;
         }
-        
-        .amenity-item:hover {
-            transform: translateX(10px);
+        .pricing-table .price {
             color: #d4af37;
+            font-weight: 800;
+            font-size: 1.1rem;
+            text-align: right;
         }
         
-        .amenity-icon {
-            width: 35px;
-            height: 35px;
-            background: linear-gradient(135deg, #d4af37, #ffe082);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 0.8rem;
-            color: white;
-            font-size: 1rem;
+        .view-buttons {
+            display: grid !important;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+            width: 100%;
         }
-        
-        .amenity-content h4 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 500;
-            margin-bottom: 0.1rem;
-            font-size: 1rem;
-            text-align: left;
-        }
-        
-        .amenity-content p {
-            font-size: 0.85rem;
-            color: #666;
-            line-height: 1.4;
-        }
-        
-        .cta-section {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            color: white;
+        .view-btn {
+            background: linear-gradient(135deg, #d4af37, #ffe082) !important;
+            color: white !important;
+            padding: 15px 25px;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
             text-align: center;
-            padding: 60px 40px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(212,175,55,0.3);
+            display: block;
+        }
+        .view-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(212,175,55,0.4);
+            text-decoration: none;
+            color: white !important;
+        }
+        
+        .cta { 
+            background: linear-gradient(135deg, #1a1a1a, #2d2d2d); 
+            color: white; 
+            text-align: center; 
+            padding: 50px 15px;
             position: relative;
             overflow: hidden;
         }
-        
-        .cta-section::before {
+        .cta::before {
             content: '';
             position: absolute;
             top: 0;
@@ -588,70 +167,52 @@
             bottom: 0;
             background: radial-gradient(circle at 30% 20%, rgba(212,175,55,0.1) 0%, transparent 50%);
         }
-        
         .cta-content {
             position: relative;
             z-index: 2;
+            max-width: 600px;
+            margin: 0 auto;
         }
-        
-        .cta-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: clamp(2.5rem, 4vw, 3.5rem);
-            font-weight: 700;
-            margin-bottom: 25px;
+        .cta h2 { 
+            font-family: 'Montserrat', sans-serif; 
+            font-size: 2.2rem; 
+            font-weight: 700; 
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #E49E22, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        
-        .cta-subtitle {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
+        .cta p { 
+            font-size: 1.1rem; 
+            margin-bottom: 35px; 
             opacity: 0.9;
-            line-height: 1.6;
+            color: #e0e0e0;
         }
-        
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
+        .cta-buttons { 
+            display: flex; 
+            flex-direction: column;
+            gap: 20px; 
+            align-items: center;
+        }
+        .cta-button { 
+            display: inline-flex;
+            align-items: center;
             justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .cta-button-outline {
-            display: inline-block;
-            padding: 18px 40px;
-            background: transparent;
-            color: #E49E22;
-            border: 2px solid #E49E22;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.4s ease;
+            padding: 18px 35px; 
+            background: linear-gradient(135deg, #E49E22, #d4af37); 
+            color: white; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            font-weight: 600; 
+            transition: all 0.4s ease; 
+            width: 100%;
+            max-width: 280px;
+            font-size: 1rem;
+            box-shadow: 0 8px 25px rgba(228,158,34,0.3);
             position: relative;
             overflow: hidden;
         }
-        
-        .cta-button-outline:hover {
-            background: #E49E22;
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(228,158,34,0.4);
-        }
-        
-        .cta-button {
-            display: inline-block;
-            padding: 18px 40px;
-            background: linear-gradient(135deg, #E49E22 0%, #d4af37 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.4s ease;
-            box-shadow: 0 15px 35px rgba(228,158,34,0.4);
-            position: relative;
-            overflow: hidden;
-        }
-        
         .cta-button::before {
             content: '';
             position: absolute;
@@ -659,73 +220,50 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
             transition: left 0.6s;
         }
-        
         .cta-button:hover::before {
             left: 100%;
         }
-        
-        .cta-button:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 20px 50px rgba(212,175,55,0.4);
+        .cta-button:hover { 
+            transform: translateY(-3px) scale(1.02); 
+            box-shadow: 0 15px 35px rgba(228,158,34,0.4); 
+            text-decoration: none; 
+            color: white; 
         }
         
-        .download-btn {
-            display: inline-block;
-            margin-left: 1rem;
-            padding: 1rem 2rem;
-            background: transparent;
-            color: #d4af37;
-            border: 2px solid #d4af37;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: all 0.3s ease;
+        /* Tablet Styles */
+        @media (min-width: 768px) {
+            .hero h1 { font-size: clamp(3rem, 6vw, 4.5rem); }
+            .hero p { font-size: 1rem; }
+            .container { max-width: 750px; padding: 0 20px; }
+            .section { padding: 30px 0; }
+            .section-title { font-size: 2.2rem; margin-bottom: 20px; }
+            
+            .rental-table th, .rental-table td { padding: 12px 12px; font-size: 0.9rem; }
+            
+            .cta { padding: 60px 20px; }
+            .cta h2 { font-size: 2.5rem; margin-bottom: 20px; }
+            .cta p { font-size: 1.2rem; margin-bottom: 40px; }
+            .cta-buttons { flex-direction: row; gap: 25px; justify-content: center; }
+            .cta-button { width: auto; padding: 20px 40px; font-size: 1.1rem; max-width: none; }
         }
         
-        .download-btn:hover {
-            background: #d4af37;
-            color: white;
-        }
-        
-        @media (max-width: 768px) {
-            .hero-image { height: 60vh; }
-            .hero-text-section { padding: 60px 30px; }
-            .hero-title { font-size: clamp(2.5rem, 8vw, 3.5rem); }
-            .hero-subtitle { font-size: 1rem; }
-            .section { padding: 60px 0; }
-            .container { padding: 0 20px; }
-            .features-grid { grid-template-columns: 1fr; gap: 30px; }
-            .pricing-cards { grid-template-columns: 1fr; gap: 20px; }
-            .amenities-categories { grid-template-columns: 1fr; gap: 30px; }
-            .pricing-section { padding: 40px 25px; }
-            .amenity-category { padding: 30px 20px; }
-            .pricing-header { flex-direction: column; gap: 20px; text-align: center; }
-            .cta-buttons { flex-direction: column; align-items: center; }
-            .cta-section { padding: 60px 20px; }
-        }
-        
-        @media (max-width: 480px) {
-            .hero-image { height: 50vh; }
-            .hero-text-section { padding: 40px 20px; }
+        /* Desktop Styles */
+        @media (min-width: 1024px) {
+            .hero h1 { font-size: clamp(3.5rem, 6vw, 5rem); }
+            .hero p { font-size: 1.1rem; }
+            .container { max-width: 1200px; }
             .section { padding: 40px 0; }
-            .container { padding: 0 15px; }
-            .feature-card { padding: 30px 20px; }
-            .pricing-card { padding: 30px 20px; }
-            .amenity-category { padding: 25px 15px; }
-        }
-        
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-        
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
+            .section-title { font-size: 2.8rem; margin-bottom: 25px; }
+            
+            .rental-table th, .rental-table td { padding: 14px 16px; }
+            
+            .cta { padding: 70px 20px; }
+            .cta h2 { font-size: 3rem; }
+            .cta p { font-size: 1.3rem; margin-bottom: 45px; }
+            .cta-button { padding: 22px 45px; font-size: 1.2rem; }
         }
     </style>
 </head>
@@ -733,207 +271,66 @@
     <div id="navbar-include"></div>
 
     <section class="hero">
-        <img src="../assets/images/gallery/exterior-1.jpg" alt="Tower A - Kaur Complex" class="hero-image">
-        <div class="hero-text-section">
-            <h1 class="hero-title">TOWER A</h1>
-            <p class="hero-subtitle">Ready to Move In</p>
-            <div class="hero-divider"></div>
-            <p class="hero-tagline">Modern Living Meets Architectural Elegance</p>
-        </div>
+        <img src="../assets/images/gallery/tower-a-hero.png" alt="Tower A - Kaur Complex" class="hero-image">
     </section>
 
     <section class="section">
         <div class="container">
-            <h2 class="section-title fade-in">Investment Plans</h2>
-            <div class="pricing-section fade-in">
-                <div class="pricing-cards">
-                    <div class="pricing-card">
-                        <div class="apartment-icon"><i class="fas fa-home"></i></div>
-                        <div class="apartment-type">Studio</div>
-                        <div class="apartment-size"><i class="fas fa-ruler-combined"></i> 502 Sqft</div>
-                        <div class="apartment-price">40-45 Lac PKR</div>
-                    </div>
-                    <div class="pricing-card">
-                        <div class="apartment-icon"><i class="fas fa-bed"></i></div>
-                        <div class="apartment-type">One Bedroom</div>
-                        <div class="apartment-size"><i class="fas fa-ruler-combined"></i> 581 Sqft</div>
-                        <div class="apartment-price">46-52 Lac PKR</div>
-                    </div>
-                    <div class="pricing-card popular">
-                        <div class="popular-badge">Most Popular</div>
-                        <div class="apartment-icon"><i class="fas fa-building"></i></div>
-                        <div class="apartment-type">Two Bedroom</div>
-                        <div class="apartment-size"><i class="fas fa-ruler-combined"></i> 1080 Sqft</div>
-                        <div class="apartment-price">86-97 Lac PKR</div>
-                    </div>
-                    <div class="pricing-card">
-                        <div class="apartment-icon"><i class="fas fa-home"></i></div>
-                        <div class="apartment-type">Three Bedroom</div>
-                        <div class="apartment-size"><i class="fas fa-ruler-combined"></i> 1345 Sqft</div>
-                        <div class="apartment-price">107-121 Lac PKR</div>
-                    </div>
-                </div>
+            <h2 class="section-title">Investment Plans</h2>
+            <div class="pricing-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Unit Type</th>
+                            <th>Price Range</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1 Bed Apartment</td>
+                            <td class="price">48 – 55 Lac</td>
+                        </tr>
+                        <tr>
+                            <td>2 Bed Apartment</td>
+                            <td class="price">78 – 90 Lac</td>
+                        </tr>
+                        <tr class="featured">
+                            <td>3 Bed Apartment</td>
+                            <td class="price">95 – 125 Lac</td>
+                        </tr>
+                        <tr>
+                            <td>Penthouse</td>
+                            <td class="price">130 – 180 Lac</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
 
-    <section class="amenities-section">
+    <section class="section" style="background: #f8f9fa; padding: 40px 0;">
         <div class="container">
-            <h2 class="section-title fade-in">World-Class Amenities</h2>
-            <div class="amenities-categories">
-                <div class="amenity-category fade-in">
-                    <h3 class="category-title">Security & Safety</h3>
-                    <div class="amenity-item">
-                        <div class="amenity-icon">
-                            <i class="fas fa-video"></i>
-                        </div>
-                        <div class="amenity-content">
-                            <h4>CCTV Surveillance</h4>
-                            <p>24/7 monitored security cameras</p>
-                        </div>
-                    </div>
-                    <div class="amenity-item">
-                        <div class="amenity-icon">
-                            <i class="fas fa-user-shield"></i>
-                        </div>
-                        <div class="amenity-content">
-                            <h4>Security Personnel</h4>
-                            <p>Trained professional staff</p>
-                        </div>
-                    </div>
-                    <div class="amenity-item">
-                        <div class="amenity-icon">
-                            <i class="fas fa-fire-extinguisher"></i>
-                        </div>
-                        <div class="amenity-content">
-                            <h4>Fire Safety Systems</h4>
-                            <p>Advanced fire alarms and extinguishers</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="amenity-category fade-in">
-                    <h3 class="category-title">Comfort & Convenience</h3>
-                    <div class="amenity-item">
-                        <div class="amenity-icon">
-                            <i class="fas fa-parking"></i>
-                        </div>
-                        <div class="amenity-content">
-                            <h4>Two Layered Parking</h4>
-                            <p>Secure parking for residents and guests</p>
-                        </div>
-                    </div>
-                    <div class="amenity-item">
-                        <div class="amenity-icon">
-                            <i class="fas fa-bolt"></i>
-                        </div>
-                        <div class="amenity-content">
-                            <h4>24/7 Electricity</h4>
-                            <p>Reliable backup power systems</p>
-                        </div>
-                    </div>
-                    <div class="amenity-item">
-                        <div class="amenity-icon">
-                            <i class="fas fa-elevator"></i>
-                        </div>
-                        <div class="amenity-content">
-                            <h4>High-Speed Elevators</h4>
-                            <p>Quick access to all floors</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="amenity-category fade-in">
-                    <h3 class="category-title">Premium Services</h3>
-                    <div class="amenity-item">
-                        <div class="amenity-icon">
-                            <i class="fas fa-building"></i>
-                        </div>
-                        <div class="amenity-content">
-                            <h4>Management Office</h4>
-                            <p>On-site resident support</p>
-                        </div>
-                    </div>
-                    <div class="amenity-item">
-                        <div class="amenity-icon">
-                            <i class="fas fa-trash"></i>
-                        </div>
-                        <div class="amenity-content">
-                            <h4>Garbage Chute System</h4>
-                            <p>Hygienic waste disposal</p>
-                        </div>
-                    </div>
-                    <div class="amenity-item">
-                        <div class="amenity-icon">
-                            <i class="fas fa-door-open"></i>
-                        </div>
-                        <div class="amenity-content">
-                            <h4>Grand Entrance</h4>
-                            <p>Impressive main gate with access control</p>
-                        </div>
-                    </div>
-                </div>
+            <h2 class="section-title">View Images</h2>
+            <div class="view-buttons" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+                <a href="1-bed-apartment.html" style="background: #d4af37; color: white; padding: 15px 25px; text-decoration: none; border-radius: 10px; font-weight: 600; min-width: 180px; text-align: center;">1 Bed Apartment</a>
+                <a href="2-bed-apartment.html" style="background: #d4af37; color: white; padding: 15px 25px; text-decoration: none; border-radius: 10px; font-weight: 600; min-width: 180px; text-align: center;">2 Bed Apartment</a>
+                <a href="3-bed-apartment.html" style="background: #d4af37; color: white; padding: 15px 25px; text-decoration: none; border-radius: 10px; font-weight: 600; min-width: 180px; text-align: center;">3 Bed Apartment</a>
+                <a href="penthouse.html" style="background: #d4af37; color: white; padding: 15px 25px; text-decoration: none; border-radius: 10px; font-weight: 600; min-width: 180px; text-align: center;">Penthouse</a>
             </div>
         </div>
     </section>
 
-    <section class="section">
+    <section class="cta">
         <div class="container">
-            <h2 class="section-title fade-in">Features</h2>
-            <div class="features-grid">
-                <div class="feature-card fade-in">
-                    <div class="feature-icon">
-                        <i class="fas fa-bed"></i>
-                    </div>
-                    <h3>Spacious Layouts</h3>
-                    <p>1, 2, and 3 bedroom apartments designed for modern living with optimal space utilization and contemporary aesthetics.</p>
-                </div>
-                <div class="feature-card fade-in">
-                    <div class="feature-icon">
-                        <i class="fas fa-crown"></i>
-                    </div>
-                    <h3>Exclusive Penthouses</h3>
-                    <p>Luxurious penthouses with private terraces offering breathtaking panoramic city views and premium amenities.</p>
-                </div>
-                <div class="feature-card fade-in">
-                    <div class="feature-icon">
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h3>Premium Finishes</h3>
-                    <p>High-quality materials and finishes throughout, featuring modern kitchens, elegant bathrooms, and luxury fixtures.</p>
-                </div>
-                <div class="feature-card fade-in">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>24/7 Security</h3>
-                    <p>Round-the-clock security with advanced CCTV surveillance and trained personnel ensuring complete safety.</p>
-                </div>
-                <div class="feature-card fade-in">
-                    <div class="feature-icon">
-                        <i class="fas fa-parking"></i>
-                    </div>
-                    <h3>Secure Parking</h3>
-                    <p>Two-layered parking system with dedicated spaces for residents and visitors, ensuring convenience and security.</p>
-                </div>
-                <div class="feature-card fade-in">
-                    <div class="feature-icon">
-                        <i class="fas fa-elevator"></i>
-                    </div>
-                    <h3>High-Speed Elevators</h3>
-                    <p>Modern, fast elevators providing quick and smooth access to all floors with advanced safety features.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="cta-section">
-        <div class="cta-content">
-            <h2 class="cta-title">Ready to Call Tower A Home?</h2>
-            <p class="cta-subtitle">Schedule a visit or talk with our sales representative</p>
+            <h2>Ready to Invest?</h2>
+            <p>Contact us today to schedule a viewing</p>
             <div class="cta-buttons">
-                <a href="../pages/contact.html" class="cta-button">Contact Sales Team</a>
-
+                <a href="tel:03320001888" class="cta-button">
+                    <i class="fas fa-phone" style="margin-right: 8px;"></i>Call: 0332 0001888
+                </a>
+                <a href="mailto:kaurcomplexofficial@hotmail.com" class="cta-button">
+                    <i class="fas fa-envelope" style="margin-right: 8px;"></i>Email Us
+                </a>
             </div>
         </div>
     </section>
@@ -953,28 +350,6 @@
             if (typeof initNavigation === 'function') initNavigation();
         });
         includeHTML('footer-include', '../assets/includes/footer.html');
-        
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-        
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-        
-
-        
-
     </script>
 </body>
 </html>
