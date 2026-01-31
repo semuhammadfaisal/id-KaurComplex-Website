@@ -237,7 +237,7 @@ section {
     left: 0;
     width: 100%;
     z-index: 1000;
-    background: #ffffff;
+    background: #ffffff !important;
     box-shadow: 0 2px 20px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
 }
@@ -334,7 +334,7 @@ section {
 
 .nav-item {
     text-decoration: none;
-    color: #1a2238;
+    color: #1a2238 !important;
     font-weight: 500;
     font-size: 16px;
     padding: 8px 16px;

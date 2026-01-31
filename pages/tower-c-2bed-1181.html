@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2 Bed – 1181 sq ft - Tower C</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f5f5f5; padding-top: 80px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .video-container { background: white; border-radius: 10px; padding: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        video { width: 100%; height: auto; border-radius: 8px; }
+        h1 { text-align: center; margin-bottom: 20px; color: #333; }
+        .back-btn { display: inline-block; background: #d4af37; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-bottom: 20px; font-weight: 600; }
+        .back-btn:hover { background: #b8941f; color: white; }
+    </style>
+</head>
+<body>
+    <div id="navbar-include"></div>
+    
+    <div class="container">
+        <a href="tower-c.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Tower C</a>
+        <h1>2 Bed – 1181 sq ft - Tower C</h1>
+        <div class="video-container">
+            <video controls>
+                <source src="../assets/videos/tower-c/2 BED 1181.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <div class="whatsapp-float">
+        <a href="https://wa.me/923320001888" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <div id="footer-include"></div>
+
+    <script src="../assets/js/main.js"></script>
+    <script>
+        function includeHTML(id, url, callback) {
+            fetch(url).then(res => res.text()).then(data => {
+                document.getElementById(id).innerHTML = data;
+                if (callback) callback();
+            });
+        }
+        
+        includeHTML('navbar-include', '../assets/includes/navbar.html', function() {
+            if (typeof initNavigation === 'function') initNavigation();
+        });
+        includeHTML('footer-include', '../assets/includes/footer.html');
+    </script>
+</body>
+</html>
