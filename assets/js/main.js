@@ -762,3 +762,90 @@ function initEnhancedNavigation() {
     
     sections.forEach(section => observer.observe(section));
 }
+
+// Video Enhancement Utilities
+function initVideoEnhancements() {
+    // Enhanced video player functionality
+    const videos = document.querySelectorAll('video');
+    
+    videos.forEach(video => {
+        // Add loading state
+        const container = video.closest('.video-container');
+        if (container) {
+            const loadingDiv = document.createElement('div');
+            loadingDiv.className = 'video-loading';
+            loadingDiv.innerHTML = `
+                <div class="spinner"></div>
+                <p>Loading video...</p>
+            `;
+            loadingDiv.style.display = 'none';
+            container.appendChild(loadingDiv);
+            
+            // Show loading when video starts loading
+            video.addEventListener('loadstart', () => {
+                loadingDiv.style.display = 'block';
+            });
+            
+            // Hide loading when video can play
+            video.addEventListener('canplay', () => {
+                loadingDiv.style.display = 'none';
+            });
+            
+            // Handle video errors
+            video.addEventListener('error', (e) => {
+                console.error('Video error:', e);
+                loadingDiv.style.display = 'none';
+                
+                const errorDiv = container.querySelector('.video-error') || container.querySelector('#videoError');
+                if (errorDiv) {
+                    video.style.display = 'none';
+                    errorDiv.style.display = 'block';
+                }
+            });
+            
+            // Add retry functionality
+            const errorDiv = container.querySelector('.video-error') || container.querySelector('#videoError');
+            if (errorDiv) {
+                const retryBtn = document.createElement('button');
+                retryBtn.textContent = 'Retry';
+                retryBtn.className = 'retry-btn';
+                retryBtn.style.cssText = `
+                    background: #d4af37;
+                    color: white;
+                    border: none;
+                    padding: 10px 20px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    margin-top: 10px;
+                `;
+                retryBtn.addEventListener('click', () => {
+                    video.load();
+                    video.style.display = 'block';
+                    errorDiv.style.display = 'none';
+                });
+                errorDiv.appendChild(retryBtn);
+            }
+        }
+        
+        // Add video quality detection
+        video.addEventListener('loadedmetadata', () => {
+            console.log(`Video loaded: ${video.videoWidth}x${video.videoHeight}`);
+        });
+        
+        // Add play/pause on click (in addition to controls)
+        video.addEventListener('click', (e) => {
+            if (e.target === video) {
+                if (video.paused) {
+                    video.play();
+                } else {
+                    video.pause();
+                }
+            }
+        });
+    });
+}
+
+// Initialize video enhancements on page load
+document.addEventListener('DOMContentLoaded', function() {
+    initVideoEnhancements();
+});
