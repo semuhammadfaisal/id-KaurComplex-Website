@@ -81,11 +81,15 @@ function initCounters() {
 // Gallery
 function initGallery() {
     const galleryItems = document.querySelectorAll('.gallery-item');
+    if (galleryItems.length === 0) return; // Exit if no gallery items
+    
     let currentImageIndex = 0;
     const images = [];
     
     galleryItems.forEach((item, index) => {
         const img = item.querySelector('img');
+        if (!img) return;
+        
         images.push({
             src: img.src,
             alt: img.alt,
@@ -94,30 +98,46 @@ function initGallery() {
         });
 
         item.addEventListener('click', () => openLightbox(index));
-        item.querySelector('.view-btn')?.addEventListener('click', (e) => {
-            e.stopPropagation();
-            openLightbox(index);
-        });
+        const viewBtn = item.querySelector('.view-btn');
+        if (viewBtn) {
+            viewBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                openLightbox(index);
+            });
+        }
     });
 
     function openLightbox(index) {
+        const lightboxModal = document.querySelector('.lightbox-modal');
+        if (!lightboxModal) return;
+        
         currentImageIndex = index;
         updateLightbox();
-        document.querySelector('.lightbox-modal').classList.add('active');
+        lightboxModal.classList.add('active');
         document.body.style.overflow = 'hidden';
     }
 
     function updateLightbox() {
         const currentImage = images[currentImageIndex];
         const lightbox = document.querySelector('.lightbox-modal');
-        lightbox.querySelector('.lightbox-image').src = currentImage.src;
-        lightbox.querySelector('.image-title').textContent = currentImage.title;
-        lightbox.querySelector('.image-description').textContent = currentImage.description;
+        if (!lightbox || !currentImage) return;
+        
+        const lightboxImage = lightbox.querySelector('.lightbox-image');
+        const imageTitle = lightbox.querySelector('.image-title');
+        const imageDescription = lightbox.querySelector('.image-description');
+        
+        if (lightboxImage) lightboxImage.src = currentImage.src;
+        if (imageTitle) imageTitle.textContent = currentImage.title;
+        if (imageDescription) imageDescription.textContent = currentImage.description;
     }
 
-    document.querySelector('.close-btn').addEventListener('click', closeLightbox);
-    document.querySelector('.prev-btn').addEventListener('click', () => navigateImage(-1));
-    document.querySelector('.next-btn').addEventListener('click', () => navigateImage(1));
+    const closeBtn = document.querySelector('.close-btn');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    
+    if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+    if (prevBtn) prevBtn.addEventListener('click', () => navigateImage(-1));
+    if (nextBtn) nextBtn.addEventListener('click', () => navigateImage(1));
 
     function navigateImage(direction) {
         currentImageIndex = (currentImageIndex + direction + images.length) % images.length;
@@ -125,12 +145,16 @@ function initGallery() {
     }
 
     function closeLightbox() {
-        document.querySelector('.lightbox-modal').classList.remove('active');
-        document.body.style.overflow = '';
+        const lightboxModal = document.querySelector('.lightbox-modal');
+        if (lightboxModal) {
+            lightboxModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
     }
 
     document.addEventListener('keydown', (e) => {
-        if (!document.querySelector('.lightbox-modal').classList.contains('active')) return;
+        const lightboxModal = document.querySelector('.lightbox-modal');
+        if (!lightboxModal || !lightboxModal.classList.contains('active')) return;
         if (e.key === 'Escape') closeLightbox();
         if (e.key === 'ArrowLeft') navigateImage(-1);
         if (e.key === 'ArrowRight') navigateImage(1);
@@ -830,17 +854,6 @@ function initVideoEnhancements() {
         // Add video quality detection
         video.addEventListener('loadedmetadata', () => {
             console.log(`Video loaded: ${video.videoWidth}x${video.videoHeight}`);
-        });
-        
-        // Add play/pause on click (in addition to controls)
-        video.addEventListener('click', (e) => {
-            if (e.target === video) {
-                if (video.paused) {
-                    video.play();
-                } else {
-                    video.pause();
-                }
-            }
         });
     });
 }
