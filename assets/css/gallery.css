@@ -203,3 +203,48 @@
   }
 }
 
+@media (min-width: 1400px) {
+  .premium-gallery-showcase {
+    padding: 120px 0;
+  }
+  
+  .premium-gallery-showcase .container {
+    max-width: 1500px;
+  }
+  
+  .gallery-single-view {
+    max-width: 1000px;
+  }
+  
+  .main-image-container {
+    height: 600px;
+  }
+  
+  .showcase-title {
+    font-size: 3.8rem;
+  }
+  
+  .showcase-subtitle {
+    font-size: 1.35rem;
+  }
+  
+  .gallery-click-text {
+    font-size: 1.25rem;
+    padding: 20px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .premium-gallery-showcase .container {
+    max-width: 1700px;
+  }
+  
+  .gallery-single-view {
+    max-width: 1200px;
+  }
+  
+  .main-image-container {
+    height: 700px;
+  }
+}
+

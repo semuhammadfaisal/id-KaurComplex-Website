@@ -109,8 +109,8 @@
     <!-- Navbar Include -->
     <div id="navbar-include"></div>
 
-    <!-- Fully Responsive Luxury Hero Section -->
-    <section class="luxury-hero">
+    <!-- Mobile Hero (Image-based) -->
+    <section class="luxury-hero mobile-hero">
       <div class="hero-bg-container">
         <div class="hero-bg-image hero-bg-slide" style="background-image: url('assets/images/gallery/WELCOME\ TO_20250715_104649_0000.png'); opacity: 1;"></div>
         <div class="hero-bg-image hero-bg-slide" style="background-image: url('assets/images/gallery/WELCOME\ TO_20250715_104649_0000.png'); opacity: 0;"></div>
@@ -123,13 +123,31 @@
       </div>
     </section>
 
+    <!-- Desktop Hero (Code-based) -->
+    <section class="desktop-hero">
+      <div class="desktop-hero-content">
+        <div class="hero-text-wrapper">
+          <h1 class="desktop-hero-title">Welcome to <span class="gold-text">Kaur Complex</span></h1>
+          <p class="desktop-hero-subtitle">Peshawar's Premier Luxury Living Destination</p>
+          <p class="desktop-hero-description">Experience world-class apartments, penthouses, and commercial spaces in the heart of Peshawar. 600+ international standard units in a secure gated community.</p>
+          <div class="desktop-hero-buttons">
+            <a href="#towers" class="hero-btn primary">Explore Towers</a>
+            <a href="pages/contact.html" class="hero-btn secondary">Contact Us</a>
+          </div>
+        </div>
+        <div class="hero-image-wrapper">
+          <img src="assets/images/gallery/kaur-complex-img.jpg" alt="Kaur Complex" class="hero-building-img">
+        </div>
+      </div>
+    </section>
+
     <!-- Modern Towers Section -->
-    <section class="towers-section">
+    <section class="towers-section" id="towers">
       <div class="container">
         <div class="section-intro" style="text-align:center; margin-bottom: 50px;">
           <span class="section-tag" style="display:inline-block; font-size:1.2rem; letter-spacing:1px; color:#d4af37; font-family:'Poppins',sans-serif; font-weight:700; background:linear-gradient(90deg,#fffbe622 60%,#ffe08218 100%); padding:6px 22px; border-radius:18px; box-shadow:0 2px 8px rgba(212,175,55,0.07); margin-bottom:8px;">Our Towers</span>
           <p class="section-description" style="font-size:1.13rem; color:#111; font-weight:600; margin-top:8px;">
-            Tower A ready to move in | Towers B &amp; C under construction
+            Tower A completed & sold | Tower B under construction & sold | Tower C available
           </p>
         </div>
         
@@ -138,7 +156,7 @@
             <div class="tower-visual">
               <div class="tower-image-container">
                 <img src="assets/images/gallery/1.png" alt="Tower A">
-                <div class="tower-badge ready">Delivered</div>
+                <div class="tower-badge ready">Sold Out</div>
               </div>
               <div class="tower-progress">
                 <div class="progress-bar">
@@ -152,9 +170,9 @@
                 <h3>Tower A</h3>
                 <span class="tower-letter">A</span>
               </div>
-              <p>Premium apartments with modern amenities.</p>
+              <p>Completed & fully sold premium apartments.</p>
               <div class="tower-link">
-                <span>Explore Details</span>
+                <span>View Details</span>
                 <i class="fas fa-arrow-right"></i>
               </div>
             </div>
@@ -164,6 +182,7 @@
             <div class="tower-visual">
               <div class="tower-image-container">
                 <img src="assets/images/gallery/2.png" alt="Tower B">
+                <div class="tower-badge ready">Sold Out</div>
               </div>
               <div class="tower-progress">
                 <div class="progress-bar">
@@ -177,9 +196,9 @@
                 <h3>Tower B</h3>
                 <span class="tower-letter">B</span>
               </div>
-              <p>Luxury residences with panoramic views.</p>
+              <p>Under construction & fully sold out.</p>
               <div class="tower-link">
-                <span>Explore Details</span>
+                <span>View Details</span>
                 <i class="fas fa-arrow-right"></i>
               </div>
             </div>
@@ -508,6 +527,53 @@
         padding: 20px;
       }
     }
+    
+    @media (min-width: 1400px) {
+      .towers-section {
+        padding: 120px 0;
+      }
+      
+      .towers-section .container {
+        max-width: 1500px;
+      }
+      
+      .towers-showcase {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 50px;
+        max-width: 1400px;
+      }
+      
+      .tower-image-container {
+        height: 260px;
+      }
+      
+      .tower-info {
+        padding: 30px;
+      }
+      
+      .tower-header h3 {
+        font-size: 1.6rem;
+      }
+      
+      .tower-info p {
+        font-size: 1.05rem;
+      }
+    }
+    
+    @media (min-width: 1920px) {
+      .towers-section .container {
+        max-width: 1700px;
+      }
+      
+      .towers-showcase {
+        max-width: 1600px;
+        gap: 60px;
+      }
+      
+      .tower-image-container {
+        height: 280px;
+      }
+    }
     </style>
 
     <!-- Masterplan Section: Towers A, B, C Locations -->
@@ -538,8 +604,8 @@
                 <div class="tower-icon">A</div>
                 <div class="tower-info">
                   <h4>Tower A</h4>
-                  <span class="tower-status ready">Ready to Move</span>
-                  <p>Premium apartments with modern amenities</p>
+                  <span class="tower-status ready">Sold Out</span>
+                  <p>Completed & fully sold premium apartments</p>
                 </div>
                 <div class="tower-arrow">
                   <i class="fas fa-arrow-right"></i>
@@ -550,8 +616,8 @@
                 <div class="tower-icon">B</div>
                 <div class="tower-info">
                   <h4>Tower B</h4>
-                  <span class="tower-status construction">60% Complete</span>
-                  <p>Luxury residences with panoramic views</p>
+                  <span class="tower-status ready">Sold Out</span>
+                  <p>Under construction & fully sold out</p>
                 </div>
                 <div class="tower-arrow">
                   <i class="fas fa-arrow-right"></i>
@@ -831,6 +897,54 @@
         font-size: 1.1rem;
       }
     }
+    
+    @media (min-width: 1400px) {
+      .masterplan-section {
+        padding: 120px 0;
+      }
+      
+      .masterplan-section .container {
+        max-width: 1500px;
+      }
+      
+      .masterplan-grid {
+        grid-template-columns: 1.3fr 1fr;
+        gap: 80px;
+      }
+      
+      .nav-header h3 {
+        font-size: 2.3rem;
+      }
+      
+      .tower-card {
+        padding: 30px;
+        gap: 25px;
+      }
+      
+      .tower-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 1.8rem;
+      }
+      
+      .tower-info h4 {
+        font-size: 1.5rem;
+      }
+      
+      .tower-info p {
+        font-size: 1.05rem;
+      }
+    }
+    
+    @media (min-width: 1920px) {
+      .masterplan-section .container {
+        max-width: 1700px;
+      }
+      
+      .masterplan-grid {
+        gap: 100px;
+      }
+    }
     </style>
 
     <!-- Premium Gallery Showcase -->
@@ -1029,6 +1143,45 @@
     width: 100%;
     max-width: 250px;
     justify-content: center;
+  }
+}
+
+@media (min-width: 1400px) {
+  .bold-cta-section {
+    padding: 120px 0;
+  }
+  
+  .bold-cta-section .container {
+    max-width: 1000px;
+  }
+  
+  .cta-card {
+    padding: 80px 60px;
+  }
+  
+  .cta-heading {
+    font-size: 4rem;
+  }
+  
+  .cta-text {
+    font-size: 1.4rem;
+    max-width: 700px;
+    margin: 0 auto 50px;
+  }
+  
+  .btn-primary, .btn-secondary {
+    padding: 18px 45px;
+    font-size: 1.15rem;
+  }
+}
+
+@media (min-width: 1920px) {
+  .bold-cta-section .container {
+    max-width: 1200px;
+  }
+  
+  .cta-heading {
+    font-size: 4.5rem;
   }
 }
 </style>
@@ -1291,6 +1444,56 @@
         height: 300px;
       }
     }
+    
+    @media (min-width: 1400px) {
+      .enhanced-location-section {
+        padding: 120px 0;
+      }
+      
+      .enhanced-location-section .container {
+        max-width: 1500px;
+      }
+      
+      .location-content {
+        gap: 80px;
+      }
+      
+      .location-info-panel {
+        padding: 50px;
+      }
+      
+      .info-card {
+        padding: 20px 0;
+      }
+      
+      .info-icon {
+        width: 55px;
+        height: 55px;
+        font-size: 22px;
+      }
+      
+      .info-details h4 {
+        font-size: 1.15rem;
+      }
+      
+      .info-details p {
+        font-size: 1.05rem;
+      }
+      
+      .map-container iframe {
+        height: 500px;
+      }
+    }
+    
+    @media (min-width: 1920px) {
+      .enhanced-location-section .container {
+        max-width: 1700px;
+      }
+      
+      .map-container iframe {
+        height: 600px;
+      }
+    }
     </style>
 
     <!-- Footer Include -->
@@ -1332,6 +1535,32 @@
         slides[current].style.opacity = 1;
       }, 4000);
     })();
+    
+    // Scroll reveal animation
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      const sections = document.querySelectorAll('.towers-section, .masterplan-section, .premium-gallery-showcase, .bold-cta-section, .enhanced-location-section');
+      sections.forEach(section => {
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(30px)';
+        section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        observer.observe(section);
+      });
+    });
+    
     // Gallery expand on click
     document.addEventListener('DOMContentLoaded', function() {
       var firstGalleryItem = document.querySelector('.gallery-grid .gallery-item');
