@@ -40,11 +40,6 @@
             background: #b8941f;
             color: white;
         }
-        .video-error { text-align: center; padding: 40px; color: #666; background: #f9f9f9; border-radius: 8px; }
-        .video-error i { font-size: 2rem; margin-bottom: 10px; color: #d4af37; }
-        .loading-spinner { display: none; text-align: center; padding: 40px; }
-        .spinner { border: 3px solid #f3f3f3; border-top: 3px solid #d4af37; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin: 0 auto 10px; }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
     </style>
 </head>
 <body>
@@ -54,25 +49,13 @@
         <a href="tower-a.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Tower A</a>
         <h1>2 Bed Apartment - Tower A</h1>
         <div class="video-container">
-            <video id="apartmentVideo" controls preload="metadata" playsinline>
+            <video controls>
                 <source src="../assets/videos/tower-a-2bed.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div id="videoError" class="video-error" style="display: none;">
-                <i class="fas fa-exclamation-triangle"></i>
-                <p>Video temporarily unavailable. Please contact us for a virtual tour.</p>
-                <a href="tel:03320001888" class="retry-btn" style="text-decoration: none; color: white;">Call for Tour: 0332 0001888</a>
-            </div>
         </div>
     </div>
-
-    <!-- Floating Buttons -->
-    <div class="whatsapp-float">
-        <a href="https://wa.me/923320001888" target="_blank">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-    </div>
-
+    
     <div id="footer-include"></div>
 
     <script src="../assets/js/main.js"></script>
@@ -88,27 +71,6 @@
             if (typeof initNavigation === 'function') initNavigation();
         });
         includeHTML('footer-include', '../assets/includes/footer.html');
-        
-        // Video error handling and enhancement
-        document.addEventListener('DOMContentLoaded', function() {
-            const video = document.getElementById('apartmentVideo');
-            const errorDiv = document.getElementById('videoError');
-            
-            if (video) {
-                video.addEventListener('error', function() {
-                    video.style.display = 'none';
-                    errorDiv.style.display = 'block';
-                });
-                
-                video.addEventListener('loadstart', function() {
-                    console.log('Video loading started');
-                });
-                
-                video.addEventListener('canplay', function() {
-                    console.log('Video can start playing');
-                });
-            }
-        });
     </script>
 </body>
 </html>

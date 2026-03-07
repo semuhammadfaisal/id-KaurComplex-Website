@@ -13,6 +13,16 @@
     
     <title>Kaur Complex - Luxury Living in Peshawar</title>
     
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://unpkg.com">
+    
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    
     <!-- Favicon -->
     <!-- Favicon links removed -->
     
@@ -25,12 +35,15 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Google Fonts -->
+    <!-- Google Fonts with display=swap -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- AOS Animation (optional) -->
+    <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
+      html {
+        scroll-behavior: smooth;
+      }
       .footer .social-links a {
   text-decoration: none !important;
 }
@@ -106,18 +119,156 @@
 </head>
 <body>
 
-    <!-- Navbar Include -->
-    <div id="navbar-include"></div>
+    <!-- New Simple Navbar -->
+    <nav class="simple-navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-brand">
+                <img src="assets/images/gallery/logo-kc.png" alt="Kaur Complex Logo" class="nav-logo">
+                <span>Kaur Complex</span>
+            </a>
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#towers" class="nav-link">Towers</a>
+                <a href="#gallery" class="nav-link">Gallery</a>
+                <a href="#location" class="nav-link">Location</a>
+            </div>
+        </div>
+    </nav>
+    
+    <style>
+    .simple-navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(255,255,255,0.95);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        z-index: 1000;
+        padding: 15px 0;
+    }
+    .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .nav-brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #1a2238;
+        text-decoration: none;
+        font-family: 'Poppins', sans-serif;
+    }
+    .nav-logo {
+        height: 40px;
+        width: auto;
+    }
+    .nav-menu {
+        display: flex;
+        gap: 30px;
+    }
+    .nav-link {
+        color: #1a2238;
+        text-decoration: none;
+        font-weight: 500;
+        font-family: 'Poppins', sans-serif;
+        transition: color 0.3s;
+    }
+    .nav-link:hover {
+        color: #d4af37;
+    }
+    .nav-toggle {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 5px;
+    }
+    .nav-toggle span {
+        width: 25px;
+        height: 3px;
+        background: linear-gradient(135deg, #d4af37, #ffe082);
+        border-radius: 2px;
+        transition: 0.3s;
+    }
+    @media (max-width: 768px) {
+        .nav-toggle {
+            display: flex;
+        }
+        .nav-menu {
+            position: fixed;
+            top: 70px;
+            left: 0;
+            width: 100vw;
+            height: calc(100vh - 70px);
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+            backdrop-filter: blur(20px);
+            flex-direction: column;
+            padding: 40px 30px;
+            gap: 0;
+            box-shadow: 0 10px 30px rgba(212,175,55,0.2);
+            transform: translateX(-100%);
+            transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            overflow-y: auto;
+        }
+        .nav-menu.active {
+            transform: translateX(0);
+        }
+        .nav-link {
+            padding: 18px 25px;
+            border-radius: 15px;
+            margin-bottom: 12px;
+            background: rgba(255,255,255,0.9);
+            border: 2px solid rgba(212,175,55,0.2);
+            transition: all 0.3s ease;
+            text-align: center;
+            font-size: 1.15rem;
+            color: #1a2238;
+            font-weight: 600;
+        }
+        .nav-link:hover, .nav-link:active {
+            background: linear-gradient(135deg, rgba(212,175,55,0.15), rgba(255,224,130,0.15));
+            border-color: rgba(212,175,55,0.5);
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(212,175,55,0.3);
+        }
+        .nav-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+        .nav-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .nav-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+    }
+    body {
+        padding-top: 70px;
+    }
+    </style>
 
     <!-- Mobile Hero (Image-based) -->
-    <section class="luxury-hero mobile-hero">
-      <div class="hero-bg-container">
+    <section class="luxury-hero mobile-hero" id="home">
+      <div class="hero-bg-container" data-aos="fade-in" data-aos-duration="1200">
         <div class="hero-bg-image hero-bg-slide" style="background-image: url('assets/images/gallery/WELCOME\ TO_20250715_104649_0000.png'); opacity: 1;"></div>
         <div class="hero-bg-image hero-bg-slide" style="background-image: url('assets/images/gallery/WELCOME\ TO_20250715_104649_0000.png'); opacity: 0;"></div>
         <div class="hero-bg-image hero-bg-slide" style="background-image: url('assets/images/gallery/WELCOME\ TO_20250715_104649_0000.png'); opacity: 0;"></div>
         <div class="hero-gradient-overlay"></div>
       </div>
-      <div class="hero-content-container">
+      <div class="hero-content-container" data-aos="zoom-in" data-aos-delay="300">
         <div class="hero-content">
         </div>
       </div>
@@ -126,25 +277,45 @@
     <!-- Desktop Hero (Code-based) -->
     <section class="desktop-hero">
       <div class="desktop-hero-content">
-        <div class="hero-text-wrapper">
-          <h1 class="desktop-hero-title">Welcome to <span class="gold-text">Kaur Complex</span></h1>
-          <p class="desktop-hero-subtitle">Peshawar's Premier Luxury Living Destination</p>
-          <p class="desktop-hero-description">Experience world-class apartments, penthouses, and commercial spaces in the heart of Peshawar. 600+ international standard units in a secure gated community.</p>
-          <div class="desktop-hero-buttons">
+        <div class="hero-text-wrapper" data-aos="fade-right">
+          <h1 class="desktop-hero-title" data-aos="fade-up" data-aos-delay="100">Welcome to <span class="gold-text">Kaur Complex</span></h1>
+          <p class="desktop-hero-subtitle" data-aos="fade-up" data-aos-delay="200">Peshawar's Premier Luxury Living Destination</p>
+          <p class="desktop-hero-description" data-aos="fade-up" data-aos-delay="300">Experience world-class apartments, penthouses, and commercial spaces in the heart of Peshawar. 600+ international standard units in a secure gated community.</p>
+          <div class="desktop-hero-buttons" data-aos="fade-up" data-aos-delay="400">
             <a href="#towers" class="hero-btn primary">Explore Towers</a>
             <a href="pages/contact.html" class="hero-btn secondary">Contact Us</a>
           </div>
         </div>
-        <div class="hero-image-wrapper">
+        <div class="hero-image-wrapper" data-aos="fade-left" data-aos-delay="200">
           <img src="assets/images/gallery/kaur-complex-img.jpg" alt="Kaur Complex" class="hero-building-img">
         </div>
       </div>
     </section>
 
-    <!-- Modern Towers Section -->
-    <section class="towers-section" id="towers">
+    <!-- Masterplan Section: Towers A, B, C Locations -->
+    <section class="masterplan-section animate-on-scroll">
+      <div class="masterplan-bg"></div>
       <div class="container">
-        <div class="section-intro" style="text-align:center; margin-bottom: 50px;">
+        <div class="section-intro" style="text-align:center; margin-bottom: 50px;" data-aos="fade-up">
+          <h2 style="font-size:2.5rem; font-family:'Poppins',sans-serif; font-weight:800; color:#1a2238; margin:0 0 12px 0; letter-spacing:-1px;">Project Masterplan</h2>
+          <p style="font-size:1.1rem; color:#666; font-family:'Poppins',sans-serif; font-weight:400; margin:0; max-width:600px; margin:0 auto; line-height:1.6;">Explore the architectural blueprint of Kaur Complex featuring three premium towers strategically positioned for optimal living experience.</p>
+        </div>
+        
+        <div class="masterplan-grid">
+          <div class="masterplan-visual" data-aos="zoom-in" data-aos-delay="100">
+            <div class="plan-image-container">
+              <img src="assets/images/gallery/Master Plan-01-01.png" alt="Kaur Complex Masterplan" class="masterplan-image">
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modern Towers Section -->
+    <section class="towers-section animate-on-scroll" id="towers">
+      <div class="container">
+        <div class="section-intro" style="text-align:center; margin-bottom: 50px;" data-aos="fade-up">
           <span class="section-tag" style="display:inline-block; font-size:1.2rem; letter-spacing:1px; color:#d4af37; font-family:'Poppins',sans-serif; font-weight:700; background:linear-gradient(90deg,#fffbe622 60%,#ffe08218 100%); padding:6px 22px; border-radius:18px; box-shadow:0 2px 8px rgba(212,175,55,0.07); margin-bottom:8px;">Our Towers</span>
           <p class="section-description" style="font-size:1.13rem; color:#111; font-weight:600; margin-top:8px;">
             Tower A completed & sold | Tower B under construction & sold | Tower C available
@@ -152,7 +323,7 @@
         </div>
         
         <div class="towers-showcase">
-          <a href="pages/tower-a.html" class="tower-item" data-tower="a">
+          <a href="pages/tower-a.html" class="tower-item" data-tower="a" data-aos="fade-up" data-aos-delay="0">
             <div class="tower-visual">
               <div class="tower-image-container">
                 <img src="assets/images/gallery/1.png" alt="Tower A">
@@ -178,7 +349,7 @@
             </div>
           </a>
           
-          <a href="pages/tower-b.html" class="tower-item" data-tower="b">
+          <a href="pages/tower-b.html" class="tower-item" data-tower="b" data-aos="fade-up" data-aos-delay="100">
             <div class="tower-visual">
               <div class="tower-image-container">
                 <img src="assets/images/gallery/2.png" alt="Tower B">
@@ -204,7 +375,7 @@
             </div>
           </a>
           
-          <a href="pages/tower-c.html" class="tower-item" data-tower="c">
+          <a href="pages/tower-c.html" class="tower-item" data-tower="c" data-aos="fade-up" data-aos-delay="200">
             <div class="tower-visual">
               <div class="tower-image-container">
                 <img src="assets/images/gallery/3.png" alt="Tower C">
@@ -229,7 +400,7 @@
             </div>
           </a>
           
-          <a href="pages/rentals.html" class="tower-item" data-tower="rental">
+          <a href="pages/rentals.html" class="tower-item" data-tower="rental" data-aos="fade-up" data-aos-delay="300">
             <div class="tower-visual">
               <div class="tower-image-container">
                 <img src="assets/images/gallery/rent-tower-a.png" alt="Rental Apartments">
@@ -575,71 +746,6 @@
       }
     }
     </style>
-
-    <!-- Masterplan Section: Towers A, B, C Locations -->
-    <section class="masterplan-section">
-      <div class="masterplan-bg"></div>
-      <div class="container">
-        <div class="section-intro" style="text-align:center; margin-bottom: 50px;">
-          <span class="section-tag" style="display:inline-block; font-size:1.2rem; letter-spacing:1px; color:#d4af37; font-family:'Poppins',sans-serif; font-weight:700; background:linear-gradient(90deg,#fffbe622 60%,#ffe08218 100%); padding:6px 22px; border-radius:18px; box-shadow:0 2px 8px rgba(212,175,55,0.07); margin-bottom:8px;">Development Layout</span>
-          <h2 style="font-size:2.5rem; font-family:'Poppins',sans-serif; font-weight:800; color:#1a2238; margin:0 0 12px 0; letter-spacing:-1px;">Project Masterplan</h2>
-          <p style="font-size:1.1rem; color:#666; font-family:'Poppins',sans-serif; font-weight:400; margin:0; max-width:600px; margin:0 auto; line-height:1.6;">Explore the architectural blueprint of Kaur Complex featuring three premium towers strategically positioned for optimal living experience.</p>
-        </div>
-        
-        <div class="masterplan-grid">
-          <div class="masterplan-visual">
-            <div class="plan-image-container">
-              <img src="assets/images/gallery/Master Plan-01-01.png" alt="Kaur Complex Masterplan" class="masterplan-image">
-            </div>
-          </div>
-          
-          <div class="towers-navigation">
-            <div class="nav-header">
-              <h3>Select Tower</h3>
-              <p>Click to explore each tower's details</p>
-            </div>
-            
-            <div class="tower-cards">
-              <a href="pages/tower-a.html" class="tower-card tower-a">
-                <div class="tower-icon">A</div>
-                <div class="tower-info">
-                  <h4>Tower A</h4>
-                  <span class="tower-status ready">Sold Out</span>
-                  <p>Completed & fully sold premium apartments</p>
-                </div>
-                <div class="tower-arrow">
-                  <i class="fas fa-arrow-right"></i>
-                </div>
-              </a>
-              
-              <a href="pages/tower-b.html" class="tower-card tower-b">
-                <div class="tower-icon">B</div>
-                <div class="tower-info">
-                  <h4>Tower B</h4>
-                  <span class="tower-status ready">Sold Out</span>
-                  <p>Under construction & fully sold out</p>
-                </div>
-                <div class="tower-arrow">
-                  <i class="fas fa-arrow-right"></i>
-                </div>
-              </a>
-              
-              <a href="pages/tower-c.html" class="tower-card tower-c">
-                <div class="tower-icon">C</div>
-                <div class="tower-info">
-                  <h4>Tower C</h4>
-                  <span class="tower-status construction">40% Complete</span>
-                  <p>Executive penthouses and premium units</p>
-                </div>
-                <div class="tower-arrow">
-                  <i class="fas fa-arrow-right"></i>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
     
     <style>
     .masterplan-section {
@@ -948,14 +1054,14 @@
     </style>
 
     <!-- Premium Gallery Showcase -->
-    <section class="premium-gallery-showcase">
+    <section class="premium-gallery-showcase" id="gallery">
       <div class="gallery-ambient-bg"></div>
       <div class="container">
-        <div class="gallery-intro">
+        <div class="gallery-intro" data-aos="fade-up">
           <h2 class="showcase-title">Gallery</h2>
           <p class="showcase-subtitle">Experience the pinnacle of architectural excellence</p>
         </div>
-        <div class="gallery-single-view">
+        <div class="gallery-single-view" data-aos="zoom-in" data-aos-delay="100">
           <div class="main-gallery-card" id="mainGalleryCard">
             <div class="main-image-container">
               <img src="assets/images/gallery/kaur-complex-img.jpg" alt="Kaur Complex" loading="lazy">
@@ -1001,7 +1107,7 @@
     <!-- Bold CTA Section -->
 <section class="bold-cta-section">
   <div class="container">
-    <div class="cta-card">
+    <div class="cta-card" data-aos="flip-up" data-aos-duration="1000">
       <h2 class="cta-heading">
         Experience<br>
         <span class="highlight">Luxury Living</span><br>
@@ -1010,12 +1116,12 @@
       <p class="cta-text">
         Schedule your exclusive tour and discover premium apartments, penthouses, and commercial spaces in Peshawar's most prestigious development.
       </p>
-      <div class="cta-buttons">
-        <a href="pages/contact.html" class="btn-primary">
+      <div class="cta-buttons" data-aos="fade-up" data-aos-delay="100">
+        <a href="pages/contact.html" class="btn-primary" data-aos="zoom-in" data-aos-delay="200">
           <i class="fas fa-calendar-check"></i>
           Book Private Tour
         </a>
-        <a href="tel:03320001888" class="btn-secondary">
+        <a href="tel:03320001888" class="btn-secondary" data-aos="zoom-in" data-aos-delay="300">
           <i class="fas fa-phone"></i>
           Call Now
         </a>
@@ -1187,18 +1293,18 @@
 </style>
 
     <!-- Enhanced Location Section -->
-    <section class="enhanced-location-section">
+    <section class="enhanced-location-section animate-on-scroll" id="location">
       <div class="location-ambient-bg"></div>
       <div class="container">
-        <div class="location-header">
+        <div class="location-header" data-aos="fade-up">
 
           <h2 class="location-title">Our <span class="title-accent">Location</span></h2>
           <p class="location-subtitle">Visit us at the heart of Peshawar's premium residential district</p>
         </div>
         
         <div class="location-content">
-          <div class="location-info-panel">
-            <div class="info-card">
+          <div class="location-info-panel" data-aos="fade-right" data-aos-delay="100">
+            <div class="info-card" data-aos="fade-up" data-aos-delay="150">
               <div class="info-icon">
                 <i class="fas fa-building"></i>
               </div>
@@ -1208,7 +1314,7 @@
               </div>
             </div>
             
-            <div class="info-card">
+            <div class="info-card" data-aos="fade-up" data-aos-delay="200">
               <div class="info-icon">
                 <i class="fas fa-map-marker-alt"></i>
               </div>
@@ -1218,7 +1324,7 @@
               </div>
             </div>
             
-            <div class="info-card">
+            <div class="info-card" data-aos="fade-up" data-aos-delay="250">
               <div class="info-icon">
                 <i class="fas fa-phone"></i>
               </div>
@@ -1228,7 +1334,7 @@
               </div>
             </div>
             
-            <div class="info-card">
+            <div class="info-card" data-aos="fade-up" data-aos-delay="300">
               <div class="info-icon">
                 <i class="fas fa-envelope"></i>
               </div>
@@ -1238,7 +1344,7 @@
               </div>
             </div>
             
-            <div class="info-card">
+            <div class="info-card" data-aos="fade-up" data-aos-delay="350">
               <div class="info-icon">
                 <i class="fas fa-clock"></i>
               </div>
@@ -1248,13 +1354,13 @@
               </div>
             </div>
             
-            <a href="https://maps.app.goo.gl/RSrW3GYsxu4T8KDc6" target="_blank" class="directions-btn">
+            <a href="https://maps.app.goo.gl/RSrW3GYsxu4T8KDc6" target="_blank" class="directions-btn" data-aos="zoom-in" data-aos-delay="400">
               <i class="fas fa-directions"></i>
               Get Directions
             </a>
           </div>
           
-          <div class="location-map-panel">
+          <div class="location-map-panel" data-aos="fade-left" data-aos-delay="100">
             <div class="map-container">
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5164.429739922866!2d71.4603929329566!3d33.985623095204886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38d911c73a471387%3A0xfa759c62f32cdc38!2sKaur%20Complex!5e0!3m2!1sen!2s!4v1751886262308!5m2!1sen!2s" width="100%" height="400" style="border:0; border-radius: 20px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
@@ -1499,33 +1605,46 @@
     <!-- Footer Include -->
     <div id="footer-include"></div>
 
-    <!-- JavaScript -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="assets/js/main.js"></script>
+    <!-- JavaScript - Deferred for performance -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="assets/js/scroll-animations.js" defer></script>
     <script>
-        // Initialize AOS animation
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({duration: 800, easing: 'ease-in-out', once: true, offset: 100});
+            setTimeout(() => AOS.refresh(), 500);
         });
-        // HTML includes for navbar and footer
+        
         function includeHTML(id, url, callback) {
-          fetch(url)
-            .then(res => res.text())
-            .then(data => {
-              document.getElementById(id).innerHTML = data;
-              if (callback) callback();
-            });
+          fetch(url).then(res => res.text()).then(data => {
+            document.getElementById(id).innerHTML = data;
+            if (callback) callback();
+          });
         }
-        // Load navbar, then initialize navigation
-        includeHTML('navbar-include', 'assets/includes/navbar.html', function() {
-          if (typeof initNavigation === 'function') initNavigation();
-        });
+        
         includeHTML('footer-include', 'assets/includes/footer.html');
+        
+        // Simple navigation
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        navToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+        
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                    navMenu.classList.remove('active');
+                    navToggle.classList.remove('active');
+                }
+            });
+        });
     </script>
-    <script>
-    // Minimal classic hero slider
+    <script defer>
     (function() {
       const slides = document.querySelectorAll('.hero-bg-slide');
       let current = 0;
@@ -1535,33 +1654,31 @@
         slides[current].style.opacity = 1;
       }, 4000);
     })();
-    
-    // Scroll reveal animation
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-    
+    const observerOptions = {threshold: 0.1, rootMargin: '0px 0px -50px 0px'};
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
+          entry.target.classList.add('animated');
+          if (!entry.target.classList.contains('animate-on-scroll') && !entry.target.classList.contains('animate-fade-in') && !entry.target.classList.contains('animate-scale')) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
         }
       });
     }, observerOptions);
-    
     document.addEventListener('DOMContentLoaded', () => {
-      const sections = document.querySelectorAll('.towers-section, .masterplan-section, .premium-gallery-showcase, .bold-cta-section, .enhanced-location-section');
-      sections.forEach(section => {
-        section.style.opacity = '0';
-        section.style.transform = 'translateY(30px)';
-        section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-        observer.observe(section);
+      document.querySelectorAll('.animate-on-scroll, .animate-fade-in, .animate-scale, .animate-slide-left, .animate-slide-right').forEach(el => observer.observe(el));
+      document.querySelectorAll('.towers-section, .masterplan-section, .premium-gallery-showcase, .bold-cta-section, .enhanced-location-section').forEach(section => {
+        if (!section.classList.contains('animate-on-scroll') && !section.classList.contains('animate-fade-in') && !section.classList.contains('animate-scale')) {
+          section.style.opacity = '0';
+          section.style.transform = 'translateY(30px)';
+          section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+          observer.observe(section);
+        }
       });
     });
-    
-    // Gallery expand on click
+    </script>
+    <script defer>
     document.addEventListener('DOMContentLoaded', function() {
       var firstGalleryItem = document.querySelector('.gallery-grid .gallery-item');
       var galleryGrid = document.querySelector('.gallery-grid');
@@ -1573,21 +1690,15 @@
           galleryGrid.classList.remove('gallery-collapsed');
         }, { once: true });
       }
-    });
-    </script>
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
       var mainCard = document.getElementById('mainGalleryCard');
       var hiddenGallery = document.getElementById('hiddenGallery');
       var closeBtn = document.getElementById('closeGalleryBtn');
-      
       if (mainCard && hiddenGallery) {
         mainCard.addEventListener('click', function() {
           hiddenGallery.style.display = 'block';
           mainCard.style.display = 'none';
         });
       }
-      
       if (closeBtn && hiddenGallery && mainCard) {
         closeBtn.addEventListener('click', function() {
           hiddenGallery.style.display = 'none';

@@ -18,6 +18,113 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Scroll Animation Styles */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-on-scroll.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.animate-fade-in {
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.animate-fade-in.animated {
+    opacity: 1;
+}
+
+.animate-slide-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.animate-slide-left.animated {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.animate-slide-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.animate-slide-right.animated {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.animate-scale {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-scale.animated {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Ensure masterplan image visibility */
+.masterplan-image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Tower items staggered animation */
+.tower-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.towers-section.animated .tower-item:nth-child(1) {
+    animation: fadeInUp 0.6s ease forwards 0.1s;
+}
+
+.towers-section.animated .tower-item:nth-child(2) {
+    animation: fadeInUp 0.6s ease forwards 0.2s;
+}
+
+.towers-section.animated .tower-item:nth-child(3) {
+    animation: fadeInUp 0.6s ease forwards 0.3s;
+}
+
+.towers-section.animated .tower-item:nth-child(4) {
+    animation: fadeInUp 0.6s ease forwards 0.4s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Masterplan image animation */
+.masterplan-section.animated .masterplan-image {
+    animation: zoomIn 0.8s ease forwards;
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 * {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -505,9 +612,14 @@ html {
   }
 }
 
+/* Masterplan Section Styles */
+.masterplan-section {
+    padding: 2rem 0 1rem 0;
+}
+
 /* Minimalist Tower Section Styles */
 .towers-section {
-    padding: 4rem 0;
+    padding: 1rem 0 2rem 0;
     background: #fff;
 }
 
@@ -519,7 +631,7 @@ html {
 
 .section-intro {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
 }
 
 .section-tag {
@@ -613,8 +725,12 @@ html {
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
+    .masterplan-section {
+        padding: 1.5rem 0 0.5rem 0;
+    }
+    
     .towers-section {
-        padding: 3rem 0;
+        padding: 0.5rem 0 1.5rem 0;
     }
     
     .towers-list {
@@ -630,7 +746,7 @@ html {
 
 @media (max-width: 480px) {
     .section-intro {
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
     }
     
     .section-description {
