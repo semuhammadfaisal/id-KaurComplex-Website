@@ -152,3 +152,66 @@ This project is created for **Kaur Complex**. All rights reserved.
 [Live Demo](https://semuhammadfaisal.github.io/id-KaurComplex-Website/) • [Report Bug](https://github.com/semuhammadfaisal/id-KaurComplex-Website/issues) • [Request Feature](https://github.com/semuhammadfaisal/id-KaurComplex-Website/issues)
 
 </div>
+
+
+---
+
+## 🎬 Animation System
+
+### Professional Animations Throughout
+The Kaur Complex website features a comprehensive animation system powered by **GSAP (GreenSock)** and **ScrollTrigger**, providing smooth, professional animations across every section.
+
+### ✨ Features
+- **26+ Animation Types** - Entrance, exit, continuous, and hover effects
+- **50+ Animations** - Throughout the entire website
+- **60 FPS Performance** - Smooth, optimized animations
+- **Mobile Optimized** - Simplified animations for mobile devices
+- **Accessibility Compliant** - Respects `prefers-reduced-motion`
+
+### 🎨 Animation Types
+- **Entrance**: Fade, slide (up/down/left/right), zoom, rotate, flip, blur, scale
+- **Exit**: Fade out, slide down, scale down, blur out
+- **Continuous**: Ken Burns effect, button pulse, icon float, shimmer, glow
+- **Hover**: Button lift, 3D card lift, image zoom, icon rotation
+
+### 📚 Documentation
+- **[ANIMATION-COMPLETE.md](ANIMATION-COMPLETE.md)** - Complete overview
+- **[ANIMATIONS.md](ANIMATIONS.md)** - Technical documentation
+- **[ANIMATION-REFERENCE.md](ANIMATION-REFERENCE.md)** - Quick reference guide
+- **[ANIMATION-INSTALL.md](ANIMATION-INSTALL.md)** - Installation & usage
+- **[ANIMATION-CHECKLIST.md](ANIMATION-CHECKLIST.md)** - Feature checklist
+
+### 🚀 Quick Start
+Animations are already integrated! Just open `index.html` and enjoy.
+
+To add animations to new elements:
+```html
+<!-- Add animation classes -->
+<div class="animate-slide-up">Content</div>
+
+<!-- Combine multiple effects -->
+<div class="card-3d gpu-accelerate">Card</div>
+
+<!-- Use AOS attributes -->
+<div data-aos="fade-up">Content</div>
+```
+
+### 🎯 Libraries Used
+- **GSAP v3.12.5** - Core animation engine
+- **ScrollTrigger** - Scroll-based animations
+- **ScrollToPlugin** - Smooth anchor scrolling
+- **AOS v2.3.1** - Declarative animations
+
+### ⚡ Performance
+- GPU-accelerated animations
+- 60 FPS on modern devices
+- Optimized for mobile
+- Minimal memory overhead
+
+### ♿ Accessibility
+- Respects `prefers-reduced-motion`
+- Keyboard navigation maintained
+- Screen reader compatible
+- WCAG compliant
+
+---

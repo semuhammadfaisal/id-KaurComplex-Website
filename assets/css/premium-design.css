@@ -1,0 +1,456 @@
+/* ========================================
+   PREMIUM TYPOGRAPHY & SPACING SYSTEM
+   Kaur Complex - Luxury Real Estate
+   ======================================== */
+
+/* ========================================
+   1. TYPOGRAPHY SYSTEM
+   ======================================== */
+
+/* Base Typography */
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: 0.3px;
+  color: #1a2238;
+}
+
+/* Headings - Playfair Display */
+h1, h2, h3, h4, h5, h6,
+.desktop-hero-title,
+.showcase-title,
+.location-title,
+.cta-heading,
+.masterplan-title {
+  font-family: 'Playfair Display', serif !important;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.5px;
+  margin-bottom: 24px;
+}
+
+h1, .desktop-hero-title {
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -1px;
+}
+
+h2, .showcase-title, .location-title, .cta-heading {
+  font-size: 40px;
+  font-weight: 600;
+}
+
+h3, .tower-header h3 {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+/* Subheadings */
+.desktop-hero-subtitle,
+.showcase-subtitle,
+.location-subtitle,
+.section-description {
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0.2px;
+  margin-bottom: 16px;
+}
+
+/* Body Text */
+p, .cta-text, .tower-info p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: 0.3px;
+  margin-bottom: 16px;
+}
+
+/* Small Text */
+.progress-text,
+.tower-badge,
+.info-details p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Buttons */
+.hero-btn,
+.btn-primary,
+.btn-secondary,
+.directions-btn,
+.nav-link {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* ========================================
+   2. SPACING SYSTEM (8px base)
+   ======================================== */
+
+/* Section Spacing */
+section {
+  padding: 100px 0;
+}
+
+.masterplan-section,
+.towers-section,
+.premium-gallery-showcase,
+.bold-cta-section,
+.enhanced-location-section {
+  padding: 100px 0;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Section Headers */
+.section-intro,
+.gallery-intro,
+.location-header {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+/* Card Spacing */
+.tower-item,
+.cta-card,
+.location-info-panel {
+  padding: 32px;
+}
+
+.info-card {
+  padding: 24px 0;
+  margin-bottom: 24px;
+}
+
+/* Grid Gaps */
+.towers-showcase {
+  gap: 40px;
+}
+
+.location-content {
+  gap: 50px;
+}
+
+/* Heading Spacing */
+h1 { margin-bottom: 24px; }
+h2 { margin-bottom: 24px; }
+h3 { margin-bottom: 16px; }
+p { margin-bottom: 16px; }
+
+/* ========================================
+   3. LAYOUT & ALIGNMENT
+   ======================================== */
+
+/* Centered Containers */
+.nav-container,
+.desktop-hero-content,
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Text Alignment */
+.section-intro,
+.gallery-intro,
+.location-header,
+.cta-card {
+  text-align: center;
+}
+
+/* ========================================
+   4. MINIMALIST BUTTONS
+   ======================================== */
+
+.hero-btn,
+.btn-primary {
+  padding: 14px 28px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #d4af37, #ffe082);
+  color: white;
+  border: none;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(212,175,55,0.25);
+  transition: all 0.3s ease;
+}
+
+.hero-btn:hover,
+.btn-primary:hover {
+  box-shadow: 0 6px 20px rgba(212,175,55,0.35);
+  transform: translateY(-2px);
+}
+
+.btn-secondary,
+.directions-btn {
+  padding: 14px 28px;
+  border-radius: 30px;
+  background: transparent;
+  border: 2px solid rgba(212,175,55,0.4);
+  color: #1a2238;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover,
+.directions-btn:hover {
+  background: rgba(212,175,55,0.1);
+  border-color: #d4af37;
+}
+
+/* ========================================
+   5. CLEAN CARDS
+   ======================================== */
+
+.tower-item {
+  background: white;
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+  transition: all 0.3s ease;
+}
+
+.tower-item:hover {
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+  border-color: rgba(212,175,55,0.2);
+}
+
+.cta-card {
+  background: white;
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 20px;
+  padding: 60px 40px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+}
+
+.location-info-panel {
+  background: white;
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+}
+
+/* ========================================
+   6. NAVBAR IMPROVEMENTS
+   ======================================== */
+
+.simple-navbar {
+  padding: 20px 0;
+  background: rgba(255,255,255,0.98);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.nav-menu {
+  gap: 32px;
+}
+
+.nav-link {
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
+
+.nav-brand {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+/* ========================================
+   7. GALLERY IMPROVEMENTS
+   ======================================== */
+
+.gallery-grid {
+  gap: 24px;
+}
+
+.gallery-item {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* ========================================
+   8. RESPONSIVE TYPOGRAPHY
+   ======================================== */
+
+@media (max-width: 768px) {
+  /* Typography */
+  h1, .desktop-hero-title { font-size: 36px; }
+  h2, .showcase-title, .location-title, .cta-heading { font-size: 28px; }
+  h3 { font-size: 22px; }
+  .desktop-hero-subtitle, .showcase-subtitle { font-size: 18px; }
+  p { font-size: 15px; }
+  
+  /* Spacing */
+  section { padding: 70px 0; }
+  .section-intro, .gallery-intro, .location-header { margin-bottom: 40px; }
+  .tower-item, .cta-card { padding: 24px; }
+  .location-info-panel { padding: 24px; }
+  .container { padding: 0 20px; }
+  
+  /* Buttons */
+  .hero-btn, .btn-primary, .btn-secondary { padding: 12px 24px; font-size: 15px; }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  h1, .desktop-hero-title { font-size: 44px; }
+  h2 { font-size: 34px; }
+  section { padding: 80px 0; }
+}
+
+/* ========================================
+   9. UTILITY CLASSES
+   ======================================== */
+
+.text-center { text-align: center; }
+.mb-16 { margin-bottom: 16px; }
+.mb-24 { margin-bottom: 24px; }
+.mb-32 { margin-bottom: 32px; }
+.mb-40 { margin-bottom: 40px; }
+.mb-60 { margin-bottom: 60px; }
+
+.p-24 { padding: 24px; }
+.p-32 { padding: 32px; }
+.p-40 { padding: 40px; }
+
+.gap-24 { gap: 24px; }
+.gap-32 { gap: 32px; }
+.gap-40 { gap: 40px; }
+
+/* ========================================
+   10. CLEAN VISUAL HIERARCHY
+   ======================================== */
+
+/* Reduce visual noise */
+* {
+  box-sizing: border-box;
+}
+
+/* Subtle borders */
+.tower-item,
+.cta-card,
+.location-info-panel,
+.info-card {
+  border-color: rgba(0,0,0,0.06);
+}
+
+/* Clean shadows */
+.tower-item { box-shadow: 0 4px 20px rgba(0,0,0,0.04); }
+.cta-card { box-shadow: 0 8px 30px rgba(0,0,0,0.06); }
+.location-info-panel { box-shadow: 0 4px 20px rgba(0,0,0,0.04); }
+
+/* White space */
+.tower-info { padding-top: 24px; }
+.tower-visual { margin-bottom: 0; }
+
+/* ========================================
+   11. PREMIUM DETAILS
+   ======================================== */
+
+/* Gold accent color */
+.gold-text,
+.highlight,
+.title-accent {
+  background: linear-gradient(135deg, #d4af37, #ffe082);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Icon styling */
+.info-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #d4af37, #ffe082);
+}
+
+/* Progress bars */
+.progress-bar {
+  height: 4px;
+  background: rgba(0,0,0,0.06);
+  border-radius: 2px;
+}
+
+.progress-fill {
+  background: linear-gradient(90deg, #d4af37, #ffe082);
+  border-radius: 2px;
+}
+
+/* ========================================
+   12. BREATHABLE LAYOUTS
+   ======================================== */
+
+/* Increase white space */
+.tower-image-container {
+  margin-bottom: 24px;
+}
+
+.tower-progress {
+  padding: 24px;
+  background: rgba(248,250,252,0.5);
+}
+
+.tower-info {
+  padding: 24px;
+}
+
+.info-card:not(:last-child) {
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+/* Section breathing room */
+.masterplan-section,
+.towers-section,
+.premium-gallery-showcase,
+.bold-cta-section,
+.enhanced-location-section {
+  padding: 100px 0;
+}
+
+/* ========================================
+   13. CONSISTENT STRUCTURE
+   ======================================== */
+
+/* All sections follow same pattern */
+.section-intro h2,
+.gallery-intro h2,
+.location-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.section-intro p,
+.gallery-intro p,
+.location-header p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Spacing between header and content */
+.section-intro + *,
+.gallery-intro + *,
+.location-header + * {
+  margin-top: 60px;
+}
