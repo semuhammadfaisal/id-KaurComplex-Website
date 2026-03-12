@@ -61,7 +61,7 @@
 }
 
 .showcase-title {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
   font-size: 3.2rem;
   font-weight: 700;
   color: #1a2238;
@@ -134,7 +134,7 @@
   padding: 15px;
   font-size: 1.1rem;
   font-weight: 600;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
 }
 
 .gallery-grid {
@@ -179,7 +179,7 @@
   margin-left: auto;
   margin-right: auto;
   transition: all 0.3s ease;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
 }
 
 .close-gallery-btn:hover {

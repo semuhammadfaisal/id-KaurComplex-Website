@@ -1044,7 +1044,7 @@ table td:last-child {
   color: #333;
   border: 2px solid #d4af37;
   border-radius: 50px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -1476,7 +1476,7 @@ table td:last-child {
     padding: 15px 20px;
     border-radius: 50px;
     border: none;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins';
     font-size: 16px;
     background: rgba(255, 255, 255, 0.9);
     transition: var(--transition);
@@ -2421,7 +2421,7 @@ html, body {
   color: #d4af37;
   font-size: 1.1rem;
   margin: 18px 0 8px 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
   font-weight: 600;
 }
 .tower-options-list {
@@ -3084,7 +3084,7 @@ html, body {
 .amenity-label {
   font-size: 1.08rem;
   color: #000;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
 }
 
 /* Redesigned Amenities Section */
@@ -3160,7 +3160,7 @@ html, body {
 .amenity-label {
   font-size: 1.04rem;
   color: #1e3a8a;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
   text-align: center;
   margin-top: 2px;
 }
@@ -3296,7 +3296,7 @@ html, body {
 .amenity-label {
   font-size: 1.04rem;
   color: #000;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
   text-align: center;
   margin-top: 2px;
   font-weight: 500;
@@ -3307,7 +3307,7 @@ html, body {
   margin-top: 4px;
   text-align: center;
   line-height: 1.4;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
 }
 .gold-divider {
   width: 100%;
@@ -3487,7 +3487,7 @@ h6 {
 
 /* --- Classic Minimal Font Families --- */
 body, p, li, td, th, .nav-link, .nav-cta, .btn, input, select, textarea {
-  font-family: 'Poppins', Arial, sans-serif;
+  font-family: 'Poppins';
   font-weight: 400;
   letter-spacing: 0.01em;
 }
@@ -3499,7 +3499,7 @@ h1, h2, h3, .section-title, .hero-heading {
 }
 
 h4, h5, h6, .section-subtitle {
-  font-family: 'Poppins', Arial, sans-serif;
+  font-family: 'Poppins';
   font-weight: 500;
 }
 
@@ -3647,7 +3647,7 @@ h6 {
 .tower-title-container p {
   font-size: 1.1rem !important;
   color: #555;
-  font-family: 'Poppins', Arial, sans-serif;
+  font-family: 'Poppins';
 }
 
 /* Amenities list icon (dot) */

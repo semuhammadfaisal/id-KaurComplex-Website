@@ -50,7 +50,7 @@ html {
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins';
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--white);
@@ -63,7 +63,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins';
     font-weight: 700;
     line-height: 1.2;
     color: var(--dark-gray);
@@ -91,7 +91,7 @@ section {
 }
 
 .section-subtitle {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins';
     color: #5D4A1F;
     font-size: 1.15em;
     font-weight: 700;
@@ -125,7 +125,7 @@ section {
 }
 
 .section-title {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins';
     font-size: 2.8em;
     color: var(--secondary-color);
     margin-bottom: 10px;
@@ -165,7 +165,7 @@ section {
     align-items: center;
     justify-content: center;
     padding: 12px 28px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins';
     font-size: 16px;
     font-weight: 600;
     text-decoration: none;
@@ -296,7 +296,7 @@ section {
 }
 
 .brand-text {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins';
     font-size: 18px;
     font-weight: 700;
     background: linear-gradient(135deg, #1a2238, #2d3748);
@@ -312,7 +312,7 @@ section {
     color: #1a2238;
     margin: 0;
     line-height: 1;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins';
 }
 
 .brand-tagline {
@@ -322,7 +322,7 @@ section {
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins';
 }
 
 /* Navigation Links */
@@ -889,7 +889,7 @@ body.nav-open {
 }
 
 .footer-logo span {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins';
     font-size: 24px;
     font-weight: 700;
     color: var(--white);
@@ -1049,7 +1049,7 @@ body.nav-open {
 }
 
 .footer-brand-title {
-    font-family: 'Poppins', sans-serif !important;
+    font-family: 'Poppins' !important;
     font-size: 1.2rem !important;
     font-weight: 700 !important;
     color: #000000 !important;
@@ -2535,7 +2535,7 @@ body.nav-open {
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins';
 }
 
 .page-header p {
@@ -2560,7 +2560,7 @@ body.nav-open {
     font-size: 2.5rem;
     color: var(--primary-color);
     margin-bottom: 1rem;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins';
 }
 
 .section-header p {
@@ -2662,7 +2662,7 @@ body.nav-open {
     font-size: 2.25rem;
     color: var(--primary-color);
     margin-bottom: 1.5rem;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins';
 }
 
 .amenity-details p {
@@ -2832,7 +2832,7 @@ body.nav-open {
 .cta-content h2 {
     font-size: 2.75rem;
     margin-bottom: 1.5rem;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins';
 }
 
 .cta-content p {
@@ -3080,7 +3080,7 @@ body.nav-open {
     padding: 12px 15px;
     border: 1px solid var(--border-color);
     border-radius: var(--radius-sm);
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins';
     font-size: 16px;
     transition: var(--transition);
 }
@@ -3305,7 +3305,7 @@ body.nav-open {
     font-size: 18px;
     margin: 0;
     color: var(--primary-color);
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins';
     font-weight: 600;
 }
 
@@ -3605,7 +3605,7 @@ body.nav-open {
   filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
 }
 .redesigned-hero .hero-pretitle {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
   font-size: 1.1rem;
   letter-spacing: 0.2em;
   color: #D4AF37;
@@ -3613,7 +3613,7 @@ body.nav-open {
   margin-bottom: 0.5rem;
 }
 .redesigned-hero .hero-heading {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
   font-size: 3.2rem;
   font-weight: 700;
   color: #fff;
@@ -3621,7 +3621,7 @@ body.nav-open {
   letter-spacing: 0.03em;
 }
 .redesigned-hero .hero-subheading {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
   font-size: 1.5rem;
   font-weight: 400;
   color: #D4AF37;
@@ -3830,7 +3830,7 @@ table tbody tr:hover {
   filter: drop-shadow(0 2px 8px #d4af3740);
 }
 .listings-cta-content .cta-title {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
   color: #fff;
   font-size: 2.1em;
   margin-bottom: 12px;
@@ -3841,7 +3841,7 @@ table tbody tr:hover {
   color: #ffe082;
   font-size: 1.18em;
   margin-bottom: 30px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
 }
 .luxury-cta-btn {
   display: inline-flex;
@@ -3849,7 +3849,7 @@ table tbody tr:hover {
   gap: 18px;
   background: linear-gradient(90deg, #ffe082 0%, #d4af37 100%);
   color: #1a2238;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
   font-weight: 800;
   font-size: 1.18em;
   padding: 18px 44px;
@@ -4453,7 +4453,7 @@ table tbody tr:hover {
 .luxury-cta-btn {
   background: linear-gradient(90deg, #ffe082 0%, #d4af37 100%);
   color: #1a2238;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
   font-weight: 700;
   font-size: 1.1em;
   padding: 14px 36px;
@@ -4513,7 +4513,7 @@ table tbody tr:hover {
   border-radius: 30px;
   padding: 10px 28px;
   font-size: 1em;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
   font-weight: 600;
   cursor: pointer;
   transition: background 0.2s, color 0.2s, border 0.2s;
@@ -4673,7 +4673,7 @@ table tbody tr:hover {
   text-shadow: 0 2px 16px #d4af3780;
 }
 .home-cta-content .cta-title {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
   color: #fff;
   font-size: 2.3em;
   margin-bottom: 12px;
@@ -4684,7 +4684,7 @@ table tbody tr:hover {
   color: #ffe082;
   font-size: 1.18em;
   margin-bottom: 32px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
 }
 .home-cta-btn {
   display: inline-flex;
@@ -4692,7 +4692,7 @@ table tbody tr:hover {
   gap: 18px;
   background: linear-gradient(90deg, #ffe082 0%, #d4af37 100%);
   color: #1a2238;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
   font-weight: 800;
   font-size: 1.18em;
   padding: 20px 48px;
@@ -4805,7 +4805,7 @@ table tbody tr:hover {
   margin-bottom: 8px;
 }
 .location-title {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
   font-size: 2.3rem;
   font-weight: 700;
   color: #1a2238;
@@ -4842,7 +4842,7 @@ table tbody tr:hover {
 }
 .location-info-card h3 {
   color: #d4af37;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
   font-size: 1.5em;
   margin-bottom: 16px;
   font-weight: 700;
@@ -4989,7 +4989,7 @@ table tbody tr:hover {
   backdrop-filter: blur(2px);
 }
 .luxury-hero-title {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
   font-size: 3.2rem;
   font-weight: 800;
   color: #d4af37;
@@ -5009,7 +5009,7 @@ table tbody tr:hover {
   font-size: 1.45rem;
   color: #1a2238;
   margin-bottom: 38px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
   font-weight: 500;
   line-height: 1.5;
   text-shadow: 0 1px 8px #fffbe6cc;
@@ -5113,7 +5113,7 @@ table tbody tr:hover {
 .kc-listings-header h2 {
   color: #222;
   font-size: 2.2rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
   font-weight: 700;
   margin-bottom: 6px;
   letter-spacing: 0.01em;
@@ -5121,7 +5121,7 @@ table tbody tr:hover {
 .kc-listings-header h3 {
   color: #666;
   font-size: 1.1rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
   margin-bottom: 10px;
   font-weight: 400;
   letter-spacing: 0.01em;
@@ -5130,7 +5130,7 @@ table tbody tr:hover {
   color: #444;
   font-size: 1.02rem;
   margin-bottom: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
 }
 .kc-listings-table-wrap {
   margin-bottom: 40px;
@@ -5146,7 +5146,7 @@ table tbody tr:hover {
   color: #fff;
   background: #222;
   font-size: 1.08rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
   margin: -28px -18px 18px -18px;
   padding: 16px 18px 12px 18px;
   font-weight: 600;
@@ -5185,7 +5185,7 @@ table tbody tr:hover {
   text-align: left;
   border-bottom: 1px solid #e5e7eb;
   background: none;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
 }
 .kc-listings-table th {
   color: #444;
@@ -5218,7 +5218,7 @@ table tbody tr:hover {
   border-radius: 6px;
   padding: 10px 14px;
   font-size: 1em;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
   margin-top: 6px;
   box-shadow: none;
   border: 1px solid #e5e7eb;
@@ -5239,7 +5239,7 @@ table tbody tr:hover {
   color: #222;
   font-size: 1.15em;
   margin-bottom: 8px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
   letter-spacing: 0.01em;
   font-weight: 600;
 }
@@ -5247,7 +5247,7 @@ table tbody tr:hover {
   color: #444;
   font-size: 1em;
   margin-bottom: 16px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
 }
 .kc-listings-cta-btn {
   display: inline-block;
@@ -5391,7 +5391,7 @@ table tbody tr:hover {
   margin-bottom: 32px;
 }
 .kc-listings-header h2 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
   font-size: 2.3rem;
   color: #1a2238;
   margin-bottom: 0.5rem;
@@ -5790,7 +5790,7 @@ table tbody tr:hover {
   margin-bottom: 32px;
 }
 .location-title {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
   font-size: 2.1rem;
   color: #1a2238;
   margin-bottom: 0.5rem;
@@ -6077,7 +6077,7 @@ table tbody tr:hover {
   margin-bottom: 2px;
 }
 .location-card-title {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
   font-size: 1.6rem;
   color: #1a2238;
   margin: 0;
@@ -6315,7 +6315,7 @@ table tbody tr:hover {
 .amenity-label {
   font-size: 1.04rem;
   color: var(--dark-gray);
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
   text-align: center;
   margin-top: 2px;
   font-weight: 500;
