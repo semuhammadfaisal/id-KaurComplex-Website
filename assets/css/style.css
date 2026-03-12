@@ -50,7 +50,7 @@ html {
 }
 
 body {
-    font-family: 'Poppins';
+    font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--white);
@@ -63,7 +63,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Poppins';
+    font-family: 'Poppins', sans-serif;
     font-weight: 700;
     line-height: 1.2;
     color: var(--dark-gray);
@@ -91,7 +91,7 @@ section {
 }
 
 .section-subtitle {
-    font-family: 'Poppins';
+    font-family: 'Poppins', sans-serif;
     color: #5D4A1F;
     font-size: 1.15em;
     font-weight: 700;
@@ -125,7 +125,7 @@ section {
 }
 
 .section-title {
-    font-family: 'Poppins';
+    font-family: 'Poppins', sans-serif;
     font-size: 2.8em;
     color: var(--secondary-color);
     margin-bottom: 10px;
@@ -165,7 +165,7 @@ section {
     align-items: center;
     justify-content: center;
     padding: 12px 28px;
-    font-family: 'Poppins';
+    font-family: 'Poppins', sans-serif;
     font-size: 16px;
     font-weight: 600;
     text-decoration: none;
@@ -296,7 +296,7 @@ section {
 }
 
 .brand-text {
-    font-family: 'Poppins';
+    font-family: 'Poppins', sans-serif;
     font-size: 18px;
     font-weight: 700;
     background: linear-gradient(135deg, #1a2238, #2d3748);
@@ -312,7 +312,7 @@ section {
     color: #1a2238;
     margin: 0;
     line-height: 1;
-    font-family: 'Poppins';
+    font-family: 'Poppins', sans-serif;
 }
 
 .brand-tagline {
@@ -322,7 +322,7 @@ section {
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-family: 'Poppins';
+    font-family: 'Poppins', sans-serif;
 }
 
 /* Navigation Links */
@@ -889,7 +889,7 @@ body.nav-open {
 }
 
 .footer-logo span {
-    font-family: 'Poppins';
+    font-family: 'Poppins', sans-serif;
     font-size: 24px;
     font-weight: 700;
     color: var(--white);
@@ -1049,7 +1049,7 @@ body.nav-open {
 }
 
 .footer-brand-title {
-    font-family: 'Poppins' !important;
+    font-family: 'Poppins', sans-serif !important;
     font-size: 1.2rem !important;
     font-weight: 700 !important;
     color: #000000 !important;
@@ -2535,7 +2535,7 @@ body.nav-open {
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    font-family: 'Poppins';
+    font-family: 'Poppins', sans-serif;
 }
 
 .page-header p {
@@ -3080,7 +3080,7 @@ body.nav-open {
     padding: 12px 15px;
     border: 1px solid var(--border-color);
     border-radius: var(--radius-sm);
-    font-family: 'Poppins';
+    font-family: 'Poppins', sans-serif;
     font-size: 16px;
     transition: var(--transition);
 }
@@ -3305,7 +3305,7 @@ body.nav-open {
     font-size: 18px;
     margin: 0;
     color: var(--primary-color);
-    font-family: 'Poppins';
+    font-family: 'Poppins', sans-serif;
     font-weight: 600;
 }
 
