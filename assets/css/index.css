@@ -662,6 +662,9 @@ html {
     text-decoration: none;
     color: inherit;
     transition: transform 0.3s ease;
+    display: block;
+    padding: 0;
+    margin: 0;
 }
 
 .tower-item:hover {
@@ -671,27 +674,33 @@ html {
 .tower-image-wrapper {
   background-color: #fff;
   position: relative;
-  height: 180px !important;
+  height: 200px;
   border-radius: 8px;
   overflow: hidden;
   margin-bottom: 0.5rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.188);
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
+  display: block;
+  padding: 0;
+  line-height: 0;
+  border: none;
 }
 
 .tower-image-wrapper img {
   width: 100%;
-  height: auto;
-  max-height: 100%;
-  object-fit: contain;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   transition: transform 0.5s ease;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: none;
+  vertical-align: bottom;
 }
 
 @media (max-width: 768px) {
   .tower-image-wrapper {
-    height: 90px;
+    height: 150px;
   }
 }
 
