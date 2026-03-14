@@ -125,10 +125,6 @@ html {
     }
 }
 
-* {
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
 /* Fully Responsive Hero Section Styles */
 .luxury-hero {
   position: relative;
@@ -205,7 +201,6 @@ html {
 
 .hero-text-wrapper {
   color: #1a2238;
-  animation: fadeInLeft 1s ease-out;
 }
 
 @keyframes fadeInLeft {
@@ -233,7 +228,7 @@ html {
   position: absolute;
   bottom: -5px;
   left: 0;
-  width: 100%;
+  width: 0;
   height: 3px;
   background: linear-gradient(90deg, #d4af37, #ffe082);
   border-radius: 2px;
@@ -315,7 +310,6 @@ html {
 
 .hero-image-wrapper {
   position: relative;
-  animation: fadeInRight 1s ease-out;
 }
 
 @keyframes fadeInRight {
@@ -3510,89 +3504,6 @@ h1, h2, h3, .section-title, .hero-heading {
 h4, h5, h6, .section-subtitle {
   font-family: 'Poppins';
   font-weight: 500;
-}
-
-/* --- Classic Minimal Font Sizes (already present, but ensure coverage) --- */
-html {
-  font-size: 16px;
-}
-body {
-  font-size: 1rem;
-}
-
-h1, .section-title, .hero-heading {
-  font-size: clamp(2.2rem, 6vw, 3rem);
-  font-weight: 700;
-  line-height: 1.1;
-}
-h2, .section-subtitle {
-  font-size: 2rem;
-  font-weight: 600;
-  line-height: 1.15;
-}
-h3 {
-  font-size: 1.5rem;
-  font-weight: 500;
-}
-h4 {
-  font-size: 1.25rem;
-  font-weight: 500;
-}
-h5 {
-  font-size: 1.125rem;
-  font-weight: 500;
-}
-h6 {
-  font-size: 1rem;
-  font-weight: 500;
-}
-
-.section-description, p, li, td, th {
-  font-size: 1rem;
-}
-.small, .footer, .footer-section, .footer-content, .footer-bottom {
-  font-size: 0.9rem;
-}
-
-.nav-link, .nav-cta {
-  font-size: 1rem;
-}
-
-.btn, button, input, select, textarea {
-  font-size: 1rem;
-}
-
-.section-tag, .tower-badge, .gallery-caption, .gallery-item, .gallery-overlay, .view-btn, .lightbox-caption, .location-info-row, .location-map-btn-wide, .call-float, .whatsapp-float, .back-to-top {
-  font-size: 0.95rem;
-}
-
-@media (max-width: 768px) {
-  html {
-    font-size: 15px;
-  }
-  h1, .section-title, .hero-heading {
-    font-size: clamp(1.5rem, 7vw, 2.2rem);
-  }
-  h2, .section-subtitle {
-    font-size: 1.3rem;
-  }
-  h3 {
-    font-size: 1.1rem;
-  }
-  .nav-link, .nav-cta, .btn, button {
-    font-size: 0.95rem;
-  }
-}
-@media (max-width: 480px) {
-  html {
-    font-size: 14px;
-  }
-  h1, .section-title, .hero-heading {
-    font-size: clamp(1.2rem, 8vw, 1.7rem);
-  }
-  h2, .section-subtitle {
-    font-size: 1.1rem;
-  }
 }
 
 /* --- Icon Perfection: Classic Minimal --- */

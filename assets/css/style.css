@@ -24,7 +24,6 @@
     --radius-xl: 20px;
     --light-bg: #f6f7fb;
     --card-bg: #fcfcfd;
-    --shadow: 0 8px 32px rgba(30,34,56,0.10);
     --main-font: 'Poppins';
 }
 
@@ -32,7 +31,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition: none !important;
 }
 
 /* Prevent horizontal overflow and double scrollbars */
@@ -55,11 +53,8 @@ body {
     color: var(--text-color);
     background-color: var(--white);
     overflow-x: hidden;
-    padding-top: 80px; /* Increased to match navbar height and prevent overlap */
-    /* display: flex; removed to allow normal block flow */
-    /* flex-direction: column; removed */
-    /* min-height: 100vh; removed to allow content to define height */
-    width: 100%; /* Fix: was 100vw, now 100% to prevent overflow */
+    padding-top: 70px;
+    width: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -4764,12 +4759,6 @@ table tbody tr:hover {
     font-size: 1em;
     padding: 12px 18px;
   }
-}
-
-.home-cta-card {
-  border: 3px solid red !important;
-  background: #fffbe6 !important;
-  color: #1a2238 !important;
 }
 
 /* --- Best & Perfect Location Section Styles --- */

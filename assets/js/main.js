@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initWhatsApp();
     initAnimations();
     initTestimonialSlider();
-    initNavbarDropdown();
+    initVideoEnhancements();
 });
 
 // Loading Screen
@@ -29,7 +29,6 @@ function initLoadingScreen() {
 
 // Navigation - Updated to use enhanced version
 function initNavigation() {
-    // Use the enhanced navigation function
     initEnhancedNavigation();
     initNavbarDropdown();
 }
@@ -234,7 +233,6 @@ function initBackToTop() {
 // WhatsApp
 function initWhatsApp() {
     document.querySelector('.whatsapp-float a')?.addEventListener('click', () => {
-        console.log('WhatsApp clicked');
     });
 }
 
@@ -268,47 +266,42 @@ function initTestimonialSlider() {
     const track = document.querySelector('.testimonial-track');
     if (!track) return;
     
-    const slides = document.querySelectorAll('.testimonial-card'); // Changed from .testimonial-slide
-    const dotsContainer = document.querySelector('.testimonial-dots'); // Changed from .slider-dots
+    const slides = document.querySelectorAll('.testimonial-card');
+    if (!slides.length) return;
+
+    const dotsContainer = document.querySelector('.testimonial-dots');
     let currentIndex = 0;
 
-    slides.forEach((_, index) => {
-        const dot = document.createElement('span');
-        dot.className = `dot ${index === 0 ? 'active' : ''}`;
-        dot.dataset.index = index;
-        dot.addEventListener('click', () => goToSlide(index));
-        dotsContainer.appendChild(dot);
-    });
+    if (dotsContainer) {
+        slides.forEach((_, index) => {
+            const dot = document.createElement('span');
+            dot.className = `dot ${index === 0 ? 'active' : ''}`;
+            dot.dataset.index = index;
+            dot.addEventListener('click', () => goToSlide(index));
+            dotsContainer.appendChild(dot);
+        });
+    }
 
     const dots = document.querySelectorAll('.dot');
     const getSlideWidth = () => slides[0].offsetWidth;
+    const prevBtn = document.querySelector('.nav-btn.prev-btn');
+    const nextBtn = document.querySelector('.nav-btn.next-btn');
+
+    if (!prevBtn || !nextBtn) return;
 
     function updateSlider() {
         track.style.transform = `translateX(-${currentIndex * getSlideWidth()}px)`;
         dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
-        document.querySelector('.nav-btn.prev-btn').disabled = currentIndex === 0;
-        document.querySelector('.nav-btn.next-btn').disabled = currentIndex === slides.length - 1;
+        prevBtn.disabled = currentIndex === 0;
+        nextBtn.disabled = currentIndex === slides.length - 1;
     }
 
-    function goToSlide(index) {
-        currentIndex = index;
-        updateSlider();
-    }
+    function goToSlide(index) { currentIndex = index; updateSlider(); }
+    function nextSlide() { if (currentIndex < slides.length - 1) goToSlide(currentIndex + 1); }
+    function prevSlide() { if (currentIndex > 0) goToSlide(currentIndex - 1); }
 
-    function nextSlide() {
-        if (currentIndex < slides.length - 1) goToSlide(currentIndex + 1);
-    }
-
-    function prevSlide() {
-        if (currentIndex > 0) goToSlide(currentIndex - 1);
-    }
-
-    document.querySelector('.nav-btn.prev-btn').addEventListener('click', prevSlide);
-    document.querySelector('.nav-btn.next-btn').addEventListener('click', nextSlide);
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowRight') nextSlide();
-        if (e.key === 'ArrowLeft') prevSlide();
-    });
+    prevBtn.addEventListener('click', prevSlide);
+    nextBtn.addEventListener('click', nextSlide);
 
     let autoplay = setInterval(nextSlide, 5000);
     const container = document.querySelector('.testimonials-section');
@@ -333,279 +326,22 @@ function initSmoothScrolling() {
 
 // handle the click functionality
 document.addEventListener('DOMContentLoaded', function() {
-    const valueCards = document.querySelectorAll('.value-card');
-    
-    valueCards.forEach(card => {
-        const toggleBtn = card.querySelector('.value-toggle-btn');
-        
-        toggleBtn.addEventListener('click', function() {
+    // Value cards toggle
+    document.querySelectorAll('.value-card').forEach(card => {
+        card.querySelector('.value-toggle-btn')?.addEventListener('click', function() {
             card.classList.toggle('active');
-            
-            // Close other open cards if needed
-            // valueCards.forEach(otherCard => {
-            //     if (otherCard !== card) {
-            //         otherCard.classList.remove('active');
-            //     }
-            // });
         });
     });
-});
 
-// gallery.js
-class Gallery {
-    constructor(options) {
-        this.container = document.querySelector(options.container);
-        this.data = options.data || [];
-        this.itemsPerLoad = options.itemsPerLoad || 12;
-        this.currentItems = 0;
-        this.activeFilter = 'all';
-        this.currentLightboxIndex = 0;
-    }
-
-    init() {
-        this.renderGallery();
-        this.setupEventListeners();
-        this.loadInitialItems();
-    }
-
-    renderGallery() {
-        // Clear existing content
-        this.container.innerHTML = '';
-        
-        // Create loading placeholders
-        for (let i = 0; i < this.itemsPerLoad; i++) {
-            const placeholder = document.createElement('div');
-            placeholder.className = 'gallery-item loading-placeholder';
-            this.container.appendChild(placeholder);
-        }
-    }
-
-    loadInitialItems() {
-        this.loadMoreItems();
-    }
-
-    loadMoreItems() {
-        const fragment = document.createDocumentFragment();
-        const endIndex = Math.min(this.currentItems + this.itemsPerLoad, this.data.length);
-        
-        for (let i = this.currentItems; i < endIndex; i++) {
-            const item = this.data[i];
-            
-            // Skip if item doesn't match current filter
-            if (this.activeFilter !== 'all' && item.category !== this.activeFilter) {
-                continue;
-            }
-            
-            const galleryItem = this.createGalleryItem(item);
-            fragment.appendChild(galleryItem);
-        }
-        
-        // Replace placeholders with actual items
-        const placeholders = this.container.querySelectorAll('.loading-placeholder');
-        if (placeholders.length > 0) {
-            placeholders[0].replaceWith(fragment);
-        } else {
-            this.container.appendChild(fragment);
-        }
-        
-        this.currentItems = endIndex;
-        
-        // Update load more button visibility
-        this.updateLoadMoreButton();
-        
-        // Initialize lazy loading for images
-        this.initLazyLoading();
-    }
-
-    createGalleryItem(item) {
-        const itemElement = document.createElement('div');
-        itemElement.className = `gallery-item`;
-        itemElement.dataset.category = item.category;
-        
-        itemElement.innerHTML = `
-            <img src="${item.placeholder || 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNlZWVlZWUiLz48L3N2Zz4='}" 
-                 data-src="${item.src}" 
-                 alt="${item.alt}" 
-                 loading="lazy"
-                 class="lazy">
-            <div class="gallery-overlay">
-                <h3>${item.title}</h3>
-                <p>${item.desc}</p>
-                <i class="fas fa-expand" aria-hidden="true"></i>
-            </div>
-        `;
-        
-        return itemElement;
-    }
-
-    initLazyLoading() {
-        const lazyImages = this.container.querySelectorAll('img.lazy');
-        
-        const lazyLoad = (image) => {
-            if (image.classList.contains('loaded')) return;
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.dataset.src;
-                        
-                        img.onload = () => {
-                            img.classList.add('loaded');
-                            observer.unobserve(img);
-                        };
-                    }
-                });
-            });
-            
-            observer.observe(image);
-        };
-        
-        lazyImages.forEach(lazyLoad);
-    }
-
-    setupEventListeners() {
-        // Filter buttons
-        document.querySelectorAll('.filter-btn').forEach(button => {
-            button.addEventListener('click', () => {
-                this.activeFilter = button.dataset.filter;
-                
-                // Update button states
-                document.querySelectorAll('.filter-btn').forEach(btn => {
-                    btn.setAttribute('aria-pressed', btn === button ? 'true' : 'false');
-                    btn.classList.toggle('active', btn === button);
-                });
-                
-                // Filter items
-                this.currentItems = 0;
-                this.renderGallery();
-                this.loadMoreItems();
-            });
-        });
-        
-        // Load more button
-        const loadMoreBtn = document.getElementById('loadMoreBtn');
-        if (loadMoreBtn) {
-            loadMoreBtn.addEventListener('click', () => this.loadMoreItems());
-        }
-        
-        // Gallery item clicks
-        this.container.addEventListener('click', (e) => {
-            const galleryItem = e.target.closest('.gallery-item');
-            const expandBtn = e.target.closest('.fa-expand');
-            
-            if (galleryItem && expandBtn) {
-                const index = Array.from(this.container.children).indexOf(galleryItem);
-                this.openLightbox(index);
-            }
-        });
-        
-        // Lightbox controls
-        document.getElementById('closeLightbox')?.addEventListener('click', () => this.closeLightbox());
-        document.getElementById('prevBtn')?.addEventListener('click', () => this.navigateLightbox(-1));
-        document.getElementById('nextBtn')?.addEventListener('click', () => this.navigateLightbox(1));
-        
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            const lightbox = document.getElementById('lightboxModal');
-            if (!lightbox || !lightbox.classList.contains('active')) return;
-            
-            if (e.key === 'Escape') {
-                this.closeLightbox();
-            } else if (e.key === 'ArrowLeft') {
-                this.navigateLightbox(-1);
-            } else if (e.key === 'ArrowRight') {
-                this.navigateLightbox(1);
-            }
-        });
-    }
-
-    updateLoadMoreButton() {
-        const loadMoreBtn = document.getElementById('loadMoreBtn');
-        if (!loadMoreBtn) return;
-        
-        const filteredItems = this.activeFilter === 'all' 
-            ? this.data 
-            : this.data.filter(item => item.category === this.activeFilter);
-        
-        loadMoreBtn.style.display = this.currentItems >= filteredItems.length ? 'none' : 'block';
-    }
-
-    openLightbox(index) {
-        this.currentLightboxIndex = index;
-        const item = this.data[index];
-        const lightbox = document.getElementById('lightboxModal');
-        const lightboxImg = document.getElementById('lightboxImage');
-        const lightboxTitle = document.getElementById('lightboxTitle');
-        const lightboxDesc = document.getElementById('lightboxDesc');
-        const lightboxCounter = document.getElementById('lightboxCounter');
-        
-        // Set content
-        lightboxTitle.textContent = item.title;
-        lightboxDesc.textContent = item.desc;
-        lightboxCounter.textContent = `${index + 1} of ${this.data.length}`;
-        
-        // Show loading
-        lightboxImg.classList.remove('loaded');
-        
-        // Load image
-        lightboxImg.src = item.src;
-        lightboxImg.alt = item.alt;
-        
-        lightboxImg.onload = () => {
-            lightboxImg.classList.add('loaded');
-        };
-        
-        // Show lightbox
-        lightbox.classList.add('active');
-        lightbox.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-    }
-
-    closeLightbox() {
-        const lightbox = document.getElementById('lightboxModal');
-        lightbox.classList.remove('active');
-        lightbox.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-    }
-
-    navigateLightbox(direction) {
-        let newIndex = this.currentLightboxIndex + direction;
-        
-        // Wrap around
-        if (newIndex < 0) {
-            newIndex = this.data.length - 1;
-        } else if (newIndex >= this.data.length) {
-            newIndex = 0;
-        }
-        
-        this.openLightbox(newIndex);
-    }
-}
-document.addEventListener('DOMContentLoaded', function() {
-    // FAQ Accordion Functionality
+    // FAQ Accordion
     const faqItems = document.querySelectorAll('.faq-item');
-    
     faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        
-        question.addEventListener('click', () => {
-            // Close all other items
-            faqItems.forEach(otherItem => {
-                if (otherItem !== item && otherItem.classList.contains('active')) {
-                    otherItem.classList.remove('active');
-                }
-            });
-            
-            // Toggle current item
+        item.querySelector('.faq-question')?.addEventListener('click', () => {
+            faqItems.forEach(other => { if (other !== item) other.classList.remove('active'); });
             item.classList.toggle('active');
         });
     });
-
-    // Optional: Open first FAQ item by default
-    if (faqItems.length > 0) {
-        faqItems[0].classList.add('active');
-    }
+    if (faqItems.length > 0) faqItems[0].classList.add('active');
 });
 
 // Add to your main.js
@@ -789,76 +525,23 @@ function initEnhancedNavigation() {
 
 // Video Enhancement Utilities
 function initVideoEnhancements() {
-    // Enhanced video player functionality
     const videos = document.querySelectorAll('video');
-    
     videos.forEach(video => {
-        // Add loading state
         const container = video.closest('.video-container');
-        if (container) {
-            const loadingDiv = document.createElement('div');
-            loadingDiv.className = 'video-loading';
-            loadingDiv.innerHTML = `
-                <div class="spinner"></div>
-                <p>Loading video...</p>
-            `;
+        if (!container) return;
+
+        const loadingDiv = document.createElement('div');
+        loadingDiv.className = 'video-loading';
+        loadingDiv.innerHTML = '<div class="spinner"></div><p>Loading video...</p>';
+        loadingDiv.style.display = 'none';
+        container.appendChild(loadingDiv);
+
+        video.addEventListener('loadstart', () => { loadingDiv.style.display = 'block'; });
+        video.addEventListener('canplay', () => { loadingDiv.style.display = 'none'; });
+        video.addEventListener('error', () => {
             loadingDiv.style.display = 'none';
-            container.appendChild(loadingDiv);
-            
-            // Show loading when video starts loading
-            video.addEventListener('loadstart', () => {
-                loadingDiv.style.display = 'block';
-            });
-            
-            // Hide loading when video can play
-            video.addEventListener('canplay', () => {
-                loadingDiv.style.display = 'none';
-            });
-            
-            // Handle video errors
-            video.addEventListener('error', (e) => {
-                console.error('Video error:', e);
-                loadingDiv.style.display = 'none';
-                
-                const errorDiv = container.querySelector('.video-error') || container.querySelector('#videoError');
-                if (errorDiv) {
-                    video.style.display = 'none';
-                    errorDiv.style.display = 'block';
-                }
-            });
-            
-            // Add retry functionality
-            const errorDiv = container.querySelector('.video-error') || container.querySelector('#videoError');
-            if (errorDiv) {
-                const retryBtn = document.createElement('button');
-                retryBtn.textContent = 'Retry';
-                retryBtn.className = 'retry-btn';
-                retryBtn.style.cssText = `
-                    background: #d4af37;
-                    color: white;
-                    border: none;
-                    padding: 10px 20px;
-                    border-radius: 5px;
-                    cursor: pointer;
-                    margin-top: 10px;
-                `;
-                retryBtn.addEventListener('click', () => {
-                    video.load();
-                    video.style.display = 'block';
-                    errorDiv.style.display = 'none';
-                });
-                errorDiv.appendChild(retryBtn);
-            }
-        }
-        
-        // Add video quality detection
-        video.addEventListener('loadedmetadata', () => {
-            console.log(`Video loaded: ${video.videoWidth}x${video.videoHeight}`);
+            const errorDiv = container.querySelector('.video-error, #videoError');
+            if (errorDiv) { video.style.display = 'none'; errorDiv.style.display = 'block'; }
         });
     });
 }
-
-// Initialize video enhancements on page load
-document.addEventListener('DOMContentLoaded', function() {
-    initVideoEnhancements();
-});

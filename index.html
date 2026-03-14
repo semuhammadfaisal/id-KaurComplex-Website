@@ -29,7 +29,6 @@
     
     <!-- CSS Files -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="stylesheet" href="assets/css/index.css">
     <link rel="stylesheet" href="assets/css/gallery.css">
     <link rel="stylesheet" href="assets/css/animations.css">
@@ -121,6 +120,54 @@
         display: flex;
       }
       
+      /* Hero entrance animations */
+      @keyframes heroFadeIn {
+        from { opacity: 0; transform: scale(1.04); }
+        to { opacity: 1; transform: scale(1); }
+      }
+      @keyframes heroSlideUp {
+        from { opacity: 0; transform: translateY(40px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes heroSlideLeft {
+        from { opacity: 0; transform: translateX(-50px); }
+        to { opacity: 1; transform: translateX(0); }
+      }
+      @keyframes heroSlideRight {
+        from { opacity: 0; transform: translateX(50px); }
+        to { opacity: 1; transform: translateX(0); }
+      }
+      @keyframes heroGoldLine {
+        from { width: 0; opacity: 0; }
+        to { width: 100%; opacity: 1; }
+      }
+
+      .hero-anim-title {
+        opacity: 0;
+        animation: heroSlideLeft 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards;
+      }
+      .hero-anim-subtitle {
+        opacity: 0;
+        animation: heroSlideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.6s forwards;
+      }
+      .hero-anim-desc {
+        opacity: 0;
+        animation: heroSlideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.85s forwards;
+      }
+      .hero-anim-btns {
+        opacity: 0;
+        animation: heroSlideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 1.1s forwards;
+      }
+      .hero-anim-img {
+        opacity: 0;
+        animation: heroSlideRight 1s cubic-bezier(0.22, 1, 0.36, 1) 0.5s forwards;
+      }
+      /* Gold underline draws in after title */
+      .gold-text::after {
+        width: 0 !important;
+        animation: heroGoldLine 0.7s ease-out 1.2s forwards !important;
+      }
+
       @keyframes pulse {
         0%, 100% { transform: scale(1); }
         50% { transform: scale(1.05); }
@@ -151,7 +198,7 @@
 <body>
 
     <!-- New Simple Navbar -->
-    <nav class="simple-navbar" id="navbar" data-aos="fade-down" data-aos-duration="800">
+    <nav class="simple-navbar" id="navbar">
         <div class="nav-container">
             <a href="#home" class="nav-brand">
                 <img src="assets/images/gallery/logo-kc.png" alt="Kaur Complex Logo" class="nav-logo">
@@ -211,7 +258,7 @@
     }
     .nav-menu {
         display: flex;
-        gap: 30px;
+        gap: 0;
     }
     .nav-link {
         color: #1a2238;
@@ -291,7 +338,6 @@
         }
     }
     body {
-        padding-top: 70px;
         font-family: 'Poppins';
         line-height: 1.7;
         letter-spacing: 0.3px;
@@ -300,7 +346,7 @@
 
     <!-- Mobile Hero (Image-based) -->
     <section class="luxury-hero mobile-hero" id="home">
-      <div class="hero-bg-container ken-burns" data-aos="fade-in" data-aos-duration="2500" data-aos-easing="ease-in-out">
+      <div class="hero-bg-container" style="animation: heroFadeIn 1.2s ease-out forwards;">
         <div class="hero-bg-image hero-bg-slide gpu-accelerate" style="background-image: url('assets/images/gallery/WELCOME\ TO_20250715_104649_0000.png'); opacity: 1;"></div>
         <div class="hero-bg-image hero-bg-slide gpu-accelerate" style="background-image: url('assets/images/gallery/WELCOME\ TO_20250715_104649_0000.png'); opacity: 0;"></div>
         <div class="hero-bg-image hero-bg-slide gpu-accelerate" style="background-image: url('assets/images/gallery/WELCOME\ TO_20250715_104649_0000.png'); opacity: 0;"></div>
@@ -311,17 +357,17 @@
     <!-- Desktop Hero (Code-based) -->
     <section class="desktop-hero">
       <div class="desktop-hero-content">
-        <div class="hero-text-wrapper will-animate" data-aos="fade-right" data-aos-duration="1800">
-          <h1 class="desktop-hero-title" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1800">Welcome to <span class="gold-text" data-aos="zoom-in" data-aos-delay="500" data-aos-duration="1500">Kaur Complex</span></h1>
-          <p class="desktop-hero-subtitle" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1800">Peshawar's Premier Luxury Living Destination</p>
-          <p class="desktop-hero-description" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1800">Experience world-class apartments, penthouses, and commercial spaces in the heart of Peshawar. 600+ international standard units in a secure gated community.</p>
-          <div class="desktop-hero-buttons" data-aos="fade-up" data-aos-delay="800" data-aos-duration="1800">
-            <a href="#towers" class="hero-btn primary btn-hover-lift" data-aos="flip-right" data-aos-delay="1000" data-aos-duration="1200">Explore Towers</a>
-            <a href="pages/contact.html" class="hero-btn secondary btn-hover-lift" data-aos="flip-left" data-aos-delay="1200" data-aos-duration="1200">Contact Us</a>
+        <div class="hero-text-wrapper">
+          <h1 class="desktop-hero-title hero-anim-title">Welcome to <span class="gold-text">Kaur Complex</span></h1>
+          <p class="desktop-hero-subtitle hero-anim-subtitle">Peshawar's Premier Luxury Living Destination</p>
+          <p class="desktop-hero-description hero-anim-desc">Experience world-class apartments, penthouses, and commercial spaces in the heart of Peshawar. 600+ international standard units in a secure gated community.</p>
+          <div class="desktop-hero-buttons hero-anim-btns">
+            <a href="#towers" class="hero-btn primary btn-hover-lift">Explore Towers</a>
+            <a href="pages/contact.html" class="hero-btn secondary btn-hover-lift">Contact Us</a>
           </div>
         </div>
-        <div class="hero-image-wrapper will-animate" data-aos="fade-left" data-aos-delay="400" data-aos-duration="2000">
-          <img src="assets/images/gallery/kaur-complex-img.jpg" alt="Kaur Complex" class="hero-building-img gpu-accelerate" data-aos="zoom-in" data-aos-delay="800" data-aos-duration="1800">
+        <div class="hero-image-wrapper hero-anim-img">
+          <img src="assets/images/gallery/kaur-complex-img.jpg" alt="Kaur Complex" class="hero-building-img gpu-accelerate">
         </div>
       </div>
     </section>
@@ -360,24 +406,13 @@
             <div class="tower-visual">
               <div class="tower-image-container img-zoom-hover">
                 <img src="assets/images/gallery/1.png" alt="Tower A">
-                <div class="tower-badge ready glow-pulse">Sold Out</div>
+                <div class="tower-badge ready glow-pulse">Completed & Delivered</div>
               </div>
               <div class="tower-progress">
                 <div class="progress-bar">
                   <div class="progress-fill" style="width: 100%;"></div>
                 </div>
                 <span class="progress-text">100% Complete</span>
-              </div>
-            </div>
-            <div class="tower-info">
-              <div class="tower-header">
-                <h3>Tower A</h3>
-                <span class="tower-letter">A</span>
-              </div>
-              <p>Completed & fully sold premium apartments.</p>
-              <div class="tower-link">
-                <span>View Details</span>
-                <i class="fas fa-arrow-right"></i>
               </div>
             </div>
           </a>
@@ -390,20 +425,9 @@
               </div>
               <div class="tower-progress">
                 <div class="progress-bar">
-                  <div class="progress-fill" style="width: 60%;"></div>
+                  <div class="progress-fill" style="width: 80%;"></div>
                 </div>
-                <span class="progress-text">60% Complete</span>
-              </div>
-            </div>
-            <div class="tower-info">
-              <div class="tower-header">
-                <h3>Tower B</h3>
-                <span class="tower-letter">B</span>
-              </div>
-              <p>Under construction & fully sold out.</p>
-              <div class="tower-link">
-                <span>View Details</span>
-                <i class="fas fa-arrow-right"></i>
+                <span class="progress-text">80% Complete</span>
               </div>
             </div>
           </a>
@@ -412,6 +436,7 @@
             <div class="tower-visual">
               <div class="tower-image-container img-zoom-hover">
                 <img src="assets/images/gallery/3.png" alt="Tower C">
+                <div class="tower-badge construction glow-pulse">Under Construction</div>
               </div>
               <div class="tower-progress">
                 <div class="progress-bar">
@@ -420,41 +445,18 @@
                 <span class="progress-text">40% Complete</span>
               </div>
             </div>
-            <div class="tower-info">
-              <div class="tower-header">
-                <h3>Tower C</h3>
-                <span class="tower-letter">C</span>
-              </div>
-              <p>Executive penthouses and premium units.</p>
-              <div class="tower-link">
-                <span>Explore Details</span>
-                <i class="fas fa-arrow-right"></i>
-              </div>
-            </div>
           </a>
           
           <a href="pages/rentals.html" class="tower-item card-3d gpu-accelerate" data-tower="rental" data-aos="flip-left" data-aos-delay="0" data-aos-duration="1500" data-aos-anchor-placement="center-center">
             <div class="tower-visual">
               <div class="tower-image-container img-zoom-hover">
                 <img src="assets/images/gallery/rent-tower-a.png" alt="Rental Apartments">
-                <div class="tower-badge rental glow-pulse">Available</div>
               </div>
               <div class="tower-progress">
                 <div class="progress-bar">
                   <div class="progress-fill rental-fill" style="width: 100%;"></div>
                 </div>
                 <span class="progress-text">Ready to Rent</span>
-              </div>
-            </div>
-            <div class="tower-info">
-              <div class="tower-header">
-                <h3>Rentals</h3>
-                <span class="tower-letter"><i class="fas fa-key"></i></span>
-              </div>
-              <p>Fully furnished apartments for rent.</p>
-              <div class="tower-link">
-                <span>View Rentals</span>
-                <i class="fas fa-arrow-right"></i>
               </div>
             </div>
           </a>
@@ -465,7 +467,7 @@
     <style>
     .towers-section {
       background: #ffffff;
-      padding: 100px 0;
+      padding: 30px 0 100px;
       position: relative;
     }
     
@@ -518,6 +520,7 @@
     .highlight {
       background: linear-gradient(135deg, #d4af37, #ffe082);
       -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
     }
     
@@ -555,7 +558,7 @@
     .tower-item {
       background: #ffffff;
       border: none;
-      border-radius: 20px;
+      border-radius: 0;
       overflow: hidden;
       transition: all 0.3s ease;
       box-shadow: 0 10px 30px rgba(0,0,0,0.05);
@@ -600,7 +603,6 @@
       margin: 0;
       padding: 0;
       border: none;
-      vertical-align: bottom;
     }
     
     .tower-item:hover .tower-image-container img {
@@ -729,7 +731,7 @@
     
     @media (max-width: 768px) {
       .towers-section {
-        padding: 80px 0;
+        padding: 20px 0 80px;
       }
       
       .section-title {
@@ -741,8 +743,7 @@
       }
       
       .towers-showcase {
-        grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 4px;
       }
       
       .tower-image-container {
@@ -752,11 +753,14 @@
       .tower-info {
         padding: 20px;
       }
+      .towers-section .container {
+        padding: 0;
+      }
     }
     
     @media (min-width: 1400px) {
       .towers-section {
-        padding: 120px 0;
+        padding: 40px 0 120px;
       }
       
       .towers-section .container {
@@ -805,7 +809,7 @@
     <style>
     .masterplan-section {
       background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
-      padding: 100px 0;
+      padding: 100px 0 30px;
       position: relative;
       overflow: hidden;
     }
@@ -931,7 +935,7 @@
       background: rgba(255,255,255,0.8);
       backdrop-filter: blur(10px);
       border: 1px solid rgba(212,175,55,0.1);
-      border-radius: 20px;
+      border-radius: 0;
       padding: 25px;
       text-decoration: none;
       transition: all 0.3s ease;
@@ -1032,7 +1036,7 @@
     
     @media (max-width: 768px) {
       .masterplan-section {
-        padding: 80px 0;
+        padding: 80px 0 20px;
       }
       
       .masterplan-title {
@@ -1061,7 +1065,7 @@
     
     @media (min-width: 1400px) {
       .masterplan-section {
-        padding: 120px 0;
+        padding: 120px 0 40px;
       }
       
       .masterplan-section .container {
@@ -1162,7 +1166,7 @@
     <!-- Bold CTA Section -->
 <section class="bold-cta-section">
   <div class="container">
-    <div class="cta-card card-3d gpu-accelerate" data-aos="fade-up" data-aos-duration="800">
+    <div class="cta-card">
       <h2 class="cta-heading">
         Experience<br>
         <span class="highlight">Luxury Living</span><br>
@@ -1172,11 +1176,11 @@
         Schedule your exclusive tour and discover premium apartments, penthouses, and commercial spaces in Peshawar's most prestigious development.
       </p>
       <div class="cta-buttons">
-        <a href="pages/contact.html" class="btn-primary btn-pulse btn-hover-lift">
+        <a href="pages/contact.html" class="cta-btn-primary">
           <i class="fas fa-calendar-check"></i>
           Book Private Tour
         </a>
-        <a href="tel:03320001888" class="btn-secondary btn-hover-lift">
+        <a href="tel:03320001888" class="cta-btn-secondary">
           <i class="fas fa-phone"></i>
           Call Now
         </a>
@@ -1186,7 +1190,7 @@
 </section>
 
 <style>
-.bold-cta-section {
+.bold-cta-section { opacity: 1 !important; visibility: visible !important;
   background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
   padding: 100px 0;
   position: relative;
@@ -1220,8 +1224,8 @@
 .highlight {
   background: linear-gradient(135deg, #d4af37, #ffe082);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-weight: 800;
 }
 
@@ -1240,7 +1244,7 @@
   flex-wrap: wrap;
 }
 
-.btn-primary, .btn-secondary {
+.cta-btn-primary, .cta-btn-secondary { opacity: 1 !important; visibility: visible !important;
   display: inline-flex;
   align-items: center;
   gap: 12px;
@@ -1253,33 +1257,35 @@
   transition: all 0.3s ease;
 }
 
-.btn-primary {
-  background: linear-gradient(135deg, #d4af37, #ffe082);
-  color: white;
+.cta-btn-primary {
+  background: linear-gradient(135deg, #d4af37, #ffe082) !important;
+  color: white !important;
+  -webkit-text-fill-color: white !important;
   box-shadow: 0 8px 25px rgba(212,175,55,0.4);
 }
 
-.btn-secondary {
-  background: transparent;
-  color: #1a2238;
+.cta-btn-secondary {
+  background: transparent !important;
+  color: #1a2238 !important;
+  -webkit-text-fill-color: #1a2238 !important;
   border: 2px solid rgba(212,175,55,0.3);
 }
 
-.btn-primary:hover {
+.cta-btn-primary:hover {
   transform: translateY(-3px);
   box-shadow: 0 12px 35px rgba(212,175,55,0.5);
-  color: white;
+  color: white !important;
 }
 
-.btn-secondary:hover {
-  background: rgba(212,175,55,0.1);
+.cta-btn-secondary:hover {
+  background: rgba(212,175,55,0.1) !important;
   border-color: #d4af37;
-  color: #d4af37;
+  color: #d4af37 !important;
   transform: translateY(-3px);
 }
 
 @media (max-width: 768px) {
-  .bold-cta-section {
+  .bold-cta-section { opacity: 1 !important; visibility: visible !important;
     padding: 80px 0;
   }
   
@@ -1300,7 +1306,7 @@
     align-items: center;
   }
   
-  .btn-primary, .btn-secondary {
+  .cta-btn-primary, .cta-btn-secondary { opacity: 1 !important; visibility: visible !important;
     width: 100%;
     max-width: 250px;
     justify-content: center;
@@ -1308,7 +1314,7 @@
 }
 
 @media (min-width: 1400px) {
-  .bold-cta-section {
+  .bold-cta-section { opacity: 1 !important; visibility: visible !important;
     padding: 120px 0;
   }
   
@@ -1330,7 +1336,7 @@
     margin: 0 auto 50px;
   }
   
-  .btn-primary, .btn-secondary {
+  .cta-btn-primary, .cta-btn-secondary { opacity: 1 !important; visibility: visible !important;
     padding: 18px 45px;
     font-size: 1.15rem;
   }
@@ -1589,7 +1595,7 @@
     @media (max-width: 768px) {
       .location-content {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 0;
       }
       
       .location-title {
@@ -1669,12 +1675,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="assets/js/smooth-scroll.js"></script>
     <script src="assets/js/gsap-animations.js"></script>
     <script src="assets/js/scroll-animations.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            AOS.init({duration: 1000, easing: 'ease-in-out', once: false, offset: 100, mirror: true});
+            AOS.init({duration: 1000, easing: 'ease-in-out', once: true, offset: 100, mirror: false});
             setTimeout(() => AOS.refresh(), 500);
         });
         
@@ -1762,7 +1767,7 @@
     }, observerOptions);
     document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('.animate-on-scroll, .animate-fade-in, .animate-scale, .animate-slide-left, .animate-slide-right').forEach(el => observer.observe(el));
-      document.querySelectorAll('.towers-section, .masterplan-section, .premium-gallery-showcase, .bold-cta-section, .enhanced-location-section').forEach(section => {
+      document.querySelectorAll('.towers-section, .masterplan-section, .premium-gallery-showcase, .enhanced-location-section').forEach(section => {
         if (!section.classList.contains('animate-on-scroll') && !section.classList.contains('animate-fade-in') && !section.classList.contains('animate-scale')) {
           section.style.opacity = '0';
           section.style.transform = 'translateY(30px)';
@@ -1803,3 +1808,6 @@
     </script>
 </body>
 </html>
+
+
+
